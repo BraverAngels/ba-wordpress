@@ -9,7 +9,7 @@ add_action( 'gform_after_submission_15', 'record_action_network_member_info', 10
 
 add_action( 'gform_after_submission_13', 'record_action_network_member_payment', 10, 2 );
 
-add_action( 'gform_after_submission_21', 'record_action_network_member_payment_b', 10, 2 );
+add_action( 'gform_after_submission_22', 'record_action_network_member_payment_b', 10, 2 );
 
 
 /* 
