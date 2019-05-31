@@ -2,8 +2,8 @@
 
 function fb_pixel_inline_scripts() {
 
-  if (is_page('thank-you') || is_page('thank-you-for-donating')) {
-  ?>
+  if (is_page('thank-you') || is_page('thank-you-for-donating')) { ?>
+
     <!-- Facebook Pixel Code -->
     <script>
 
@@ -62,9 +62,8 @@ function fb_pixel_inline_scripts() {
     </noscript>
     <!-- End Facebook Pixel Code -->
 
-  <?php
-  } elseif (is_page('join')) {
-  ?>
+  <?php } elseif (is_page('join')) { ?>
+
     <!-- Facebook Pixel Code -->
     <script>
 
@@ -85,10 +84,11 @@ function fb_pixel_inline_scripts() {
     src="https://www.facebook.com/tr?id=1593383650758809&ev=PageView
     &noscript=1"/>
     </noscript>
+
     <!-- End Facebook Pixel Code -->
-  <?php
-  } elseif (is_page('convention')) {
-  ?>
+
+  <?php } elseif (is_page('convention')) { ?>
+
     <!-- Facebook Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -126,9 +126,9 @@ function fb_pixel_inline_scripts() {
     &noscript=1"/>
     </noscript>
     <!-- End Facebook Pixel Code -->
-  <?php
-  } elseif (is_page()) {
-  ?>
+
+  <?php } elseif (is_page()) { ?>
+
     <!-- Facebook Pixel Code -->
     <script>
     !function(f,b,e,v,n,t,s)
@@ -148,6 +148,7 @@ function fb_pixel_inline_scripts() {
     &noscript=1"/>
     </noscript>
     <!-- End Facebook Pixel Code -->
+
   <?php
   }
 }
