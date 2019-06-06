@@ -16,7 +16,7 @@ add_action( 'gform_after_submission_22', 'record_action_network_member_payment_b
 The JOIN form
 */
 function record_action_network_member_payment_b($entry) {
-
+  
 	if (!AN_KEY) {
 		return;
 	}
@@ -38,7 +38,7 @@ function record_action_network_member_payment_b($entry) {
         $is_recurring = true;
         break;
       case 'One Time Gift':
-        $occurence = "Single";
+        $occurence = null;
         $is_recurring = false;	
         break;
 	}
@@ -83,19 +83,10 @@ function record_action_network_member_payment_b($entry) {
 		)
 	);
 	
-	echo print_r($fields);
-	
 	$actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
 
-	echo $actionnetwork_response;
+	return $actionnetwork_response;
 }
-
-
-
-
-
-
-
 
 
 
