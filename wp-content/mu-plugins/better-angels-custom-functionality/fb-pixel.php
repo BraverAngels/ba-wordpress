@@ -108,7 +108,7 @@ function fb_pixel_inline_scripts() {
 
       if (applyNowButton) {
         applyNowButton.onclick = function(e) {
-            e.preventDefault();
+        e.preventDefault();
         fbq('track', 'FindLocation');
         var url = this.href;
         setTimeout(function(){
@@ -141,6 +141,8 @@ function fb_pixel_inline_scripts() {
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1593383650758809');
     fbq('track', 'PageView');
+      
+
     </script>
     <noscript>
      <img height="1" width="1"
