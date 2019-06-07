@@ -31,7 +31,8 @@ wp-content/mu-plugins/limit-login-attempts
 wp-content/mu-plugins/wpengine-common
 wp-content/mysql.sql
 wp-content/plugins
-
+wp-content/themes/*
+!wp-content/themes/astra-child
 
 # wp core (as of 3.4.1)
 /db-config.php
