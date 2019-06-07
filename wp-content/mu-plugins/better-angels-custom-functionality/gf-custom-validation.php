@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 add_filter( 'gform_validation', 'ba_custom_validation' );
 

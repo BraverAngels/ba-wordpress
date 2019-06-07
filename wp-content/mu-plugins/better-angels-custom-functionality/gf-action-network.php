@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 define('AN_BASE', "https://actionnetwork.org/api/v2");
 define('AN_FUNDRAISING_ID', "4b5466f8-885f-432c-8b18-b491aa3ec4ab");
@@ -12,23 +12,23 @@ add_action( 'gform_after_submission_13', 'record_action_network_member_payment',
 add_action( 'gform_after_submission_22', 'record_action_network_member_payment_b', 10, 2 );
 
 
-/* 
+/*
 The JOIN form
 */
 function record_action_network_member_payment_b($entry) {
-  
-	if (!AN_KEY) {
-		return;
-	}
-	$actionnetwork_url = AN_BASE . '/fundraising_pages/' . AN_FUNDRAISING_ID . '/donations';
-	
-	$transaction_id = $entry['transaction_id'];
-	
-	if (!$transaction_id) {
-		return;
-	}
- 
-	switch ($entry['15']) {
+
+  if (!AN_KEY) {
+    return;
+  }
+  $actionnetwork_url = AN_BASE . '/fundraising_pages/' . AN_FUNDRAISING_ID . '/donations';
+
+  $transaction_id = $entry['transaction_id'];
+
+  if (!$transaction_id) {
+    return;
+  }
+
+  switch ($entry['15']) {
       case 'Yearly':
         $occurence = "Yearly";
         $is_recurring = true;
@@ -39,69 +39,69 @@ function record_action_network_member_payment_b($entry) {
         break;
       case 'One Time Gift':
         $occurence = null;
-        $is_recurring = false;	
+        $is_recurring = false;
         break;
-	}
-	
-	$donation_value = $entry['payment_amount'];
-	
-	if ($entry['40'] == 'Credit Card') {
-		$identifier_prefix = 'stripe:';
-	} else {
-		$identifier_prefix = 'paypal:';
-	}
+  }
+
+  $donation_value = $entry['payment_amount'];
+
+  if ($entry['40'] == 'Credit Card') {
+    $identifier_prefix = 'stripe:';
+  } else {
+    $identifier_prefix = 'paypal:';
+  }
 
     $person = array(
-	  "family_name" =>  $entry['41.6'],
-	  "given_name" =>  $entry['41.3'],
+    "family_name" =>  $entry['41.6'],
+    "given_name" =>  $entry['41.3'],
       "email_addresses" => [
         array(
           'address' => $entry['8']
         )
       ],
-	  "postal_addresses" => [
+    "postal_addresses" => [
         array(
-          'postal_code' => $entry['3.5'] 
-        )		  
+          'postal_code' => $entry['3.5']
+        )
       ],
-	  "country" => "US",
+    "country" => "US",
       "language" => "en",
-	  "custom_fields" => create_custom_fields($entry, $donation_value, $is_recurring, true)
+    "custom_fields" => create_custom_fields($entry, $donation_value, $is_recurring, true)
     );
 
-  	$fields = array(
-		'identifiers' => [$identifier_prefix . $transaction_id], // $transaction_id
-		'recipients' => [array(
-			'display_name' => 'Better Angels',
-			'amount' => $donation_value,
-		)],
-		'person' => $person, 
-		'add_tags' => array('Member'),
-		'action_network:recurrence' => array(
-		    'recurring' => $is_recurring,
-			'period' => $occurence
-		)
-	);
-	
-	$actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
+    $fields = array(
+    'identifiers' => [$identifier_prefix . $transaction_id], // $transaction_id
+    'recipients' => [array(
+      'display_name' => 'Better Angels',
+      'amount' => $donation_value,
+    )],
+    'person' => $person,
+    'add_tags' => array('Member'),
+    'action_network:recurrence' => array(
+        'recurring' => $is_recurring,
+      'period' => $occurence
+    )
+  );
 
-	return $actionnetwork_response;
+  $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
+
+  return $actionnetwork_response;
 }
 
 
 
 
-/* 
+/*
 The Survey form
 */
 
 function record_action_network_member_info($entry) {
-  
-  
+
+
   if (!AN_KEY) {
-		return;
+    return;
   }
-	
+
   if (!isset($_GET['email']) && !$_GET['email']) {
       return;
   }
@@ -111,10 +111,10 @@ function record_action_network_member_info($entry) {
   $reason = $entry[1];
   $profession = $entry[2];
   $lean = $entry[4];
-	
+
   $tags = [];
-  
-  foreach(['3.1', '3.2', '3.3', '3.4', '3.5'] as $option) {		
+
+  foreach(['3.1', '3.2', '3.3', '3.4', '3.5'] as $option) {
     if ( isset($entry[$option]) && $entry[$option] != '' ) {
       $tags[] = $entry[$option];
     }
@@ -139,8 +139,8 @@ function record_action_network_member_info($entry) {
   );
 
   $fields = array(
-      'person' => $person, 
-	  'add_tags' => $tags,
+      'person' => $person,
+    'add_tags' => $tags,
   );
 
   $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
@@ -150,159 +150,159 @@ function record_action_network_member_info($entry) {
 }
 
 
-/* 
+/*
 The JOIN form
 */
 function record_action_network_member_payment($entry) {
 
-	if (!AN_KEY) {
-		return;
-	}
-	$actionnetwork_url = AN_BASE . '/fundraising_pages/' . AN_FUNDRAISING_ID . '/donations';
-	
-	$transaction_id = $entry['transaction_id'];
-	
-	if (!$transaction_id) {
-		return;
-	}
-  
-	switch ($entry['15']) {
+  if (!AN_KEY) {
+    return;
+  }
+  $actionnetwork_url = AN_BASE . '/fundraising_pages/' . AN_FUNDRAISING_ID . '/donations';
+
+  $transaction_id = $entry['transaction_id'];
+
+  if (!$transaction_id) {
+    return;
+  }
+
+  switch ($entry['15']) {
       case 'Yearly':
         $occurence = "Yearly";
         $is_recurring = true;
-		if ($entry['38'] == 'other|0') {
-			$amount = $entry['39'];				
-		} else {
-	        $amount = $entry['38'];			
-		}		
+    if ($entry['38'] == 'other|0') {
+      $amount = $entry['39'];
+    } else {
+          $amount = $entry['38'];
+    }
         break;
       case 'Monthly':
         $occurence = "Monthly";
         $is_recurring = true;
-		if ($entry['5'] == 'Other|0') {
-			$amount = $entry['11'];				
-		} else {
-	        $amount = $entry['5'];			
-		}
+    if ($entry['5'] == 'Other|0') {
+      $amount = $entry['11'];
+    } else {
+          $amount = $entry['5'];
+    }
         break;
       case 'One Time Gift':
         $occurence = "Single";
         $is_recurring = false;
-        $amount = $entry['24'];			
+        $amount = $entry['24'];
         break;
-	}
-	
-	$donation_value = convert_value_to_float($amount);
-	
-	if ($entry['40'] == 'Credit Card') {
-		$identifier_prefix = 'stripe:';
-	} else {
-		$identifier_prefix = 'paypal:';
-	}
+  }
+
+  $donation_value = convert_value_to_float($amount);
+
+  if ($entry['40'] == 'Credit Card') {
+    $identifier_prefix = 'stripe:';
+  } else {
+    $identifier_prefix = 'paypal:';
+  }
 
     $person = array(
-	  "family_name" =>  $entry['41.6'],
-	  "given_name" =>  $entry['41.3'],
+    "family_name" =>  $entry['41.6'],
+    "given_name" =>  $entry['41.3'],
       "email_addresses" => [
         array(
           'address' => $entry['8']
         )
       ],
-	  "postal_addresses" => [
+    "postal_addresses" => [
         array(
-          'postal_code' => $entry['3.5'] 
-        )		  
+          'postal_code' => $entry['3.5']
+        )
       ],
-	  "country" => "US",
+    "country" => "US",
       "language" => "en",
-	  "custom_fields" => create_custom_fields($entry, $donation_value, $is_recurring, true)
+    "custom_fields" => create_custom_fields($entry, $donation_value, $is_recurring, true)
     );
 
-  	$fields = array(
-		'identifiers' => [$identifier_prefix . $transaction_id], // $transaction_id
-		'recipients' => [array(
-			'display_name' => 'Better Angels',
-			'amount' => $donation_value,
-		)],
-		'person' => $person, 
-		'add_tags' => array('Member'),
-		'action_network:recurrence' => array(
-		    'recurring' => $is_recurring,
-			'period' => $occurence
-		)
-	);
-	
-	$actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
+    $fields = array(
+    'identifiers' => [$identifier_prefix . $transaction_id], // $transaction_id
+    'recipients' => [array(
+      'display_name' => 'Better Angels',
+      'amount' => $donation_value,
+    )],
+    'person' => $person,
+    'add_tags' => array('Member'),
+    'action_network:recurrence' => array(
+        'recurring' => $is_recurring,
+      'period' => $occurence
+    )
+  );
 
-	return $actionnetwork_response;
+  $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
+
+  return $actionnetwork_response;
 }
 
 
-/* 
+/*
 The DONATE form
 */
 function record_action_network_donation($entry) {
 
-	if (!AN_KEY) {
-		return;
-	}
-	$actionnetwork_url = AN_BASE . '/fundraising_pages/' . AN_FUNDRAISING_ID . '/donations';
-	
-	$transaction_id = $entry['transaction_id'];
-	
-	if (!$transaction_id) {
-		return;
-	}
-	
-	if ($entry['5'] != 'Other|0') {
-		$amount = $entry['5'];
-	} else {
-		$amount = $entry['11'];
-	}
-	
-	$donation_value = convert_value_to_float($amount);
-	
-	if ($entry['40'] == 'Credit Card') {
-		$identifier_prefix = 'stripe:';
-	} else {
-		$identifier_prefix = 'paypal:';
-	}
+  if (!AN_KEY) {
+    return;
+  }
+  $actionnetwork_url = AN_BASE . '/fundraising_pages/' . AN_FUNDRAISING_ID . '/donations';
+
+  $transaction_id = $entry['transaction_id'];
+
+  if (!$transaction_id) {
+    return;
+  }
+
+  if ($entry['5'] != 'Other|0') {
+    $amount = $entry['5'];
+  } else {
+    $amount = $entry['11'];
+  }
+
+  $donation_value = convert_value_to_float($amount);
+
+  if ($entry['40'] == 'Credit Card') {
+    $identifier_prefix = 'stripe:';
+  } else {
+    $identifier_prefix = 'paypal:';
+  }
 
     $person = array(
-	  "family_name" =>  $entry['41.6'],
-	  "given_name" =>  $entry['41.3'],
+    "family_name" =>  $entry['41.6'],
+    "given_name" =>  $entry['41.3'],
       "email_addresses" => [
         array(
           'address' => $entry['8']
         )
       ],
-	  "postal_addresses" => [
+    "postal_addresses" => [
         array(
-          'postal_code' => $entry['3.5'] 
-        )		  
+          'postal_code' => $entry['3.5']
+        )
       ],
-	  "country" => "US",
+    "country" => "US",
       "language" => "en",
-	  "custom_fields" => create_custom_fields($entry, $donation_value, $is_recurring)
+    "custom_fields" => create_custom_fields($entry, $donation_value, $is_recurring)
     );
 
-  	$fields = array(
-		'identifiers' => [$identifier_prefix . $transaction_id], // $transaction_id
-		'recipients' => [array(
-			'display_name' => 'Better Angels',
-			'amount' => $donation_value,
-		)],
-		'person' => $person, 
-		'action_network:recurrence' => array(
-		    'recurring' => $is_recurring,
-			'period' => $occurence
-		)
-	);
+    $fields = array(
+    'identifiers' => [$identifier_prefix . $transaction_id], // $transaction_id
+    'recipients' => [array(
+      'display_name' => 'Better Angels',
+      'amount' => $donation_value,
+    )],
+    'person' => $person,
+    'action_network:recurrence' => array(
+        'recurring' => $is_recurring,
+      'period' => $occurence
+    )
+  );
 
-	$actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
+  $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
 
-	return $actionnetwork_response;
-	
+  return $actionnetwork_response;
+
 }
 
 
@@ -315,7 +315,7 @@ function ba_curl_post($url, $fields = []) {
     "Content-Type: application/json",
     "OSDI-API-Token: " . AN_KEY
   ));
-  
+
   curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
   # Return response instead of printing.
   curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
@@ -335,26 +335,26 @@ function convert_value_to_float($value) {
 }
 
 function create_custom_fields($entry, $amount=0, $is_recurring = false, $include_start_date = false) {
-	$utm_source = $entry[31];
-	$utm_medium = $entry[32];
-	$utm_campaign = $entry[33];
-	
-	$custom_fields = array();
-	
-	if ($utm_campaign || $utm_medium || $utm_source) {
-		$custom_fields = array(
-			'utm_source' => $utm_source,
-			'utm_medium' => $utm_medium,
-			'utm_campaign' => $utm_campaign			
-		);
-	}
-	$custom_fields['Contribution'] = $amount;
-	$custom_fields['recurring'] = $is_recurring;
-	if ($include_start_date) {
-		$custom_fields['Membership Start Date'] = date("Y-m-d", strtotime($entry['date_created']));		
-	}
+  $utm_source = $entry[31];
+  $utm_medium = $entry[32];
+  $utm_campaign = $entry[33];
 
-	return $custom_fields;
+  $custom_fields = array();
+
+  if ($utm_campaign || $utm_medium || $utm_source) {
+    $custom_fields = array(
+      'utm_source' => $utm_source,
+      'utm_medium' => $utm_medium,
+      'utm_campaign' => $utm_campaign
+    );
+  }
+  $custom_fields['Contribution'] = $amount;
+  $custom_fields['recurring'] = $is_recurring;
+  if ($include_start_date) {
+    $custom_fields['Membership Start Date'] = date("Y-m-d", strtotime($entry['date_created']));
+  }
+
+  return $custom_fields;
 }
 
 
@@ -362,11 +362,11 @@ add_action( 'gform_post_payment_status', 'record_action_network_paypal_donation'
 
 // After paypal payment is complete, send form data to Action Network
 function record_action_network_paypal_donation( $feed, $entry, $status,  $transaction_id, $subscriber_id, $amount, $pending_reason, $reason ) {
- 
+
     if ( $status == 'Completed' && $entry['form_id'] == 16 ) {
-		record_action_network_donation($entry);
+    record_action_network_donation($entry);
     } elseif ( $status == 'Completed' && $entry['form_id'] == 13 ) {
-		record_action_network_member_payment($entry);
+    record_action_network_member_payment($entry);
     }
- 
+
 }
