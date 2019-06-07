@@ -12,5 +12,6 @@
    require_once(__DIR__ . '/gf-action-network.php');
    require_once(__DIR__ . '/gf-custom-validation.php');
    require_once(__DIR__ . '/venue-states-select-field.php');
+   require_once(__DIR__ . '/gf-conditional-user-registration.php');
 
 ?>
