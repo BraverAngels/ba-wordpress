@@ -29,7 +29,7 @@ add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
  */
 add_action( 'template_redirect', 'redirect_organizer_and_venue_type_single' );
   function redirect_organizer_and_venue_type_single() {
-      if ( ! is_singular( 'tribe_organizer' ) )
+      if ( ! is_singular( 'tribe_organizer' ) && ! is_singular( 'tribe_venue' ) )
           return;
       if ( tribe_get_events_link() ) {
         wp_redirect( tribe_get_events_link(), 301 );
