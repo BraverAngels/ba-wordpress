@@ -20,6 +20,12 @@ $events_label_plural   = tribe_get_event_label_plural();
 
 $event_id = get_the_ID();
 
+// Signup link
+$signup_link = tribe_get_event_website_link($event_id);
+
+// Organizer Email
+$email = tribe_get_organizer_email();
+
 ?>
 
 <div id="tribe-events-content" class="tribe-events-single">
@@ -32,11 +38,15 @@ $event_id = get_the_ID();
   <?php tribe_the_notices() ?>
 
   <?php the_title( '<h1 class="tribe-events-single-event-title">', '</h1>' ); ?>
-
   <div class="tribe-events-schedule tribe-clearfix">
     <?php echo tribe_events_event_schedule_details( $event_id, '<h2>', '</h2>' ); ?>
     <?php if ( tribe_get_cost() ) : ?>
       <span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
+    <?php endif; ?>
+    <?php if ($signup_link) : ?>
+      <h4 style="margin-top:.5rem;"><a target="_blank" rel="nofollow" href="<?php echo strip_tags($signup_link); ?>">Sign up now!</a></h4>
+    <?php elseif ( ! empty( $email ) ) : ?>
+      <h4 style="margin-top:.5rem;"><a target="_blank" rel="nofollow" href="mailto:<?php echo $email; ?>">Contact organizer to sign up now!</a></h4>
     <?php endif; ?>
   </div>
 
