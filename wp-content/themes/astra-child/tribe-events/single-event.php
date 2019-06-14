@@ -44,7 +44,12 @@ $email = tribe_get_organizer_email();
       <span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
     <?php endif; ?>
     <?php if ($signup_link) : ?>
-      <h4 style="margin-top:.5rem;"><a target="_blank" rel="nofollow" href="<?php echo strip_tags($signup_link); ?>">Sign up now!</a></h4>
+      <?php if (strpos (strip_tags($signup_link), 'http')) :
+        $prefix = '';
+      else :
+        $prefix = '//';
+      endif; ?>
+      <h4 style="margin-top:.5rem;"><a target="_blank" rel="nofollow" href="<?php echo $prefix . strip_tags($signup_link); ?>">Sign up now!</a></h4>
     <?php elseif ( ! empty( $email ) ) : ?>
       <h4 style="margin-top:.5rem;"><a target="_blank" rel="nofollow" href="mailto:<?php echo $email; ?>">Contact organizer to sign up now!</a></h4>
     <?php endif; ?>
