@@ -43,10 +43,32 @@ function ba_custom_validation( $validation_result ) {
         //finding Field with ID of 11 (monthly) and marking it as failed validation
         foreach( $form['fields'] as $field ) {
 
-          //NOTE: replace 1 with the field you would like to validate, 14 in this case
           if ( $field->id == '10' ) {
             $field->failed_validation = true;
             $field->validation_message = 'Yearly contribution must be $12 or more';
+            break;
+          }
+        }
+
+      }
+  }
+
+  elseif ( rgpost( 'input_15' ) == 'One Time Gift' {
+
+      $donation_value = intval (str_replace('$', '', rgpost( 'input_50' )));
+
+      //If selected, "other" monthly amount (field 11) must be 1 or greater
+      if ( $donation_value < 1 ) {
+
+        // set the form validation to false
+        $validation_result['is_valid'] = false;
+
+        //finding Field with ID of 11 (monthly) and marking it as failed validation
+        foreach( $form['fields'] as $field ) {
+
+          if ( $field->id == '50' ) {
+            $field->failed_validation = true;
+            $field->validation_message = 'Contribution must be $1 or more';
             break;
           }
         }
