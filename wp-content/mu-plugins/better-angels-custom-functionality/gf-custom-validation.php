@@ -53,7 +53,7 @@ function ba_custom_validation( $validation_result ) {
       }
   }
 
-  elseif ( rgpost( 'input_15' ) == 'One Time Gift' {
+  elseif ( rgpost( 'input_15' ) == 'One Time Gift' ) {
 
       $donation_value = intval (str_replace('$', '', rgpost( 'input_50' )));
 
