@@ -16,7 +16,7 @@ define( 'CHILD_THEME_ASTRA_CHILD_VERSION', '1.0.0' );
 add_action('init', 'use_jquery_from_google');
 
 function use_jquery_from_google () {
-  if (is_admin()) {
+  if (is_admin() || is_user_logged_in()) {
     return;
   }
 
