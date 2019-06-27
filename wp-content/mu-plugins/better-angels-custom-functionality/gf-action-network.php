@@ -7,10 +7,54 @@ add_action( 'gform_after_submission_16', 'record_action_network_donation', 10, 2
 
 add_action( 'gform_after_submission_15', 'record_action_network_member_info', 10, 2 );
 
+add_action( 'gform_after_submission_17', 'record_action_network_subscriber_info', 10, 2 );
+
 add_action( 'gform_after_submission_13', 'record_action_network_member_payment', 10, 2 );
 
 add_action( 'gform_after_submission_22', 'record_action_network_member_payment_b', 10, 2 );
 
+
+
+
+function record_action_network_subscriber_info($entry) {
+
+  if (!AN_KEY) {
+    return;
+  }
+  $actionnetwork_url = AN_BASE . '/people/';
+
+  $custom_fields = array(
+    "Lean Red or Blue" => $entry['1'],
+  );
+
+  $person = array(
+    "family_name" =>  $entry['5'],
+    "given_name" =>  $entry['4'],
+      "email_addresses" => [
+        array(
+          'address' => $entry['2']
+        )
+      ],
+      "postal_addresses" => [
+        array(
+          'postal_code' => $entry['6.5']
+        )
+      ],
+      "country" => "US",
+      "language" => "en",
+      "custom_fields" => $custom_fields
+    );
+
+    $fields = array(
+      'person' => $person,
+    );
+
+
+    $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
+
+    return $actionnetwork_response;
+
+}
 
 /*
 The JOIN form
@@ -139,7 +183,7 @@ function record_action_network_member_info($entry) {
   );
 
   $fields = array(
-      'person' => $person,
+    'person' => $person,
     'add_tags' => $tags,
   );
 
