@@ -72,8 +72,6 @@ function record_action_network_member_payment_b($entry) {
     return;
   }
 
-  if ()
-
   switch ($entry['15']) {
       case 'Yearly':
         $occurence = "Yearly";
@@ -129,10 +127,9 @@ function record_action_network_member_payment_b($entry) {
     )
   );
 
-  echo print_r($fields);
-  // $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
+  $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
 
-  // return $actionnetwork_response;
+  return $actionnetwork_response;
 }
 
 
