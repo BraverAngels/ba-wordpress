@@ -72,6 +72,8 @@ function record_action_network_member_payment_b($entry) {
     return;
   }
 
+  if ()
+
   switch ($entry['15']) {
       case 'Yearly':
         $occurence = "Yearly";
@@ -95,25 +97,25 @@ function record_action_network_member_payment_b($entry) {
     $identifier_prefix = 'paypal:';
   }
 
-    $person = array(
+  $person = array(
     "family_name" =>  $entry['41.6'],
     "given_name" =>  $entry['41.3'],
-      "email_addresses" => [
-        array(
-          'address' => $entry['8']
-        )
-      ],
+    "email_addresses" => [
+      array(
+        'address' => $entry['8']
+      )
+    ],
     "postal_addresses" => [
-        array(
-          'postal_code' => $entry['3.5']
-        )
-      ],
+      array(
+        'postal_code' => $entry['3.5']
+      )
+    ],
     "country" => "US",
-      "language" => "en",
-    "custom_fields" => create_custom_fields($entry, $donation_value, $is_recurring, true)
-    );
+    "language" => "en",
+    "custom_fields" => create_custom_fields($entry, $donation_value, $is_recurring, true, $entry['53'])
+  );
 
-    $fields = array(
+  $fields = array(
     'identifiers' => [$identifier_prefix . $transaction_id], // $transaction_id
     'recipients' => [array(
       'display_name' => 'Better Angels',
@@ -122,14 +124,15 @@ function record_action_network_member_payment_b($entry) {
     'person' => $person,
     'add_tags' => array('Member'),
     'action_network:recurrence' => array(
-        'recurring' => $is_recurring,
+      'recurring' => $is_recurring,
       'period' => $occurence
     )
   );
 
-  $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
+  echo print_r($fields);
+  // $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
 
-  return $actionnetwork_response;
+  // return $actionnetwork_response;
 }
 
 
@@ -378,7 +381,7 @@ function convert_value_to_float($value) {
   return floatval($res);
 }
 
-function create_custom_fields($entry, $amount=0, $is_recurring = false, $include_start_date = false) {
+function create_custom_fields($entry, $amount=0, $is_recurring = false, $include_start_date = false, $phone='') {
   $utm_source = $entry[31];
   $utm_medium = $entry[32];
   $utm_campaign = $entry[33];
@@ -396,6 +399,9 @@ function create_custom_fields($entry, $amount=0, $is_recurring = false, $include
   $custom_fields['recurring'] = $is_recurring;
   if ($include_start_date) {
     $custom_fields['Membership Start Date'] = date("Y-m-d", strtotime($entry['date_created']));
+  }
+  if ($phone) {
+    $custom_fields['Telephone'] = $phone;
   }
 
   return $custom_fields;
