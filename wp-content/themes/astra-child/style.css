@@ -285,3 +285,103 @@ background-color: #ab2634 !important;
       margin-top: 0px !important;
   }
 }
+
+
+.ba-custom-form input[type="text"], .ba-custom-form select{
+    border: 1px solid #23356c;
+    border-radius: 5px;
+    background: white;
+    -webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+            box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    margin-top: 0 !important;
+}
+
+.ba-custom-form select{
+    padding: 5px 4px;
+    height: 44px;
+}
+
+.ba-custom-form .ba-button-list li {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.ba-custom-form input[type="submit"] {
+    border-radius: 5px;
+    background: #27b758;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.ba-custom-form input[type="submit"]:hover, .ba-custom-form input[type="submit"]:focus  {
+    background: #23356c;
+}
+
+@media screen and (min-width: 500px) {
+    .ba-custom-form .ba-button-list li {
+        display: inline-block;
+        min-width: 200px;
+        width: auto;
+    }
+}
+
+
+/* Hide the checkbox */
+.ba-custom-form .ba-button-list li input {
+    display: none;
+}
+
+
+/* the unselected button*/
+.ba-custom-form .ba-button-list li label {
+    background: white;
+    color: white;
+    font-weight: bold;
+    padding: .5rem 1.5rem;
+    border: 2px solid lightgray;
+    color: #23356c;
+    text-align: center;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    border-radius: 5px;
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
+}
+
+@media screen and (min-width: 500px) {
+ .ba-custom-form .ba-button-list li label {
+     max-width: 95%;
+ }
+}
+
+/* the selected button*/
+.ba-custom-form .ba-button-list li input:checked + label {
+    background: #23356c;
+    color: white;
+    border: 2px solid #23356c;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+
+.ba-custom-form select{
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+    position: relative;
+     background: url(https://www.better-angels.org/wp-content/uploads/2019/06/icon-chevron-down.png) no-repeat;
+     background-size: 14px;
+     background-position: right 8px center;
+}
+
+.ba-custom-form .gfield_description {
+    padding: 0;
+    margin-top: 0;
+}
