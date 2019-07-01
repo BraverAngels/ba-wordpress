@@ -11,7 +11,7 @@
 /**
  * Define Constants
  */
-define( 'CHILD_THEME_ASTRA_CHILD_VERSION', '1.0.0' );
+define( 'CHILD_THEME_ASTRA_CHILD_VERSION', '1.0.1' );
 
 add_action('init', 'use_jquery_from_google');
 
