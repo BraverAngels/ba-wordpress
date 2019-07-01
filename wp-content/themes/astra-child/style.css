@@ -41,16 +41,12 @@ Template: astra
     border-color: white;
     /* end button colors */
     letter-spacing: 0.09375rem;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
     border-radius: 3px;
     font-family: Open Sans, sans-serif;
     font-weight: 600;
     display: block;
     -webkit-transition: background-color 300ms ease-out;
-    -moz-transition: background-color 300ms ease-out;
+    -o-transition: background-color 300ms ease-out;
     transition: background-color 300ms ease-out;
     -webkit-appearance: none;
     cursor: pointer;
@@ -59,7 +55,8 @@ Template: astra
     text-decoration: none;
     text-align: center;
     font-size: 1.1em;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 /* THIS CONTROLS THE STYLE OF THE BUTTON WHEN IT IS SELECTED */
@@ -96,16 +93,12 @@ Template: astra
     border-color: white;
     /* end button colors */
     letter-spacing: 0.09375rem;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
     border-radius: 3px;
     font-family: Open Sans, sans-serif;
     font-weight: 600;
     display: block;
     -webkit-transition: background-color 300ms ease-out;
-    -moz-transition: background-color 300ms ease-out;
+    -o-transition: background-color 300ms ease-out;
     transition: background-color 300ms ease-out;
     -webkit-appearance: none;
     cursor: pointer;
@@ -114,7 +107,8 @@ Template: astra
     text-decoration: none;
     text-align: center;
     font-size: 1.1em;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 /* THIS CONTROLS THE STYLE OF THE BUTTON WHEN IT IS SELECTED */
@@ -184,13 +178,110 @@ background-color: #ab2634 !important;
   bottom: 200px;
 }
 
-/*
-Delete?
- */
+/* GLOBAL FORM STYLES - for gravity forms with class of .ba-custom-form */
 
-/* .event-categories {
-  margin-bottom: 3rem;
+.ba-custom-form input[type="text"], .ba-custom-form select, .ba-custom-form textarea{
+    border: 1px solid #23356c;
+    border-radius: 5px;
+    background: white;
+    -webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+            box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    margin-top: 0 !important;
 }
-.event-categories a {
-  line-height: 2.35
-} */
+
+.ba-custom-form select{
+    padding: 5px 4px;
+    height: 44px;
+}
+
+.ba-custom-form .ba-button-list li {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+}
+
+.ba-custom-form input[type="submit"] {
+    border-radius: 5px;
+    background: #27b758;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+.ba-custom-form input[type="submit"]:hover, .ba-custom-form input[type="submit"]:focus  {
+    background: #23356c;
+}
+
+@media screen and (min-width: 500px) {
+    .ba-custom-form .ba-button-list li {
+        display: inline-block;
+        min-width: 200px;
+        width: auto;
+    }
+}
+
+
+/* Hide the checkbox */
+.ba-custom-form .ba-button-list li input {
+    display: none;
+}
+
+
+/* the unselected button*/
+.ba-custom-form .ba-button-list li label {
+    background: white;
+    color: white;
+    font-weight: bold;
+    padding: .5rem 1.5rem;
+    border: 2px solid lightgray;
+    color: #23356c;
+    text-align: center;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+    border-radius: 5px;
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
+}
+
+@media screen and (min-width: 500px) {
+ .ba-custom-form .ba-button-list li label {
+     max-width: 95%;
+ }
+}
+
+/* the selected button*/
+.ba-custom-form .ba-button-list li input:checked + label {
+    background: #23356c;
+    color: white;
+    border: 2px solid #23356c;
+    -webkit-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+
+
+.ba-custom-form select,
+.ba-custom-form select:focus {
+    -moz-appearance:none; /* Firefox */
+    -webkit-appearance:none; /* Safari and Chrome */
+    appearance:none;
+    position: relative;
+     background: url(https://www.better-angels.org/wp-content/uploads/2019/06/icon-chevron-down.png) no-repeat;
+     background-size: 14px;
+     background-position: right 8px center;
+}
+
+.ba-custom-form .gfield_description {
+    padding: 0 !important;
+    margin-top: 0 !important;
+}
+
+@-moz-document url-prefix() {
+  .ba-custom-form .gfield_checkbox li > label {
+      margin-top: 0px !important;
+  }
+}
