@@ -88,3 +88,20 @@ add_action( 'template_redirect', 'redirect_organizer_and_venue_type_single' );
     </style>
  <?php
 } add_action( 'login_enqueue_scripts', 'ba_login_page_styles' );
+
+
+function inline_scripts() {
+    ?>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93943838-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'UA-93943838-2');
+    </script>
+
+    <?php
+}
+add_action( 'wp_enqueue_scripts', 'inline_scripts', 1, 1 );
