@@ -65,17 +65,17 @@ add_action( 'init', 'ba_custom_post_types' );
 function ba_custom_taxonomies() {
 
  $labels = array(
-   'name'              => _x( 'Review Category', 'taxonomy general name', 'better-angels' ),
-   'singular_name'     => _x( 'Review Category', 'taxonomy singular name', 'better-angels' ),
-   'search_items'      => __( 'Search Categories', 'better-angels' ),
-   'all_items'         => __( 'All Categories', 'better-angels' ),
-   'parent_item'       => __( 'Parent Categories', 'better-angels' ),
-   'parent_item_colon' => __( 'Parent Categories:', 'better-angels' ),
-   'edit_item'         => __( 'Edit Category', 'better-angels' ),
-   'update_item'       => __( 'Update Category', 'better-angels' ),
-   'add_new_item'      => __( 'Add New Category', 'better-angels' ),
-   'new_item_name'     => __( 'New Category', 'better-angels' ),
-   'menu_name'         => __( 'Categories', 'better-angels' ),
+   'name'              => _x( 'Item Labels', 'taxonomy general name', 'better-angels' ),
+   'singular_name'     => _x( 'Item Label', 'taxonomy singular name', 'better-angels' ),
+   'search_items'      => __( 'Search Labels', 'better-angels' ),
+   'all_items'         => __( 'All Labels', 'better-angels' ),
+   'parent_item'       => __( 'Parent Labels', 'better-angels' ),
+   'parent_item_colon' => __( 'Parent labels:', 'better-angels' ),
+   'edit_item'         => __( 'Edit Label', 'better-angels' ),
+   'update_item'       => __( 'Update Label', 'better-angels' ),
+   'add_new_item'      => __( 'Add New Label', 'better-angels' ),
+   'new_item_name'     => __( 'New Label', 'better-angels' ),
+   'menu_name'         => __( 'Labels', 'better-angels' ),
  );
 
  $args = array(
@@ -84,10 +84,10 @@ function ba_custom_taxonomies() {
    'show_ui'           => true,
    'show_admin_column' => true,
    'query_var'         => true,
-   'rewrite'           => array( 'slug' => 'library/categories' ),
+   'rewrite'           => array( 'slug' => 'library/labels' ),
  );
 
- register_taxonomy( 'library_category', array( 'library' ), $args );
+ register_taxonomy( 'library_label', array( 'library' ), $args );
  // Should rename to "Reading Rooms?"
 }
 

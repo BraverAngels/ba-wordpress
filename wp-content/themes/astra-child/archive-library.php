@@ -34,39 +34,58 @@ get_header(); ?>
     </section>
 
     <?php astra_entry_before(); ?>
-    <div class="library-index-content" style="margin: 0 -20px;">
-    <?php if ( have_posts() ) :
-      while ( have_posts() ) : the_post(); ?>
-      <?php //astra_entry_top(); ?>
-      <?php //the_post_thubnail(); ?>
-      <?php //astra_entry_bottom(); ?>
-      <article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" id="post-<?php the_ID(); ?>" <?php post_class('ast-col-md-6 ast-col-lg-4'); ?>>
+    <div class="library-content-wrap" style="margin: 0 -20px;">
+      <div class="library-sidebar ast-col-md-3">
+        <h4>Labels</h4>
+        <?php
+        $terms = get_terms( array(
+            'taxonomy' => 'library_label',
+            'hide_empty' => false,
+        ) ); ?>
+        <ul class="library-labels-list">
+          <?php foreach($terms as $term) : ?>
+            <li>
+              <a href="<?php echo get_term_link( $term, 'library_label'); ?>">
+                <?php echo $term->name; ?>
+              </a>
+            </li>
+          <?php endforeach; ?>
+        </ul>
+      </div>
+      <div class="library-index-content ast-col-md-9">
+        <?php if ( have_posts() ) :
+          while ( have_posts() ) : the_post(); ?>
+          <?php //astra_entry_top(); ?>
+          <?php //the_post_thubnail(); ?>
+          <?php //astra_entry_bottom(); ?>
+          <article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" id="post-<?php the_ID(); ?>" <?php post_class('ast-col-md-6 ast-col-lg-4'); ?>>
 
-        <?php if (has_post_thumbnail()) : ?>
-          <a href="<?php the_permalink('large'); ?>" rel="bookmark">
-            <?php the_post_thumbnail(); ?>
-          </a>
-        <?php endif; ?>
+            <?php if (has_post_thumbnail()) : ?>
+              <a href="<?php the_permalink(); ?>" rel="bookmark">
+                <?php the_post_thumbnail(); ?>
+              </a>
+            <?php endif; ?>
 
 
-        <div class="ast-post-format- blog-layout-1">
-          <div class="post-content ast-col-md-12">
-            <header class="entry-header">
-              <h4 class="entry-title library-entry-title" itemprop="headline">
-              <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
-              <?php if (has_ba_library_author(get_the_ID())) : ?>
-                <span><?php the_ba_library_author(get_the_ID()); ?></span>
-                <br/>
-              <?php endif; ?>
-              <a href="<?php the_permalink(); ?>" rel="bookmark">View →</a>
-            </header><!-- .entry-header -->
+            <div class="ast-post-format- blog-layout-1">
+              <div class="post-content ast-col-md-12">
+                <header class="entry-header">
+                  <h4 class="entry-title library-entry-title" itemprop="headline">
+                  <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
+                  <?php if (has_ba_library_author(get_the_ID())) : ?>
+                    <span><?php the_ba_library_author(get_the_ID()); ?></span>
+                    <br/>
+                  <?php endif; ?>
+                  <a href="<?php the_permalink(); ?>" rel="bookmark">View →</a>
+                </header><!-- .entry-header -->
 
-          </div><!-- .post-content -->
-        </div>
-      </article><!-- #post-## -->
-    <?php endwhile; ?>
-  <?php endif; ?>
-  <div class="library-index-content">
+              </div><!-- .post-content -->
+            </div>
+          </article><!-- #post-## -->
+        <?php endwhile; ?>
+      <?php endif; ?>
+    </div >
+  </div >
 
 <?php astra_entry_after(); ?>
 
@@ -93,6 +112,14 @@ get_header(); ?>
   .post-type-archive-library .blog-layout-1 {
     padding-bottom: 1em;
     border-bottom: none;
+  }
+  .library-labels-list {
+    margin: 0;
+    list-style: none;
+  }
+  .library-sidebar {
+    border-right: 1px solid lightgray;
+    min-height: 200px;
   }
 </style>
 <?php get_footer(); ?>
