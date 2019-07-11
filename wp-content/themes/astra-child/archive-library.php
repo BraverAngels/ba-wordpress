@@ -90,5 +90,9 @@ get_header(); ?>
     max-height: 275px;
     width: auto;
   }
+  .post-type-archive-library .blog-layout-1 {
+    padding-bottom: 1em;
+    border-bottom: none;
+  }
 </style>
 <?php get_footer(); ?>
