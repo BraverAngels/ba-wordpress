@@ -40,7 +40,7 @@ get_header(); ?>
         <?php
         $terms = get_terms( array(
             'taxonomy' => 'library_label',
-            'hide_empty' => false,
+            'hide_empty' => true,
         ) ); ?>
         <ul class="library-labels-list">
           <?php foreach($terms as $term) : ?>
