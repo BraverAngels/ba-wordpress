@@ -86,5 +86,9 @@ get_header(); ?>
     font-size: 22px;
     margin-top: 1rem;
   }
+  .post-type-archive-library .attachment-post-thumbnail {
+    max-height: 275px;
+    width: auto;
+  }
 </style>
 <?php get_footer(); ?>
