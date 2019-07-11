@@ -387,3 +387,13 @@ background-color: #ab2634 !important;
     padding: 0;
     margin-top: 0;
 }
+.library-back-link-wrapper {
+  overflow: auto;
+  position: relative;
+  display: block;
+}
+.library-back-link {
+  display: inline-block;
+  float: left;
+  margin: 1rem 0;
+}

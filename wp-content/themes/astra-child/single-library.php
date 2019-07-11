@@ -21,7 +21,9 @@ get_header(); ?>
     <?php astra_primary_content_top(); ?>
 
     <article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
-
+      <div class="library-back-link-wrapper">
+        <a class="library-back-link" href="<?php echo home_url();?>/library">&larr; Back to Library</a><br/>
+      </div>
       <?php if (has_post_thumbnail()) : ?>
           <?php the_post_thumbnail(); ?>
       <?php endif; ?>
@@ -45,6 +47,11 @@ get_header(); ?>
             <br/>
           <?php endif; ?>
           <?php the_ba_library_review_content(get_the_ID()); ?>
+          <br/>
+          <div class="library-back-link-wrapper">
+            <a class="library-back-link" href="<?php echo home_url();?>/library">&larr; Back to Library</a><br/>
+          </div>
+          
         </div><!-- .post-content -->
       </div>
     </article><!-- #post-## -->
