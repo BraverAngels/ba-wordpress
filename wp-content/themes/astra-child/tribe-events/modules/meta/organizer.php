@@ -32,6 +32,7 @@ $website = tribe_get_organizer_website_link();
       <dt style="display:none;"><?php // This element is just to make sure we have a valid HTML ?></dt>
       <dd class="tribe-organizer">
         <?php echo strip_tags(tribe_get_organizer_link( $organizer ) ) ?>
+        <?php echo tribe_get_organizer_email($organizer) ? '<a href="mailto:' . tribe_get_organizer_email($organizer) .'">('.tribe_get_organizer_email($organizer).')</a>' : ''; ?>
       </dd>
       <?php
     }
@@ -44,17 +45,6 @@ $website = tribe_get_organizer_website_link();
         </dt>
         <dd class="tribe-organizer-tel">
           <?php echo esc_html( $phone ); ?>
-        </dd>
-        <?php
-      }//end if
-
-      if ( ! empty( $email ) ) {
-        ?>
-        <dt class="tribe-organizer-email-label">
-          <?php esc_html_e( 'Email:', 'the-events-calendar' ) ?>
-        </dt>
-        <dd class="tribe-organizer-email">
-          <?php echo esc_html( $email ); ?>
         </dd>
         <?php
       }//end if

@@ -43,11 +43,6 @@ $email = tribe_get_organizer_email();
     <?php if ( tribe_get_cost() ) : ?>
       <span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
     <?php endif; ?>
-    <?php if ($signup_link) : ?>
-      <h4 style="margin-top:.5rem;"><a target="_blank" rel="nofollow" href="<?php echo strip_tags($signup_link); ?>">Sign up now!</a></h4>
-    <?php elseif ( ! empty( $email ) ) : ?>
-      <h4 style="margin-top:.5rem;"><a target="_blank" rel="nofollow" href="mailto:<?php echo $email; ?>">Contact organizer to sign up now!</a></h4>
-    <?php endif; ?>
   </div>
 
   <!-- Event header -->
@@ -70,6 +65,11 @@ $email = tribe_get_organizer_email();
 
       <!-- Event content -->
       <?php do_action( 'tribe_events_single_event_before_the_content' ) ?>
+      <?php if ($signup_link) : ?>
+        <a class="tribe-events-button" style="font-size: 1.125rem;background-color:#23356c;" target="_blank" rel="nofollow" href="<?php echo strip_tags($signup_link); ?>">Click here to sign up now!</a>
+      <?php elseif ( ! empty( $email ) ) : ?>
+        <a class="tribe-events-button" style="font-size: 1.125rem;background-color:#23356c;" target="_blank" rel="nofollow" href="mailto:<?php echo $email; ?>">Click here to contact organizer!</a>
+      <?php endif; ?>
       <div class="tribe-events-single-event-description tribe-events-content">
         <?php the_content(); ?>
       </div>
