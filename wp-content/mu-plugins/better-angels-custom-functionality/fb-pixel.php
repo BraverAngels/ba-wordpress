@@ -127,7 +127,7 @@ function fb_pixel_inline_scripts() {
     </noscript>
     <!-- End Facebook Pixel Code -->
 
-  <?php } elseif (is_page()) { ?>
+  <?php } else { ?>
 
     <!-- Facebook Pixel Code -->
     <script>
@@ -141,7 +141,7 @@ function fb_pixel_inline_scripts() {
     'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1593383650758809');
     fbq('track', 'PageView');
-      
+
 
     </script>
     <noscript>
