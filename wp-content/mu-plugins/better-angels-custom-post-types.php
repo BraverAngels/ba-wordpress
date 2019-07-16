@@ -48,7 +48,7 @@ function ba_custom_post_types() {
     'hierarchical'       => false,
     'menu_icon'          => 'dashicons-book-alt',
     'menu_position'      => 4,
-    'supports'           => array( 'title', 'editor', 'thumbnail' ),
+    'supports'           => array( 'title', 'editor', 'thumbnail', 'comments' ),
     'rewrite'            => array(
       'slug' => 'library',
       'with_front' => true,
@@ -108,12 +108,6 @@ function ba_add_library_data_custom_box()
           $screen,                   				        // Post type
           'side' 									                  // Location on the page
         );
-        add_meta_box(
-          'review_content_editor',
-          'Review',
-          'ba_render_review_editor',
-          $screen
-        );
     }
 }
 add_action('add_meta_boxes', 'ba_add_library_data_custom_box');
@@ -125,7 +119,6 @@ function ba_add_library_data_custom_box_html($post)
       array('label' => 'Year Published', 'key' => 'ba_year_published', 'value' => get_post_meta($post->ID, '_ba_year_published', true)),
       array('label' => 'Author', 'key' => 'ba_author', 'value' => get_post_meta($post->ID, '_ba_author', true)),
       array('label' => 'Purchase URL', 'key' => 'ba_purchase_link', 'value' => get_post_meta($post->ID, '_ba_purchase_link', true)),
-      array('label' => 'Review Author', 'key' => 'ba_review_author', 'value' => get_post_meta($post->ID, '_ba_review_author', true)),
     );
     // Display code below
     foreach ($keys as $item) { ?>
@@ -141,7 +134,7 @@ add_action( 'save_post', 'ba_save_library_data_custom_box', 10, 2 );
 /* Save the meta box post metadata. */
 function ba_save_library_data_custom_box( $post_id, $post ) {
   // Keys
-  $keys = ["ba_year_published", "ba_author", "ba_purchase_link", "ba_review_author"];
+  $keys = ["ba_year_published", "ba_author", "ba_purchase_link",];
   // Loop through keys and update their meta
   foreach($keys as $key){
     if (array_key_exists($key, $_POST)) {
@@ -152,25 +145,25 @@ function ba_save_library_data_custom_box( $post_id, $post ) {
         );
     }
   }
-  if (!empty($_POST['review_content'])) {
-      $data=htmlspecialchars($_POST['review_content']); //make sanitization more strict !!
-      update_post_meta($post_id, '_ba_review_content', $data );
-  }
+  // if (!empty($_POST['review_content'])) {
+  //     $data=htmlspecialchars($_POST['review_content']); //make sanitization more strict !!
+  //     update_post_meta($post_id, '_ba_review_content', $data );
+  // }
 }
 
-// Render the content editor
-function ba_render_review_editor( $post ) {
-    $text=get_post_meta($post->ID, '_ba_review_content' , true );
-    wp_editor( htmlspecialchars_decode($text), 'review_content', $settings = array('textarea_name'=>'review_content') );
-}
-
-
-// template tags
-function the_ba_library_review_content($id) {
-  if (get_post_meta($id, '_ba_review_content')) {
-    echo get_post_meta($id, '_ba_review_content', true);
-  }
-}
+// // Render the content editor
+// function ba_render_review_editor( $post ) {
+//     $text=get_post_meta($post->ID, '_ba_review_content' , true );
+//     wp_editor( htmlspecialchars_decode($text), 'review_content', $settings = array('textarea_name'=>'review_content') );
+// }
+//
+//
+// // template tags
+// function the_ba_library_review_content($id) {
+//   if (get_post_meta($id, '_ba_review_content')) {
+//     echo get_post_meta($id, '_ba_review_content', true);
+//   }
+// }
 
 function the_ba_library_purchase_link($id) {
   if (get_post_meta($id, '_ba_purchase_link', true)) {
@@ -201,5 +194,18 @@ function has_ba_library_review_author($id) {
 function the_ba_library_review_author($id) {
   if (get_post_meta($id, '_ba_review_author', true)) {
     echo get_post_meta($id, '_ba_review_author' , true );
+  }
+}
+
+function has_ba_library_year_published($id) {
+  if (get_post_meta($id, '_ba_year_published', true)) {
+    return true;
+  }
+  return false;
+}
+
+function the_ba_library_year_published($id) {
+  if (get_post_meta($id, '_ba_year_published', true)) {
+    echo get_post_meta($id, '_ba_year_published' , true );
   }
 }

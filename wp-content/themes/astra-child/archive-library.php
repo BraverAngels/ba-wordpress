@@ -76,6 +76,10 @@ get_header(); ?>
                     <span><?php the_ba_library_author(get_the_ID()); ?></span>
                     <br/>
                   <?php endif; ?>
+                  <?php if (has_ba_library_year_published(get_the_ID())) : ?>
+                    <span><em><?php the_ba_library_year_published(get_the_ID()); ?></em></span>
+                    <br/>
+                  <?php endif; ?>
                   <a href="<?php the_permalink(); ?>" rel="bookmark">View →</a>
                 </header><!-- .entry-header -->
 
