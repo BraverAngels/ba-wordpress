@@ -30,7 +30,7 @@ get_header(); ?>
 
     <section class="ast-archive-description">
       <h1 class="page-title ast-archive-title">Library</h1>
-      <p>A cool headline describing the purpose if the Better Angels library</p>
+      <p>A cool headline describing the purpose of the Better Angels library</p>
     </section>
 
     <?php astra_entry_before(); ?>
