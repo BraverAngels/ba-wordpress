@@ -65,7 +65,7 @@ if ( post_password_required() ) {
       <?php
     endif;
   endif; // Check for have_comments().
-  comment_form();
+  comment_form(array('comment_field'=> '<p class="comment-form-comment"><label for="comment">' . _x( 'Review', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>', 'title_reply' => __( 'Leave a Review' ), 'label_submit' => __( 'Post Review' )));
   ?>
 
 </div><!-- #comments -->

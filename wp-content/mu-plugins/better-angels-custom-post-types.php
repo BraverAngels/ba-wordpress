@@ -89,6 +89,31 @@ function ba_custom_taxonomies() {
 
  register_taxonomy( 'library_label', array( 'library' ), $args );
  // Should rename to "Reading Rooms?"
+
+ $labels = array(
+   'name'              => _x( 'Reading Room', 'taxonomy general name', 'better-angels' ),
+   'singular_name'     => _x( 'Item Reading Room', 'taxonomy singular name', 'better-angels' ),
+   'search_items'      => __( 'Search Reading Rooms', 'better-angels' ),
+   'all_items'         => __( 'All Reading Rooms', 'better-angels' ),
+   'parent_item'       => __( 'Parent Reading Rooms', 'better-angels' ),
+   'parent_item_colon' => __( 'Parent Reading Rooms:', 'better-angels' ),
+   'edit_item'         => __( 'Edit Reading Room', 'better-angels' ),
+   'update_item'       => __( 'Update Reading Room', 'better-angels' ),
+   'add_new_item'      => __( 'Add New Reading Room', 'better-angels' ),
+   'new_item_name'     => __( 'New Reading Room', 'better-angels' ),
+   'menu_name'         => __( 'Reading Rooms', 'better-angels' ),
+ );
+
+ $args = array(
+   'hierarchical'      => true,
+   'labels'            => $labels,
+   'show_ui'           => true,
+   'show_admin_column' => true,
+   'query_var'         => true,
+   'rewrite'           => array( 'slug' => 'library/reading-rooms' ),
+ );
+
+ register_taxonomy( 'library_reading_room', array( 'library' ), $args );
 }
 
 add_action( 'init', 'ba_custom_taxonomies', 0 );

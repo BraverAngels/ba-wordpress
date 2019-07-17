@@ -36,6 +36,21 @@ get_header(); ?>
     <?php astra_entry_before(); ?>
     <div class="library-content-wrap" style="margin: 0 -20px;">
       <div class="library-sidebar ast-col-md-3">
+        <h4>Reading Rooms</h4>
+        <?php
+        $terms = get_terms( array(
+            'taxonomy' => 'library_reading_room',
+            'hide_empty' => true,
+        ) ); ?>
+        <ul class="library-labels-list">
+          <?php foreach($terms as $term) : ?>
+            <li>
+              <a href="<?php echo get_term_link( $term, 'library_label'); ?>">
+                <?php echo $term->name; ?>
+              </a>
+            </li>
+          <?php endforeach; ?>
+        </ul>
         <h4>Labels</h4>
         <?php
         $terms = get_terms( array(
