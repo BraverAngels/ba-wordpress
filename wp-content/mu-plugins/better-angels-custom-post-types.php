@@ -234,3 +234,20 @@ function the_ba_library_year_published($id) {
     echo get_post_meta($id, '_ba_year_published' , true );
   }
 }
+
+
+add_action( 'init', 'ba_remove_membership_comments' );
+function ba_remove_membership_comments() {
+  remove_post_type_support( 'memberpressproduct', 'comments' );
+}
+
+function ba_comments_open( $open, $post_id ) {
+    $post_type = get_post_type( $post_id );
+    // allow comments for built-in "post" post type
+    if ( $post_type == 'post' || $post_type == 'library') {
+        return true;
+    }
+    // disable comments for any other post types
+    return false;
+}
+add_filter( 'comments_open', 'ba_comments_open', 10 , 2 );
