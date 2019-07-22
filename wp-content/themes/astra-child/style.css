@@ -397,3 +397,6 @@ background-color: #ab2634 !important;
   float: left;
   margin: 1rem 0;
 }
+.single-memberpressproduct .ast-container {
+  max-width: 800px;
+}

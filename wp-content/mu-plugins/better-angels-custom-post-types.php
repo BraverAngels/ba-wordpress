@@ -251,3 +251,11 @@ function ba_comments_open( $open, $post_id ) {
     return false;
 }
 add_filter( 'comments_open', 'ba_comments_open', 10 , 2 );
+
+function ba_next_prev_links( $status ) {
+  if ( 'memberpressproduct' == get_post_type() ) {
+    $status = false;
+  }
+  return $status;
+}
+add_filter( 'astra_single_post_navigation_enabled', 'ba_next_prev_links' );
