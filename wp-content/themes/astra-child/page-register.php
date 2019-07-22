@@ -21,38 +21,37 @@ get_header(); ?>
       <?php echo the_content(); ?>
     </div>
     <div class="join-selection-column">
-      <h3>1. Amount</h3>
-      <span class="join-description">Select contribution type</span><br/>
-
+      <h3>Select contribution type</h3>
       <div class="join-selection-type">
 
-        <button class="join-selection-type" data-toggle="monthly-options">Monthly</button>
-        <button class="join-selection-type" data-toggle="yearly-options">Yearly</button>
-        <button class="join-selection-type" data-toggle="one-time-gift-options">One Time Gift</button>
+        <button class="join-selection-type-item" data-toggle="monthly-options">Monthly</button>
+        <button class="join-selection-type-item" data-toggle="yearly-options">Yearly</button>
+        <button class="join-selection-type-item" data-toggle="one-time-gift-options">One Time Gift</button>
       </div>
+        <div class="join-selection-options-wrap">
+          <div id="one-time-gift-options" class="join-selection-options">
+            <span class="join-description">Select contribution amount<br/>(membership expires after one year)</span>
+            <ul>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/one-time-gift-12/">$12</a></li>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/one-time-gift-25/">$25</a></li>
+            </ul>
+          </div>
 
-        <div id="one-time-gift-options" class="join-selection-options">
-          <span class="join-description">Select Contribution Amount</span>
-          <ul>
-            <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/one-time-gift-12/">$12</a></li>
-            <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/one-time-gift-25/">$25</a></li>
-          </ul>
-        </div>
+          <div id="yearly-options" class="join-selection-options">
+            <span class="join-description">Select yearly contribution amount</span>
+            <ul>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/yearly-12/">$12</a></li>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/yearly-25/">$25</a></li>
+            </ul>
+          </div>
 
-        <div id="yearly-options" class="join-selection-options">
-          <span class="join-description">Select Yearly Contribution Amount</span>
-          <ul>
-            <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/yearly-12/">$12</a></li>
-            <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/yearly-25/">$25</a></li>
-          </ul>
-        </div>
-
-        <div id="monthly-options" class="join-selection-options">
-          <span class="join-description">Select Monthly Contribution Amount</span>
-          <ul>
-            <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/monthly-5/">$5</a></li>
-            <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/monthly-10/">$10</a></li>
-          </ul>
+          <div id="monthly-options" class="join-selection-options">
+            <span class="join-description">Select monthly contribution amount</span>
+            <ul>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/monthly-5/">$5</a></li>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/monthly-10/">$10</a></li>
+            </ul>
+          </div>
         </div>
 
       <form id="join-submit-form" action="">
@@ -74,15 +73,18 @@ get_header(); ?>
   @media screen and (min-width: 900px) {
     .join-content-column, .join-selection-column {
       padding: 1rem;
-      width: 50%;
+      width: 60%;
       float: left;
       display: inline-block;
     }
     .join-selection-column {
       min-height: 300px;
+      width: 40%;
       border: 1px solid lightgray;
     }
-    .join-selection-type {
+    .join-selection-type-item {
+      padding: 10px 10px;
+      min-width: 32.5%;
       margin-bottom: 1rem;
     }
     .screen-reader-label {
@@ -90,6 +92,9 @@ get_header(); ?>
       height: 0px;
       position: absolute;
     }
+  }
+  .join-selection-options-wrap {
+    min-height: 100px;
   }
   .join-selection-options {
     display: none;
@@ -100,12 +105,18 @@ get_header(); ?>
   .join-selection-options ul {
     list-style: none;
     margin-left: 0;
+    display: flex;
+    flex-grow: 1;
   }
   .join-selection-options ul li {
     display: inline-block;
+    flex: 1;
   }
   .join-selection-options ul li a{
     border-radius: 2px;
+    display: block;
+    text-align: center;
+    width: 100%;
     padding: 10px 40px;
     color: #ffffff;
     border-color: #23356c;
@@ -124,6 +135,10 @@ get_header(); ?>
   .join-description {
     padding-bottom: 1rem;
     display: inline-block;
+  }
+  .join-selection-type {}
+  #join-submit-button {
+    width: 100%;
   }
   #join-submit-button:disabled {
     background: #8e8e8e;
@@ -152,7 +167,7 @@ get_header(); ?>
       event.preventDefault();
 
       var selectedId = event.target.getAttribute('data-toggle');
-      var options = document.getElementsByClassName('join-selection-type');
+      var options = document.getElementsByClassName('join-selection-type-item');
       for (var i = 0; i < options.length; i++) {
         if (options[i].classList.contains('selected') ) {
           options[i].classList.remove('selected');
