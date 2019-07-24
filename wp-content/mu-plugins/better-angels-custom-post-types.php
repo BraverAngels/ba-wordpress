@@ -51,7 +51,7 @@ function ba_custom_post_types() {
     'supports'           => array( 'title', 'editor', 'thumbnail', 'comments' ),
     'rewrite'            => array(
       'slug' => 'library',
-      'with_front' => true,
+      'with_front' => false,
     )
   );
 
