@@ -59,7 +59,7 @@ function ba_custom_post_types() {
 
 }
 
-// add_action( 'init', 'ba_custom_post_types' );
+add_action( 'init', 'ba_custom_post_types' );
 
 
 function ba_custom_taxonomies() {
@@ -116,7 +116,7 @@ function ba_custom_taxonomies() {
  register_taxonomy( 'library_reading_room', array( 'library' ), $args );
 }
 
-// add_action( 'init', 'ba_custom_taxonomies', 0 );
+add_action( 'init', 'ba_custom_taxonomies', 0 );
 
 
 // Meta boxes for the Book Reviews post type
