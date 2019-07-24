@@ -68,43 +68,45 @@ get_header(); ?>
         </ul>
       </div>
       <div class="library-index-content ast-col-md-9">
-        <?php if ( have_posts() ) :
-          while ( have_posts() ) : the_post(); ?>
-          <?php //astra_entry_top(); ?>
-          <?php //the_post_thubnail(); ?>
-          <?php //astra_entry_bottom(); ?>
-          <article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" id="post-<?php the_ID(); ?>" <?php post_class('ast-col-md-6 ast-col-lg-4'); ?>>
+        <?php $ba_docs_query = new WP_Query( array(
+            'post_type' => 'library',
+            'nopaging' => true,
+            'posts_per_page' => '3',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'library_reading_room',
+                    'field' => 'slug',
+                    'terms' => 'better-angels-documents',
+                ),
+            ),
+        ) ); ?>
+        <?php $ba_other_items = new WP_Query( array(
+            'post_type' => 'library',
+            'tax_query' => array(
+                array(
+                    'taxonomy' => 'library_reading_room',
+                    'field' => 'slug',
+                    'terms' => 'better-angels-documents',
+                    'operator'  => 'NOT IN'
+                ),
+            ),
+        ) ); ?>
 
-            <?php if (has_post_thumbnail()) : ?>
-              <a href="<?php the_permalink(); ?>" rel="bookmark">
-                <?php the_post_thumbnail(); ?>
-              </a>
-            <?php endif; ?>
+        <?php if ($ba_docs_query->have_posts() ) :
+          echo "<h1>Better Angels Docs</h1>";
+          while ( $ba_docs_query->have_posts() ) : $ba_docs_query->the_post(); ?>
+            <?php get_template_part('content-library-index-item'); ?>
+          <?php endwhile; wp_reset_postdata(); ?>
+        <?php endif; ?>
 
-
-            <div class="ast-post-format- blog-layout-1">
-              <div class="post-content ast-col-md-12">
-                <header class="entry-header">
-                  <h4 class="entry-title library-entry-title" itemprop="headline">
-                  <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
-                  <?php if (has_ba_library_author(get_the_ID())) : ?>
-                    <span><?php the_ba_library_author(get_the_ID()); ?></span>
-                    <br/>
-                  <?php endif; ?>
-                  <?php if (has_ba_library_year_published(get_the_ID())) : ?>
-                    <span><em><?php the_ba_library_year_published(get_the_ID()); ?></em></span>
-                    <br/>
-                  <?php endif; ?>
-                  <a href="<?php the_permalink(); ?>" rel="bookmark">View →</a>
-                </header><!-- .entry-header -->
-
-              </div><!-- .post-content -->
-            </div>
-          </article><!-- #post-## -->
-        <?php endwhile; ?>
-      <?php endif; ?>
-    </div >
-  </div >
+        <?php if ($ba_other_items->have_posts() ) :
+          echo "<h1>Other Stuff</h1>";
+          while ( $ba_other_items->have_posts() ) : $ba_other_items->the_post(); ?>
+            <?php get_template_part('content-library-index-item'); ?>
+          <?php endwhile; wp_reset_postdata(); ?>
+        <?php endif; ?>
+    </div>
+  </div>
 
 <?php astra_entry_after(); ?>
 
