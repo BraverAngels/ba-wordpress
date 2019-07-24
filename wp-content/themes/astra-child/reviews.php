@@ -19,13 +19,13 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<div id="comments" class="comments-area library-reviews-area">
 
   <?php
   // You can start editing here -- including this comment!
   if ( have_comments() ) :
     ?>
-    <h2 class="comments-title">
+    <h3 class="comments-title">
       <?php
       $_s_comment_count = get_comments_number();
       if ( '1' === $_s_comment_count ) {
@@ -43,7 +43,7 @@ if ( post_password_required() ) {
         );
       }
       ?>
-    </h2><!-- .comments-title -->
+    </h3><!-- .comments-title -->
 
     <?php the_comments_navigation(); ?>
 

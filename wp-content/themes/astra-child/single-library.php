@@ -16,56 +16,58 @@ get_header(); ?>
 
 <?php endif ?>
 
-  <div id="primary" <?php astra_primary_class(); ?>>
+<div id="primary" <?php astra_primary_class(); ?>>
 
-    <?php astra_primary_content_top(); ?>
 
-    <article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
-      <div class="library-back-link-wrapper">
-        <a class="library-back-link" href="<?php echo home_url();?>/library">&larr; Back to Library</a><br/>
-      </div>
+  <div class="library-content-wrap" style="margin: 0 -20px; display: block;">
+
+    <div class="library-back-link-wrapper ast-col-md-12">
+      <a class="library-back-link" href="<?php echo home_url();?>/library">&larr; Back to Library</a><br/>
+    </div>
+
+    <div class="library-sidebar ast-col-md-3">
       <?php if (has_post_thumbnail()) : ?>
           <?php the_post_thumbnail(); ?>
       <?php endif; ?>
+    </div>
 
+    <div class="ast-col-md-9">
+      <?php astra_primary_content_top(); ?>
+      <article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>
+        <div class="ast-post-format- blog-layout-1" style="margin-top: 1rem; border-bottom: none;">
+          <div class="post-content ast-col-md-12">
+            <header class="entry-header">
+              <h4 class="entry-title library-entry-title" itemprop="headline">
+              <?php the_title(); ?></h4>
+              <?php if (has_ba_library_author(get_the_ID())) : ?>
+                <span><?php the_ba_library_author(get_the_ID()); ?></span>
+                <br/>
+              <?php endif; ?>
+              <?php if (has_ba_library_year_published(get_the_ID())) : ?>
+                <span><em><?php the_ba_library_year_published(get_the_ID()); ?></em></span>
+                <br/>
+              <?php endif; ?>
 
-      <div class="ast-post-format- blog-layout-1" style="margin-top: 1rem;">
-        <div class="post-content ast-col-md-12">
-          <header class="entry-header">
-            <h4 class="entry-title library-entry-title" itemprop="headline">
-            <?php the_title(); ?></h4>
-            <?php if (has_ba_library_author(get_the_ID())) : ?>
-              <span><?php the_ba_library_author(get_the_ID()); ?></span>
-              <br/>
-            <?php endif; ?>
-            <?php if (has_ba_library_year_published(get_the_ID())) : ?>
-              <span><em><?php the_ba_library_year_published(get_the_ID()); ?></em></span>
-              <br/>
-            <?php endif; ?>
+              <?php the_ba_library_purchase_link(get_the_ID()); ?>
+            </header><!-- .entry-header -->
 
-            <?php the_ba_library_purchase_link(get_the_ID()); ?>
-          </header><!-- .entry-header -->
-          <?php the_content(); ?>
-          <div class="library-back-link-wrapper">
-            <a class="library-back-link" href="<?php echo home_url();?>/library">&larr; Back to Library</a><br/>
-          </div>
+            <?php the_content(); ?>
 
-        </div><!-- .post-content -->
-      </div>
-    </article><!-- #post-## -->
+          </div><!-- .post-content -->
+        </div>
+      </article><!-- #post-## -->
+      <?php astra_primary_content_bottom(); ?>
+    </div><!-- .ast-col-md-9 -->
     <?php
     if ( comments_open() || get_comments_number() ) :
       comments_template('/reviews.php');
     endif;
     ?>
-    <?php astra_primary_content_bottom(); ?>
 
-  </div><!-- #primary -->
-
-<?php if ( astra_page_layout() == 'right-sidebar' ) : ?>
-
-  <?php get_sidebar(); ?>
-
-<?php endif ?>
+  </div><!-- .library-content-wrap -->
+  <div class="library-back-link-wrapper">
+    <a class="library-back-link" href="<?php echo home_url();?>/library">&larr; Back to Library</a><br/>
+  </div>
+</div><!-- #primary -->
 
 <?php get_footer(); ?>
