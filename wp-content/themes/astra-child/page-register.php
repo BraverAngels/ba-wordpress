@@ -17,14 +17,14 @@ get_header(); ?>
 
   <div class="entry-content clear" itemprop="text">
     <div class="join-content-column">
-      <h1><?php the_title(); ?></h1>
+      <!-- <h1><?php //the_title(); ?></h1> -->
       <?php echo the_content(); ?>
     </div>
     <div class="join-selection-column">
       <h3>Select contribution type</h3>
       <div class="join-selection-type">
 
-        <button class="join-selection-type-item" data-toggle="monthly-options">Monthly</button>
+        <button class="join-selection-type-item selected" data-toggle="monthly-options">Monthly</button>
         <button class="join-selection-type-item" data-toggle="yearly-options">Yearly</button>
         <button class="join-selection-type-item" data-toggle="one-time-gift-options">One Time Gift</button>
       </div>
@@ -45,17 +45,17 @@ get_header(); ?>
             </ul>
           </div>
 
-          <div id="monthly-options" class="join-selection-options">
+          <div id="monthly-options" class="join-selection-options active">
             <span class="join-description">Select monthly contribution amount</span>
             <ul>
               <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/monthly-5/">$5</a></li>
-              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/monthly-10/">$10</a></li>
+              <li><a class="join-selection-amount selected" href="https://stbetterangels.wpengine.com/register/monthly-10/">$10</a></li>
             </ul>
           </div>
         </div>
 
-      <form id="join-submit-form" action="">
-        <input id="join-submit-button" type="submit" value="Join" disabled="disabled" />
+      <form id="join-submit-form" action="https://stbetterangels.wpengine.com/register/monthly-10/">
+        <input id="join-submit-button" type="submit" value="Join" />
       </form>
     </div>
 
@@ -101,6 +101,7 @@ get_header(); ?>
   }
   .join-selection-options.active {
     display: block;
+    overflow: auto;
   }
   .join-selection-options ul {
     list-style: none;
@@ -111,6 +112,13 @@ get_header(); ?>
   .join-selection-options ul li {
     display: inline-block;
     flex: 1;
+    padding: 0 .125rem;
+  }
+  .join-selection-options ul li:first-child {
+    padding-left: 0;
+  }
+  .join-selection-options ul li:last-child {
+    padding-right: 0;
   }
   .join-selection-options ul li a{
     border-radius: 2px;
@@ -123,6 +131,9 @@ get_header(); ?>
     background-color: #23356c;
     display: inline-block;
   }
+  .join-selection-amount {
+    transition: none;
+  }
   .join-selection-options ul li a:hover,
   .join-selection-options ul li a:focus,
   .join-selection-options ul li a:active,
@@ -133,8 +144,11 @@ get_header(); ?>
     background-color: #ab2634;
   }
   .join-description {
-    padding-bottom: 1rem;
+    padding-bottom: .5rem;
     display: inline-block;
+    font-size: 17px;
+    /* color: #3c3c3c; */
+    line-height: 1.5;
   }
   .join-selection-type {}
   #join-submit-button {
