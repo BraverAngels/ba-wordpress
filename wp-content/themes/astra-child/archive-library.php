@@ -93,14 +93,14 @@ get_header(); ?>
         ) ); ?>
 
         <?php if ($ba_docs_query->have_posts() ) :
-          echo "<div class='ast-col-sm-12'><h3>Better Angels Documents</h3></div>";
+          echo "<div class='ast-col-sm-12 library-section-header'><h3>Better Angels Documents</h3></div>";
           while ( $ba_docs_query->have_posts() ) : $ba_docs_query->the_post(); ?>
             <?php get_template_part('content-library-index-item'); ?>
           <?php endwhile; wp_reset_postdata(); ?>
         <?php endif; ?>
 
         <?php if ($ba_other_items->have_posts() ) :
-          echo "<div class='ast-col-sm-12'><h3>Other Stuff</h3></div>";
+          echo "<div class='ast-col-sm-12 library-section-header'><h3>Other Stuff</h3></div>";
           while ( $ba_other_items->have_posts() ) : $ba_other_items->the_post(); ?>
             <?php get_template_part('content-library-index-item'); ?>
           <?php endwhile; wp_reset_postdata(); ?>
@@ -141,6 +141,12 @@ get_header(); ?>
   .library-sidebar {
     border-right: 1px solid lightgray;
     min-height: 200px;
+  }
+  .library-section-header {
+    margin-bottom: 1rem;
+  }
+  .library-section-header h3 {
+    border-bottom: 1px solid lightgray;
   }
 </style>
 <?php get_footer(); ?>

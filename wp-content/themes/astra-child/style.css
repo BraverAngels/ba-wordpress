@@ -424,3 +424,17 @@ background-color: #ab2634 !important;
 .single-memberpressproduct .ast-container {
   max-width: 800px;
 }
+
+/* Registration Page */
+.mepr-form-has-errors, .cc-error, .stripe_element_error {
+  border: 1px solid lightgray;
+  border-radius: 2px;
+  padding: 2px 4px;
+  border-left: 3px solid;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 2px 0px;
+  font-size: .875rem;
+}
+
+.mepr-form-input.invalid {
+  background-color: #F2F2F2 !important
+}
