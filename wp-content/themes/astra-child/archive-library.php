@@ -145,8 +145,5 @@ get_header(); ?>
   .library-section-header {
     margin-bottom: 1rem;
   }
-  .library-section-header h3 {
-    border-bottom: 1px solid lightgray;
-  }
 </style>
 <?php get_footer(); ?>
