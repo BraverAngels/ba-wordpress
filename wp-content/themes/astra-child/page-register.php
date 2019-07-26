@@ -48,8 +48,12 @@ get_header(); ?>
           <div id="monthly-options" class="join-selection-options active">
             <span class="join-description">Select monthly contribution amount</span>
             <ul>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/monthly-5/">$1</a></li>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/monthly-5/">$2</a></li>
               <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/monthly-5/">$5</a></li>
               <li><a class="join-selection-amount selected" href="https://stbetterangels.wpengine.com/register/monthly-10/">$10</a></li>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/monthly-10/">$25</a></li>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/monthly-10/">$50</a></li>
             </ul>
           </div>
         </div>
@@ -78,6 +82,16 @@ get_header(); ?>
     margin: auto;
     display: block;
   }
+  .join-selection-type {
+    display: block;
+    margin-bottom: 1rem;
+  }
+  .join-selection-type-item {
+    padding: 10px 10px;
+    display: block;
+    width: 100%;
+    margin: .125rem;
+  }
   @media screen and (min-width: 900px) {
     .join-content-column, .join-selection-column {
       width: 60%;
@@ -93,19 +107,25 @@ get_header(); ?>
       width: 40%;
       max-width: 40%;
     }
+    .join-selection-type {
+      display: flex;
+      flex-wrap: wrap;
+      flex-grow: 1;
+      margin-bottom: 1rem;
+    }
     .join-selection-type-item {
       padding: 10px 10px;
-      width: 100%;
-      margin-bottom: .5rem;
+      display: inline-block;
+      flex: 1;
     }
   }
-  @media screen and (min-width: 1200px) {
+  /* @media screen and (min-width: 1200px) {
     .join-selection-type-item {
       padding: 10px 10px;
       max-width: 32.5%;
       margin-bottom: 1rem;
     }
-  }
+  } */
 
   .screen-reader-label {
     visibility: hidden;
@@ -126,19 +146,21 @@ get_header(); ?>
     list-style: none;
     margin-left: 0;
     display: flex;
+    flex-wrap: wrap;
     flex-grow: 1;
   }
   .join-selection-options ul li {
     display: inline-block;
+    min-width: 33%;
     flex: 1;
-    padding: 0 .125rem;
+    padding: .125rem;
   }
-  .join-selection-options ul li:first-child {
+  /* .join-selection-options ul li:first-child {
     padding-left: 0;
   }
   .join-selection-options ul li:last-child {
     padding-right: 0;
-  }
+  } */
   .join-selection-options ul li a{
     border-radius: 2px;
     display: block;
