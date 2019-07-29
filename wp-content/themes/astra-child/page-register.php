@@ -32,33 +32,33 @@ get_header(); ?>
           <div id="one-time-gift-options" class="join-selection-options">
             <span class="join-description">Membership begins at $12 and expires after one year. If you’d like to donate a different amount, visit <a href="https://better-angels.org/donate">better-angels.org/donate</a>.</span>
             <ul>
-              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/one-time-gift-12/">$12</a></li>
-              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/one-time-gift-25/">$25</a></li>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/join/one-time-gift-12/">$12</a></li>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/join/one-time-gift-25/">$25</a></li>
             </ul>
           </div>
 
           <div id="yearly-options" class="join-selection-options">
             <span class="join-description">Select yearly contribution amount</span>
             <ul>
-              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/yearly-12/">$12</a></li>
-              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/yearly-25/">$25</a></li>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/join/yearly-12/">$12</a></li>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/join/yearly-25/">$25</a></li>
             </ul>
           </div>
 
           <div id="monthly-options" class="join-selection-options active">
             <span class="join-description">Select monthly contribution amount</span>
             <ul>
-              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/monthly-5/">$1</a></li>
-              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/monthly-5/">$2</a></li>
-              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/monthly-5/">$5</a></li>
-              <li><a class="join-selection-amount selected" href="https://stbetterangels.wpengine.com/register/monthly-10/">$10</a></li>
-              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/monthly-10/">$25</a></li>
-              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/register/monthly-10/">$50</a></li>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/join/monthly-5/">$1</a></li>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/join/monthly-5/">$2</a></li>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/join/monthly-5/">$5</a></li>
+              <li><a class="join-selection-amount selected" href="https://stbetterangels.wpengine.com/join/monthly-10/">$10</a></li>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/join/monthly-10/">$25</a></li>
+              <li><a class="join-selection-amount" href="https://stbetterangels.wpengine.com/join/monthly-10/">$50</a></li>
             </ul>
           </div>
         </div>
 
-      <form id="join-submit-form" action="https://stbetterangels.wpengine.com/register/monthly-10/">
+      <form id="join-submit-form" action="https://stbetterangels.wpengine.com/join/monthly-10/">
         <input id="join-submit-button" type="submit" value="Join" />
       </form>
     </div>

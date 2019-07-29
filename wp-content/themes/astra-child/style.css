@@ -438,3 +438,8 @@ background-color: #ab2634 !important;
 .mepr-form-input.invalid {
   background-color: #F2F2F2 !important
 }
+
+.mepr-account-actions a {
+  display: block;
+  text-align: center;
+}

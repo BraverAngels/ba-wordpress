@@ -131,3 +131,17 @@ function ba_new_gravatar ($avatar_defaults) {
   $avatar_defaults[$myavatar] = "Default Gravatar";
   return $avatar_defaults;
 }
+
+// Redirect non-logged-in users to login page
+
+// add_action( 'template_redirect', 'redirect_to_specific_page' );
+//
+// function redirect_to_specific_page() {
+//
+// if ( is_page('account') || is_page('members-portal' || strpos($wp->request, 'members-portal') ) {
+// if ( ! is_user_logged_in() ) {
+// wp_redirect( home_url( '/login/' ), 301 );
+//   exit;
+//     }
+// }
+// }
