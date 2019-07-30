@@ -35,7 +35,7 @@ get_header(); ?>
 
     <?php astra_entry_before(); ?>
     <div class="library-content-wrap" style="margin: 0 -20px;">
-      
+
       <div class="library-sidebar ast-col-md-3">
         <?php get_template_part('template-parts/content-library-sidebar'); ?>
       </div>
@@ -66,7 +66,7 @@ get_header(); ?>
         ) ); ?>
 
         <?php if ($ba_docs_query->have_posts() ) :
-          echo "<div class='ast-col-sm-12 library-section-header'><h3>Better Angels Readings</h3><a class='library-view-all-link' href='" . home_url('/library/reading-rooms/better-angels-readings') . "'>[View All]</a></div>";
+          echo "<div class='ast-col-sm-12 library-section-header'><h3>Better Angels Readings</h3><a class='library-view-all-link' href='" . home_url('/library/reading-rooms/better-angels-readings#primary') . "'>[View All]</a></div>";
           while ( $ba_docs_query->have_posts() ) : $ba_docs_query->the_post(); ?>
             <?php get_template_part('template-parts/content-library-index-item'); ?>
           <?php endwhile; wp_reset_postdata(); ?>
@@ -94,47 +94,5 @@ get_header(); ?>
   <?php get_sidebar(); ?>
 
 <?php endif ?>
-<style>
-  .library-entry-title {
-    font-size: 22px;
-    margin-top: 1rem;
-  }
-  .post-type-archive-library .attachment-post-thumbnail {
-    max-height: 275px;
-    width: auto;
-  }
-  .post-type-archive-library .blog-layout-1 {
-    padding-bottom: 1em;
-    border-bottom: none;
-  }
-  .library-labels-list, .library-reading-rooms-list  {
-    margin: 0;
-    list-style: none;
-  }
-  .library-reading-rooms-list {
-    margin-bottom: .5rem;
-  }
-  .library-labels-list li{
-    font-size: 16px;
-  }
-  .library-sidebar {
-    padding-bottom: 1.5rem;
-  }
-  .library-sidebar-inner {
-    background: #e8e8e8;
-    padding: 1rem 1.25rem;
-    border-radius: 3px;
-  }
-  .library-section-header {
-    margin-bottom: 1rem;
 
-  }
-  .library-section-header h3 {
-    display: inline-block;
-    margin-right: .5rem;
-  }
-  .library-item-meta {
-    color: #838383;
-  }
-</style>
 <?php get_footer(); ?>

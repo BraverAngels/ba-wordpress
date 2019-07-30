@@ -425,6 +425,48 @@ background-color: #ab2634 !important;
   max-width: 800px;
 }
 
+.library-entry-title {
+  font-size: 22px;
+  margin-top: 1rem;
+}
+.post-type-archive-library .attachment-post-thumbnail {
+  max-height: 275px;
+  width: auto;
+}
+.post-type-archive-library .blog-layout-1 {
+  padding-bottom: 1em;
+  border-bottom: none;
+}
+.library-labels-list, .library-reading-rooms-list  {
+  margin: 0;
+  list-style: none;
+}
+.library-reading-rooms-list {
+  margin-bottom: .5rem;
+}
+.library-labels-list li{
+  font-size: 16px;
+}
+.library-sidebar {
+  padding-bottom: 1.5rem;
+}
+.library-sidebar-inner {
+  background: #e8e8e8;
+  padding: 1rem 1.25rem;
+  border-radius: 3px;
+}
+.library-section-header {
+  margin-bottom: 1rem;
+
+}
+.library-section-header h3 {
+  display: inline-block;
+  margin-right: .5rem;
+}
+.library-item-meta {
+  color: #838383;
+}
+
 /* Registration Page */
 .mepr-form-has-errors, .cc-error, .stripe_element_error {
   border: 1px solid lightgray;

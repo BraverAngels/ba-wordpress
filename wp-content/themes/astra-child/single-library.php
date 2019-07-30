@@ -39,14 +39,20 @@ get_header(); ?>
             <header class="entry-header">
               <h4 class="entry-title library-entry-title" itemprop="headline">
               <?php the_title(); ?></h4>
+              <div class="library-item-meta">
               <?php if (has_ba_library_author(get_the_ID())) : ?>
                 <span><?php the_ba_library_author(get_the_ID()); ?></span>
-                <br/>
+              <?php endif; ?>
+              <?php if (has_ba_library_author(get_the_ID()) && has_ba_library_year_published(get_the_ID())) : ?>
+                <span>| </span>
               <?php endif; ?>
               <?php if (has_ba_library_year_published(get_the_ID())) : ?>
-                <span><em><?php the_ba_library_year_published(get_the_ID()); ?></em></span>
+                <span><?php the_ba_library_year_published(get_the_ID()); ?></span>
+              <?php endif; ?>
+              <?php if (has_ba_library_author(get_the_ID()) || has_ba_library_year_published(get_the_ID())) : ?>
                 <br/>
               <?php endif; ?>
+              </div>
 
               <?php the_ba_library_purchase_link(get_the_ID()); ?>
             </header><!-- .entry-header -->
