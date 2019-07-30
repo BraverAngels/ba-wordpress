@@ -28,7 +28,7 @@ get_header(); ?>
 
     <?php astra_primary_content_top(); ?>
 
-    <section class="ast-archive-description" style="text-align:center;border-radius: 3px;padding: 1.25rem;color: white;background:#23356c;background-image: url(https://www.better-angels.org/wp-content/uploads/2018/11/better-angels-depolarize-america-hero2-01-01.jpg); background-size:cover;background-position:center;">
+    <section class="ast-archive-description" style="text-align:center;border-radius: 3px;padding: 2rem 1.25rem;color: white;background:#23356c;background-image: url(https://www.better-angels.org/wp-content/uploads/2018/11/better-angels-depolarize-america-hero2-01-01.jpg); background-size:cover;background-position:center;">
       <h1 class="page-title ast-archive-title" style="color:white;">Better Angels Library</h1>
       <p>A cool headline describing the purpose of the Better Angels library</p>
     </section>
@@ -97,14 +97,14 @@ get_header(); ?>
         <?php if ($ba_docs_query->have_posts() ) :
           echo "<div class='ast-col-sm-12 library-section-header'><h3>Better Angels Readings</h3><a class='library-view-all-link' href='" . home_url('/library/reading-rooms/better-angels-readings') . "'>[View All]</a></div>";
           while ( $ba_docs_query->have_posts() ) : $ba_docs_query->the_post(); ?>
-            <?php get_template_part('content-library-index-item'); ?>
+            <?php get_template_part('template-parts/content-library-index-item'); ?>
           <?php endwhile; wp_reset_postdata(); ?>
         <?php endif; ?>
 
         <?php if ($ba_other_items->have_posts() ) :
           echo "<div class='ast-col-sm-12 library-section-header'><h3>Selected Books</h3></div>";
           while ( $ba_other_items->have_posts() ) : $ba_other_items->the_post(); ?>
-            <?php get_template_part('content-library-index-item'); ?>
+            <?php get_template_part('template-parts/content-library-index-item'); ?>
           <?php endwhile; wp_reset_postdata(); ?>
         <?php endif; ?>
     </div>
@@ -144,9 +144,7 @@ get_header(); ?>
     margin-bottom: .5rem;
   }
   .library-labels-list li{
-    display: inline-block;
     font-size: 16px;
-    margin-right: .5rem;
   }
   .library-sidebar {
     padding-bottom: 1.5rem;
