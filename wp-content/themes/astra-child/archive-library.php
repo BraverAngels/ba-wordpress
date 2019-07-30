@@ -160,5 +160,8 @@ get_header(); ?>
     display: inline-block;
     margin-right: .5rem;
   }
+  .library-item-meta {
+    color: #838383;
+  }
 </style>
 <?php get_footer(); ?>
