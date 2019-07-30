@@ -47,7 +47,7 @@ get_header(); ?>
             'posts_per_page' => '3',
             'tax_query' => array(
                 array(
-                    'taxonomy' => 'library_reading_room',
+                    'taxonomy' => 'library_category',
                     'field' => 'slug',
                     'terms' => 'better-angels-readings',
                 ),
@@ -57,7 +57,7 @@ get_header(); ?>
             'post_type' => 'library',
             'tax_query' => array(
                 array(
-                    'taxonomy' => 'library_reading_room',
+                    'taxonomy' => 'library_category',
                     'field' => 'slug',
                     'terms' => 'better-angels-readings',
                     'operator'  => 'NOT IN'
@@ -73,7 +73,7 @@ get_header(); ?>
         <?php endif; ?>
 
         <?php if ($ba_other_items->have_posts() ) :
-          echo "<div class='ast-col-sm-12 library-section-header'><h3>Selected Books</h3></div>";
+          echo "<div class='ast-col-sm-12 library-section-header'><h3>Member Recommended Books</h3></div>";
           while ( $ba_other_items->have_posts() ) : $ba_other_items->the_post(); ?>
             <?php get_template_part('template-parts/content-library-index-item'); ?>
           <?php endwhile; wp_reset_postdata(); ?>

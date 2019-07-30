@@ -54,24 +54,13 @@ get_header(); ?>
                 <br/>
               <?php endif; ?>
               </div>
-              <?php $item_reading_rooms = get_the_terms( $post, 'library_reading_room' ); ?>
-              <?php $item_labels = get_the_terms( $post, 'library_label' ); ?>
+              <?php $item_labels = get_the_terms( $post, 'library_category' ); ?>
               <div class="library-entry-categories">
                 <?php
-                if ($item_reading_rooms) : ?>
-                  <span>Reading Room:
-                  <?php foreach ($item_reading_rooms as $term) : ?>
-                    <a href="<?php echo get_term_link( $term, 'library_label'); ?>">
-                      <?php echo $term->name; ?>
-                    </a>
-                  <?php endforeach; ?>
-                  </span>
-                <?php endif; ?>
-                <?php
                 if ($item_labels) : ?>
-                  <span>Labels:
+                  <span>Posted in:
                   <?php foreach ($item_labels as $term) : ?>
-                    <a href="<?php echo get_term_link( $term, 'library_label'); ?>">
+                    <a href="<?php echo get_term_link( $term, 'library_category'); ?>">
                       <?php echo $term->name; ?>
                     </a>
                   <?php endforeach; ?>
