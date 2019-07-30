@@ -28,44 +28,46 @@ get_header(); ?>
 
     <?php astra_primary_content_top(); ?>
 
-    <section class="ast-archive-description">
-      <h1 class="page-title ast-archive-title">Library</h1>
+    <section class="ast-archive-description" style="text-align:center;border-radius: 3px;padding: 1.25rem;color: white;background:#23356c;background-image: url(https://www.better-angels.org/wp-content/uploads/2018/11/better-angels-depolarize-america-hero2-01-01.jpg); background-size:cover;background-position:center;">
+      <h1 class="page-title ast-archive-title" style="color:white;">Better Angels Library</h1>
       <p>A cool headline describing the purpose of the Better Angels library</p>
     </section>
 
     <?php astra_entry_before(); ?>
     <div class="library-content-wrap" style="margin: 0 -20px;">
       <div class="library-sidebar ast-col-md-3">
-        <h4>Reading Rooms</h4>
-        <?php
-        $terms = get_terms( array(
-            'taxonomy' => 'library_reading_room',
-            'hide_empty' => true,
-        ) ); ?>
-        <ul class="library-reading-rooms-list">
-          <?php foreach($terms as $term) : ?>
-            <li>
-              <a href="<?php echo get_term_link( $term, 'library_label'); ?>">
-                <?php echo $term->name; ?>
-              </a>
-            </li>
-          <?php endforeach; ?>
-        </ul>
-        <h4>Labels</h4>
-        <?php
-        $terms = get_terms( array(
-            'taxonomy' => 'library_label',
-            'hide_empty' => true,
-        ) ); ?>
-        <ul class="library-labels-list">
-          <?php foreach($terms as $term) : ?>
-            <li>
-              <a href="<?php echo get_term_link( $term, 'library_label'); ?>">
-                <?php echo $term->name; ?>
-              </a>
-            </li>
-          <?php endforeach; ?>
-        </ul>
+        <div class="library-sidebar-inner">
+          <h4>Reading Rooms</h4>
+          <?php
+          $terms = get_terms( array(
+              'taxonomy' => 'library_reading_room',
+              'hide_empty' => true,
+          ) ); ?>
+          <ul class="library-reading-rooms-list">
+            <?php foreach($terms as $term) : ?>
+              <li>
+                <a href="<?php echo get_term_link( $term, 'library_label'); ?>">
+                  <?php echo $term->name; ?>
+                </a>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+          <h4>Labels</h4>
+          <?php
+          $terms = get_terms( array(
+              'taxonomy' => 'library_label',
+              'hide_empty' => true,
+          ) ); ?>
+          <ul class="library-labels-list">
+            <?php foreach($terms as $term) : ?>
+              <li>
+                <a href="<?php echo get_term_link( $term, 'library_label'); ?>">
+                  <?php echo $term->name; ?>
+                </a>
+              </li>
+            <?php endforeach; ?>
+          </ul>
+        </div>
       </div>
       <div class="library-index-content ast-col-md-9">
         <?php $ba_docs_query = new WP_Query( array(
@@ -147,9 +149,11 @@ get_header(); ?>
     margin-right: .5rem;
   }
   .library-sidebar {
+    padding-bottom: 1.5rem;
+  }
+  .library-sidebar-inner {
     background: #e8e8e8;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding: 1rem 1.25rem;
     border-radius: 3px;
   }
   .library-section-header {
