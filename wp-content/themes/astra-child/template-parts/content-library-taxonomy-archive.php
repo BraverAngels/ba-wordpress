@@ -30,51 +30,17 @@ get_header(); ?>
 
     <section class="ast-archive-description" style="text-align:center;border-radius: 3px;padding: 2rem 1.25rem;color: white;background:#23356c;background-image: url(https://www.better-angels.org/wp-content/uploads/2018/11/better-angels-depolarize-america-hero2-01-01.jpg); background-size:cover;background-position:center;">
       <h1 class="page-title ast-archive-title" style="color:white;">Better Angels Library</h1>
-      <p>A cool headline describing the purpose of the Better Angels library</p>
+      <p>Now Viewing: <?php echo single_cat_title( '', false ); ?> <a class="library-clear-filters-link" href="<?php echo home_url('/library'); ?>">Clear Filters</a></p>
     </section>
 
     <?php astra_entry_before(); ?>
     <div class="library-content-wrap" style="margin: 0 -20px;">
-      
       <div class="library-sidebar ast-col-md-3">
         <?php get_template_part('template-parts/content-library-sidebar'); ?>
       </div>
-
       <div class="library-index-content ast-col-md-9">
-        <?php $ba_docs_query = new WP_Query( array(
-            'post_type' => 'library',
-            'nopaging' => true,
-            'posts_per_page' => '3',
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'library_reading_room',
-                    'field' => 'slug',
-                    'terms' => 'better-angels-readings',
-                ),
-            ),
-        ) ); ?>
-        <?php $ba_other_items = new WP_Query( array(
-            'post_type' => 'library',
-            'tax_query' => array(
-                array(
-                    'taxonomy' => 'library_reading_room',
-                    'field' => 'slug',
-                    'terms' => 'better-angels-readings',
-                    'operator'  => 'NOT IN'
-                ),
-            ),
-        ) ); ?>
-
-        <?php if ($ba_docs_query->have_posts() ) :
-          echo "<div class='ast-col-sm-12 library-section-header'><h3>Better Angels Readings</h3><a class='library-view-all-link' href='" . home_url('/library/reading-rooms/better-angels-readings') . "'>[View All]</a></div>";
-          while ( $ba_docs_query->have_posts() ) : $ba_docs_query->the_post(); ?>
-            <?php get_template_part('template-parts/content-library-index-item'); ?>
-          <?php endwhile; wp_reset_postdata(); ?>
-        <?php endif; ?>
-
-        <?php if ($ba_other_items->have_posts() ) :
-          echo "<div class='ast-col-sm-12 library-section-header'><h3>Selected Books</h3></div>";
-          while ( $ba_other_items->have_posts() ) : $ba_other_items->the_post(); ?>
+        <?php if (have_posts() ) :
+          while ( have_posts() ) : the_post(); ?>
             <?php get_template_part('template-parts/content-library-index-item'); ?>
           <?php endwhile; wp_reset_postdata(); ?>
         <?php endif; ?>
@@ -117,6 +83,11 @@ get_header(); ?>
   .library-labels-list li{
     font-size: 16px;
   }
+  .library-reading-rooms-list a.currently-selected, .library-labels-list a.currently-selected{
+    color: #23356c;
+    font-weight: bold;
+    text-decoration: underline;
+  }
   .library-sidebar {
     padding-bottom: 1.5rem;
   }
@@ -135,6 +106,18 @@ get_header(); ?>
   }
   .library-item-meta {
     color: #838383;
+  }
+  .library-clear-filters-link {
+    color: white;
+    text-decoration: underline;
+    font-size: 16px;
+    margin-left: .5rem;
+  }
+  .library-clear-filters-link:hover,
+  .library-clear-filters-link:active,
+  .library-clear-filters-link:focus {
+    color: lightgray;
+    text-decoration: underline;
   }
 </style>
 <?php get_footer(); ?>

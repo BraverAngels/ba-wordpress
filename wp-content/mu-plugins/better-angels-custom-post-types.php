@@ -115,7 +115,7 @@ function ba_custom_taxonomies() {
    'query_var'         => true,
    'rewrite'           => array(
      'slug' => 'library/reading-rooms',
-     'with_front' => false, 
+     'with_front' => false,
    ),
  );
 
@@ -265,3 +265,10 @@ function ba_next_prev_links( $status ) {
   return $status;
 }
 add_filter( 'astra_single_post_navigation_enabled', 'ba_next_prev_links' );
+
+// add_filter( 'get_the_archive_title', function ( $title ) {
+//     if( is_category() ) {
+//         $title = single_cat_title( '', false );
+//     }
+//     return $title;
+// });
