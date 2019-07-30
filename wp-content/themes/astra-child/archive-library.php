@@ -42,7 +42,7 @@ get_header(); ?>
             'taxonomy' => 'library_reading_room',
             'hide_empty' => true,
         ) ); ?>
-        <ul class="library-labels-list">
+        <ul class="library-reading-rooms-list">
           <?php foreach($terms as $term) : ?>
             <li>
               <a href="<?php echo get_term_link( $term, 'library_label'); ?>">
@@ -134,13 +134,23 @@ get_header(); ?>
     padding-bottom: 1em;
     border-bottom: none;
   }
-  .library-labels-list {
+  .library-labels-list, .library-reading-rooms-list  {
     margin: 0;
     list-style: none;
   }
+  .library-reading-rooms-list {
+    margin-bottom: .5rem;
+  }
+  .library-labels-list li{
+    display: inline-block;
+    font-size: 16px;
+    margin-right: .125rem;
+  }
   .library-sidebar {
-    border-right: 1px solid lightgray;
-    min-height: 200px;
+    background: #e8e8e8;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 3px;
   }
   .library-section-header {
     margin-bottom: 1rem;
