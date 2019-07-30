@@ -76,7 +76,7 @@ get_header(); ?>
                 array(
                     'taxonomy' => 'library_reading_room',
                     'field' => 'slug',
-                    'terms' => 'better-angels-documents',
+                    'terms' => 'better-angels-readings',
                 ),
             ),
         ) ); ?>
@@ -86,7 +86,7 @@ get_header(); ?>
                 array(
                     'taxonomy' => 'library_reading_room',
                     'field' => 'slug',
-                    'terms' => 'better-angels-documents',
+                    'terms' => 'better-angels-readings',
                     'operator'  => 'NOT IN'
                 ),
             ),
