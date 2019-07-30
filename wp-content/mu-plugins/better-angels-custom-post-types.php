@@ -84,7 +84,10 @@ function ba_custom_taxonomies() {
    'show_ui'           => true,
    'show_admin_column' => true,
    'query_var'         => true,
-   'rewrite'           => array( 'slug' => 'library/labels' ),
+   'rewrite'           => array(
+     'slug' => 'library/labels',
+     'with_front' => false,
+   ),
  );
 
  register_taxonomy( 'library_label', array( 'library' ), $args );
@@ -110,7 +113,10 @@ function ba_custom_taxonomies() {
    'show_ui'           => true,
    'show_admin_column' => true,
    'query_var'         => true,
-   'rewrite'           => array( 'slug' => 'library/reading-rooms' ),
+   'rewrite'           => array(
+     'slug' => 'library/reading-rooms',
+     'with_front' => false, 
+   ),
  );
 
  register_taxonomy( 'library_reading_room', array( 'library' ), $args );
