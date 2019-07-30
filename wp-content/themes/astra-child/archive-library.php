@@ -93,7 +93,7 @@ get_header(); ?>
         ) ); ?>
 
         <?php if ($ba_docs_query->have_posts() ) :
-          echo "<div class='ast-col-sm-12 library-section-header'><h3>Better Angels Readings</h3></div>";
+          echo "<div class='ast-col-sm-12 library-section-header'><h3>Better Angels Readings</h3><a class='library-view-all-link' href='" . home_url('/library/reading-rooms/better-angels-readings') . "'>[View All]</a></div>";
           while ( $ba_docs_query->have_posts() ) : $ba_docs_query->the_post(); ?>
             <?php get_template_part('content-library-index-item'); ?>
           <?php endwhile; wp_reset_postdata(); ?>
@@ -144,7 +144,7 @@ get_header(); ?>
   .library-labels-list li{
     display: inline-block;
     font-size: 16px;
-    margin-right: .125rem;
+    margin-right: .5rem;
   }
   .library-sidebar {
     background: #e8e8e8;
@@ -154,6 +154,11 @@ get_header(); ?>
   }
   .library-section-header {
     margin-bottom: 1rem;
+
+  }
+  .library-section-header h3 {
+    display: inline-block;
+    margin-right: .5rem;
   }
 </style>
 <?php get_footer(); ?>
