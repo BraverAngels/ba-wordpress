@@ -399,12 +399,15 @@ background-color: #ab2634 !important;
 }
 .library-reviews-area {
   padding: 1rem;
+  float: left;
+  clear: both;
   display: block;
   overflow: auto;
   border: none;
+  margin-top: 0;
 }
 .library-reviews-area .comment-list {
-  margin: 2rem 1rem 0 1rem;
+  margin: 2rem 0;
 }
 .library-reviews-area .comment-body {
   padding: 1rem;
@@ -427,6 +430,8 @@ background-color: #ab2634 !important;
 
 .library-entry-title {
   font-size: 22px;
+}
+.library-index-entry-title {
   margin-top: 1rem;
 }
 .post-type-archive-library .attachment-post-thumbnail {
@@ -457,7 +462,6 @@ background-color: #ab2634 !important;
 }
 .library-section-header {
   margin-bottom: 1rem;
-
 }
 .library-section-header h3 {
   display: inline-block;
@@ -466,7 +470,16 @@ background-color: #ab2634 !important;
 .library-item-meta {
   color: #838383;
 }
-
+.single-library .library-item-meta {
+    color: black;
+    font-weight: 600;
+}
+.library-entry-categories {
+  color: #838383; font-size: 16px;
+}
+.library-entry-categories span{
+  display: block;
+}
 /* Registration Page */
 .mepr-form-has-errors, .cc-error, .stripe_element_error {
   border: 1px solid lightgray;
