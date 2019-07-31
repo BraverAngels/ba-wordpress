@@ -480,13 +480,40 @@ background-color: #ab2634 !important;
 .library-entry-categories span{
   display: block;
 }
-/* Registration Page */
+
+/* Memberpress */
+
+
+.mepr-account-actions a {
+    display: inline-block;
+    font-size: 16px;
+    text-decoration: underline;
+    margin-right: .25rem;
+    clear: both;
+    float: left;
+    text-align: center;
+}
+
+
+.page-id-1551 #mepr_loginform , .page-id-1551 #mepr_forgot_password_form {
+  max-width: 350px;
+}
+
+.page-id-1551 .mp_wrapper {
+    margin: auto;
+    max-width: 1200px;
+    display: block;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
 .mepr-form-has-errors, .cc-error, .stripe_element_error {
-  border: 1px solid lightgray;
+  display: inline-block;
+  width: auto;
+  background: #e03330 !important;
   border-radius: 2px;
-  padding: 2px 4px;
-  border-left: 3px solid;
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 2px 2px 0px;
+  color: white;
+  padding: .25rem 1rem !important;
   font-size: .875rem;
 }
 
@@ -494,7 +521,31 @@ background-color: #ab2634 !important;
   background-color: #F2F2F2 !important
 }
 
-.mepr-account-actions a {
-  display: block;
-  text-align: center;
+
+.mepr_error {
+  display: inline-block;
+  width: auto;
+  background: #e03330 !important;
+  border-radius: 2px;
+  color: white;
+  padding: .25rem 1rem !important;
+}
+.mepr_error ul {
+  padding: 0 !important;
+}
+.mepr_updated {
+  display: inline-block;
+  width: auto;
+  background: #27b758 !important;
+  border-color: #27b758 !important;
+  border-radius: 2px;
+  color: white;
+  padding: .25rem 1rem !important;
+}
+.mp_wrapper textarea, .mp_wrapper select, .mp_wrapper input[type=text], .mp_wrapper input[type=url], .mp_wrapper input[type=email], .mp_wrapper input[type=tel], .mp_wrapper input[type=number], .mp_wrapper input[type=password] {
+  padding: 5px 10px;
+}
+
+.mepr-account-form {
+  max-width: 600px !important;
 }
