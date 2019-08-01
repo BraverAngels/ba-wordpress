@@ -495,11 +495,11 @@ background-color: #ab2634 !important;
 }
 
 
-.page-id-1551 #mepr_loginform , .page-id-1551 #mepr_forgot_password_form {
+#mepr_loginform, #mepr_forgot_password_form, .mepr-stripe-payment-form {
   max-width: 350px;
 }
 
-.page-id-1551 .mp_wrapper {
+.mp_wrapper {
     margin: auto;
     max-width: 1200px;
     display: block;
@@ -512,15 +512,16 @@ background-color: #ab2634 !important;
   width: auto;
   background: #e03330 !important;
   border-radius: 2px;
-  color: white;
-  padding: .25rem 1rem !important;
+  color: white !important;
   font-size: .875rem;
+}
+.mepr-form-has-errors, .cc-error {
+  padding: 5px !important;
 }
 
 .mepr-form-input.invalid {
   background-color: #F2F2F2 !important
 }
-
 
 .mepr_error {
   display: inline-block;
@@ -548,4 +549,46 @@ background-color: #ab2634 !important;
 
 .mepr-account-form {
   max-width: 600px !important;
+}
+
+.mepr-signup-form .mepr_price {
+  display: inline-block;
+  width: auto !important;
+  padding: .25rem .5rem;
+  background: #27b758 !important;
+  color: white;
+  font-weight: bold;
+  border-radius: 2px;
+}
+
+.stripe_element_input {
+  background: #fafafa !important;
+  height: 2.75rem !important;
+}
+
+input.stripe-card-name {
+  padding: 5px 10px !important;
+  line-height: 1.75 !important;
+}
+
+.mepr-submit {
+  margin-bottom: 1rem !important;
+}
+
+input.mepr-form-input.invalid,
+.mepr-form div.mepr-radios-field.invalid {
+  background-color: #FAFAFA  !important;
+  border: 2px solid #e03330 !important;
+}
+
+.mepr-payment-method-desc-text {
+  padding:0!important
+}
+.mepr-payment-method-icon img {
+  max-height: 32px
+}
+
+.mepr-cancel-sub-buttons button {
+  background-color: #23356c !important;
+  border: none !important;
 }
