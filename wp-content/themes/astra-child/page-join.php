@@ -126,6 +126,9 @@ get_header(); ?>
       display: inline-block;
       flex: 1;
     }
+    .join-selection-options ul li {
+      min-width: 33%;
+    }
   }
   /* @media screen and (min-width: 1200px) {
     .join-selection-type-item {
@@ -159,7 +162,7 @@ get_header(); ?>
   }
   .join-selection-options ul li {
     display: inline-block;
-    min-width: 33%;
+    min-width: auto;
     flex: 1;
     padding: .125rem;
   }
