@@ -13,6 +13,7 @@
    require_once(__DIR__ . '/gf-custom-validation.php');
    require_once(__DIR__ . '/venue-states-select-field.php');
    require_once(__DIR__ . '/gf-conditional-user-registration.php');
+   require_once(__DIR__ . '/mepr-hooks.php');
    require_once(__DIR__ . '/disable-admin-notifications.php');
 
 ?>
