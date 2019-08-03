@@ -26,7 +26,7 @@ function send_user_data_to_action_network($user_id){
   if (!AN_KEY) {
     return;
   }
-  
+
   // The url we will eventually query
   $actionnetwork_url = AN_BASE . '/people/';
 
@@ -90,7 +90,7 @@ function send_user_data_to_action_network($user_id){
         'period' => ucfirst($membership_code[0])
       );
     } elseif ($membership_code[0] = 'one') {
-      $custom_fields['Contribution'] = $membership_code[2];
+      $custom_fields['Contribution'] = $membership_code[3];
     } else {
       $custom_fields['Contribution'] = 0;
     }
