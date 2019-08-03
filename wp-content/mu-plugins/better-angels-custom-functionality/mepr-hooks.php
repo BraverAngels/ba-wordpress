@@ -8,7 +8,7 @@ add_action( 'wp_head', 'ba_process_membership_data' );
 
 function ba_process_membership_data() {
 
-     if( isset( $_POST['mepr-account-form']) &&  $_POST['mepr-account-form'] == 'Save Profile' ) {
+     if( isset( $_POST['mepr-account-form']) && $_POST['mepr-account-form'] == 'Save Profile' ) {
         // Profile updated
         send_user_data_to_action_network(get_current_user_id());
 
@@ -124,9 +124,10 @@ function send_user_data_to_action_network($user_id){
   );
 
   error_log("Making API request");
+  error_log(print_r($fields,1));
 
   $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
 
-  error_log(print_r($actionnetwork_response,1));
+
 
 }
