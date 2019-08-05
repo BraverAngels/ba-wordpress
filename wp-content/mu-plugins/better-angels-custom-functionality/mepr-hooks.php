@@ -10,17 +10,23 @@ function ba_process_membership_data() {
 
      if( isset( $_POST['mepr-account-form']) && $_POST['mepr-account-form'] == 'Save Profile' ) {
         // Profile updated
-        send_user_data_to_action_network(get_current_user_id());
+        error_log(print_r($_POST, 1));
+        send_updated_user_data_to_action_network($_POST);
 
-     } elseif (isset($_GET['membership_id']) && isset($_GET['membership'])) {
+     }
+     elseif (isset($_GET['membership_id']) && isset($_GET['membership'])) {
         // Membership saved
-        send_user_data_to_action_network(get_current_user_id());
+        send_new_user_data_to_action_network(get_current_user_id());
      }
 }
 
 
 
-function send_user_data_to_action_network($user_id){
+/*
+  After a user registers for a subscription and completes payment
+*/
+
+function send_new_user_data_to_action_network($user_id){
 
   // Bail if the API key is not set
   if (!AN_KEY) {
@@ -124,10 +130,88 @@ function send_user_data_to_action_network($user_id){
   );
 
   error_log("Making API request");
-  error_log(print_r($fields,1));
 
   $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
 
+  error_log(print_r($actionnetwork_response,1));
+}
 
 
+/*
+  After a user registers for a subscription and completes payment
+*/
+
+function send_updated_user_data_to_action_network($data){
+
+  // Bail if the API key is not set
+  if (!AN_KEY) {
+    return;
+  }
+
+  // The url we will eventually query
+  $actionnetwork_url = AN_BASE . '/people/';
+
+  // Add the default Member tag
+  $tags = ['Member'];
+
+  // Get array of user interests selected in profile and add to tags
+  if (isset($data['mepr_interests'])) {
+
+    $interests = array_keys($data['mepr_interests']);
+
+    foreach($interests as $interest) {
+      $tags[] = 'Interest - ' . ucfirst(str_replace('-', ' ', $interest));
+    }
+  }
+
+  // add an empty array for "Custom Fields"
+  $custom_fields = array();
+
+  // Set tags
+  if (isset($data['mepr_lean_red_or_blue']) && $data['mepr_lean_red_or_blue']) {
+    $custom_fields['LeanRedorBlue'] = ucfirst(str_replace('-', ' ', $data['mepr_lean_red_or_blue']));
+  }
+  if (isset($data['mepr_birthday']) && $data['mepr_birthday']) {
+    $custom_fields['Birthday'] = $data['mepr_birthday'];
+  }
+  if (isset($data['mepr_why_i_joined']) && $data['mepr_why_i_joined']) {
+    $custom_fields['Why I Joined'] = $data['mepr_why_i_joined'];
+  }
+  if (isset($data['mepr_phone']) && $data['mepr_phone']) {
+    $custom_fields['Telephone'] = $data['mepr_phone'];
+  }
+  if (isset($data['mepr_profession']) && $data['mepr_profession']) {
+    $custom_fields['Profession'] = $data['mepr_profession'];
+  }
+
+  // Set the user info
+  $person = array(
+    "family_name" => $data['user_last_name'],
+    "given_name" => $data['user_first_name'],
+    "email_addresses" => [
+      array(
+        'address' => $data['user_email']
+      )
+    ],
+    "postal_addresses" => [
+      array(
+        'postal_code' => $data['mepr_zipcode']
+      )
+    ],
+    "country" => "US",
+    "language" => "en",
+    "custom_fields" => $custom_fields,
+  );
+
+  // Final fields we will submit to Action Network
+  $fields = array(
+    'person' => $person,
+    'add_tags' => $tags,
+  );
+
+  error_log("Making API request");
+
+  $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
+
+  error_log(print_r($actionnetwork_response,1));
 }
