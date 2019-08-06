@@ -59,7 +59,7 @@ function ba_log_completed_transaction($event) {
   error_log(print_r($actionnetwork_response,1));
 
 }
-add_action('mepr-event-transaction-completed', 'ba_log_completed_transaction');
+// add_action('mepr-event-transaction-completed', 'ba_log_completed_transaction');
 
 
 
