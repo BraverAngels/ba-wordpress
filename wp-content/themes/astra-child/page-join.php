@@ -30,7 +30,7 @@ get_header(); ?>
       </div>
         <div class="join-selection-options-wrap">
           <div id="one-time-gift-options" class="join-selection-options">
-            <span class="join-description">Membership begins at $12 and expires after one year. If you’d like to donate a different amount, visit <a href="https://better-angels.org/donate">better-angels.org/donate</a>.</span>
+            <span class="join-description">Select contribution amount</span>
             <ul>
               <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/one-time-12/">$12</a></li>
               <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/one-time-25/">$25</a></li>

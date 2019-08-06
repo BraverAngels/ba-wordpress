@@ -592,3 +592,11 @@ input.mepr-form-input.invalid,
   background-color: #23356c !important;
   border: none !important;
 }
+
+.mepr_update_account_table {
+  max-width: 600px !important;
+}
+
+.mepr_update_account_table #card-element{
+  height: auto !important;
+}
