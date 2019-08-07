@@ -4,7 +4,6 @@ function fb_pixel_inline_scripts() { ?>
 
     <!-- Facebook Pixel Code -->
     <script>
-
       //Intialize conversion values
       var LTVMonthly = 10;
       var LTVYearly = 1.2;
@@ -23,9 +22,13 @@ function fb_pixel_inline_scripts() { ?>
 
 
       if (window.location.pathname.includes("/members-portal/welcome/")) {
-        trackMembershipInfo();
+        if(!sessionStorage.getItem('new_membership')) {
+          trackMembershipInfo();
+        }
       } else if (window.location.pathname.includes("/thank-you-for-donating/")) {
-        trackDonationInfo();
+        if(!sessionStorage.getItem('new_donation')) {
+          trackDonationInfo();
+        }
       } else if (window.location.pathname.includes("/join/") || window.location.pathname.includes("/donate/")) {
         fbq('track', 'InitiateCheckout');
       }
@@ -36,6 +39,7 @@ function fb_pixel_inline_scripts() { ?>
         //The custom tracking logic
         if (params.type && params.contribution) {
           var contributionVal = params.contribution.replace(/\$/g, '');
+
           if( params.type == "Yearly" ) {
             var value = contributionVal * LTVYearly;
             fbq('track', 'StartTrial', {value: contributionVal, currency: 'USD', predicted_ltv: value.toString()});
@@ -45,6 +49,8 @@ function fb_pixel_inline_scripts() { ?>
           } else {
             fbq('track', 'Purchase', {value: contributionVal, currency: 'USD'});
           }
+
+          sessionStorage.setItem('new_donation', true);
         }
       }
 
@@ -65,6 +71,7 @@ function fb_pixel_inline_scripts() { ?>
           } else {
             fbq('track', 'Purchase', {value: contributionVal, currency: 'USD'});
           }
+          sessionStorage.setItem('new_membership', true);
         }
       }
 
