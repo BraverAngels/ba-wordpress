@@ -21,6 +21,7 @@ function fb_pixel_inline_scripts() { ?>
       fbq('track', 'PageView');
 
 
+
       if (window.location.pathname.includes("/members-portal/welcome/")) {
         if(!sessionStorage.getItem('new_membership')) {
           trackMembershipInfo();
@@ -31,6 +32,24 @@ function fb_pixel_inline_scripts() { ?>
         }
       } else if (window.location.pathname.includes("/join/") || window.location.pathname.includes("/donate/")) {
         fbq('track', 'InitiateCheckout');
+      } else if (window.location.pathname.includes("/event/")) {
+        document.addEventListener('click', function (event) {
+
+          if (!event.target.matches('#event-signup-button')) return;
+
+          // Don't follow the link
+          event.preventDefault();
+
+          // Remember the link href
+          var href = event.target.href;
+
+          fbq('track', 'Contact');
+
+          setTimeout(function(){
+            window.location = href;
+          }, 800);
+        }, false);
+
       }
 
       function trackDonationInfo() {
