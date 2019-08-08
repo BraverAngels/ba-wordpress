@@ -35,7 +35,7 @@ get_header(); ?>
               <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/one-time-12/">$12</a></li>
               <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/one-time-25/">$25</a></li>
               <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/one-time-50/">$50</a></li>
-              <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/one-time-100/">$100</a></li>
+              <li><a data-autoselect class="join-selection-amount" href="<?php echo home_url(); ?>/join/one-time-100/">$100</a></li>
               <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/one-time-250/">$250</a></li>
               <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/one-time-500/">$500</a></li>
             </ul>
@@ -47,7 +47,7 @@ get_header(); ?>
               <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-12/">$12</a></li>
               <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-25/">$25</a></li>
               <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-50/">$50</a></li>
-              <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-100/">$100</a></li>
+              <li><a data-autoselect class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-100/">$100</a></li>
               <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-250/">$250</a></li>
               <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-500/">$500</a></li>
             </ul>
@@ -59,7 +59,7 @@ get_header(); ?>
               <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-1/">$1</a></li>
               <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-2/">$2</a></li>
               <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-5/">$5</a></li>
-              <li><a class="join-selection-amount selected" href="<?php echo home_url(); ?>/join/monthly-10/">$10</a></li>
+              <li><a data-autoselect class="join-selection-amount selected" href="<?php echo home_url(); ?>/join/monthly-10/">$10</a></li>
               <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-25/">$25</a></li>
               <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-50/">$50</a></li>
             </ul>
@@ -240,8 +240,10 @@ get_header(); ?>
         }
       }
       event.target.classList.add('selected');
-      togglePaymentType(selectedId);
+
       togglePaymentAmount(false);
+      togglePaymentType(selectedId);
+
     }, false);
   }
 
@@ -265,7 +267,13 @@ get_header(); ?>
       // Don't follow the link
       event.preventDefault();
 
-      resetSelectedAmount();
+      var options = document.getElementsByClassName('join-selection-amount');
+      
+      for (var i = 0; i < options.length; i++) {
+        if (options[i].classList.contains('selected') ) {
+          options[i].classList.remove('selected');
+        }
+      }
 
       event.target.classList.add('selected');
 
@@ -288,9 +296,18 @@ get_header(); ?>
 
   function resetSelectedAmount() {
     var options = document.getElementsByClassName('join-selection-amount');
+
     for (var i = 0; i < options.length; i++) {
-      if (options[i].classList.contains('selected') ) {
+      var isAutomaticallySelected = options[i].parentNode.parentNode.parentNode.classList.contains('active') && options[i].getAttribute('data-autoselect') != null;
+
+      if(isAutomaticallySelected) {
+
+        options[i].classList.add('selected');
+        togglePaymentAmount(options[i].href);
+
+      } else if (options[i].classList.contains('selected') ) {
         options[i].classList.remove('selected');
+
       }
     }
   }
