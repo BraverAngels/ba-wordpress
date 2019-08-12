@@ -1,8 +1,11 @@
 <?php
 get_header(); ?>
-  <iframe id="skills-training-wrapper" src="https://www.better-angels.org/wp-content/skills-training/" width="100%" height="500"></iframe>
+  <div id="skills-training-wrapper">
+    <iframe src="https://www.better-angels.org/wp-content/skills-training/" width="100%" height="500"></iframe>
+  </div>
   <style>
     #skills-training-wrapper {
+      background: white;
       height: 100vh;
       position: fixed;
       left: 0;
@@ -10,11 +13,9 @@ get_header(); ?>
       width: 100vw;
       z-index: 10000;
     }
-    header {
-      display: none !important;
-    }
-    footer {
-      display: none !important;
+    #skills-training-wrapper iframe {
+      height: 100%;
+      width: 100%;
     }
   </style>
 
