@@ -131,3 +131,15 @@ function ba_new_gravatar ($avatar_defaults) {
   $avatar_defaults[$myavatar] = "Default Gravatar";
   return $avatar_defaults;
 }
+
+
+add_action( 'template_redirect', 'redirect_to_specific_page' );
+
+function redirect_to_specific_page() {
+
+if ( is_page('online-skills-training') && ! is_user_logged_in() ) {
+
+wp_redirect( home_url() . 'login', 301 );
+  exit;
+    }
+}
