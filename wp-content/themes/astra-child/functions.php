@@ -139,7 +139,7 @@ function redirect_to_specific_page() {
 
 if ( is_page('online-skills-training') && ! is_user_logged_in() ) {
 
-wp_redirect( home_url() . '/login', 301 );
+wp_redirect( home_url() . '/login?redirect_to=' . home_url() . '/members-portal/online-skills-training', 301 );
   exit;
     }
 }
