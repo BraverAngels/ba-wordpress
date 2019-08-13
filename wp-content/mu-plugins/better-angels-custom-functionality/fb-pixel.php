@@ -1,6 +1,9 @@
 <?php
 
-function fb_pixel_inline_scripts() { ?>
+function fb_pixel_inline_scripts() {
+
+  if( !current_user_can('editor') && !current_user_can('administrator') ) {
+  ?>
 
     <!-- Facebook Pixel Code -->
     <script>
@@ -118,6 +121,8 @@ function fb_pixel_inline_scripts() { ?>
     <!-- End Facebook Pixel Code -->
 
   <?php
+  }
 }
 
-add_action( 'wp_enqueue_scripts', 'fb_pixel_inline_scripts', 1, 1 );
+
+  add_action( 'wp_enqueue_scripts', 'fb_pixel_inline_scripts', 1, 1 );
