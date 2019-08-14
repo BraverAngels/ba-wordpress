@@ -55,6 +55,27 @@ function fb_pixel_inline_scripts() {
 
       }
 
+
+      // Add event for when users interact with payment info inputs
+      if(!sessionStorage.getItem('cc_input_detected')) {
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+          var paymentFormInputs = document.querySelectorAll('.mepr-payment-method input, .ginput_container_creditcard input, .ginput_container_creditcard select');
+
+          for(i = 0; paymentFormInputs.length > i; i++) {
+            paymentFormInputs[i].onchange = function() {
+              fbq('track', 'AddPaymentInfo');
+              sessionStorage.setItem('cc_input_detected', true);
+            }
+          }
+
+        });
+      }
+
+
+
+
       function trackDonationInfo() {
         var params = getParams(window.location.href);
 
