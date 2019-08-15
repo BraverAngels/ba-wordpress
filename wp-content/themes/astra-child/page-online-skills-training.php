@@ -1,7 +1,7 @@
 <?php
 get_header(); ?>
   <div id="skills-training-wrapper">
-    <iframe src="https://www.better-angels.org/wp-content/skills-training/" width="100%" height="500"></iframe>
+    <iframe src="https://www.better-angels.org/wp-content/skills-training/" width="100%" height="100%"></iframe>
   </div>
   <style>
     #skills-training-wrapper {
