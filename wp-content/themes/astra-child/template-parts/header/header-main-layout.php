@@ -9,9 +9,15 @@
 .ba-primary-menu {
 	font-family: "Nunito Sans", Karla;
 	text-transform: uppercase;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
-	justify-content: space-between;
+	-webkit-box-align: center;
+			-ms-flex-align: center;
+					align-items: center;
+	-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+					justify-content: space-between;
 }
 .ba-primary-menu .ba-menu-logo {
 	min-width: 220px;
@@ -29,10 +35,17 @@
 	margin: 0;
 	padding-left: 0;
 	width: 100%;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	justify-content: space-evenly;
+	-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+	-webkit-box-align: center;
+			-ms-flex-align: center;
+					align-items: center;
+	-webkit-box-pack: space-evenly;
+			-ms-flex-pack: space-evenly;
+					justify-content: space-evenly;
 }
 .ba-primary-menu-desktop li {
 	display: block;
@@ -40,7 +53,9 @@
 	padding: 13px 14px;
 	position: relative;
 	text-decoration: none;
-	transition-duration: 0.5s;
+	-webkit-transition-duration: 0.5s;
+			 -o-transition-duration: 0.5s;
+					transition-duration: 0.5s;
 }
 .ba-primary-menu-desktop li a {
 	color: #231f20;
@@ -60,6 +75,8 @@
 	opacity: 0;
 	min-width: 5rem;
 	position: absolute;
+	-webkit-transition: all 0.5s ease;
+	-o-transition: all 0.5s ease;
 	transition: all 0.5s ease;
 	left: 0;
 	display: none;
@@ -101,8 +118,12 @@
 	font-weight: 700;
 }
 .ba-mobile-logo-container {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+			-ms-flex-align: center;
+					align-items: center;
 }
 .ba-mobile-menu-links {
 	display: none;
@@ -118,9 +139,15 @@
 	background-color: #23356C;
 	padding: 7px 20px;
 	text-align: right;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
-	justify-content: flex-end;
+	-webkit-box-align: center;
+			-ms-flex-align: center;
+					align-items: center;
+	-webkit-box-pack: end;
+			-ms-flex-pack: end;
+					justify-content: flex-end;
 }
 .ba-secondary-menu a {
 	color: #fff;
@@ -146,8 +173,12 @@
 
 /* Call To Action Buttons ( Join Us / Donate ) */
 .ba-cta-buttons {
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	align-items: center;
+	-webkit-box-align: center;
+			-ms-flex-align: center;
+					align-items: center;
 }
 .ba-cta-button {
 	font-size: 16px;
@@ -239,6 +270,8 @@
 }
 @media screen and (max-width: 768px){
 	.ba-primary-menu-mobile {
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 	}
 	.ba-primary-menu-desktop {
