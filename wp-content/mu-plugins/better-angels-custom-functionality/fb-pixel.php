@@ -91,7 +91,7 @@ function fb_pixel_inline_scripts() {
             var ltvVal = contributionVal * LTVMonthly;
             fbq('track', 'Subscribe', {value: contributionVal, currency: 'USD', predicted_ltv: ltvVal.toString()});
 
-           else {
+          } else {
             fbq('track', 'Purchase', {value: contributionVal, currency: 'USD'});
           }
 
