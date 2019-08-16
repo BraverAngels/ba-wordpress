@@ -32,7 +32,7 @@
 .ba-primary-menu-desktop ul {
 	background: #fff;
 	list-style: none;
-	margin: 0;
+	margin: 0 12px 0 0;
 	padding-left: 0;
 	width: 100%;
 	display: -webkit-box;
@@ -43,9 +43,9 @@
 	-webkit-box-align: center;
 			-ms-flex-align: center;
 					align-items: center;
-	-webkit-box-pack: space-evenly;
-			-ms-flex-pack: space-evenly;
-					justify-content: space-evenly;
+	-webkit-box-pack: flex-end;
+			-ms-flex-pack: flex-end;
+					justify-content: flex-end;
 }
 .ba-primary-menu-desktop li {
 	display: block;
@@ -97,6 +97,10 @@
 	display: block;
 	line-height: 1.2;
 }
+.ba-primary-menu-desktop ul li ul li a {
+	font-weight: 600;
+	color: #424242;
+}
 .ba-primary-menu-desktop .ba-dropdown-arrow{
 	font-size: 16px;
 	line-height: 1;
@@ -132,6 +136,16 @@
 }
 .ba-mobile-menu-links ul {
 	list-style: none;
+	padding: 12px 0 12px 38px;
+	margin: 0;
+}
+.ba-mobile-menu-links ul ul {
+	padding: 2px 0 12px 24px;
+}
+.ba-mobile-menu-top-section {
+	background: #ebebeb;
+	margin: 0 0 10px 0;
+	padding: 12px 0 12px 50px;
 }
 
 /* Blue Background Menu with Social Icons, Login, Logout, etc. */
@@ -184,7 +198,7 @@
 	font-size: 16px;
 	font-weight: bold;
 	text-transform: uppercase;
-	border-radius: 7px 7px 7px 7px;
+	border-radius: 3px;
 	padding: 10px 20px !important;
 	display: inline-block;
 	white-space: nowrap;
@@ -268,7 +282,7 @@
 		padding: 10px !important;
 	}
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 960px){
 	.ba-primary-menu-mobile {
 		display: -webkit-box;
 		display: -ms-flexbox;
@@ -279,6 +293,14 @@
 	}
 	.ba-secondary-menu-links{
 		display: none;
+	}
+	.ba-cta-buttons {
+		margin-left: auto;
+		margin-right: 12px;
+	}
+	.ba-cta-button {
+		font-size: 14px;
+		padding: 6px 20px !important;
 	}
 }
 @media screen and (max-width: 480px){
@@ -306,13 +328,13 @@ $( document ).ready(function() {
 		$open_button.hide();
 		$close_button.show();
 		$mobile_menu.show();
-	})
+	});
 
 	$close_button.click(function(){
 		$open_button.show();
 		$close_button.hide();
 		$mobile_menu.hide();
-	})
+	});
 });
 </script>
 
@@ -432,14 +454,14 @@ function ba_get_menu_html($menu_array) {
 		<a class="ba-menu-item ba-menu-logo" href="<?php echo esc_url(home_url('/')) ?>">
 			<img src="<?php echo ba_logo_url() ?>" />
 		</a>
-		<div class="ba-cta-buttons">
-			<a class="ba-cta-button ba-cta-button-white" href="<?php echo home_url("/donate?utm_source=website&utm_medium=donate&utm_campaign=upper_right"); ?>">
-				Donate
-			</a>
-			<a class="ba-cta-button ba-cta-button-red" href="<?php echo home_url("/join?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
-				Join Us
-			</a>
-		</div>
+	</div>
+	<div class="ba-cta-buttons">
+		<a class="ba-cta-button ba-cta-button-white" href="<?php echo home_url("/donate?utm_source=website&utm_medium=donate&utm_campaign=upper_right"); ?>">
+			Donate
+		</a>
+		<a class="ba-cta-button ba-cta-button-red" href="<?php echo home_url("/join?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
+			Join Us
+		</a>
 	</div>
 	<div class="ba-hamburger-buttons">
 		<div class="ba-hamburger ba-hamburger-open"></div>
@@ -447,7 +469,7 @@ function ba_get_menu_html($menu_array) {
 	</div>
 </nav>
 <div class="ba-mobile-menu-links">
-	<ul>
+	<ul class="ba-mobile-menu-top-section">
 		<li>
 			<?php if( is_user_logged_in() ): ?>
 				<a href="<?php echo wp_logout_url(); ?>">Logout</a>
