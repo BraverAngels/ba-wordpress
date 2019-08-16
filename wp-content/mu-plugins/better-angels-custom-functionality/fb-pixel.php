@@ -83,13 +83,15 @@ function fb_pixel_inline_scripts() {
         if (params.type && params.contribution) {
           var contributionVal = params.contribution.replace(/\$/g, '');
 
-          if( params.type == "Yearly" ) {
+          if( params.type.toLowerCase().includes("yearly")) {
             var value = contributionVal * LTVYearly;
             fbq('track', 'StartTrial', {value: contributionVal, currency: 'USD', predicted_ltv: value.toString()});
-          } else if ( params.type == "Monthly" ) {
+
+          } else if ( params.type.toLowerCase().includes("monthly") ) {
             var ltvVal = contributionVal * LTVMonthly;
             fbq('track', 'Subscribe', {value: contributionVal, currency: 'USD', predicted_ltv: ltvVal.toString()});
-          } else {
+
+           else {
             fbq('track', 'Purchase', {value: contributionVal, currency: 'USD'});
           }
 
