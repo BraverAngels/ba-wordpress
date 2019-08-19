@@ -343,16 +343,34 @@ $( document ).ready(function() {
   $close_button = $('.ba-hamburger-close');
   $mobile_menu = $('.ba-mobile-menu-links');
 
-  $open_button.click(function(){
-    $open_button.hide();
-    $close_button.show();
-    $mobile_menu.show();
-  });
-
-  $close_button.click(function(){
+  function closeMobileMenu(){
     $open_button.show();
     $close_button.hide();
     $mobile_menu.hide();
+    $(document).off("mousedown", closeMobileMenu);
+    $(window).off("resize", closeMobileMenu);
+  }
+
+  function openMobileMenu(){
+    $open_button.hide();
+    $close_button.show();
+    $mobile_menu.show();
+    $(document).on("mousedown", closeMobileMenu);
+    $(window).on("resize", closeMobileMenu);
+  }
+
+  $open_button.on("mouseup", openMobileMenu);
+
+  $mobile_menu.on("mousedown", function(event) {
+    event.stopPropagation();
+  });
+
+  $close_button.on("mousedown", function(event) {
+    event.stopPropagation();
+  });
+
+  $close_button.on("mouseup", function(event) {
+    closeMobileMenu();
   });
 });
 </script>
