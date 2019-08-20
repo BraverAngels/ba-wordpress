@@ -84,7 +84,6 @@
   box-shadow: 0 3px 3px 2px rgba(0,0,0,0.15);
 }
 .ba-primary-menu-desktop ul li:hover > ul,
-.ba-primary-menu-desktop ul li:focus-within > ul,
 .ba-primary-menu-desktop ul li ul:hover,
 .ba-primary-menu-desktop ul li ul:focus {
    visibility: visible;
