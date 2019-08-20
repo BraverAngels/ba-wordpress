@@ -338,16 +338,24 @@
 
 <script>
 $( document ).ready(function() {
-  $open_button = $('.ba-hamburger-open');
-  $close_button = $('.ba-hamburger-close');
-  $mobile_menu = $('.ba-mobile-menu-links');
+  var $open_button = $('.ba-hamburger-open');
+  var $close_button = $('.ba-hamburger-close');
+  var $mobile_menu = $('.ba-mobile-menu-links');
+  var window_width = $(window).width();
 
   function closeMobileMenu(){
     $open_button.show();
     $close_button.hide();
     $mobile_menu.hide();
     $(document).off("mousedown", closeMobileMenu);
-    $(window).off("resize", closeMobileMenu);
+  }
+
+  function handleResize(){
+    if ($(window).width() !== window_width) {
+      closeMobileMenu()
+      $(window).off("resize", handleResize);
+    }
+    window_width = $(window).width();
   }
 
   function openMobileMenu(){
@@ -355,7 +363,7 @@ $( document ).ready(function() {
     $close_button.show();
     $mobile_menu.show();
     $(document).on("mousedown", closeMobileMenu);
-    $(window).on("resize", closeMobileMenu);
+    $(window).on("resize", handleResize);
   }
 
   $open_button.on("mouseup", openMobileMenu);
