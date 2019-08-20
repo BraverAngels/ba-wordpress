@@ -23,6 +23,12 @@
   min-width: 220px;
   max-width: 220px;
 }
+.ba-dropdown-icon {
+  font-size: 12px;
+  margin-left: 3px;
+  position: relative;
+  bottom: 1px;
+}
 
 /* Desktop Menu */
 .ba-primary-menu-desktop {
@@ -425,7 +431,8 @@ function ba_get_menu_html($menu_array) {
     $html .= "<li class='{$menu_item['classname']}' id='{$menu_item['ID']}'>";
 
     if($has_children) {
-      $html .= "<a aria-haspopup='true' href='{$menu_item['url']}'>{$menu_item['title']}<span class='ba-dropdown-arrow'>&#9662;</span></a>";
+      $html .= "<a aria-haspopup='true' href='{$menu_item['url']}'>{$menu_item['title']}<i class='fa fa-chevron-down ba-dropdown-icon' aria-hidden='true'></i>
+</a>";
       $html .= "<ul class='ba-sub-menu-container' aria-label='submenu'>";
       foreach ($menu_item['children'] as $sub_menu_item) {
         $html .= "<li class='{$sub_menu_item['classname']}' id='{$sub_menu_item['ID']}'>";
