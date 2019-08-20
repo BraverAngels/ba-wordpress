@@ -25,9 +25,16 @@ function record_action_network_subscriber_info($entry) {
   }
   $actionnetwork_url = AN_BASE . '/people/';
 
-  $custom_fields = array(
-    "Lean Red or Blue" => $entry['1'],
-  );
+  $lean = strtolower($entry[1]);
+  $tags = [];
+
+  if (strpos($lean, 'red') !== false) {
+    $tags[] = 'Red';
+  } elseif (strpos($lean, 'blue') !== false) {
+    $tags[] = 'Blue';
+  } else {
+    $tags[] = 'Prefer Not to Say / Not Leaning Either Way';
+  }
 
   $person = array(
     "family_name" =>  $entry['5'],
@@ -44,11 +51,11 @@ function record_action_network_subscriber_info($entry) {
       ],
       "country" => "US",
       "language" => "en",
-      "custom_fields" => $custom_fields
     );
 
     $fields = array(
       'person' => $person,
+      'add_tags' => $tags,
     );
 
 
@@ -156,7 +163,7 @@ function record_action_network_member_info($entry) {
 
   $reason = $entry[1];
   $profession = $entry[2];
-  $lean = $entry[4];
+  $lean = strtolower($entry[4]);
 
   $tags = [];
 
@@ -166,10 +173,17 @@ function record_action_network_member_info($entry) {
     }
   }
 
+  if (strpos($lean, 'red') !== false) {
+    $tags[] = 'Red';
+  } elseif (strpos($lean, 'blue') !== false) {
+    $tags[] = 'Blue';
+  } else {
+    $tags[] = 'Prefer Not to Say / Not Leaning Either Way';
+  }
+
   $custom_fields = array(
     "Why I joined" => $reason,
     "Profession" => $profession,
-    "Lean Red or Blue" => $lean,
   );
 
 

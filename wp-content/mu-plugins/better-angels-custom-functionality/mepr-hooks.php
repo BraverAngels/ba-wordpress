@@ -218,7 +218,16 @@ function send_updated_user_data_to_action_network($data){
 
   // Set tags
   if (isset($data['mepr_lean_red_or_blue']) && $data['mepr_lean_red_or_blue']) {
-    $custom_fields['LeanRedorBlue'] = ucfirst(str_replace('-', ' ', $data['mepr_lean_red_or_blue']));
+
+    $lean = $data['mepr_lean_red_or_blue'];
+    if ($lean == 'red' || $lean == 'lean-red') {
+      $tags[] = 'Red';
+    } elseif ($lean == 'blue' || $lean == 'lean-blue') {
+      $tags[] = 'Blue';
+    } else {
+      $tags[] = 'Prefer Not to Say / Not Leaning Either Way';
+    }
+
   }
   if (isset($data['mepr_birthday']) && $data['mepr_birthday']) {
     $custom_fields['Birthday'] = $data['mepr_birthday'];
