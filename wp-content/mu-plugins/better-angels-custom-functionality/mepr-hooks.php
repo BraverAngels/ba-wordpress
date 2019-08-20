@@ -48,15 +48,8 @@ function ba_log_completed_transaction($event) {
     'action_network:recurrence' => $recurrence,
   );
 
-  //Do what you need
-  error_log('Transaction Happened');
-  error_log("EMAIL IS " . $user->user_email);
-  error_log("TOTAL IS " . $transaction->total);
-  error_log("Making API request");
 
   $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
-
-  error_log(print_r($actionnetwork_response,1));
 
 }
 // add_action('mepr-event-transaction-completed', 'ba_log_completed_transaction');
@@ -70,7 +63,6 @@ function ba_process_membership_data() {
 
      if( isset( $_POST['mepr-account-form']) && $_POST['mepr-account-form'] == 'Save Profile' ) {
         // Profile updated
-        error_log(print_r($_POST, 1));
         send_updated_user_data_to_action_network($_POST);
 
      }
@@ -189,11 +181,8 @@ function send_new_user_data_to_action_network($user_id){
     'action_network:recurrence' => $recurrence
   );
 
-  error_log("Making API request");
-
   $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
 
-  error_log(print_r($actionnetwork_response,1));
 }
 
 
@@ -269,9 +258,6 @@ function send_updated_user_data_to_action_network($data){
     'add_tags' => $tags,
   );
 
-  error_log("Making API request");
-
   $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
 
-  error_log(print_r($actionnetwork_response,1));
 }

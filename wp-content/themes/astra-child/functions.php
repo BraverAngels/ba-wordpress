@@ -91,7 +91,7 @@ add_action( 'template_redirect', 'redirect_organizer_and_venue_type_single' );
 
 
 function inline_scripts() {
-    ?>
+  if( !current_user_can('editor') && !current_user_can('administrator') ) { ?>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93943838-2"></script>
     <script>
@@ -118,6 +118,7 @@ function inline_scripts() {
     </script>
     <!-- end Drip -->
     <?php
+  }
 }
 add_action( 'wp_enqueue_scripts', 'inline_scripts', 1, 1 );
 
@@ -139,7 +140,7 @@ function redirect_to_specific_page() {
 
 if ( is_page('online-skills-training') && ! is_user_logged_in() ) {
 
-wp_redirect( home_url() . '/login', 301 );
+wp_redirect( home_url() . '/login?redirect_to=' . home_url() . '/members-portal/online-skills-training', 301 );
   exit;
     }
 }

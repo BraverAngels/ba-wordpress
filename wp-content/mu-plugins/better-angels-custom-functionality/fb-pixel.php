@@ -1,6 +1,9 @@
 <?php
 
-function fb_pixel_inline_scripts() { ?>
+function fb_pixel_inline_scripts() {
+
+  if( !current_user_can('editor') && !current_user_can('administrator') ) {
+  ?>
 
     <!-- Facebook Pixel Code -->
     <script>
@@ -52,6 +55,27 @@ function fb_pixel_inline_scripts() { ?>
 
       }
 
+
+      // Add event for when users interact with payment info inputs
+      if(!sessionStorage.getItem('cc_input_detected')) {
+
+        document.addEventListener("DOMContentLoaded", function() {
+
+          var paymentFormInputs = document.querySelectorAll('.mepr-payment-method input, .ginput_container_creditcard input, .ginput_container_creditcard select');
+
+          for(i = 0; paymentFormInputs.length > i; i++) {
+            paymentFormInputs[i].onchange = function() {
+              fbq('track', 'AddPaymentInfo');
+              sessionStorage.setItem('cc_input_detected', true);
+            }
+          }
+
+        });
+      }
+
+
+
+
       function trackDonationInfo() {
         var params = getParams(window.location.href);
 
@@ -59,12 +83,14 @@ function fb_pixel_inline_scripts() { ?>
         if (params.type && params.contribution) {
           var contributionVal = params.contribution.replace(/\$/g, '');
 
-          if( params.type == "Yearly" ) {
+          if( params.type.toLowerCase().includes("yearly")) {
             var value = contributionVal * LTVYearly;
             fbq('track', 'StartTrial', {value: contributionVal, currency: 'USD', predicted_ltv: value.toString()});
-          } else if ( params.type == "Monthly" ) {
+
+          } else if ( params.type.toLowerCase().includes("monthly") ) {
             var ltvVal = contributionVal * LTVMonthly;
             fbq('track', 'Subscribe', {value: contributionVal, currency: 'USD', predicted_ltv: ltvVal.toString()});
+
           } else {
             fbq('track', 'Purchase', {value: contributionVal, currency: 'USD'});
           }
@@ -118,6 +144,8 @@ function fb_pixel_inline_scripts() { ?>
     <!-- End Facebook Pixel Code -->
 
   <?php
+  }
 }
 
-add_action( 'wp_enqueue_scripts', 'fb_pixel_inline_scripts', 1, 1 );
+
+  add_action( 'wp_enqueue_scripts', 'fb_pixel_inline_scripts', 1, 1 );
