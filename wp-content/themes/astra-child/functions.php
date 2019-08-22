@@ -139,8 +139,6 @@ add_action( 'template_redirect', 'redirect_to_login_page' );
 function redirect_to_login_page() {
   global $post;
 
-  !is_user_logged_in();
-
   $is_member_portal = is_page('members-portal');
   $is_member_portal_child_page = is_page() && $post->post_parent == 1303;
 
