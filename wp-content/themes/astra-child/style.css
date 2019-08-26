@@ -480,7 +480,26 @@ background-color: #ab2634 !important;
 .library-entry-categories span{
   display: block;
 }
+.ba-clearfix {
+  width: 100%;
+  display: none;
+  float: left;
+}
 
+@media screen and (min-width: 768px) {
+  .ba-clearfix-md {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .ba-clearfix-md {
+    display: none;
+  }
+  .ba-clearfix-lg {
+    display: block;
+  }
+}
 /* Memberpress */
 
 

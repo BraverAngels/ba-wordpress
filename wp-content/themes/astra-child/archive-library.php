@@ -8,14 +8,6 @@
  * @since 1.0.0
  */
 
- /* Add a link  to the end of our excerpt contained in a div for styling purposes and to break to a new line on the page.*/
-
- // function ba_library_excerpt_more($more) {
- //     global $post;
- //     return '';
- // }
- // add_filter('excerpt_more', 'ba_library_excerpt_more');
-
 get_header(); ?>
 
 <?php if ( astra_page_layout() == 'left-sidebar' ) : ?>
@@ -65,18 +57,32 @@ get_header(); ?>
             ),
         ) ); ?>
 
-        <?php if ($ba_docs_query->have_posts() ) :
+        <?php if ($ba_docs_query->have_posts() ) : $i = 1;
           echo "<div class='ast-col-sm-12 library-section-header'><h3>Better Angels Readings</h3><a class='library-view-all-link' href='" . home_url('/library/categories/better-angels-readings#primary') . "'>[View All]</a></div>";
           while ( $ba_docs_query->have_posts() ) : $ba_docs_query->the_post(); ?>
             <?php get_template_part('template-parts/content-library-index-item'); ?>
-          <?php endwhile; wp_reset_postdata(); ?>
+            <?php if ($i % 3 == 0) : ?>
+              <div class="ba-clearfix ba-clearfix-lg"></div>
+            <?php endif; ?>
+            <?php if ($i % 2 == 0) : ?>
+              <div class="ba-clearfix ba-clearfix-md"></div>
+            <?php endif; ?>
+          <?php $i++;
+          endwhile; wp_reset_postdata(); ?>
         <?php endif; ?>
 
-        <?php if ($ba_other_items->have_posts() ) :
+        <?php if ($ba_other_items->have_posts() ) : $i = 1;
           echo "<div class='ast-col-sm-12 library-section-header'><h3>Member Recommended Readings</h3></div>";
           while ( $ba_other_items->have_posts() ) : $ba_other_items->the_post(); ?>
             <?php get_template_part('template-parts/content-library-index-item'); ?>
-          <?php endwhile; wp_reset_postdata(); ?>
+            <?php if ($i % 3 == 0) : ?>
+              <div class="ba-clearfix ba-clearfix-lg"></div>
+            <?php endif; ?>
+            <?php if ($i % 2 == 0) : ?>
+              <div class="ba-clearfix ba-clearfix-md"></div>
+            <?php endif; ?>
+          <?php $i++;
+          endwhile; wp_reset_postdata(); ?>
         <?php endif; ?>
     </div>
   </div>
