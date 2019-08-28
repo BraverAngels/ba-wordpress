@@ -619,3 +619,7 @@ input.mepr-form-input.invalid,
 .mepr_update_account_table #card-element{
   height: auto !important;
 }
+
+#mepr_forgot_password_form {
+  margin-bottom: 1rem;
+}
