@@ -106,8 +106,17 @@ function send_new_user_data_to_action_network($user_id){
   $custom_fields = array();
 
   // Set tags
-  if (isset($user_meta['mepr_lean_red_or_blue']) && $user_meta['mepr_lean_red_or_blue']) {
-    $custom_fields['LeanRedorBlue'] = ucfirst(str_replace('-', ' ', $user_meta['mepr_lean_red_or_blue'][0]));
+  if (isset($user_meta['mepr_lean_red_or_blue']) && $user_meta['mepr_lean_red_or_blue'][0]) {
+
+    $lean = $user_meta['mepr_lean_red_or_blue'][0];
+    if ($lean == 'red' || $lean == 'lean-red') {
+      $tags[] = 'Red';
+    } elseif ($lean == 'blue' || $lean == 'lean-blue') {
+      $tags[] = 'Blue';
+    } else {
+      $tags[] = 'Prefer Not to Say / Not Leaning Either Way';
+    }
+
   }
   if (isset($user_meta['mepr_birthday']) && $user_meta['mepr_birthday']) {
     $custom_fields['Birthday'] = $user_meta['mepr_birthday'][0];
