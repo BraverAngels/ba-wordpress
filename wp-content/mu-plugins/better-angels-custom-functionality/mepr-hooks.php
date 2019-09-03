@@ -114,7 +114,7 @@ function send_new_user_data_to_action_network($user_id){
     } elseif ($lean == 'blue' || $lean == 'lean-blue') {
       $tags[] = 'Blue';
     } else {
-      $tags[] = 'Prefer Not to Say / Not Leaning Either Way';
+      $tags[] = 'Not Red or Blue';
     }
 
   }
@@ -234,7 +234,7 @@ function send_updated_user_data_to_action_network($data){
     } elseif ($lean == 'blue' || $lean == 'lean-blue') {
       $tags[] = 'Blue';
     } else {
-      $tags[] = 'Prefer Not to Say / Not Leaning Either Way';
+      $tags[] = 'Not Red or Blue';
     }
 
   }

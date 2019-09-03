@@ -33,7 +33,7 @@ function record_action_network_subscriber_info($entry) {
   } elseif (strpos($lean, 'blue') !== false) {
     $tags[] = 'Blue';
   } else {
-    $tags[] = 'Prefer Not to Say / Not Leaning Either Way';
+    $tags[] = 'Not Red or Blue';
   }
 
   $person = array(
@@ -178,7 +178,7 @@ function record_action_network_member_info($entry) {
   } elseif (strpos($lean, 'blue') !== false) {
     $tags[] = 'Blue';
   } else {
-    $tags[] = 'Prefer Not to Say / Not Leaning Either Way';
+    $tags[] = 'Not Red or Blue';
   }
 
   $custom_fields = array(
