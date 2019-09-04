@@ -69,6 +69,7 @@ get_header(); ?>
       <form id="join-submit-form" action="<?php echo home_url(); ?>/join/monthly-10/">
         <input id="join-submit-button" type="submit" value="Join" />
       </form>
+      <span class="join-selection-subscribe-text">Not ready to become a member?<br><a href="<?php echo home_url(); ?>/subscribe">Subscribe to our newsletter</a></span>
     </div>
 
   </div>
@@ -99,6 +100,11 @@ get_header(); ?>
     display: block;
     width: 100%;
     margin: .125rem;
+  }
+  .join-selection-subscribe-text {
+    line-height: 1.5;
+    display: inline-block;
+    margin-top: 1rem;
   }
   @media screen and (min-width: 900px) {
     .join-content-column, .join-selection-column {
@@ -268,7 +274,7 @@ get_header(); ?>
       event.preventDefault();
 
       var options = document.getElementsByClassName('join-selection-amount');
-      
+
       for (var i = 0; i < options.length; i++) {
         if (options[i].classList.contains('selected') ) {
           options[i].classList.remove('selected');
