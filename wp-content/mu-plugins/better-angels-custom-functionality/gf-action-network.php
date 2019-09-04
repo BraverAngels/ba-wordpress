@@ -27,14 +27,19 @@ function record_action_network_subscriber_info($entry) {
 
   $lean = strtolower($entry[1]);
   $tags = [];
+  $custom_fields = array();
 
   if (strpos($lean, 'red') !== false) {
     $tags[] = 'Red';
+    $custom_fields['Master Partisanship'] = 'Red';
   } elseif (strpos($lean, 'blue') !== false) {
     $tags[] = 'Blue';
+    $custom_fields['Master Partisanship'] = 'Blue';
   } else {
     $tags[] = 'Not Red or Blue';
+    $custom_fields['Master Partisanship'] = 'Prefer Not to Say / Not Leaning Either Way';
   }
+
 
   $person = array(
     "family_name" =>  $entry['5'],
@@ -51,6 +56,7 @@ function record_action_network_subscriber_info($entry) {
       ],
       "country" => "US",
       "language" => "en",
+      "custom_fields" => $custom_fields,
     );
 
     $fields = array(
@@ -173,19 +179,21 @@ function record_action_network_member_info($entry) {
     }
   }
 
-  if (strpos($lean, 'red') !== false) {
-    $tags[] = 'Red';
-  } elseif (strpos($lean, 'blue') !== false) {
-    $tags[] = 'Blue';
-  } else {
-    $tags[] = 'Not Red or Blue';
-  }
-
   $custom_fields = array(
     "Why I joined" => $reason,
     "Profession" => $profession,
   );
 
+  if (strpos($lean, 'red') !== false) {
+    $tags[] = 'Red';
+    $custom_fields['Master Partisanship'] = 'Red';
+  } elseif (strpos($lean, 'blue') !== false) {
+    $tags[] = 'Blue';
+    $custom_fields['Master Partisanship'] = 'Blue';
+  } else {
+    $tags[] = 'Not Red or Blue';
+    $custom_fields['Master Partisanship'] = 'Prefer Not to Say / Not Leaning Either Way';
+  }
 
   $person = array(
     "email_addresses" => [

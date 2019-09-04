@@ -111,10 +111,13 @@ function send_new_user_data_to_action_network($user_id){
     $lean = $user_meta['mepr_lean_red_or_blue'][0];
     if ($lean == 'red' || $lean == 'lean-red') {
       $tags[] = 'Red';
+      $custom_fields['Master Partisanship'] = 'Red';
     } elseif ($lean == 'blue' || $lean == 'lean-blue') {
       $tags[] = 'Blue';
+      $custom_fields['Master Partisanship'] = 'Blue';
     } else {
       $tags[] = 'Not Red or Blue';
+      $custom_fields['Master Partisanship'] = 'Prefer Not to Say / Not Leaning Either Way';
     }
 
   }
@@ -231,10 +234,13 @@ function send_updated_user_data_to_action_network($data){
     $lean = $data['mepr_lean_red_or_blue'];
     if ($lean == 'red' || $lean == 'lean-red') {
       $tags[] = 'Red';
+      $custom_fields['Master Partisanship'] = 'Red';
     } elseif ($lean == 'blue' || $lean == 'lean-blue') {
       $tags[] = 'Blue';
+      $custom_fields['Master Partisanship'] = 'Blue';
     } else {
       $tags[] = 'Not Red or Blue';
+      $custom_fields['Master Partisanship'] = 'Prefer Not to Say / Not Leaning Either Way';
     }
 
   }
