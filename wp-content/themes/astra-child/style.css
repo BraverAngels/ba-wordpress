@@ -502,7 +502,17 @@ background-color: #ab2634 !important;
 }
 /* Memberpress */
 
-
+.mepr-unauthorized-message {
+  margin: 1rem -.5rem;
+  min-height: 200px;
+  border: 2px solid lightgray;
+  border-radius: 3px;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 .mepr-account-actions a {
     display: inline-block;
     font-size: 16px;
