@@ -36,7 +36,7 @@ function record_action_network_subscriber_info($entry) {
     $tags[] = 'Blue';
     $custom_fields['Master Partisanship'] = 'Blue';
   } else {
-    $tags[] = 'Not Red or Blue';
+    $tags[] = 'Declined to say political affiliation';
     $custom_fields['Master Partisanship'] = 'Prefer Not to Say / Not Leaning Either Way';
   }
 
@@ -191,7 +191,7 @@ function record_action_network_member_info($entry) {
     $tags[] = 'Blue';
     $custom_fields['Master Partisanship'] = 'Blue';
   } else {
-    $tags[] = 'Not Red or Blue';
+    $tags[] = 'Declined to say political affiliation';
     $custom_fields['Master Partisanship'] = 'Prefer Not to Say / Not Leaning Either Way';
   }
 
