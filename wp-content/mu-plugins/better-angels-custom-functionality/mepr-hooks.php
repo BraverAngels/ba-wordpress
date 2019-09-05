@@ -117,7 +117,7 @@ function send_new_user_data_to_action_network($user_id){
       $custom_fields['Master Partisanship'] = 'Blue';
     } else {
       $tags[] = 'Declined to say political affiliation';
-      $custom_fields['Master Partisanship'] = 'Prefer Not to Say / Not Leaning Either Way';
+      $custom_fields['Master Partisanship'] = 'Declined to say political affiliation';
     }
 
   }
@@ -240,7 +240,7 @@ function send_updated_user_data_to_action_network($data){
       $custom_fields['Master Partisanship'] = 'Blue';
     } else {
       $tags[] = 'Declined to say political affiliation';
-      $custom_fields['Master Partisanship'] = 'Prefer Not to Say / Not Leaning Either Way';
+      $custom_fields['Master Partisanship'] = 'Declined to say political affiliation';
     }
 
   }
