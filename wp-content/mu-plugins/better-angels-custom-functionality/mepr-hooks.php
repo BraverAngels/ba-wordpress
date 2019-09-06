@@ -285,3 +285,14 @@ function send_updated_user_data_to_action_network($data){
   $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
 
 }
+
+
+
+// Function to add subscribe text to posts and pages
+function ba_mepr_login_before_checkout_reminder() {
+  if (!is_user_logged_in()) {
+    return '<p><strong>Already have an account? <a href="' . home_url() . '/login?redirect_to=' . home_url() . $_SERVER['REQUEST_URI'] . '">Login</a> before completing your purchase.</strong></p>';
+  }
+  return;
+}
+add_shortcode('login_before_checkout_reminder', 'ba_mepr_login_before_checkout_reminder');
