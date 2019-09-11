@@ -39,10 +39,16 @@ get_header(); ?>
         <?php get_template_part('template-parts/content-library-sidebar'); ?>
       </div>
       <div class="library-index-content ast-col-md-9">
-        <?php if (have_posts() ) :
+        <?php if (have_posts() ) : $i = 1;
           while ( have_posts() ) : the_post(); ?>
             <?php get_template_part('template-parts/content-library-index-item'); ?>
-          <?php endwhile; wp_reset_postdata(); ?>
+            <?php if ($i % 3 == 0) : ?>
+              <div class="ba-clearfix ba-clearfix-lg"></div>
+            <?php endif; ?>
+            <?php if ($i % 2 == 0) : ?>
+              <div class="ba-clearfix ba-clearfix-md"></div>
+            <?php endif; ?>
+          <?php $i++; endwhile; wp_reset_postdata(); ?>
         <?php endif; ?>
     </div>
   </div>
@@ -118,6 +124,10 @@ get_header(); ?>
   .library-clear-filters-link:focus {
     color: lightgray;
     text-decoration: underline;
+  }
+  .library-index-content .blog-layout-1 {
+    padding-bottom: 1em;
+    border-bottom: none
   }
 </style>
 <?php get_footer(); ?>
