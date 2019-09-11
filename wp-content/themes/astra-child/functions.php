@@ -132,3 +132,24 @@ function redirect_to_login_page() {
     exit;
   }
 }
+
+
+
+/**
+ * This function modifies the main WordPress query to include an array of
+ * post types instead of the default 'post' post type.
+ *
+ * @param object $query  The original query.
+ * @return object $query The amended query.
+ */
+function ba_search_set_post_types( $query ) {
+
+    if ( $query->is_search ) {
+  $query->set( 'post_type', array( 'post', 'page', 'library', 'tribe_events') );
+    }
+
+    return $query;
+
+}
+
+add_filter( 'pre_get_posts', 'ba_search_set_post_types' );
