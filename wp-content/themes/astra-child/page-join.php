@@ -16,8 +16,7 @@
 get_header(); ?>
 
   <div class="entry-content clear" itemprop="text">
-    <div class="join-content-column">
-      <!-- <h1><?php //the_title(); ?></h1> -->
+    <div class="join-content-column for-large">
       <?php echo the_content(); ?>
     </div>
     <div class="join-selection-column">
@@ -71,7 +70,9 @@ get_header(); ?>
       </form>
       <span class="join-selection-subscribe-text">Not ready to become a member?<br><a href="<?php echo home_url(); ?>/subscribe">Subscribe to our newsletter</a></span>
     </div>
-
+    <div class="join-content-column for-small">
+      <?php echo the_content(); ?>
+    </div>
   </div>
 
 
@@ -82,14 +83,19 @@ get_header(); ?>
     max-width: 1200px;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    padding: 0 1rem;
+    padding: 0;
   }
   .join-selection-column {
     padding: 1rem;
     border: 1px solid lightgray;
     max-width: 600px;
     margin: auto;
+  }
+  .join-content-column.for-small {
     display: block;
+  }
+  .join-content-column.for-large {
+    display: none;
   }
   .join-selection-type {
     display: block;
@@ -107,7 +113,13 @@ get_header(); ?>
     margin-top: 1rem;
   }
   @media screen and (min-width: 900px) {
-    .join-content-column, .join-selection-column {
+    .entry-content {
+      padding: 0 1rem;
+    }
+    .join-content-column.for-small {
+      display: none;
+    }
+    .join-content-column.for-large, .join-selection-column {
       width: 60%;
       float: left;
       display: inline-block;
