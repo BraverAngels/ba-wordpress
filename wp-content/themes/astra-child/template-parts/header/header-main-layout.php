@@ -9,6 +9,8 @@
 .ba-primary-menu {
   font-family: "Nunito Sans", Karla;
   text-transform: uppercase;
+  width: 100%;
+  background: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -343,6 +345,20 @@
 </style>
 
 <script>
+window.addEventListener('DOMContentLoaded', (event) => {
+
+$( document ).scroll(function() {
+
+  if(window.scrollY < 56){
+    $('.ba-primary-menu').css("position", "relative");
+    $('.ba-secondary-menu').css("height", "56px");
+  } else {
+    $('.ba-primary-menu').css("position", "fixed");
+    $('.ba-primary-menu').css("top", "0");
+    $('.ba-secondary-menu').css("height", "144px");
+  }
+});
+
 $( document ).ready(function() {
   var $open_button = $('.ba-hamburger-open');
   var $close_button = $('.ba-hamburger-close');
@@ -385,6 +401,7 @@ $( document ).ready(function() {
   $close_button.on("mouseup", function(event) {
     closeMobileMenu();
   });
+});
 });
 </script>
 
