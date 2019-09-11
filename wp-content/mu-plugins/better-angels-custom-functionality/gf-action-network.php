@@ -7,6 +7,8 @@ add_action( 'gform_after_submission_16', 'record_action_network_donation', 10, 2
 
 add_action( 'gform_after_submission_25', 'record_action_network_donation', 10, 2 );
 
+add_action( 'gform_after_submission_28', 'record_action_network_donation', 10, 2 );
+
 add_action( 'gform_after_submission_15', 'record_action_network_member_info', 10, 2 );
 
 add_action( 'gform_after_submission_17', 'record_action_network_subscriber_info', 10, 2 );
