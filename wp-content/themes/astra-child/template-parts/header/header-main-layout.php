@@ -345,6 +345,13 @@
     padding: 20px 6px;
   }
 }
+@media screen and (max-width: 350px) {
+  .ba-primary-menu .ba-menu-logo {
+    min-width: 100px;
+    max-width: 100px;
+  }
+}
+
 </style>
 
 
