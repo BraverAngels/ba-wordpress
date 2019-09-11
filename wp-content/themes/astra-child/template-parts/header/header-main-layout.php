@@ -9,6 +9,8 @@
 .ba-primary-menu {
   font-family: "Nunito Sans", Karla;
   text-transform: uppercase;
+  width: 100%;
+  background: #fff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -326,6 +328,9 @@
     padding: 6px 20px !important;
     line-height: 1.8;
   }
+  .ba-menu-item .ba-dropdown-icon {
+    display: none;
+  }
 }
 @media screen and (max-width: 480px){
   .ba-cta-button {
@@ -341,52 +346,6 @@
   }
 }
 </style>
-
-<script>
-$( document ).ready(function() {
-  var $open_button = $('.ba-hamburger-open');
-  var $close_button = $('.ba-hamburger-close');
-  var $mobile_menu = $('.ba-mobile-menu-links');
-  var window_width = $(window).width();
-
-  function closeMobileMenu(){
-    $open_button.show();
-    $close_button.hide();
-    $mobile_menu.hide();
-    $(document).off("mousedown", closeMobileMenu);
-  }
-
-  function handleResize(){
-    if ($(window).width() !== window_width) {
-      closeMobileMenu()
-      $(window).off("resize", handleResize);
-    }
-    window_width = $(window).width();
-  }
-
-  function openMobileMenu(){
-    $open_button.hide();
-    $close_button.show();
-    $mobile_menu.show();
-    $(document).on("mousedown", closeMobileMenu);
-    $(window).on("resize", handleResize);
-  }
-
-  $open_button.on("mouseup", openMobileMenu);
-
-  $mobile_menu.on("mousedown", function(event) {
-    event.stopPropagation();
-  });
-
-  $close_button.on("mousedown", function(event) {
-    event.stopPropagation();
-  });
-
-  $close_button.on("mouseup", function(event) {
-    closeMobileMenu();
-  });
-});
-</script>
 
 
 <?php
@@ -542,3 +501,7 @@ function ba_get_menu_html($menu_array) {
 
   <?php echo ba_get_menu_html(ba_get_menu_array('Primary')); ?>
 </div>
+
+<script>
+
+</script>
