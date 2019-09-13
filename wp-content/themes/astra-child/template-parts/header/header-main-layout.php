@@ -89,7 +89,8 @@
   left: 0;
   display: none;
   z-index: 1;
-  box-shadow: 0 3px 3px 2px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 0 3px 3px 2px rgba(0,0,0,0.15);
+          box-shadow: 0 3px 3px 2px rgba(0,0,0,0.15);
 }
 .ba-primary-menu-desktop ul li:hover > ul,
 .ba-primary-menu-desktop ul li ul:hover,
