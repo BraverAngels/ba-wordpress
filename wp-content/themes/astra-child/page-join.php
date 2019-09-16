@@ -16,8 +16,14 @@
 get_header(); ?>
 
   <div class="entry-content clear" itemprop="text">
+    <div class="join-content-column for-small">
+      <h2><?php the_title(); ?></h2>
+      <h3 style="color: gray; font-family: 'Karla', sans-serif;">Become a Member Today!</h3>
+    </div>
     <div class="join-content-column for-large">
-      <?php echo the_content(); ?>
+      <h2><?php the_title(); ?></h2>
+      <h3 style="color: gray; font-family: 'Karla', sans-serif;">Become a Member Today!</h3>
+      <?php the_content(); ?>
     </div>
     <div class="join-selection-column">
       <h3>Select contribution type</h3>
@@ -71,7 +77,8 @@ get_header(); ?>
       <span class="join-selection-subscribe-text">Not ready to become a member?<br><a href="<?php echo home_url(); ?>/subscribe">Subscribe to our newsletter</a></span>
     </div>
     <div class="join-content-column for-small">
-      <?php echo the_content(); ?>
+      <br/>
+      <?php the_content(); ?>
     </div>
   </div>
 
