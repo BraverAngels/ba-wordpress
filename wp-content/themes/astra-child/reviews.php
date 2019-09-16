@@ -61,11 +61,32 @@ if ( post_password_required() ) {
     // If comments are closed and there are comments, let's leave a little note, shall we?
     if ( ! comments_open() ) :
       ?>
-      <p class="no-comments"><?php esc_html_e( 'Comments are closed.', '_s' ); ?></p>
+      <p class="no-comments"><?php esc_html_e( 'Reviews are closed.', '_s' ); ?></p>
       <?php
     endif;
   endif; // Check for have_comments().
-  comment_form(array('comment_field'=> '<p class="comment-form-comment"><label for="comment">' . _x( 'Review', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>', 'title_reply' => __( 'Leave a Review' ), 'label_submit' => __( 'Post Review' )));
+  if (is_user_logged_in()) :
+    comment_form(array('comment_field'=> '<p class="comment-form-comment"><em class="library-review-guide-link">Be sure to view our <strong><a target="_blank" href="https://dvbetterangels.wpengine.com/tips-for-reviewers/">tips for reviewers</a></strong> before posting a review!</em><label for="comment">' . _x( 'Review', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>', 'title_reply' => __( 'Leave a Review' ), 'label_submit' => __( 'Post Review' )));
+  else : ?>
+    <h3>Leave a Review</h3>
+    <div class="library-review-section-join-message">
+      <h4>You must be a dues-paying member of Better Angels to post a review.</h4>
+      <p>
+        <em>Already a member?</em> <a href="<?php echo home_url('login?redirect_to=' . get_the_permalink() ); ?>"><strong>Login</strong></a>
+      </p>
+      <p>
+        Membership dues are just <strong>$1 per month</strong>. <a href="<?php echo home_url('join?utm_source=website&utm_medium=join&utm_campaign=library_review'); ?>"><strong>Join now</strong></a> and also get access to:
+        <ul>
+          <li>Online book discussions</li>
+          <li>Free training to become a Better Angels organizer, citizen moderator, or debate chair</li>
+          <li>Invites to monthly members-only calls</li>
+          <li>Attend local Better Angels Alliance meetings or form your own</li>
+        </ul>
+      </p>
+      <p><a style="margin: 0;" class="ba-cta-button ba-cta-button-red" href="<?php echo home_url('join?utm_source=website&utm_medium=join&utm_campaign=library_review'); ?>">Become a member</a></p>
+    </div>
+  <?php endif;
+
   ?>
 
 </div><!-- #comments -->

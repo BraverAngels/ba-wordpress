@@ -22,7 +22,7 @@ get_header(); ?>
 
     <section class="ast-archive-description" style="text-align:center;border-radius: 3px;padding: 2rem 1.25rem;color: white;background:#23356c;background-image: url(https://www.better-angels.org/wp-content/uploads/2018/11/better-angels-depolarize-america-hero2-01-01.jpg); background-size:cover;background-position:center;">
       <h1 class="page-title ast-archive-title" style="color:white;">Better Angels Library</h1>
-      <p>A cool headline describing the purpose of the Better Angels library</p>
+      <p>Member-recommended books and resources to encourage dialogue and promote mutual understanding</p>
     </section>
 
     <?php astra_entry_before(); ?>
@@ -72,7 +72,7 @@ get_header(); ?>
         <?php endif; ?>
 
         <?php if ($ba_other_items->have_posts() ) : $i = 1;
-          echo "<div class='ast-col-sm-12 library-section-header'><h3>Member Recommended Readings</h3></div>";
+          echo "<div class='ast-col-sm-12 library-section-header'><h3>Member-recommended Readings</h3></div>";
           while ( $ba_other_items->have_posts() ) : $ba_other_items->the_post(); ?>
             <?php get_template_part('template-parts/content-library-index-item'); ?>
             <?php if ($i % 3 == 0) : ?>
