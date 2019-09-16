@@ -18,11 +18,11 @@ get_header(); ?>
   <div class="entry-content clear" itemprop="text">
     <div class="join-content-column for-small">
       <h2><?php the_title(); ?></h2>
-      <h3 style="color: gray; font-family: 'Karla', sans-serif;">Become a Member Today!</h3>
+      <h3 style="color: gray; font-family: 'Karla', sans-serif;"><em>Become a Member Today!</em></h3>
     </div>
     <div class="join-content-column for-large">
       <h2><?php the_title(); ?></h2>
-      <h3 style="color: gray; font-family: 'Karla', sans-serif;">Become a Member Today!</h3>
+      <h3 style="color: gray; font-family: 'Karla', sans-serif;"><em>Become a Member Today!</em></h3>
       <?php the_content(); ?>
     </div>
     <div class="join-selection-column">
