@@ -17,12 +17,12 @@ get_header(); ?>
 
   <div class="entry-content clear" itemprop="text">
     <div class="join-content-column for-small">
-      <h2 style="font-family: 'Nunito Sans', 'Karla';"><?php the_title(); ?></h2>
-      <h3 style="color: gray; font-family: 'Nunito Sans', 'Karla';"><em>Become a Member Today!</em></h3>
+      <h2 style="font-family: 'Nunito Sans', 'Karla'; margin-bottom: .5rem;"><?php the_title(); ?></h2>
+      <h3 style="color: gray; font-weight: 400; font-family: 'Nunito Sans', 'Karla';"><em>Become a Member Today!</em></h3>
     </div>
     <div class="join-content-column for-large">
-      <h2 style="font-family: 'Nunito Sans', 'Karla';"><?php the_title(); ?></h2>
-      <h3 style="color: gray; font-family: 'Nunito Sans', 'Karla';"><em>Become a Member Today!</em></h3>
+      <h2 style="font-family: 'Nunito Sans', 'Karla'; margin-bottom: .5rem;"><?php the_title(); ?></h2>
+      <h3 style="color: gray; font-weight: 400; font-family: 'Nunito Sans', 'Karla'; "><em>Become a Member Today!</em></h3>
       <?php the_content(); ?>
     </div>
     <div class="join-selection-column">
