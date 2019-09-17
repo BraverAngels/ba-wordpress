@@ -14,6 +14,8 @@
  * the visitor has not yet entered the password we will
  * return early without loading the comments.
  */
+$membership_ids = '3612, 3613, 3614, 3616, 3618, 3620, 3621, 3622, 3623, 3624, 3625, 3626, 3627, 3628, 3629, 3630, 3631, 3632, 3706';
+
 if ( post_password_required() ) {
   return;
 }
@@ -65,7 +67,8 @@ if ( post_password_required() ) {
       <?php
     endif;
   endif; // Check for have_comments().
-  if (is_user_logged_in()) :
+  
+  if (current_user_can('mepr-active','memberships: ' . $membership_ids)) :
     comment_form(array('comment_field'=> '<p class="comment-form-comment"><em class="library-review-guide-link">Be sure to view our <strong><a target="_blank" href="https://dvbetterangels.wpengine.com/tips-for-reviewers/">tips for reviewers</a></strong> before posting a review!</em><label for="comment">' . _x( 'Review', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>', 'title_reply' => __( 'Leave a Review' ), 'label_submit' => __( 'Post Review' )));
   else : ?>
     <h3>Leave a Review</h3>
@@ -85,8 +88,7 @@ if ( post_password_required() ) {
       </p>
       <p><a style="margin: 0;" class="ba-cta-button ba-cta-button-red" href="<?php echo home_url('join?utm_source=website&utm_medium=join&utm_campaign=library_review'); ?>">Become a member</a></p>
     </div>
-  <?php endif;
-
-  ?>
+  <?php
+  endif; ?>
 
 </div><!-- #comments -->
