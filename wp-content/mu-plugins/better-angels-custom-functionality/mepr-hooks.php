@@ -33,7 +33,8 @@ function ba_log_completed_transaction($event) {
   $person = array(
     "email_addresses" => [
       array(
-        'address' => $user->user_email
+        'address' => $user->user_email,
+        'status' => 'subscribed'
       )
     ]
   );
@@ -173,7 +174,8 @@ function send_new_user_data_to_action_network($user_id){
     "given_name" => $user_meta['first_name'][0],
     "email_addresses" => [
       array(
-        'address' => $user_data->user_email
+        'address' => $user_data->user_email,
+        'status' => 'subscribed'
       )
     ],
     "postal_addresses" => [
@@ -263,7 +265,8 @@ function send_updated_user_data_to_action_network($data){
     "given_name" => $data['user_first_name'],
     "email_addresses" => [
       array(
-        'address' => $data['user_email']
+        'address' => $data['user_email'],
+        'status' => 'subscribed'
       )
     ],
     "postal_addresses" => [

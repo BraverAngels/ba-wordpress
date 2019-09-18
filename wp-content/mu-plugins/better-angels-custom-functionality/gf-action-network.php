@@ -48,7 +48,8 @@ function record_action_network_subscriber_info($entry) {
     "given_name" =>  $entry['4'],
       "email_addresses" => [
         array(
-          'address' => $entry['2']
+          'address' => $entry['2'],
+          'status' => 'subscribed'
         )
       ],
       "postal_addresses" => [
@@ -117,7 +118,8 @@ function record_action_network_member_payment_b($entry) {
     "given_name" =>  $entry['41.3'],
     "email_addresses" => [
       array(
-        'address' => $entry['8']
+        'address' => $entry['8'],
+        'status' => 'subscribed'
       )
     ],
     "postal_addresses" => [
@@ -200,7 +202,8 @@ function record_action_network_member_info($entry) {
   $person = array(
     "email_addresses" => [
       array(
-        'address' => $_GET['email']
+        'address' => $_GET['email'],
+        'status' => 'subscribed'
       )
     ],
     "country" => "US",
@@ -275,7 +278,8 @@ function record_action_network_member_payment($entry) {
     "given_name" =>  $entry['41.3'],
       "email_addresses" => [
         array(
-          'address' => $entry['8']
+          'address' => $entry['8'],
+          'status' => 'subscribed'
         )
       ],
     "postal_addresses" => [
@@ -343,7 +347,8 @@ function record_action_network_donation($entry) {
     "given_name" =>  $entry['41.3'],
       "email_addresses" => [
         array(
-          'address' => $entry['8']
+          'address' => $entry['8'],
+          'status' => 'subscribed'
         )
       ],
     "postal_addresses" => [
