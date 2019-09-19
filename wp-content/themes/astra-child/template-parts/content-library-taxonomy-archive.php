@@ -30,11 +30,14 @@ get_header(); ?>
 
     <section class="ast-archive-description" style="text-align:center;border-radius: 3px;padding: 2rem 1.25rem;color: white;background:#23356c;background-image: url(https://www.better-angels.org/wp-content/uploads/2018/11/better-angels-depolarize-america-hero2-01-01.jpg); background-size:cover;background-position:center;">
       <h1 class="page-title ast-archive-title" style="color:white;">Better Angels Library</h1>
-      <p>Now Viewing: <?php echo single_cat_title( '', false ); ?> <a class="library-clear-filters-link" href="<?php echo home_url('/library'); ?>">Clear Filters</a></p>
+      <p>Now viewing: <?php echo single_cat_title( '', false ); ?> <a class="library-clear-filters-link" href="<?php echo home_url('/library'); ?>">Clear Filters</a></p>
     </section>
 
     <?php astra_entry_before(); ?>
     <div class="library-content-wrap" style="margin: 0 -20px;">
+      <div class="library-back-link-wrapper ast-col-md-12">
+        <a class="library-back-link" href="<?php echo home_url();?>/library">&times; Remove Filters</a><br/>
+      </div>
       <div class="library-sidebar ast-col-md-3">
         <?php get_template_part('template-parts/content-library-sidebar'); ?>
       </div>
