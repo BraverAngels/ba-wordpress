@@ -78,7 +78,7 @@ if ( post_password_required() ) {
         <em>Already a member?</em> <a href="<?php echo home_url('login?redirect_to=' . get_the_permalink() ); ?>"><strong>Login</strong></a>
       </p>
       <p>
-        Membership dues are just <strong>$1 per month</strong>. <a href="<?php echo home_url('join?utm_source=website&utm_medium=join&utm_campaign=library_review'); ?>"><strong>Join now</strong></a> and also get access to:
+        Membership dues as low as <strong>$12 per year</strong>. <a href="<?php echo home_url('join?utm_source=website&utm_medium=join&utm_campaign=library_review'); ?>"><strong>Join now</strong></a> and also get access to:
         <ul>
           <li>Online book discussions</li>
           <li>Free training to become a Better Angels organizer, citizen moderator, or debate chair</li>

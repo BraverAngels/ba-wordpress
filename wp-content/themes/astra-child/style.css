@@ -476,7 +476,7 @@ span.library-recommended-readings-header {
 .library-sidebar-inner .library-recommended-readings ul li {
   margin-bottom: .25rem;
   margin-top: .25rem;
-  display: inline-block;
+  display: block;
 
 }
 .library-section-header {
