@@ -78,7 +78,7 @@
 .ba-primary-menu-desktop li:focus-within a {
   outline: none;
 }
-.ba-primary-menu-desktop ul li ul {
+.ba-primary-menu-desktop ul li ul, .ba-cta-buttons li ul{
   visibility: hidden;
   opacity: 0;
   min-width: 12rem;
@@ -89,12 +89,13 @@
   left: 0;
   display: none;
   z-index: 1;
-  -webkit-box-shadow: 0 3px 3px 2px rgba(0,0,0,0.15);
-          box-shadow: 0 3px 3px 2px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 0 3px 3px 3px rgba(0,0,0,0.15);
+          box-shadow: 0 3px 3px 3px rgba(0,0,0,0.15);
 }
 .ba-primary-menu-desktop ul li:hover > ul,
 .ba-primary-menu-desktop ul li ul:hover,
-.ba-primary-menu-desktop ul li ul:focus {
+.ba-primary-menu-desktop ul li ul:focus,
+.ba-cta-buttons li:hover > ul {
    visibility: visible;
    opacity: 1;
    display: block;
@@ -206,6 +207,7 @@
 
 /* Call To Action Buttons ( Join Us / Donate ) */
 .ba-cta-buttons {
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -227,6 +229,20 @@
   background-color: #23356C	!important;
   color: white !important;
   border-color: #23356C	!important;
+}
+
+.ba-cta-button + .ba-primary-menu-cta-dropdown {
+  left: auto;
+  right: -1rem;
+}
+
+.ba-primary-menu-cta-dropdown li, .ba-primary-menu-cta-dropdown li a {
+  width: 100%;
+  text-align: center;
+}
+
+.ba-primary-menu-cta-dropdown li:last-child {
+  padding-top:0;
 }
 
 .ba-cta-button-white {
@@ -458,12 +474,24 @@ function ba_get_menu_html($menu_array) {
   </a>
   <?php echo ba_get_menu_html(ba_get_menu_array('Primary')); ?>
   <div class="ba-cta-buttons">
-    <a class="ba-cta-button ba-cta-button-white" href="<?php echo home_url("/donate?utm_source=website&utm_medium=donate&utm_campaign=upper_right"); ?>">
-      Donate
+
+    <li>
+    <a aria-haspopup="true" class="ba-cta-button ba-cta-button-red" href="<?php echo home_url("/donate?utm_source=website&utm_medium=donate&utm_campaign=upper_right"); ?>">
+      Support Us <i class="fa fa-chevron-down ba-dropdown-icon" aria-hidden="true"></i>
     </a>
-    <a class="ba-cta-button ba-cta-button-red" href="<?php echo home_url("/join?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
-      Join Us
-    </a>
+      <ul class="ba-primary-menu-cta-dropdown ba-sub-menu-container">
+        <li>
+          <a class="ba-cta-button ba-cta-button-white" href="<?php echo home_url("/donate?utm_source=website&utm_medium=donate&utm_campaign=upper_right"); ?>">
+            Make a donation
+          </a>
+        </li>
+        <li>
+          <a class="ba-cta-button ba-cta-button-white" href="<?php echo home_url("/join?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
+            Become a member
+          </a>
+        </li>
+      </ul>
+    </li>
   </div>
 </nav>
 
@@ -475,10 +503,7 @@ function ba_get_menu_html($menu_array) {
   </div>
   <div class="ba-cta-buttons">
     <a class="ba-cta-button ba-cta-button-white" href="<?php echo home_url("/donate?utm_source=website&utm_medium=donate&utm_campaign=upper_right"); ?>">
-      Donate
-    </a>
-    <a class="ba-cta-button ba-cta-button-red" href="<?php echo home_url("/join?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
-      Join Us
+      Support Us
     </a>
   </div>
   <div class="ba-hamburger-buttons">
