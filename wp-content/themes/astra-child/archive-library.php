@@ -10,20 +10,16 @@
 
 get_header(); ?>
 
-<?php if ( astra_page_layout() == 'left-sidebar' ) : ?>
-
-  <?php get_sidebar(); ?>
-
-<?php endif ?>
+  <section class="ast-archive-description" style="text-align:center;border-radius: 3px;padding: 3rem 1.25rem;color: white;background:#23356c;background-image: url(https://www.better-angels.org/wp-content/uploads/2019/09/lincolnbooks1.jpg); background-size:cover;background-position:center;">
+    <h1 class="page-title ast-archive-title" style="color:white;">Better Angels Library</h1>
+    <p>Member-recommended books and resources to encourage dialogue and promote mutual understanding</p>
+  </section>
 
   <div id="primary" <?php astra_primary_class(); ?>>
 
     <?php astra_primary_content_top(); ?>
 
-    <section class="ast-archive-description" style="text-align:center;border-radius: 3px;padding: 2rem 1.25rem;color: white;background:#23356c;background-image: url(https://www.better-angels.org/wp-content/uploads/2018/11/better-angels-depolarize-america-hero2-01-01.jpg); background-size:cover;background-position:center;">
-      <h1 class="page-title ast-archive-title" style="color:white;">Better Angels Library</h1>
-      <p>Member-recommended books and resources to encourage dialogue and promote mutual understanding</p>
-    </section>
+
 
     <?php astra_entry_before(); ?>
     <div class="library-content-wrap" style="margin: 0 -20px;">

@@ -359,7 +359,7 @@
     max-width: 130px;
   }
   .ba-primary-menu-mobile {
-    padding: 20px 6px;
+    padding: 9px 6px;
   }
 }
 @media screen and (max-width: 350px) {
@@ -437,6 +437,7 @@ function ba_get_menu_html($menu_array) {
   <div class="ba-secondary-menu-links">
     <?php if( is_user_logged_in() ): ?>
       <a href="<?php echo wp_logout_url(); ?>">Logout</a>
+      <a href="<?php echo esc_url(home_url('/members-portal')) ?>">Members Portal</a>
     <?php else: ?>
       <a href="<?php echo esc_url(home_url('/login')) ?>">Member Login</a>
     <?php endif; ?>
@@ -513,13 +514,18 @@ function ba_get_menu_html($menu_array) {
 </nav>
 <div class="ba-mobile-menu-links">
   <ul class="ba-mobile-menu-top-section">
-    <li>
-      <?php if( is_user_logged_in() ): ?>
+    <?php if( is_user_logged_in() ): ?>
+      <li>
         <a href="<?php echo wp_logout_url(); ?>">Logout</a>
-      <?php else: ?>
+      </li>
+      <li>
+        <a href="<?php echo esc_url(home_url('/members-portal')) ?>">Members Portal</a>
+      </li>
+    <?php else: ?>
+      <li>
         <a href="<?php echo esc_url(home_url('/login')) ?>">Member Login</a>
-      <?php endif; ?>
-    </li>
+      </li>
+    <?php endif; ?>
     <li>
       <a href="https://teespring.com/stores/better-angels-merchandise">
         Shop
