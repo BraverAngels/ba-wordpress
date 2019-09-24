@@ -4,9 +4,9 @@
     <a href="<?php the_permalink(); ?>" rel="bookmark">
       <?php the_post_thumbnail(); ?>
     </a>
-  <?php else; ?>
+  <?php else : ?>
     <a href="<?php the_permalink(); ?>" rel="bookmark">
-      <img src="https://www.better-angels.org/wp-content/uploads/2018/08/BA_Logo-1.png" />    
+      <img class="attachment-post-thumbnail size-post-thumbnail wp-post-image library-default-image" src="https://www.better-angels.org/wp-content/uploads/2018/08/BA_Logo-1.png" />
     </a>
   <?php endif; ?>
 

@@ -455,6 +455,10 @@ background-color: #ab2634 !important;
   max-height: 275px;
   width: auto;
 }
+.library-default-image {
+  max-width: 225px;
+  border: 1px solid lightgray;
+}
 .post-type-archive-library .blog-layout-1 {
   padding-bottom: 1em;
   border-bottom: none;
