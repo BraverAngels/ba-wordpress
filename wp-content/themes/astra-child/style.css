@@ -454,7 +454,12 @@ background-color: #ab2634 !important;
 .post-type-archive-library .attachment-post-thumbnail {
   max-height: 275px;
   width: auto;
+  margin-bottom: .5rem;
 }
+.post-type-archive-library .ast-article-post {
+  margin-bottom: 1.5rem;
+}
+
 .library-default-image {
   max-width: 225px;
   border: 1px solid lightgray;
