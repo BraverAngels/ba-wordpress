@@ -78,7 +78,7 @@
 .ba-primary-menu-desktop li:focus-within a {
   outline: none;
 }
-.ba-primary-menu-desktop ul li ul, .ba-cta-buttons li ul{
+.ba-primary-menu-desktop ul li ul {
   visibility: hidden;
   opacity: 0;
   min-width: 12rem;
@@ -89,13 +89,12 @@
   left: 0;
   display: none;
   z-index: 1;
-  -webkit-box-shadow: 0 3px 3px 3px rgba(0,0,0,0.15);
-          box-shadow: 0 3px 3px 3px rgba(0,0,0,0.15);
+  -webkit-box-shadow: 0 3px 3px 2px rgba(0,0,0,0.15);
+          box-shadow: 0 3px 3px 2px rgba(0,0,0,0.15);
 }
 .ba-primary-menu-desktop ul li:hover > ul,
 .ba-primary-menu-desktop ul li ul:hover,
-.ba-primary-menu-desktop ul li ul:focus,
-.ba-cta-buttons li:hover > ul {
+.ba-primary-menu-desktop ul li ul:focus {
    visibility: visible;
    opacity: 1;
    display: block;
@@ -207,7 +206,6 @@
 
 /* Call To Action Buttons ( Join Us / Donate ) */
 .ba-cta-buttons {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -229,20 +227,6 @@
   background-color: #23356C	!important;
   color: white !important;
   border-color: #23356C	!important;
-}
-
-.ba-cta-button + .ba-primary-menu-cta-dropdown {
-  left: auto;
-  right: -1rem;
-}
-
-.ba-primary-menu-cta-dropdown li, .ba-primary-menu-cta-dropdown li a {
-  width: 100%;
-  text-align: center;
-}
-
-.ba-primary-menu-cta-dropdown li:last-child {
-  padding-top:0;
 }
 
 .ba-cta-button-white {
@@ -359,7 +343,7 @@
     max-width: 130px;
   }
   .ba-primary-menu-mobile {
-    padding: 9px 6px;
+    padding: 20px 6px;
   }
 }
 @media screen and (max-width: 350px) {
@@ -437,7 +421,6 @@ function ba_get_menu_html($menu_array) {
   <div class="ba-secondary-menu-links">
     <?php if( is_user_logged_in() ): ?>
       <a href="<?php echo wp_logout_url(); ?>">Logout</a>
-      <a href="<?php echo esc_url(home_url('/members-portal')) ?>">Members Portal</a>
     <?php else: ?>
       <a href="<?php echo esc_url(home_url('/login')) ?>">Member Login</a>
     <?php endif; ?>
@@ -475,24 +458,12 @@ function ba_get_menu_html($menu_array) {
   </a>
   <?php echo ba_get_menu_html(ba_get_menu_array('Primary')); ?>
   <div class="ba-cta-buttons">
-
-    <li>
-    <a aria-haspopup="true" class="ba-cta-button ba-cta-button-red" href="<?php echo home_url("/donate?utm_source=website&utm_medium=donate&utm_campaign=upper_right"); ?>">
-      Support Us <i class="fa fa-chevron-down ba-dropdown-icon" aria-hidden="true"></i>
+    <a class="ba-cta-button ba-cta-button-white" href="<?php echo home_url("/subscribe?utm_source=website&utm_medium=donate&utm_campaign=upper_right"); ?>">
+      Subscribe
     </a>
-      <ul class="ba-primary-menu-cta-dropdown ba-sub-menu-container">
-        <li>
-          <a class="ba-cta-button ba-cta-button-white" href="<?php echo home_url("/donate?utm_source=website&utm_medium=donate&utm_campaign=upper_right"); ?>">
-            Make a donation
-          </a>
-        </li>
-        <li>
-          <a class="ba-cta-button ba-cta-button-white" href="<?php echo home_url("/join?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
-            Become a member
-          </a>
-        </li>
-      </ul>
-    </li>
+    <a class="ba-cta-button ba-cta-button-red" href="<?php echo home_url("/support-us?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
+      Support Us
+    </a>
   </div>
 </nav>
 
@@ -503,7 +474,10 @@ function ba_get_menu_html($menu_array) {
     </a>
   </div>
   <div class="ba-cta-buttons">
-    <a class="ba-cta-button ba-cta-button-white" href="<?php echo home_url("/donate?utm_source=website&utm_medium=donate&utm_campaign=upper_right"); ?>">
+    <a class="ba-cta-button ba-cta-button-white" href="<?php echo home_url("/subscribe?utm_source=website&utm_medium=donate&utm_campaign=upper_right"); ?>">
+      Subscribe
+    </a>
+    <a class="ba-cta-button ba-cta-button-red" href="<?php echo home_url("/support-us?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
       Support Us
     </a>
   </div>
@@ -514,18 +488,13 @@ function ba_get_menu_html($menu_array) {
 </nav>
 <div class="ba-mobile-menu-links">
   <ul class="ba-mobile-menu-top-section">
-    <?php if( is_user_logged_in() ): ?>
-      <li>
+    <li>
+      <?php if( is_user_logged_in() ): ?>
         <a href="<?php echo wp_logout_url(); ?>">Logout</a>
-      </li>
-      <li>
-        <a href="<?php echo esc_url(home_url('/members-portal')) ?>">Members Portal</a>
-      </li>
-    <?php else: ?>
-      <li>
+      <?php else: ?>
         <a href="<?php echo esc_url(home_url('/login')) ?>">Member Login</a>
-      </li>
-    <?php endif; ?>
+      <?php endif; ?>
+    </li>
     <li>
       <a href="https://teespring.com/stores/better-angels-merchandise">
         Shop
