@@ -28,30 +28,12 @@ get_header(); ?>
       <li>Something else</li>
     </ul>
     <p style="text-align: center;">
-      <a href="#donate"><strong>Make a One-time Donation</strong></a> OR <a href="#join"><strong>Become a dues-paying member</strong></a>
+      <a href="#join"><strong>Become a dues-paying member</strong></a> OR <a href="#donate"><strong>Donate</strong></a>
     </p>
   </section>
   <div class="entry-content clear" itemprop="text">
 
-    <section class="donate" id="donate" style="overflow:auto;padding-top: 75px;">
-      <div style="width: 100%; display: block;">
-        <hr/>
-        <div style="width: 50%; padding-right: 16px; display: inline-block;float: left;">
-          <h2>Donate</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-          <ul>
-            <li>Something</li>
-            <li>Something else</li>
-            <li>Something else</li>
-          </ul>
-        </div>
-        <div style="width: 50%; display: inline-block;float: left;height: 300px;background: lightgray;">
-          <p>DONATION FORM GOES HERE</p>
-        </div>
-      </div>
-      <br/>
-      <?php //echo do_shortcode('[gravityform id=16 title=false description=false ajax=true tabindex=49]'); ?>
-    </section>
+
 
     <section class="donate" id="join" style="overflow:auto;padding-top: 75px;">
       <div style="width: 100%; display: block;">
@@ -73,6 +55,26 @@ get_header(); ?>
       <?php //echo do_shortcode('[gravityform id=16 title=false description=false ajax=true tabindex=49]'); ?>
     </section>
 
+
+    <section class="donate" id="donate" style="overflow:auto;padding-top: 75px;">
+      <div style="width: 100%; display: block;">
+        <hr/>
+        <div style="width: 50%; padding-right: 16px; display: inline-block;float: left;">
+          <h2>Donate</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <ul>
+            <li>Something</li>
+            <li>Something else</li>
+            <li>Something else</li>
+          </ul>
+        </div>
+        <div style="width: 50%; display: inline-block;float: left;height: 300px;background: lightgray;">
+          <p>DONATION FORM GOES HERE</p>
+        </div>
+      </div>
+      <br/>
+      <?php //echo do_shortcode('[gravityform id=16 title=false description=false ajax=true tabindex=49]'); ?>
+    </section>
   </div>
 
 
