@@ -489,6 +489,13 @@ background-color: #ab2634 !important;
 .library-sidebar-inner .library-recommended-readings-header {
   color: gray;
 }
+.library-sidebar-inner .library-sidebar-contact-info{
+  font-size: .875rem;
+  color: gray;
+  display: inline-block;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
 span.library-recommended-readings-header {
   line-height: 1.2;
   display: inline-block;
