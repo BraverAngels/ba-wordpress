@@ -11,7 +11,7 @@
 /**
  * Define Constants
  */
-define( 'CHILD_THEME_ASTRA_CHILD_VERSION', '1.0.11' );
+define( 'CHILD_THEME_ASTRA_CHILD_VERSION', '1.0.12' );
 
 add_action('wp_enqueue_scripts', 'use_jquery_from_google');
 
@@ -39,6 +39,10 @@ function child_enqueue_styles() {
 
   wp_enqueue_style( 'astra-child-theme-css', get_stylesheet_directory_uri() . '/style.css', array('astra-theme-css'), CHILD_THEME_ASTRA_CHILD_VERSION, 'all' );
   wp_enqueue_script( 'mobile-header-js', get_stylesheet_directory_uri() . '/scripts/header.js', ['jquery'], '1.0.2', true );
+
+  if (is_page('join')) {
+    wp_enqueue_script( 'join-js', get_stylesheet_directory_uri() . '/scripts/join.js', [], '1.0.0', true );
+  }
 
 }
 
@@ -143,14 +147,13 @@ function redirect_to_login_page() {
  * @param object $query  The original query.
  * @return object $query The amended query.
  */
+
 function ba_search_set_post_types( $query ) {
+  if ( $query->is_search ) {
+    $query->set( 'post_type', array( 'post', 'page', 'library', 'tribe_events') );
+  }
 
-    if ( $query->is_search ) {
-  $query->set( 'post_type', array( 'post', 'page', 'library', 'tribe_events') );
-    }
-
-    return $query;
-
+  return $query;
 }
 
 add_filter( 'pre_get_posts', 'ba_search_set_post_types' );
