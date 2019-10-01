@@ -470,15 +470,22 @@ body, button, input, select, textarea {
     max-width: 40%;
   }
   .join-selection-type {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-wrap: wrap;
-    flex-grow: 1;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
     margin-bottom: 1rem;
   }
   .join-selection-type-item {
     padding: 10px 10px;
     display: inline-block;
-    flex: 1;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
   }
   .join-selection-options ul li {
     min-width: 33%;
@@ -503,14 +510,21 @@ body, button, input, select, textarea {
 .join-selection-options ul {
   list-style: none;
   margin-left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 .join-selection-options ul li {
   display: inline-block;
   min-width: auto;
-  flex: 1;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
   padding: .125rem;
 }
 .join-selection-options ul li a{
@@ -525,6 +539,8 @@ body, button, input, select, textarea {
   display: inline-block;
 }
 .join-selection-amount {
+  -webkit-transition: none;
+  -o-transition: none;
   transition: none;
 }
 .join-selection-options ul li a:hover,
