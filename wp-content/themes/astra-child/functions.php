@@ -11,7 +11,7 @@
 /**
  * Define Constants
  */
-define( 'CHILD_THEME_ASTRA_CHILD_VERSION', '1.0.10' );
+define( 'CHILD_THEME_ASTRA_CHILD_VERSION', '1.0.11' );
 
 add_action('wp_enqueue_scripts', 'use_jquery_from_google');
 
@@ -100,7 +100,7 @@ function inline_scripts() {
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-93943838-2');
+      gtag('config', 'UA-93943838-2', { 'optimize_id': 'GTM-K5FLDKP'});
     </script>
 
     <?php
