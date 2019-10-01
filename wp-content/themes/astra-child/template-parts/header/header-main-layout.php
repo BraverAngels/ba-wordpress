@@ -165,12 +165,27 @@
   margin: 0 0 10px 0;
   padding: 12px 0 12px 50px;
 }
+.ba-scroll-to-top {
+  display: none;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background-color: #f2f2f2;
+  border-radius: 3px;
+  opacity: .9;
+}
+.ba-scroll-to-top a {
+  display: inline-block;
+  color: black;
+  padding: 0 .5rem;
+}
 
 /* Blue Background Menu with Social Icons, Login, Logout, etc. */
 .ba-secondary-menu {
   background-color: #23356C;
   padding: 7px 20px;
   text-align: right;
+  height: 56px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -180,6 +195,9 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
+}
+.ba-secondary-menu.toggled {
+  height: 144px;
 }
 .ba-secondary-menu a {
   color: #fff;
@@ -218,7 +236,7 @@
   font-weight: bold;
   text-transform: uppercase;
   border-radius: 3px;
-  padding: 10px 20px !important;
+  padding: 10px !important;
   display: inline-block;
   white-space: nowrap;
   line-height: 1.5;
@@ -305,7 +323,7 @@
   }
   .ba-cta-button {
     font-size: 14px;
-    padding: 10px !important;
+    padding: 10px 8px !important;
   }
 }
 @media screen and (max-width: 960px){
@@ -326,17 +344,23 @@
   }
   .ba-cta-button {
     font-size: 14px;
-    padding: 6px 20px !important;
+    padding: 6px 10px !important;
     line-height: 1.8;
   }
   .ba-menu-item .ba-dropdown-icon {
     display: none;
   }
+  .ba-secondary-menu.toggled {
+    height: 56px;
+  }
+  .ba-scroll-to-top.toggled {
+    display: inline-block;
+  }
 }
 @media screen and (max-width: 480px){
   .ba-cta-button {
     font-size: 12px;
-    padding: 6px !important;
+    padding: 6px 8px !important;
   }
   .ba-primary-menu .ba-menu-logo {
     min-width: 130px;
@@ -351,6 +375,7 @@
     min-width: 100px;
     max-width: 100px;
   }
+
 }
 
 </style>
@@ -458,9 +483,6 @@ function ba_get_menu_html($menu_array) {
   </a>
   <?php echo ba_get_menu_html(ba_get_menu_array('Primary')); ?>
   <div class="ba-cta-buttons">
-    <a class="ba-cta-button ba-cta-button-white" href="<?php echo home_url("/subscribe?utm_source=website&utm_medium=donate&utm_campaign=upper_right"); ?>">
-      Subscribe
-    </a>
     <a class="ba-cta-button ba-cta-button-red" href="<?php echo home_url("/support-us?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
       Support Us
     </a>
@@ -474,9 +496,6 @@ function ba_get_menu_html($menu_array) {
     </a>
   </div>
   <div class="ba-cta-buttons">
-    <a class="ba-cta-button ba-cta-button-white" href="<?php echo home_url("/subscribe?utm_source=website&utm_medium=donate&utm_campaign=upper_right"); ?>">
-      Subscribe
-    </a>
     <a class="ba-cta-button ba-cta-button-red" href="<?php echo home_url("/support-us?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
       Support Us
     </a>
@@ -510,6 +529,6 @@ function ba_get_menu_html($menu_array) {
   <?php echo ba_get_menu_html(ba_get_menu_array('Primary')); ?>
 </div>
 
-<script>
-
-</script>
+<div class="ba-scroll-to-top">
+  <a href="#">&#8593;</a>
+</div>

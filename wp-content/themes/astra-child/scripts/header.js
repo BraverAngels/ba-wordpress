@@ -1,16 +1,16 @@
-console.log("script working");
-
 ( function( $ ) {
 
 
   $( document ).scroll(function() {
     if(window.scrollY < 56){
-      $('.ba-primary-menu').css("position", "relative");
-      $('.ba-secondary-menu').css("height", "56px");
+      $('.ba-primary-menu-desktop').css("position", "relative");
+      $('.ba-secondary-menu').removeClass('toggled');
+      $('.ba-scroll-to-top').removeClass('toggled');
     } else {
-      $('.ba-primary-menu').css("position", "fixed");
-      $('.ba-primary-menu').css("top", "0");
-      $('.ba-secondary-menu').css("height", "144px");
+      $('.ba-primary-menu-desktop').css("position", "fixed");
+      $('.ba-primary-menu-desktop').css("top", "0");
+      $('.ba-secondary-menu').addClass('toggled');
+      $('.ba-scroll-to-top ').addClass('toggled');
     }
   });
 
