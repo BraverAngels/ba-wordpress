@@ -968,12 +968,14 @@ background-color: #ab2634 !important;
 .library-index-entry-title {
   margin-top: 1rem;
 }
-.post-type-archive-library .attachment-post-thumbnail {
+.post-type-archive-library .attachment-post-thumbnail,
+.tax-library_category .attachment-post-thumbnail{
   max-height: 275px;
   width: auto;
   margin-bottom: .5rem;
 }
-.post-type-archive-library .ast-article-post {
+.post-type-archive-library .ast-article-post,
+.tax-library_category .ast-article-post {
   margin-bottom: 1.5rem;
 }
 
@@ -981,7 +983,8 @@ background-color: #ab2634 !important;
   max-width: 225px;
   border: 1px solid lightgray;
 }
-.post-type-archive-library .blog-layout-1 {
+.post-type-archive-library .blog-layout-1,
+.tax-library_category .blog-layout-1 {
   padding-bottom: 1em;
   border-bottom: none;
 }
