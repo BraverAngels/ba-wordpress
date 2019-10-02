@@ -908,13 +908,15 @@ background-color: #ab2634 !important;
   # Library
 */
 
-.post-type-archive-library .ast-container {
+.post-type-archive-library .ast-container,
+.tax-library_category .ast-container {
   margin: 0;
   width: 100%;
   padding: 0;
   max-width: 100%;
 }
-.post-type-archive-library .ast-container .content-area {
+.post-type-archive-library .ast-container .content-area,
+.tax-library_category .ast-container .content-area {
   max-width: 1240px;
   margin-left: auto !important;
   margin-right: auto !important;
@@ -958,10 +960,6 @@ background-color: #ab2634 !important;
 }
 .library-reviews-area .reply {
   display: none;
-}
-
-.single-memberpressproduct .ast-container {
-  max-width: 800px;
 }
 
 .library-entry-title {
@@ -1030,6 +1028,10 @@ background-color: #ab2634 !important;
   margin-top: .375rem;
   display: block;
 }
+.library-labels-list li.current-cat > a {
+  font-weight: bold;
+  text-decoration: underline;
+}
 .library-section-header {
   margin-bottom: 1rem;
 }
@@ -1089,7 +1091,9 @@ background-color: #ab2634 !important;
 /**
   # Memberpress overrides
 */
-
+.single-memberpressproduct .ast-container {
+  max-width: 800px;
+}
 .mepr-unauthorized-message {
   margin: 1rem -.5rem;
   min-height: 200px;

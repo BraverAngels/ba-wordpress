@@ -68,7 +68,7 @@ get_header(); ?>
         <?php endif; ?>
 
         <?php if ($ba_other_items->have_posts() ) : $i = 1;
-          echo "<div class='ast-col-sm-12 library-section-header'><h3>Member-Recommended Readings</h3></div>";
+          echo "<div class='ast-col-sm-12 library-section-header'><h3>Member-Recommended Readings</h3><a class='library-view-all-link' href='" . home_url('/library/categories/member-recommended-readings#primary') . "'>[View All]</a></div>";
           while ( $ba_other_items->have_posts() ) : $ba_other_items->the_post(); ?>
             <?php get_template_part('template-parts/content-library-index-item'); ?>
             <?php if ($i % 3 == 0) : ?>
