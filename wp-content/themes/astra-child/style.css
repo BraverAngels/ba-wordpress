@@ -916,11 +916,12 @@ background-color: #ab2634 !important;
 }
 .post-type-archive-library .ast-container .content-area {
   max-width: 1240px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto !important;
+  margin-right: auto !important;
   padding-left: 20px;
   padding-right: 20px;
   margin-top: 2rem !important;
+  float: none !important;
 }
 .library-back-link-wrapper {
   overflow: auto;
@@ -986,7 +987,7 @@ background-color: #ab2634 !important;
   padding-bottom: 1em;
   border-bottom: none;
 }
-.library-labels-list, .library-reading-rooms-list  {
+.library-labels-list  {
   margin: 0;
   list-style: none;
 }
@@ -995,6 +996,9 @@ background-color: #ab2634 !important;
 }
 .library-labels-list li{
   font-size: 16px;
+  line-height: 1.2;
+  margin-bottom: .25rem;
+  margin-top: .25rem;
 }
 .library-sidebar {
   padding-bottom: 1.5rem;
@@ -1014,21 +1018,17 @@ background-color: #ab2634 !important;
   margin-top: 1rem;
   line-height: 1.5;
 }
-span.library-recommended-readings-header {
-  line-height: 1.2;
-  display: inline-block;
-  margin-top: .25rem;
-}
-.library-sidebar-inner .library-recommended-readings ul {
+
+.library-labels-list li ul {
   list-style: none;
   line-height: 1.2;
-  margin-left: .25rem;
-}
-.library-sidebar-inner .library-recommended-readings ul li {
+  margin-left: .5rem;
   margin-bottom: .25rem;
-  margin-top: .25rem;
+}
+.library-labels-list li ul li {
+  margin-bottom: .375rem;
+  margin-top: .375rem;
   display: block;
-
 }
 .library-section-header {
   margin-bottom: 1rem;
