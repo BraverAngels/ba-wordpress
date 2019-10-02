@@ -69,11 +69,13 @@ function ba_get_menu_html($menu_array) {
 <nav role="navigation" class="ba-secondary-menu">
   <div class="ba-secondary-menu-links">
     <?php if( is_user_logged_in() ): ?>
+      <a href="<?php echo esc_url(home_url('/members-portal')) ?>">Members Portal</a>
+      <a href="<?php echo esc_url(home_url('/account?action=subscriptions')) ?>">My Account</a>
       <a href="<?php echo wp_logout_url(); ?>">Logout</a>
+      <span style="color:white">&nbsp;|&nbsp;</span>
     <?php else: ?>
       <a href="<?php echo esc_url(home_url('/login')) ?>">Member Login</a>
     <?php endif; ?>
-
     <a href="https://teespring.com/stores/better-angels-merchandise">
       Shop
     </a>
@@ -131,13 +133,23 @@ function ba_get_menu_html($menu_array) {
 </nav>
 <div class="ba-mobile-menu-links">
   <ul class="ba-mobile-menu-top-section">
-    <li>
+
       <?php if( is_user_logged_in() ): ?>
-        <a href="<?php echo wp_logout_url(); ?>">Logout</a>
+        <li>
+          <a href="<?php echo esc_url(home_url('/members-portal')) ?>">Members Portal</a>
+        </li>
+        <li>
+          <a href="<?php echo esc_url(home_url('/account?action=subscriptions')) ?>">My Account</a>
+        </li>
+        <li>
+          <a href="<?php echo wp_logout_url(); ?>">Logout</a>
+        </li>
       <?php else: ?>
-        <a href="<?php echo esc_url(home_url('/login')) ?>">Member Login</a>
+        <li>
+          <a href="<?php echo esc_url(home_url('/login')) ?>">Member Login</a>
+        </li>
       <?php endif; ?>
-    </li>
+
     <li>
       <a href="https://teespring.com/stores/better-angels-merchandise">
         Shop
