@@ -31,7 +31,7 @@ get_header(); ?>
       <div class="library-index-content ast-col-md-9">
         <?php $ba_docs_query = new WP_Query( array(
             'post_type' => 'library',
-            'nopaging' => true,
+            'max_num_pages' => '1',
             'posts_per_page' => '3',
             'tax_query' => array(
                 array(
@@ -43,6 +43,8 @@ get_header(); ?>
         ) ); ?>
         <?php $ba_other_items = new WP_Query( array(
             'post_type' => 'library',
+            'max_num_pages' => '1',
+            'posts_per_page' => '6',
             'tax_query' => array(
                 array(
                     'taxonomy' => 'library_category',
