@@ -112,11 +112,10 @@ get_header(); ?>
           </p>
         </div>
         <div style="width: 40%;margin-bottom: 1rem; display: inline-block;float: left;padding: 1rem; border: 1px solid lightgray; background: white;">
-          <?php echo do_shortcode('[gravityform id=16 title=false description=false ajax=true tabindex=49]'); ?>
+          <?php echo do_shortcode('[gravityform id=29 title=false description=false ajax=true tabindex=49]'); ?>
         </div>
       </div>
-      <br/>
-      <?php //echo do_shortcode('[gravityform id=16 title=false description=false ajax=true tabindex=49]'); ?>
+      <br/>      
     </section>
   </div>
 
