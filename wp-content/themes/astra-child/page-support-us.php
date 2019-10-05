@@ -26,7 +26,7 @@ get_header(); ?>
     </div>
   </section>
   <div class="entry-content clear" itemprop="text">
-    <section class="donate" id="join" style="overflow:auto;padding-top: 75px;">
+    <section class="donate" id="join" style="overflow:auto;padding-top: 100px; padding-bottom: 50px;">
       <div style="width: 100%; display: block;">
         <div style="color: white; width: 50%; padding-right: 16px; display: inline-block;float: left;">
           <h2 style="color: white; ">Become a Member</h2>
@@ -101,7 +101,7 @@ get_header(); ?>
     </section>
 
 
-    <section class="donate" id="donate" style="overflow:auto;padding-top: 75px;">
+    <section class="donate" id="donate" style="overflow:auto;padding-top: 100px;padding-bottom: 50px;">
       <div style="width: 100%; display: block;">
         <div style="width: 50%; color: white; padding-right: 16px; display: inline-block;float: left;">
           <h2 style="color: white;">Donate</h2>
@@ -115,7 +115,7 @@ get_header(); ?>
           <?php echo do_shortcode('[gravityform id=29 title=false description=false ajax=true tabindex=49]'); ?>
         </div>
       </div>
-      <br/>      
+      <br/>
     </section>
   </div>
 
@@ -157,11 +157,11 @@ get_header(); ?>
       background-color: rgba(255,255,255, .7);
     }
     #donate {
-      background: #23356C;
+      background: #bc2f2c;
       padding-left: 2rem;
     }
     #join {
-      background: #bc2f2c;
+      background: #23356C;
       padding-left: 2rem;
     }
 
