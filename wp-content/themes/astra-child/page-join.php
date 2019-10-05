@@ -82,7 +82,6 @@ get_header(); ?>
   </div>
 </div>
 
-
 <noscript>
   <style>
     .screen-reader-label {
