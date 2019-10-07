@@ -104,7 +104,7 @@ function inline_scripts() {
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'UA-93943838-2', { 'optimize_id': 'GTM-K5FLDKP'});
+      gtag('config', 'UA-93943838-2');
     </script>
 
     <?php
