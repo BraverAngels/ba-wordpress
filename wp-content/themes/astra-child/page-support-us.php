@@ -191,6 +191,13 @@ get_header(); ?>
       margin-top: 1rem;
     }
 
+    #donate #gform_submit_button_29 {
+      background: #23356c;
+    }
+    #donate #gform_submit_button_29:hover,
+    #donate #gform_submit_button_29:focus {
+      background: #ab2634;
+    }
 
     #donate .donate-content,
     #donate .donate-content h2 {
@@ -223,9 +230,6 @@ get_header(); ?>
       max-width: 1100px;
       margin-left: auto;
       margin-right: auto;
-    }
-    #join #join-submit-button {
-      background-color: #27b758;
     }
 
     #join .join-content,
