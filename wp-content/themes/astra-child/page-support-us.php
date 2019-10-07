@@ -170,6 +170,13 @@ get_header(); ?>
       padding: 1rem .5rem;
     }
 
+    @media screen and (min-width: 961px) {
+      #donate {
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+    }
+
     #donate, .donate-inner {
       overflow: auto;
       display: block;
@@ -224,6 +231,14 @@ get_header(); ?>
       background: #23356C;
       padding: 1rem .5rem;
     }
+
+    @media screen and (min-width: 961px) {
+      #join {
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+    }
+
     #join .join-inner {
       overflow: auto;
       display: block;
