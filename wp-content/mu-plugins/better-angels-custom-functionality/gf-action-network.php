@@ -9,6 +9,8 @@ add_action( 'gform_after_submission_25', 'record_action_network_donation', 10, 2
 
 add_action( 'gform_after_submission_28', 'record_action_network_donation', 10, 2 );
 
+add_action( 'gform_after_submission_29', 'record_action_network_donation_b', 10, 2 );
+
 add_action( 'gform_after_submission_15', 'record_action_network_member_info', 10, 2 );
 
 add_action( 'gform_after_submission_17', 'record_action_network_subscriber_info', 10, 2 );
@@ -379,6 +381,73 @@ function record_action_network_donation($entry) {
   return $actionnetwork_response;
 
 }
+
+// NEW donate form
+
+function record_action_network_donation_b($entry) {
+
+  if (!AN_KEY) {
+    return;
+  }
+  $actionnetwork_url = AN_BASE . '/fundraising_pages/' . AN_FUNDRAISING_ID . '/donations';
+
+  $transaction_id = $entry['transaction_id'];
+
+  if (!$transaction_id) {
+    return;
+  }
+
+  if ($entry['5'] != 'Other|0') {
+    $amount = $entry['5'];
+  } else {
+    $amount = $entry['11'];
+  }
+
+  $donation_value = convert_value_to_float($amount);
+
+  $identifier_prefix = 'stripe:';
+
+
+  $person = array(
+    "family_name" =>  $entry['41.6'],
+    "given_name" =>  $entry['41.3'],
+    "email_addresses" => [
+      array(
+        'address' => $entry['8'],
+        'status' => 'subscribed'
+      )
+    ],
+    "postal_addresses" => [
+      array(
+        'postal_code' => $entry['3.5']
+      )
+    ],
+    "country" => "US",
+    "language" => "en",
+    "custom_fields" => create_custom_fields($entry, $donation_value, false)
+  );
+
+  $fields = array(
+    'identifiers' => [$identifier_prefix . $transaction_id], // $transaction_id
+    'recipients' => [array(
+      'display_name' => 'Better Angels',
+      'amount' => $donation_value,
+    )],
+    'person' => $person,
+    'action_network:recurrence' => array(
+      'recurring' => false,
+    )
+  );
+
+  $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
+
+  return $actionnetwork_response;
+
+}
+
+
+
+
 
 
 function ba_curl_post($url, $fields = []) {
