@@ -33,7 +33,7 @@ function fb_pixel_inline_scripts() {
         if(!sessionStorage.getItem('new_donation')) {
           trackDonationInfo();
         }
-      } else if (window.location.pathname.includes("/join/") || window.location.pathname.includes("/donate/")) {
+      } else if (window.location.pathname.includes("/support-us") || window.location.pathname.includes("/donate/")) {
         fbq('track', 'InitiateCheckout');
       } else if (window.location.pathname.includes("/event/")) {
         document.addEventListener('click', function (event) {
