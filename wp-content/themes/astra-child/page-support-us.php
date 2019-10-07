@@ -20,7 +20,7 @@ get_header(); ?>
       <h3 style="color: dark-gray; font-weight: 400; font-family: 'Nunito Sans', 'Karla'; "><em>Join 8,000+ Americans in supporting the nation’s largest political depolarization group as a <a href="#join"><strong>dues-paying member</strong></a>, or with a <a href="#donate"><strong>one-time donation!</strong></a></em></h3>
       <br/>
       <p>
-        <a href="#">Learn more about how your contribution supports our mission</a>
+        <a href="https://www.better-angels.org/our-story/#funding">Learn more about how your contribution supports our mission</a>
       </p>
     </div>
   </section>
