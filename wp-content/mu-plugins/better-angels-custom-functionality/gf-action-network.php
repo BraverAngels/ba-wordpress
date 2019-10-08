@@ -11,6 +11,8 @@ add_action( 'gform_after_submission_28', 'record_action_network_donation', 10, 2
 
 add_action( 'gform_after_submission_29', 'record_action_network_donation_b', 10, 2 );
 
+add_action( 'gform_after_submission_30', 'record_action_network_donation_b', 10, 2 );
+
 add_action( 'gform_after_submission_15', 'record_action_network_member_info', 10, 2 );
 
 add_action( 'gform_after_submission_17', 'record_action_network_subscriber_info', 10, 2 );
