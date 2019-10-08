@@ -16,12 +16,8 @@
 get_header(); ?>
   <section class="header" style="overflow: auto; background-size: cover; background-image: url(https://www.better-angels.org/wp-content/uploads/2019/09/2019-BA-Convention-631.jpg);">
     <div class="header-inner">
-      <h2 style="font-family: 'Nunito Sans', 'Karla'; margin-bottom: .5rem;">Support Us<?php //the_title(); ?></h2>
-      <h3 style="color: dark-gray; font-weight: 400; font-family: 'Nunito Sans', 'Karla'; "><em>Join 8,000+ Americans in supporting the nation’s largest political depolarization group as a <a href="#join"><strong>dues-paying member</strong></a>, or with a <a href="#donate"><strong>one-time donation!</strong></a></em></h3>
-      <br/>
-      <p>
-        <a href="https://www.better-angels.org/our-story/#funding">Learn more about how your contribution supports our mission</a>
-      </p>
+      <h2 style="font-family: 'Nunito Sans', 'Karla'; margin-bottom: .5rem;">Support Us</h2>
+      <h3 style="color: #212121; margin-bottom: 2rem; font-weight: 400; font-family: 'Nunito Sans', 'Karla'; "><em>Join 8,000+ Americans in supporting the nation’s largest political depolarization movement as a <a href="#join"><strong>dues-paying member</strong></a>, or with a <a href="#donate"><strong>one-time donation!</strong></a></em></h3>
     </div>
   </section>
   <div class="entry-content clear" itemprop="text">
@@ -29,39 +25,25 @@ get_header(); ?>
       <div class="join-inner">
         <div class="join-content">
           <h2>Become a Member</h2>
-          <p><em>Better Angels members can:</em></p>
+          <p><em>Better Angels membership requires dues of just $1 per month (or $12 a year), but many of our members generously choose to give more. Members can:</em></p>
           <ul>
-            <li>Organize meaningful workshops and debates in their communities to bridge political differences at home (we’ve had over 230 in 2019 to date!)</li>
+            <li>Organize meaningful workshops and debates in their communities to bridge political differences (we’ve had over 250 workshops in 2019 to date!)</li>
             <li>Build community alliances that bring their neighbors together</li>
-            <li>Receive valuable training as a moderator and/or debate chair</li>
-            <li>Take the online, interactive Skills Workshop</li>
-            <li>Contribute to “The Conversation,” the Better Angels blog</li>
-            <li>Get access to member-only meetings, calls, and materials with “red” and “blue” activists from across the country</li>
-            <li><em>Feel great about helping remedy one of our nation’s greatest challenges: increasing partisanship and polarization!</em></li>
+            <li>Receive valuable training as a workshop moderator and/or debate chair</li>
+            <li>Take the online interactive Skills Workshop</li>
+            <li>Contribute to “The Conversation,” the Better Angels media network</li>
+            <li>Get access to member-only meetings, calls, and materials with “red” and “blue” members and leaders from across the country</li>
+            <li><em>Join the nation’s largest grassroots citizens’ movement dedicated to bringing Americans together to bridge our partisan divide</em></li>
           </ul>
         </div>
 
         <div class="join-selection-column" style="background: white;">
           <h3>Choose your level of support</h3>
           <div class="join-selection-type">
-
             <button class="join-selection-type-item selected" data-toggle="monthly-options">Monthly</button>
             <button class="join-selection-type-item" data-toggle="yearly-options">Yearly</button>
-            <button class="join-selection-type-item" data-toggle="one-time-gift-options">One Time Gift</button>
           </div>
             <div class="join-selection-options-wrap">
-              <div id="one-time-gift-options" class="join-selection-options">
-                <span class="join-description">Select contribution amount</span>
-                <ul>
-                  <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/one-time-12/">$12</a></li>
-                  <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/one-time-25/">$25</a></li>
-                  <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/one-time-50/">$50</a></li>
-                  <li><a data-autoselect class="join-selection-amount" href="<?php echo home_url(); ?>/join/one-time-100/">$100</a></li>
-                  <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/one-time-250/">$250</a></li>
-                  <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/one-time-500/">$500</a></li>
-                </ul>
-              </div>
-
               <div id="yearly-options" class="join-selection-options">
                 <span class="join-description">Select yearly contribution amount</span>
                 <ul>
@@ -102,7 +84,7 @@ get_header(); ?>
         <div class="donate-content">
           <h2 style="color: white;">Donate</h2>
           <p>
-            Your contribution will be used to fund programming in all fifty states, innovative online workshops, and outreach online and on social media -- where our discourse is often at its most dehumanizing and upsetting! All of this matters for our organization and for the health of our country.
+            Your contribution will be used to support our grassroots programming in all fifty states, expand our resources online, and fund our upcoming 2020 tour and National Convention.
             <br/>
             Better Angels is a 501(c)3 non-profit, and all donations are tax deductible. Thank you for your support!
           </p>
