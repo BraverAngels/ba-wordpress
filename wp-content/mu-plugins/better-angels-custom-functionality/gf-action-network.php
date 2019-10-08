@@ -389,6 +389,7 @@ function record_action_network_donation_b($entry) {
   if (!AN_KEY) {
     return;
   }
+
   $actionnetwork_url = AN_BASE . '/fundraising_pages/' . AN_FUNDRAISING_ID . '/donations';
 
   $transaction_id = $entry['transaction_id'];
@@ -396,6 +397,8 @@ function record_action_network_donation_b($entry) {
   if (!$transaction_id) {
     return;
   }
+
+  $tags = [];
 
   if ($entry['5'] != 'Other|0') {
     $amount = $entry['5'];
@@ -407,6 +410,9 @@ function record_action_network_donation_b($entry) {
 
   $identifier_prefix = 'stripe:';
 
+  if ( strpos($entry['source_url'], 'twenty-twenty') !== false ) {
+    $tags[] = '2020 Campaign Donor';
+  }
 
   $person = array(
     "family_name" =>  $entry['41.6'],
@@ -434,6 +440,7 @@ function record_action_network_donation_b($entry) {
       'amount' => $donation_value,
     )],
     'person' => $person,
+    'add_tags' => $tags,
     'action_network:recurrence' => array(
       'recurring' => false,
     )
@@ -442,7 +449,6 @@ function record_action_network_donation_b($entry) {
   $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
 
   return $actionnetwork_response;
-
 }
 
 
