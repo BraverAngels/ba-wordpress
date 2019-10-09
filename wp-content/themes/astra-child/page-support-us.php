@@ -27,13 +27,13 @@ get_header(); ?>
           <h2>Become a Member</h2>
           <p><em>Better Angels membership requires dues of just $1 per month (or $12 a year), but many of our members generously choose to give more. Members can:</em></p>
           <ul>
-            <li>Organize meaningful workshops and debates in their communities to bridge political differences (we’ve had over 250 workshops in 2019 to date!)</li>
-            <li>Build community alliances that bring their neighbors together</li>
-            <li>Receive valuable training as a workshop moderator and/or debate chair</li>
+            <li>Organize workshops and debates to bridge political differences</li>
+            <li>Build local "red/blue" alliances</li>
+            <li>Get trained as a moderator and/or debate chair</li>
             <li>Take the online interactive Skills Workshop</li>
-            <li>Contribute to “The Conversation,” the Better Angels media network</li>
-            <li>Get access to member-only meetings, calls, and materials with “red” and “blue” members and leaders from across the country</li>
-            <li><em>Join the nation’s largest grassroots citizens’ movement dedicated to bringing Americans together to bridge our partisan divide</em></li>
+            <li>Contribute to “The Conversation,” the Better Angels blog</li>
+            <li>Get access to member-only meetings, calls, and materials with “red” and “blue” members from across the U.S.</li>
+            <li><em>Join the nation’s largest grassroots citizens’ movement dedicated to depolarizing America</em></li>
           </ul>
         </div>
 
