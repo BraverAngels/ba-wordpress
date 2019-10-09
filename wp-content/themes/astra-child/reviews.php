@@ -68,7 +68,7 @@ if ( post_password_required() ) {
     endif;
   endif; // Check for have_comments().
 
-  if (current_user_can('mepr-active','memberships: ' . $membership_ids)) :
+  if (current_user_can('mepr-active','memberships: ' . $membership_ids) || current_user_can('edit_others_pages')) :
     comment_form(array('comment_field'=> '<p class="comment-form-comment"><em class="library-review-guide-link">Be sure to view our <strong><a target="_blank" href="' . home_url('/tips-for-reviewers/') . '">tips for reviewers</a></strong> before posting a review!</em><label for="comment">' . _x( 'Review', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>', 'title_reply' => __( 'Leave a Review' ), 'label_submit' => __( 'Post Review' )));
   else : ?>
     <h3>Leave a Review</h3>
