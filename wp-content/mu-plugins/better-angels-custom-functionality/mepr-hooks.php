@@ -3,61 +3,6 @@
 // https://gist.github.com/cartpauj/256e893ed3de276f8604aba01ef71bb8
 
 
-//Capture a new Recurring Subscription created event
-
-//Capture any completed transaction (recurring and non-recurring) event
-function ba_log_completed_transaction($event) {
-
-  if (!AN_KEY) {
-    return;
-  }
-  $actionnetwork_url = AN_BASE . '/fundraising_pages/' . AN_FUNDRAISING_ID . '/donations';
-
-  $transaction = $event->get_data();
-  $user = $transaction->user();
-
-  if(($subscription = $transaction->subscription_id)) {
-    $transaction_number = $subscription->subscr_id;
-
-    //This transaction belongs to a recurring subscription
-    $recurrence = array(
-      'recurring' => true,
-    );
-  }
-  else {
-    $transaction_number = $transaction->trans_num;
-    //This is a non-recurring transaction
-    $recurrence = null;
-  }
-
-  $person = array(
-    "email_addresses" => [
-      array(
-        'address' => $user->user_email,
-        'status' => 'subscribed'
-      )
-    ]
-  );
-
-  $fields = array(
-    'identifiers' => [$transaction_number], // $transaction_id
-    'recipients' => [array(
-      'display_name' => 'Better Angels',
-      'amount' => $transaction->total,
-    )],
-    'person' => $person,
-    'action_network:recurrence' => $recurrence,
-  );
-
-
-  $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
-
-}
-// add_action('mepr-event-transaction-completed', 'ba_log_completed_transaction');
-
-
-
-
 add_action( 'wp_head', 'ba_process_membership_data' );
 
 function ba_process_membership_data() {
