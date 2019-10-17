@@ -193,10 +193,24 @@ get_header(); ?>
         <div class="donate-content">
           <h2 style="color: white;">Donate</h2>
           <p>
-            Your contribution will be used to support our grassroots programming in all fifty states, expand our resources online, and fund our upcoming 2020 tour and National Convention.
-            <br/>
-            Better Angels is a 501(c)3 non-profit, and all donations are tax deductible. Thank you for your support!
+            2020 is shaping up to be one of the most divisive years in American history.
+            Help us build a house united and save our Republic in this time of crisis.
+            Better Angels is a 501(c)(3) non-profit, and all donations are tax deductible.
+            Your donation will fund:
           </p>
+          <ul>
+            <li>Our National Bus Tour in 2020 (<a href="<?php home_url('bus'); ?>")>Learn more</a>)</li>
+            <li>Red-Blue Workshops</li>
+            <li>Skills Workshops</li>
+            <li>Better Angels Debates</li>
+            <li>Alliances (local chapters)</li>
+            <li>The 2020 National Better Angels Convention</li>
+            <li>Our 50-State Volunteer Network</li>
+            <li>The Better Angels State of the Union</li>
+            <li>High School & College Programs</li>
+            <li>Online Programs</li>
+            <li>Media Outreach</li>
+          </ul>
         </div>
         <div class="donate-selection-column">
           <?php echo do_shortcode('[gravityform id=29 title=false description=false ajax=true tabindex=49]'); ?>
@@ -308,6 +322,15 @@ get_header(); ?>
       overflow: auto;
       color: white;
       display: block;
+    }
+    #donate .donate-content a {
+      color: white;
+      text-decoration: underline;
+    }
+    #donate .donate-content a:hover,
+    #donate .donate-content a:focus {
+      color: lightgray;
+      text-decoration: underline;
     }
 
     @media screen and (min-width: 1000px) {
