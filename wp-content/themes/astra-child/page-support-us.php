@@ -107,7 +107,7 @@ get_header(); ?>
         <div class="upgrade-content">
           <h2>Upgrade/Renew Your Membership</h2>
           <p>Better Angels is a grassroots movement,
-            and we can’t rely on rich donors. We’re counting on our members to  upgrade or renew their membership
+            and we can’t rely on rich donors. We’re counting on our members to upgrade or renew their membership
             so that we can bring our country together in 2020.
             Your dues will help fund workshops, debates, local Alliances, high school & college programs,
             our upcoming 2020 bus tour, and of course, the 2020 National Convention in Charlotte, NC!
