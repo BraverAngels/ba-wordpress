@@ -235,8 +235,64 @@ function send_updated_user_data_to_action_network($data){
 }
 
 
+function get_user_subscription_id() {
+  $membership_ids_array = [3706, 3612, 3613, 3614, 3616, 3618, 3620, 3621, 3622, 3623, 3624, 3625, 3626, 3627, 3628, 3629, 3630, 3631, 3632];
+  $active_membership = null;
+  foreach($membership_ids_array as $membership_id) {
+    if (current_user_can('mepr-active','memberships: ' + $membership_id)) {
+      $active_membership = $membership_id;
+    }
+  }
+  return $active_membership;
+}
+
+function get_higher_membership_options() {
+  $monthly_memberships = [3612, 3613, 3614, 3616, 3618, 3620];
+  $yearly_memberships = [3621, 3622, 3623, 3624, 3625, 3626];
+
+  if (in_array(get_user_subscription_id(), $monthly_memberships)) {
+
+    $index = array_search(get_user_subscription_id(), $monthly_memberships);
+    $higher_memberships = array_slice($monthly_memberships, $index + 1);
+
+  } elseif (in_array(get_user_subscription_id(), $yearly_memberships)) {
+
+    $index = array_search(get_user_subscription_id(), $yearly_memberships);
+    $higher_memberships = array_slice($yearly_memberships, $index + 1);
+
+  } else {
+
+    $higher_memberships = array_merge($yearly_memberships, $monthly_memberships);
+
+  }
+  return $higher_memberships;
+}
+
 
 // Function to add subscribe text to posts and pages
+function ba_mepr_join_or_upgrade_text() {
+  $membership_ids = '3706, 3612, 3613, 3614, 3616, 3618, 3620, 3621, 3622, 3623, 3624, 3625, 3626, 3627, 3628, 3629, 3630, 3631, 3632';
+
+  if (!is_user_logged_in()) {
+    return
+    '<h2>Welcome to Better Angels</h2>
+    <p>
+      Please use the form below to tell us about yourself:<br/>
+      <strong>Already have an account? <a href="' . home_url() . '/login?redirect_to=' . home_url() . $_SERVER['REQUEST_URI'] . '">Login</a> before completing your purchase.</strong>
+      <br/><a href="' . home_url('login/?action=forgot_password') . '">Recover lost password</a>
+    </p>';
+  } elseif (is_user_logged_in() && current_user_can('mepr-active','memberships: ' . $membership_ids)) {
+    return '<h2>Upgrade account</h2>
+    <p>Complete the form below to upgrade your membership.
+    <br/>
+    <strong>Current subscription: ' . get_the_title(get_user_subscription_id()) . '</strong><br/><a href="'. home_url("account/?action=subscriptions").'">View account settings</a></p>';
+  }
+
+  return;
+}
+add_shortcode('login_before_checkout_reminder', 'ba_mepr_join_or_upgrade_text');
+
+
 function ba_mepr_login_before_checkout_reminder() {
   if (!is_user_logged_in()) {
     return '<p><strong>Already have an account? <a href="' . home_url() . '/login?redirect_to=' . home_url() . $_SERVER['REQUEST_URI'] . '">Login</a> before completing your purchase.</strong></p>';

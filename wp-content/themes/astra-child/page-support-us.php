@@ -15,46 +15,7 @@
 
 $membership_ids = '3706, 3612, 3613, 3614, 3616, 3618, 3620, 3621, 3622, 3623, 3624, 3625, 3626, 3627, 3628, 3629, 3630, 3631, 3632';
 
-// Use this array w/ loop to figure out the user's current shiz
-
-function get_user_subscription_id() {
-  $membership_ids_array = [3706, 3612, 3613, 3614, 3616, 3618, 3620, 3621, 3622, 3623, 3624, 3625, 3626, 3627, 3628, 3629, 3630, 3631, 3632];
-  $active_membership = null;
-  foreach($membership_ids_array as $membership_id) {
-    if (current_user_can('mepr-active','memberships: ' + $membership_id)) {
-      $active_membership = $membership_id;
-    }
-  }
-  return $active_membership;
-}
-
-function get_higher_membership_options() {
-  $monthly_memberships = [3612, 3613, 3614, 3616, 3618, 3620];
-  $yearly_memberships = [3621, 3622, 3623, 3624, 3625, 3626];
-
-  if (in_array(get_user_subscription_id(), $monthly_memberships)) {
-
-    $index = array_search(get_user_subscription_id(), $monthly_memberships);
-    $higher_memberships = array_slice($monthly_memberships, $index + 1);
-
-  } elseif (in_array(get_user_subscription_id(), $yearly_memberships)) {
-
-    $index = array_search(get_user_subscription_id(), $yearly_memberships);
-    $higher_memberships = array_slice($yearly_memberships, $index + 1);
-
-  } else {
-
-    $higher_memberships = array_merge($yearly_memberships, $monthly_memberships);
-
-  }
-  return $higher_memberships;
-}
-
-
-
 get_header(); ?>
-
-
 
   <section class="header" style="overflow: auto; background-size: cover; background-image: url(https://www.better-angels.org/wp-content/uploads/2019/09/2019-BA-Convention-631.jpg);">
     <div class="header-inner">
