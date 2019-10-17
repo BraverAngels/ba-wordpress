@@ -13,27 +13,88 @@
  * @since 1.0.0
  */
 
+$membership_ids = '3706, 3612, 3613, 3614, 3616, 3618, 3620, 3621, 3622, 3623, 3624, 3625, 3626, 3627, 3628, 3629, 3630, 3631, 3632';
+
+// Use this array w/ loop to figure out the user's current shiz
+
+function get_user_subscription_id() {
+  $membership_ids_array = [3706, 3612, 3613, 3614, 3616, 3618, 3620, 3621, 3622, 3623, 3624, 3625, 3626, 3627, 3628, 3629, 3630, 3631, 3632];
+  $active_membership = null;
+  foreach($membership_ids_array as $membership_id) {
+    if (current_user_can('mepr-active','memberships: ' + $membership_id)) {
+      $active_membership = $membership_id;
+    }
+  }
+  return $active_membership;
+}
+
+function get_higher_membership_options() {
+  $monthly_memberships = [3612, 3613, 3614, 3616, 3618, 3620];
+  $yearly_memberships = [3621, 3622, 3623, 3624, 3625, 3626];
+
+  if (in_array(get_user_subscription_id(), $monthly_memberships)) {
+
+    $index = array_search(get_user_subscription_id(), $monthly_memberships);
+    $higher_memberships = array_slice($monthly_memberships, $index + 1);
+
+  } elseif (in_array(get_user_subscription_id(), $yearly_memberships)) {
+
+    $index = array_search(get_user_subscription_id(), $yearly_memberships);
+    $higher_memberships = array_slice($yearly_memberships, $index + 1);
+
+  } else {
+
+    $higher_memberships = array_merge($yearly_memberships, $monthly_memberships);
+
+  }
+  return $higher_memberships;
+}
+
+
+
 get_header(); ?>
+
+
+
   <section class="header" style="overflow: auto; background-size: cover; background-image: url(https://www.better-angels.org/wp-content/uploads/2019/09/2019-BA-Convention-631.jpg);">
     <div class="header-inner">
       <h2 style="font-family: 'Nunito Sans', 'Karla'; margin-bottom: .5rem;">Support Us</h2>
-      <h3 style="color: #212121; margin-bottom: 2rem; font-weight: 400; font-family: 'Nunito Sans', 'Karla'; "><em>Join 8,000+ Americans in supporting the nation’s largest political depolarization movement as a <a href="#join"><strong>dues-paying member</strong></a>, or with a <a href="#donate"><strong>one-time donation!</strong></a></em></h3>
+      <h3 style="color: #212121; margin-bottom: 2rem; font-weight: 400; font-family: 'Nunito Sans', 'Karla'; ">
+
+        <?php if (!current_user_can('mepr-active','memberships: ' . $membership_ids)): ?>
+          <em>
+            Help us build a house united by <a href="#join"><strong>joining Better Angels</strong></a>,
+            <a href="#upgrade"><strong>upgrading/renewing</strong></a> your membership,
+            or <a href="#donate"><strong>donating</strong></a> to <strong>Better Angels 2020</strong>.
+          </em>
+
+        <?php else : ?>
+          <em>
+            Help us build a house united by <a href="#upgrade"><strong>upgrading/renewing</strong></a> your membership
+            or <a href="#donate"><strong>donating</strong></a> to <strong>Better Angels 2020</strong>.
+          </em>
+        <?php endif; ?>
+
+      </h3>
     </div>
   </section>
-  <div class="entry-content clear" itemprop="text">
+  <div class="entry-content entry-content-support-us clear" itemprop="text">
+
+  <?php if (!current_user_can('mepr-active','memberships: ' . $membership_ids)): ?>
     <section id="join">
       <div class="join-inner">
         <div class="join-content">
           <h2>Become a Member</h2>
-          <p><em>Better Angels membership requires dues of just $1 per month (or $12 a year), but many of our members generously choose to give more. Members can:</em></p>
+          <p><em>Better Angels membership requires dues of just $12 a year, but many of our members generously choose to give more. Members can:</em></p>
           <ul>
-            <li>Organize workshops and debates to bridge political differences</li>
-            <li>Build local "red/blue" alliances</li>
-            <li>Get trained as a moderator and/or debate chair</li>
-            <li>Take the online interactive Skills Workshop</li>
-            <li>Contribute to “The Conversation,” the Better Angels blog</li>
-            <li>Get access to member-only meetings, calls, and materials with “red” and “blue” members from across the U.S.</li>
-            <li><em>Join the nation’s largest grassroots citizens’ movement dedicated to depolarizing America</em></li>
+            <li>Join or create a Better Angels Alliance (chapter) in your community.</li>
+            <li>Get trained to lead Better Angels workshops and/or debates.</li>
+            <li>With other members, organize local events to bridge political differences.</li>
+            <li>Take the online, interactive “Skills Workshop.”</li>
+            <li>Contribute to “The Conversation,” the Better Angels blog.</li>
+            <li>Participate in member-only meetings with “red” and “blue” members from across the U.S.</li>
+            <li>Become a local or national Better Angels volunteer leader.</li>
+            <li><em>Be a part of America’s largest organization for bridging the divide.</em></li>
           </ul>
         </div>
 
@@ -72,12 +133,60 @@ get_header(); ?>
           <form id="join-submit-form" action="<?php echo home_url(); ?>/join/monthly-10/">
             <input id="join-submit-button" type="submit" value="Join" />
           </form>
+
           <span class="join-selection-subscribe-text"><a href="#donate">I just want to donate</a></span>
         </div>
       </div>
 
     </section>
+  <?php endif; ?>
 
+    <section class="upgrade" id="upgrade">
+      <div class="upgrade-inner">
+        <div class="upgrade-content">
+          <h2>Upgrade/Renew Your Membership</h2>
+          <p>Better Angels is a grassroots movement,
+            and we can’t rely on rich donors. We’re counting on our members to renew and upgrade their membership
+            so that we can bring our country together in 2020.
+            Your dues will help fund workshops, debates, local Alliances, high school & college programs,
+            our upcoming 2020 bus tour, and of course, the 2020 National Convention in Charlotte, NC!
+          </p>
+        </div>
+        <div class="upgrade-selection-column">
+
+          <?php if (!current_user_can('mepr-active','memberships: ' . $membership_ids)): ?>
+            <h3>Login to upgrade/renew</h3>
+            <?php wp_login_form(array(
+              'redirect' => home_url('support-us#upgrade')
+            )); ?>
+            <p>
+              <a href="<?php echo home_url('login/?action=forgot_password'); ?>">Recover lost password</a>
+            </p>
+            <p>
+              <a href="#donate">I just want to donate</a>
+            </p>
+
+          <?php else : ?>
+
+            <p>Current subscription: <strong><?php echo get_the_title(get_user_subscription_id()); ?></strong></p>
+            <span>Select upgraded amount</span>
+
+            <?php $options = get_higher_membership_options();
+            if (sizeof($options) > 0) {
+              echo '<ul class="membership-upgrade-options">';
+              foreach ($options as $option) {
+                echo '<li><a class="membership-upgrade-option-link" href="'. get_the_permalink($option) .'">'. get_the_title($option) .'</a></li>';
+              }
+              echo '</ul';
+            }
+            ?>
+            <p>
+              <a href="#donate">I just want to donate</a>
+            </p>
+          <?php endif; ?>
+        </div>
+      </div>
+    </section>
 
     <section class="donate" id="donate">
       <div class="donate-inner">
@@ -97,6 +206,7 @@ get_header(); ?>
   </div>
 
   <style>
+    /* Move this to other css file, yo */
     .ba-button-list input {
       display: none !important;
     }
@@ -141,6 +251,11 @@ get_header(); ?>
       max-width: 1100px;
       margin-left: auto;
       margin-right: auto;
+    }
+
+    /* */
+    .entry-content-support-us section {
+
     }
 
     /*-------- Donate section --------*/
@@ -210,7 +325,7 @@ get_header(); ?>
     /*-------- Join column ----------*/
 
     #join {
-      background: #23356C;
+      background: #bc2f2c;
       padding: 1rem .5rem;
     }
 
@@ -250,6 +365,105 @@ get_header(); ?>
         float: left;
       }
       #join .join-content {
+        padding-right: 1rem;
+      }
+    }
+
+    /*-------- Upgrade column ----------*/
+
+    #upgrade {
+      background: #23356C;
+      padding: 1rem .5rem;
+    }
+
+    @media screen and (min-width: 961px) {
+      #upgrade {
+        padding-top: 100px;
+        padding-bottom: 100px;
+      }
+    }
+
+    #upgrade .upgrade-inner {
+      overflow: auto;
+      display: block;
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    #upgrade .upgrade-content,
+    #upgrade .upgrade-content h2 {
+      overflow: auto;
+      color: white;
+      display: block;
+    }
+
+    #upgrade .upgrade-selection-column {
+      display: block;
+      width: 100%;
+      max-width: 700px;
+      background: white;
+      padding: 2rem 1rem;
+      margin-top: 1rem;
+    }
+
+    #upgrade .upgrade-selection-column label {
+      display: block;
+    }
+    #upgrade .upgrade-selection-column p {
+      margin-bottom: .5rem;
+    }
+    #upgrade .upgrade-selection-column input[type="text"],
+    #upgrade .upgrade-selection-column input[type="password"] {
+      padding: 5px 10px;
+    }
+    #upgrade .upgrade-selection-column input[type="text"],
+    #upgrade .upgrade-selection-column input[type="password"],
+    #upgrade .upgrade-selection-column input[type="submit"] {
+      display: block;
+      width: 100%;
+    }
+
+    #upgrade .upgrade-selection-column .membership-upgrade-options {
+    list-style: none;
+    margin-left: 0;
+    }
+
+    #upgrade .upgrade-selection-column .membership-upgrade-options li {
+      display: inline-block;
+      width: 50%;
+      padding: .125rem;
+    }
+
+    #upgrade .upgrade-selection-column .membership-upgrade-options li a {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: #23356c;
+      color: white;
+      padding: .5rem;
+    }
+
+    #upgrade .upgrade-selection-column .membership-upgrade-options li a:hover,
+    #upgrade .upgrade-selection-column .membership-upgrade-options li a:focus {
+      background: #ab2634 !important;
+      color: white;
+    }
+
+    @media screen and (min-width: 1000px) {
+      #upgrade .upgrade-selection-column .membership-upgrade-options li {
+        width: 33.333%;
+      }
+    }
+
+    @media screen and (min-width: 1000px) {
+      #upgrade .upgrade-content,
+      #upgrade .upgrade-selection-column {
+        display: inline-block;
+        width: 50%;
+        float: left;
+      }
+      #upgrade .upgrade-content {
         padding-right: 1rem;
       }
     }
