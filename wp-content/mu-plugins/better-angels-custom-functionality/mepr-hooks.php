@@ -290,7 +290,7 @@ function ba_mepr_join_or_upgrade_text() {
 
   return;
 }
-add_shortcode('login_before_checkout_reminder', 'ba_mepr_join_or_upgrade_text');
+add_shortcode('join_or_upgrade_text', 'ba_mepr_join_or_upgrade_text');
 
 
 function ba_mepr_login_before_checkout_reminder() {
