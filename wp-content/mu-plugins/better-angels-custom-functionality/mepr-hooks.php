@@ -288,7 +288,7 @@ function ba_mepr_join_or_upgrade_text() {
       <strong>Current subscription: ' . get_the_title(get_user_subscription_id()) . '</strong><br/><a href="'. home_url("account/?action=subscriptions").'">View account settings</a>
     </p>
     <p>
-      <em>Your membership will renew automatically.</em>
+      <em>Your card will be charged automatically for each renewal period. Cancel any time.</em>
     </p>';
   }
 
