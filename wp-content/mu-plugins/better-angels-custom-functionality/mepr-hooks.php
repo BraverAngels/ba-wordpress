@@ -284,8 +284,12 @@ function ba_mepr_join_or_upgrade_text() {
   } elseif (is_user_logged_in() && current_user_can('mepr-active','memberships: ' . $membership_ids)) {
     return '<h2>Upgrade account</h2>
     <p>Complete the form below to upgrade your membership.
-    <br/>
-    <strong>Current subscription: ' . get_the_title(get_user_subscription_id()) . '</strong><br/><a href="'. home_url("account/?action=subscriptions").'">View account settings</a></p>';
+      <br/>
+      <strong>Current subscription: ' . get_the_title(get_user_subscription_id()) . '</strong><br/><a href="'. home_url("account/?action=subscriptions").'">View account settings</a>
+    </p>
+    <p>
+      <em>Your membership will renew automatically.</em>
+    </p>';
   }
 
   return;

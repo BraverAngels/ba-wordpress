@@ -1097,6 +1097,9 @@ background-color: #ab2634 !important;
 .single-memberpressproduct .ast-container {
   max-width: 800px;
 }
+.single-memberpressproduct .mp_wrapper {
+  padding: 0;
+}
 .mepr-unauthorized-message {
   margin: 1rem -.5rem;
   min-height: 200px;
