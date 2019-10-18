@@ -130,20 +130,23 @@ get_header(); ?>
           <?php else : ?>
 
             <p>Current subscription: <strong><?php echo get_the_title(get_user_subscription_id()); ?></strong></p>
-            <span>Select upgraded amount</span>
 
             <?php $options = get_higher_membership_options();
             if (sizeof($options) > 0) {
+              echo '<span style="color:#6c6c6c;">Select upgraded amount</span>';
               echo '<ul class="membership-upgrade-options">';
               foreach ($options as $option) {
                 echo '<li><a class="membership-upgrade-option-link" href="'. get_the_permalink($option) .'">'. get_the_title($option) .'</a></li>';
               }
-              echo '</ul';
+              echo '</ul>';
+              echo '<p>';
+                echo '<a href="#donate">I just want to donate</a>';
+              echo '</p>';
+            } else {
+              echo "<span><strong>You're maxed out.</strong><br/>You are already subscribed to our highest membership level. Consider <a href='#donate'><strong>making an additional one-time gift.</strong></a></span>";
             }
             ?>
-            <p>
-              <a href="#donate">I just want to donate</a>
-            </p>
+
           <?php endif; ?>
         </div>
       </div>

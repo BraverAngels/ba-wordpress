@@ -259,6 +259,8 @@ function get_higher_membership_options() {
 
     $index = array_search(get_user_subscription_id(), $yearly_memberships);
     $higher_memberships = array_slice($yearly_memberships, $index + 1);
+    // Add the $50 per month option
+    $higher_memberships[] = 3620;
 
   } else {
 
