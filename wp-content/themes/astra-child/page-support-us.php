@@ -13,7 +13,7 @@
  * @since 1.0.0
  */
 
-$membership_ids = '3706, 3612, 3613, 3614, 3616, 3618, 3620, 3621, 3622, 3623, 3624, 3625, 3626, 3627, 3628, 3629, 3630, 3631, 3632';
+$membership_ids = '3706, 3612, 3613, 3614, 3616, 3618, 3620, 3621, 3622, 3623, 3624, 3625, 3626, 3627, 3628, 3629, 3630, 3631, 3632, 4278, 4279';
 
 get_header(); ?>
 
@@ -70,7 +70,7 @@ get_header(); ?>
                 <span class="join-description">Select yearly contribution amount</span>
                 <ul>
                   <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-12/">$12</a></li>
-                  <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-25/">$25</a></li>
+                  <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-2020/">$20.20</a></li>
                   <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-50/">$50</a></li>
                   <li><a data-autoselect class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-100/">$100</a></li>
                   <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-250/">$250</a></li>
@@ -85,7 +85,7 @@ get_header(); ?>
                   <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-2/">$2</a></li>
                   <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-5/">$5</a></li>
                   <li><a data-autoselect class="join-selection-amount selected" href="<?php echo home_url(); ?>/join/monthly-10/">$10</a></li>
-                  <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-25/">$25</a></li>
+                  <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-2020/">$20.20</a></li>
                   <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-50/">$50</a></li>
                 </ul>
               </div>

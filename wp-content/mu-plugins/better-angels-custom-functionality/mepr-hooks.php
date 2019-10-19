@@ -236,7 +236,7 @@ function send_updated_user_data_to_action_network($data){
 
 
 function get_user_subscription_id() {
-  $membership_ids_array = [3706, 3612, 3613, 3614, 3616, 3618, 3620, 3621, 3622, 3623, 3624, 3625, 3626, 3627, 3628, 3629, 3630, 3631, 3632];
+  $membership_ids_array = [3706, 3612, 3613, 3614, 3616, 3618, 3620, 3621, 3622, 3623, 3624, 3625, 3626, 3627, 3628, 3629, 3630, 3631, 3632, 4278, 4279];
   $active_membership = null;
   foreach($membership_ids_array as $membership_id) {
     if (current_user_can('mepr-active','memberships: ' + $membership_id)) {
@@ -247,8 +247,8 @@ function get_user_subscription_id() {
 }
 
 function get_higher_membership_options() {
-  $monthly_memberships = [3612, 3613, 3614, 3616, 3618, 3620];
-  $yearly_memberships = [3621, 3622, 3623, 3624, 3625, 3626];
+  $monthly_memberships = [3612, 3613, 3614, 3616, 4278, 3618, 3620];
+  $yearly_memberships = [3621, 4279, 3622, 3623, 3624, 3625, 3626];
 
   if (in_array(get_user_subscription_id(), $monthly_memberships)) {
 
@@ -267,13 +267,21 @@ function get_higher_membership_options() {
     $higher_memberships = array_merge($yearly_memberships, $monthly_memberships);
 
   }
+
+  // Don't return the $25 options
+  foreach([3618, 3622] as $membership) {
+    if (array_search($membership, $higher_memberships)) {
+      unset($higher_memberships[array_search($membership, $higher_memberships)]);
+    }
+  }
+
   return $higher_memberships;
 }
 
 
 // Function to add subscribe text to posts and pages
 function ba_mepr_join_or_upgrade_text() {
-  $membership_ids = '3706, 3612, 3613, 3614, 3616, 3618, 3620, 3621, 3622, 3623, 3624, 3625, 3626, 3627, 3628, 3629, 3630, 3631, 3632';
+  $membership_ids = '3706, 3612, 3613, 3614, 3616, 3618, 3620, 3621, 3622, 3623, 3624, 3625, 3626, 3627, 3628, 3629, 3630, 3631, 3632, 4278, 4279';
 
   if (!is_user_logged_in()) {
     return
