@@ -19,7 +19,7 @@ get_header(); ?>
 
   <section class="header" style="overflow: auto; background-size: cover; background-image: url(https://www.better-angels.org/wp-content/uploads/2019/09/2019-BA-Convention-631.jpg);">
     <div class="header-inner">
-      <h2 style="font-family: 'Nunito Sans', 'Karla'; margin-bottom: .5rem;">Support Us</h2>
+      <h2 style="font-family: 'Nunito Sans', 'Karla'; margin-bottom: .5rem;font-family: 'Nunito Sans', 'Karla'; margin-bottom: .5rem;font-weight:bold;">Support Us</h2>
       <h3 style="color: #212121; margin-bottom: 2rem; font-weight: 400; font-family: 'Nunito Sans', 'Karla'; ">
 
         <?php if (!current_user_can('mepr-active','memberships: ' . $membership_ids)): ?>
