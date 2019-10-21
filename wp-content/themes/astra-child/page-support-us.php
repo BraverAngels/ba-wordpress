@@ -72,7 +72,7 @@ get_header(); ?>
                   <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-12/">$12</a></li>
                   <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-2020/">$20.20</a></li>
                   <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-50/">$50</a></li>
-                  <li><a data-autoselect class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-100/">$100</a></li>
+                  <li><a data-autoselect class="join-selection-amount selected" href="<?php echo home_url(); ?>/join/yearly-100/">$100</a></li>
                   <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-250/">$250</a></li>
                   <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-500/">$500</a></li>
                 </ul>
