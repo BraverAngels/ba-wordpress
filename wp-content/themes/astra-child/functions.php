@@ -132,6 +132,8 @@ function redirect_to_login_page() {
   $is_member_portal = is_page('members-portal');
   $is_member_portal_child_page = is_page() && $post->post_parent == 1303;
 
+  // make sure that user has an actual membership here!!!
+  
   if (!is_user_logged_in() && ($is_member_portal || $is_member_portal_child_page)) {
     wp_redirect( home_url() . '/login?redirect_to=' . home_url() . $_SERVER['REQUEST_URI'], 301 );
     exit;

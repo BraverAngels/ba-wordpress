@@ -66,7 +66,7 @@ get_header(); ?>
             <button class="join-selection-type-item" data-toggle="yearly-options">Yearly</button>
           </div>
             <div class="join-selection-options-wrap">
-              <div id="yearly-options" class="join-selection-options">
+              <div id="yearly-options" class="join-selection-options active">
                 <span class="join-description">Select yearly contribution amount</span>
                 <ul>
                   <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-12/">$12</a></li>
@@ -78,7 +78,7 @@ get_header(); ?>
                 </ul>
               </div>
 
-              <div id="monthly-options" class="join-selection-options active">
+              <div id="monthly-options" class="join-selection-options">
                 <span class="join-description">Select monthly contribution amount</span>
                 <ul>
                   <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-1/">$1</a></li>
