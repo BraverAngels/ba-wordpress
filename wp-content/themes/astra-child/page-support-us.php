@@ -13,7 +13,7 @@
  * @since 1.0.0
  */
 
-$membership_ids = '3706, 3612, 3613, 3614, 3616, 3618, 3620, 3621, 3622, 3623, 3624, 3625, 3626, 3627, 3628, 3629, 3630, 3631, 3632, 4278, 4279';
+// $membership_ids = '3706, 3612, 3613, 3614, 3616, 3618, 3620, 3621, 3622, 3623, 3624, 3625, 3626, 3627, 3628, 3629, 3630, 3631, 3632, 4278, 4279';
 
 get_header(); ?>
 
@@ -22,7 +22,7 @@ get_header(); ?>
       <h2 style="font-family: 'Nunito Sans', 'Karla'; margin-bottom: .5rem;font-family: 'Nunito Sans', 'Karla'; margin-bottom: .5rem;font-weight:bold;">Support Us</h2>
       <h3 style="color: #212121; margin-bottom: 2rem; font-weight: 400; font-family: 'Nunito Sans', 'Karla'; ">
 
-        <?php if (!current_user_can('mepr-active','memberships: ' . $membership_ids)): ?>
+        <?php if (!is_user_logged_in()): ?>
           <em>
             Help us build a house united by <a href="#join"><strong>joining Better Angels</strong></a>,
             <a href="#upgrade"><strong>upgrading/renewing</strong></a> your membership,
@@ -41,7 +41,7 @@ get_header(); ?>
   </section>
   <div class="entry-content entry-content-support-us clear" itemprop="text">
 
-  <?php if (!current_user_can('mepr-active','memberships: ' . $membership_ids)): ?>
+  <?php if (!is_user_logged_in()): ?>
     <section id="join">
       <div class="join-inner">
         <div class="join-content">
@@ -115,7 +115,7 @@ get_header(); ?>
         </div>
         <div class="upgrade-selection-column">
 
-          <?php if (!current_user_can('mepr-active','memberships: ' . $membership_ids)): ?>
+          <?php if (!is_user_logged_in()): ?>
             <h3>Login to upgrade/renew</h3>
             <?php wp_login_form(array(
               'redirect' => home_url('support-us#upgrade')
@@ -129,11 +129,20 @@ get_header(); ?>
 
           <?php else : ?>
 
-            <p>Current subscription: <strong><?php echo get_the_title(get_user_subscription_id()); ?></strong></p>
+            <?php if (get_user_subscription_id()) : ?>
+              <p>Current subscription: <strong><?php echo get_the_title(get_user_subscription_id()); ?></strong></p>
+            <?php else :
+              //the user has an account but does not have an active subscription
+            ?>
+              <p>
+                <strong>You do not have an active membership.</strong><br/>
+                Please choose from the renewal options below.
+              </p>
+            <?php endif; ?>
 
             <?php $options = get_higher_membership_options();
             if (sizeof($options) > 0) {
-              echo '<span style="color:#6c6c6c;">Select upgraded amount</span>';
+              echo '<span style="color:#6c6c6c;">Select amount</span>';
               echo '<ul class="membership-upgrade-options">';
               foreach ($options as $option) {
                 echo '<li><a class="membership-upgrade-option-link" href="'. get_the_permalink($option) .'">'. get_the_title($option) .'</a></li>';
