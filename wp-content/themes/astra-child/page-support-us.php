@@ -135,7 +135,8 @@ get_header(); ?>
               //the user has an account but does not have an active subscription
             ?>
               <p>
-                <strong>You do not have an active membership.</strong><br/>
+                <strong>You do not have an active membership.
+                You must be a current dues-paying member to access the Members Portal</strong><br/>
                 Please choose from the renewal options below.
               </p>
             <?php endif; ?>
