@@ -95,6 +95,8 @@ function send_new_user_data_to_action_network($user_id){
   // This runs on the "Welcome" page after signup or updating subscription
   if (isset($_GET['membership'])) {
 
+    $custom_fields['Membership Cancelled Date'] = 'NA';
+
     // if the member is updating their membership ???
     if ($custom_fields['Membership Start Date'] != date("Y-m-d")) {
       $custom_fields['Membership Updated Date'] = date("Y-m-d");
@@ -239,6 +241,54 @@ function send_updated_user_data_to_action_network($data){
   $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
 
 }
+
+
+
+add_action('mepr-event-transaction-expired', 'ba_catch_txn_expired');
+
+// Transaction has expired (user cancelled, lapsed etc)
+function ba_catch_txn_expired($event) {
+  $txn = new MeprTransaction($event->evt_id); //evt_id should be the id of a transaction
+  $user = new MeprUser($txn->user_id);
+  $users_memberships = $user->active_product_subscriptions();
+  //Make sure they're not still subscribed to this membership somehow
+  if(!empty($users_memberships)) {
+    if(!in_array($txn->product_id, $users_memberships, false)) {
+
+        // Bail if the API key is not set
+        if (!AN_KEY) {
+          return;
+        }
+
+        // The url we will eventually query
+        $actionnetwork_url = AN_BASE . '/people/';
+
+        $user_data = get_userdata($txn->user_id);
+
+        $person = array(
+          "email_addresses" => [
+            array(
+              'address' => $user_data->user_email,
+            )
+          ],
+          "custom_fields" => array(
+            'Membership Cancelled Date' => date("Y-m-d")
+          ),
+        );
+
+        $fields = array(
+          'person' => $person,
+        );
+
+        $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
+    }
+    //else the user is still subscribed to this membership, so do nothing
+  }
+}
+add_action('mepr-event-transaction-expired', 'catch_txn_expired');
+
+
+
 
 
 function get_user_subscription_id() {
