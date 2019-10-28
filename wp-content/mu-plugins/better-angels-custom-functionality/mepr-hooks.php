@@ -95,16 +95,18 @@ function send_new_user_data_to_action_network($user_id){
   // This runs on the "Welcome" page after signup or updating subscription
   if (isset($_GET['membership'])) {
 
+    // if the member is updating their membership ???
+    if ($custom_fields['Membership Start Date'] != date("Y-m-d")) {
+      $custom_fields['Membership Updated Date'] = date("Y-m-d");
+    }
+
     $membership_code = explode ('-', $_GET['membership']);
 
     if ($membership_code[0] == 'monthly' || $membership_code[0] == 'yearly' ) {
+      $custom_fields['Recurring'] = ucfirst($membership_code[0])
       if (isset($membership_code[1])) {
         $custom_fields['Contribution'] = $membership_code[1];
       }
-      $recurrence = array(
-        'recurring' => true,
-        'period' => ucfirst($membership_code[0])
-      );
     } elseif ($membership_code[0] = 'one') {
       $custom_fields['Contribution'] = $membership_code[3];
     } else {
