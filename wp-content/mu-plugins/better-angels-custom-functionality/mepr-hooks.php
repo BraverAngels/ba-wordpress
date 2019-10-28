@@ -104,8 +104,12 @@ function send_new_user_data_to_action_network($user_id){
 
     if ($membership_code[0] == 'monthly' || $membership_code[0] == 'yearly' ) {
       $custom_fields['Recurring'] = ucfirst($membership_code[0]);
+      $contribution_amount = $membership_code[1];
+      if ($membership_code[2]) {
+        $contribution_amount .= '.' . $membership_code[2];
+      }
       if (isset($membership_code[1])) {
-        $custom_fields['Contribution'] = $membership_code[1];
+        $custom_fields['Contribution'] = $contribution_amount;
       }
     } elseif ($membership_code[0] = 'one') {
       $custom_fields['Contribution'] = $membership_code[3];
