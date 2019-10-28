@@ -103,7 +103,7 @@ function send_new_user_data_to_action_network($user_id){
     $membership_code = explode ('-', $_GET['membership']);
 
     if ($membership_code[0] == 'monthly' || $membership_code[0] == 'yearly' ) {
-      $custom_fields['Recurring'] = ucfirst($membership_code[0])
+      $custom_fields['Recurring'] = ucfirst($membership_code[0]);
       if (isset($membership_code[1])) {
         $custom_fields['Contribution'] = $membership_code[1];
       }
