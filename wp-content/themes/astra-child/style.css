@@ -526,7 +526,7 @@ body, button, input, select, textarea {
 }
 @media screen and (min-width: 1000px) {
   .entry-content-support-us #donate .donate-content,
-.entry-content-support-us #donate .donate-selection-column {
+  .entry-content-support-us #donate .donate-selection-column {
     display: inline-block;
     width: 50%;
     float: left;
@@ -562,7 +562,22 @@ body, button, input, select, textarea {
   display: block;
   width: 100%;
   max-width: 700px;
+  background: white;
+  border: 1px solid lightgray;
+  padding: 1rem;
 }
+.entry-content-support-us .join-selection-type {
+  display: block;
+  overflow: auto;
+}
+.entry-content-support-us .join-selection-type-item {
+  padding: 10px 10px;
+  display: inline-block;
+  width: 50%;
+  float: left;
+  border: 2px solid white !important;
+}
+
 @media screen and (min-width: 1000px) {
   .entry-content-support-us #join .join-content,
 .entry-content-support-us #join .join-selection-column {
@@ -574,6 +589,74 @@ body, button, input, select, textarea {
     padding-right: 1rem;
   }
 }
+join-selection-column
+.entry-content-support-us .join-selection-options-wrap {
+   min-height: 100px;
+}
+ .entry-content-support-us .join-selection-options {
+   display: none;
+}
+ .entry-content-support-us .join-selection-options.active {
+   display: block;
+   overflow: auto;
+}
+ .entry-content-support-us .join-selection-options ul {
+   list-style: none;
+   margin-left: 0;
+   display: -webkit-box;
+   display: -ms-flexbox;
+   display: flex;
+   -ms-flex-wrap: wrap;
+   flex-wrap: wrap;
+   -webkit-box-flex: 1;
+   -ms-flex-positive: 1;
+   flex-grow: 1;
+}
+ .entry-content-support-us .join-selection-options ul li {
+   display: inline-block;
+   min-width: auto;
+   -webkit-box-flex: 1;
+   -ms-flex: 1;
+   flex: 1;
+   padding: 0.125rem;
+}
+ .entry-content-support-us .join-selection-options ul li a {
+   border-radius: 2px;
+   display: block;
+   text-align: center;
+   width: 100%;
+   padding: 10px 40px;
+   color: #fff;
+   border-color: #23356c;
+   background-color: #23356c;
+   display: inline-block;
+}
+ .entry-content-support-us .join-selection-amount {
+   -webkit-transition: none;
+   -o-transition: none;
+   transition: none;
+}
+ .entry-content-support-us .join-selection-options ul li a:hover, .entry-content-support-us .join-selection-options ul li a:focus, .entry-content-support-us .join-selection-options ul li a:active, .entry-content-support-us .join-selection-type button.selected, .entry-content-support-us .join-selection-amount.selected {
+   color: #fff;
+   border-color: #ab2634;
+   background-color: #ab2634;
+}
+ .entry-content-support-us .join-description {
+   padding-bottom: 0.5rem;
+   display: inline-block;
+   font-size: 17px;
+   line-height: 1.5;
+}
+ .entry-content-support-us #join-submit-button {
+   width: 100%;
+}
+ .entry-content-support-us #join-submit-button:disabled {
+   background: #8e8e8e;
+   cursor: not-allowed;
+}
+
+
+/* UPGRADE section */
 .entry-content-support-us #upgrade {
   background: #23356C;
   padding: 1rem 0.5rem;

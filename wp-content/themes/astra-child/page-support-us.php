@@ -57,7 +57,7 @@ get_header(); ?>
           </ul>
         </div>
 
-        <div class="join-selection-column" style="background: white;">
+        <div class="join-selection-column">
           <h3>Choose your level of support</h3>
           <div class="join-selection-type">
             <button class="join-selection-type-item selected" data-toggle="monthly-options">Monthly</button>
