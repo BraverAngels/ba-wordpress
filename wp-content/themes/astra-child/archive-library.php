@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * The template for displaying the main BA library index/categories.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *

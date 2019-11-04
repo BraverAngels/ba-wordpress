@@ -52,22 +52,6 @@ $organizer = tribe_get_organizer();
       }
     </style>
 
-    <?php //if ( $venue_details ) : ?>
-      <!-- Venue Display Info -->
-      <!-- <div class="tribe-events-venue-details"> -->
-      <?php
-        // $address_delimiter = empty( $venue_address ) ? ' ' : ', ';
-
-        // These details are already escaped in various ways earlier in the process.
-        // echo implode( $address_delimiter, $venue_details );
-
-        // if ( tribe_show_google_map_link() ) {
-        //   echo tribe_get_map_link_html();
-        // }
-      ?>
-      <!-- </div>  -->
-    <?php //endif; ?>
-
   </div>
 </div><!-- .tribe-events-event-meta -->
 

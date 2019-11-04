@@ -1,3 +1,10 @@
+<?php
+/**
+ * The library index/archive single post content.
+ *
+ */
+?>
+
 <article itemtype="https://schema.org/CreativeWork" itemscope="itemscope" id="post-<?php the_ID(); ?>" <?php post_class('ast-col-md-6 ast-col-lg-4'); ?>>
 
   <?php if (has_post_thumbnail()) : ?>

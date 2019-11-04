@@ -1,3 +1,10 @@
+<?php
+/**
+ * The library index/archive sidebar navigation.
+ *
+ */
+?>
+
 <div class="library-sidebar-inner">
   <ul class="library-labels-list">
     <?php

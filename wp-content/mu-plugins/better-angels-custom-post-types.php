@@ -147,26 +147,12 @@ function ba_save_library_data_custom_box( $post_id, $post ) {
         );
     }
   }
-  // if (!empty($_POST['review_content'])) {
-  //     $data=htmlspecialchars($_POST['review_content']); //make sanitization more strict !!
-  //     update_post_meta($post_id, '_ba_review_content', $data );
-  // }
 }
 
-// // Render the content editor
-// function ba_render_review_editor( $post ) {
-//     $text=get_post_meta($post->ID, '_ba_review_content' , true );
-//     wp_editor( htmlspecialchars_decode($text), 'review_content', $settings = array('textarea_name'=>'review_content') );
-// }
-//
-//
-// // template tags
-// function the_ba_library_review_content($id) {
-//   if (get_post_meta($id, '_ba_review_content')) {
-//     echo get_post_meta($id, '_ba_review_content', true);
-//   }
-// }
 
+/** ////////////////////////////////////////////////////////
+**   template tags to be used in theme files
+** ///////////////////////////////////////////////////////*/
 function the_ba_library_purchase_link($id) {
   if (get_post_meta($id, '_ba_purchase_link', true)) {
     echo "<a target='blank' rel='nofollow' href=" . get_post_meta($id, '_ba_purchase_link' , true ) . ">Purchase →</a>";
@@ -236,10 +222,3 @@ function ba_next_prev_links( $status ) {
   return $status;
 }
 add_filter( 'astra_single_post_navigation_enabled', 'ba_next_prev_links' );
-
-// add_filter( 'get_the_archive_title', function ( $title ) {
-//     if( is_category() ) {
-//         $title = single_cat_title( '', false );
-//     }
-//     return $title;
-// });

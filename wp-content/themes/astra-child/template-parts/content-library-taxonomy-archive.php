@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * The library index/archive main loop.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -8,13 +8,6 @@
  * @since 1.0.0
  */
 
- /* Add a link  to the end of our excerpt contained in a div for styling purposes and to break to a new line on the page.*/
-
- // function ba_library_excerpt_more($more) {
- //     global $post;
- //     return '';
- // }
- // add_filter('excerpt_more', 'ba_library_excerpt_more');
 
 get_header(); ?>
 
