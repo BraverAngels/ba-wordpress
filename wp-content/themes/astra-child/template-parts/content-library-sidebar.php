@@ -21,7 +21,9 @@
   <a href="<?php echo home_url('members-portal/online-book-discussions'); ?>" class="ba-cta-button ba-cta-button-red" style="font-weight: 400; text-align: center; display: block; margin: 0; margin-top: 1rem;font-size: 80%;padding-left:.25rem!important; padding-right: .25rem !important;">
     Online Book Discussions
   </a>
-  <span class="library-sidebar-contact-info">
-    Questions, concerns and book recommendations for the Better Angels Library can be submitted to <a href="mailto:mailto:library@better-angels.org">library@better-angels.org</a>
-  </span>
+  <p class="library-sidebar-contact-info">
+    The Better Angels Library is curated and maintained by members <span class="library-curator-blue">Bridget Kraft</span>, <span class="library-curator-red">Jennifer Livingston</span>, <span class="library-curator-blue">Kathleen Lowry</span>, and <span class="library-curator-red">Bill Roos</span>.
+    <br/>
+    Questions, concerns and book recommendations for the Better Angels Library can be submitted to <a href="mailto:mailto:library@better-angels.org">library@better-angels.org</a>.
+  </p>
 </div>
