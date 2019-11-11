@@ -1324,16 +1324,11 @@ background-color: #ab2634 !important;
   font-size: .875rem;
   color: gray;
   display: inline-block;
-  margin-top: 1rem;
   line-height: 1.5;
 }
-.library-sidebar-inner .library-sidebar-contact-info .library-curator-blue {
-  color: #23356C;
-  font-weight: 600;
-}
-.library-sidebar-inner .library-sidebar-contact-info .library-curator-red {
-  color: #bc2f2c;
-  font-weight: 600;
+.library-sidebar-inner .library-sidebar-contact-info:first-of-type{
+  margin-bottom: 0;
+  margin-top: 1rem;
 }
 
 .library-labels-list li ul {

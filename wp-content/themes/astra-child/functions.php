@@ -37,6 +37,11 @@ function use_jquery_from_google () {
  */
 function child_enqueue_styles() {
 
+  //Disable the gutenburg styles since we aren't using it
+  if (!is_admin()) {
+    wp_deregister_style('wp-block-library');
+  }
+
   wp_enqueue_style( 'astra-child-theme-css', get_stylesheet_directory_uri() . '/style.css', array('astra-theme-css'), CHILD_THEME_ASTRA_CHILD_VERSION, 'all' );
   wp_enqueue_script( 'mobile-header-js', get_stylesheet_directory_uri() . '/scripts/header.js', ['jquery'], '1.0.2', true );
 
