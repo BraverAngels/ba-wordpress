@@ -22,8 +22,8 @@ add_filter( 'comment_notification_recipients', 'ba_library_comment_moderation_re
 function ba_unapprove_library_review( $approved , $commentdata ) {
 
   $comment_post_type = get_post_type( $commentdata['comment_post_ID'] );
-  $comment_user_roles = get_user_roles( $commentdata['user_id'] );
-
+  $comment_user_roles = get_user_by('ID', $commentdata['user_id'])->roles;
+  
   if (
     $comment_post_type == 'library'
     && !in_array( 'editor', $comment_user_roles )
