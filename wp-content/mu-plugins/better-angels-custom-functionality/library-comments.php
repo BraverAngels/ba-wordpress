@@ -8,7 +8,7 @@ function ba_library_comment_moderation_recipients( $emails, $comment_id ) {
   $comment_post_type = get_post_type($comment->comment_post_ID);
 
   if ($comment_post_type == 'library') {
-    $emails = array('webmaster@better-angels.org');
+    $emails = array('library@better-angels.org');
   }
 
   return $emails;
@@ -23,7 +23,7 @@ function ba_unapprove_library_review( $approved , $commentdata ) {
 
   $comment_post_type = get_post_type( $commentdata['comment_post_ID'] );
   $comment_user_roles = get_user_by('ID', $commentdata['user_id'])->roles;
-  
+
   if (
     $comment_post_type == 'library'
     && !in_array( 'editor', $comment_user_roles )
