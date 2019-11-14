@@ -42,7 +42,7 @@ get_header(); ?>
     <section id="join">
       <div class="join-inner">
         <div class="join-content">
-          <h2>Become a Member</h2>
+          <h2 style="overflow: hidden;">Become a Member</h2>
           <p><em>Better Angels membership requires dues of just $12 a year, but many of our members generously choose to give more. Members can:</em></p>
           <ul>
             <li>Join or create a Better Angels Alliance (chapter) in your community.</li>
@@ -50,6 +50,7 @@ get_header(); ?>
             <li>With other members, organize local events to bridge political differences.</li>
             <li>Take the online, interactive “Skills Workshop.”</li>
             <li>Contribute to “The Conversation,” the Better Angels blog.</li>
+            <li>Be part of the <a href="<?php echo home_url('bus'); ?>">2020 Bus Tour</a>.</li>
             <li>Participate in member-only meetings with “red” and “blue” members from across the U.S.</li>
             <li>Become a local or national Better Angels volunteer leader.</li>
             <li><em>Be a part of America’s largest organization for bridging the divide.</em></li>
@@ -102,12 +103,12 @@ get_header(); ?>
     <section class="upgrade" id="upgrade">
       <div class="upgrade-inner">
         <div class="upgrade-content">
-          <h2>Upgrade/Renew Your Membership</h2>
+          <h2 style="overflow: hidden;">Upgrade/Renew Your Membership</h2>
           <p>Better Angels is a grassroots movement,
             and we can’t rely on rich donors. We’re counting on our members to upgrade or renew their membership
             so that we can bring our country together in 2020.
             Your dues will help fund workshops, debates, local Alliances, high school & college programs,
-            our upcoming 2020 bus tour, and of course, the 2020 National Convention in Charlotte, NC!
+            <a href="<?php echo home_url('bus'); ?>">our upcoming 2020 bus tour</a>, and of course, the 2020 National Convention in Charlotte, NC!
           </p>
         </div>
         <div class="upgrade-selection-column">
@@ -162,7 +163,7 @@ get_header(); ?>
     <section class="donate" id="donate">
       <div class="donate-inner">
         <div class="donate-content">
-          <h2 style="color: white;">Donate</h2>
+          <h2 style="color: white; overflow: hidden;">Donate</h2>
           <p>
             2020 is shaping up to be one of the most divisive years in American history.
             Help us build a house united and save our Republic in this time of crisis.
@@ -170,7 +171,7 @@ get_header(); ?>
             Your donation will fund:
           </p>
           <ul>
-            <li>Our National Bus Tour in 2020 (<a href="<?php home_url('bus'); ?>")>Learn more</a>)</li>
+            <li>Our National Bus Tour in 2020 (<a href="<?php echo home_url('bus'); ?>">Learn more</a>)</li>
             <li>Red-Blue Workshops</li>
             <li>Skills Workshops</li>
             <li>Better Angels Debates</li>
