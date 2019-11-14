@@ -557,6 +557,10 @@ body, button, input, select, textarea {
   color: white;
   display: block;
 }
+.entry-content-support-us #join .join-content a {
+  color: white;
+  text-decoration: underline;
+}
 .entry-content-support-us #join .join-selection-column {
   display: block;
   width: 100%;
@@ -679,6 +683,12 @@ join-selection-column
   color: white;
   display: block;
 }
+
+.entry-content-support-us #upgrade .upgrade-content a {
+  color: white;
+  text-decoration: underline;
+}
+
 .entry-content-support-us #upgrade .upgrade-selection-column {
   display: block;
   width: 100%;
