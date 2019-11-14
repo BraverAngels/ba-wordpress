@@ -561,6 +561,13 @@ body, button, input, select, textarea {
   color: white;
   text-decoration: underline;
 }
+
+.entry-content-support-us #join .join-content a:hover,
+.entry-content-support-us #join .join-content a:focus {
+  color: lightgray;
+  text-decoration: underline;
+}
+
 .entry-content-support-us #join .join-selection-column {
   display: block;
   width: 100%;
@@ -688,6 +695,13 @@ join-selection-column
   color: white;
   text-decoration: underline;
 }
+
+.entry-content-support-us #upgrade .upgrade-content a:hover,
+.entry-content-support-us #upgrade .upgrade-content a:focus {
+  color: lightgray;
+  text-decoration: underline;
+}
+
 
 .entry-content-support-us #upgrade .upgrade-selection-column {
   display: block;
