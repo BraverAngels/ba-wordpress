@@ -1245,6 +1245,7 @@ background-color: #ab2634 !important;
   width: 100%;
   padding: 0;
   max-width: 100%;
+  overflow-x: hidden;
 }
 .post-type-archive-library .ast-container .content-area,
 .tax-library_category .ast-container .content-area {
