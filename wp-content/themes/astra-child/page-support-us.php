@@ -128,13 +128,13 @@ get_header(); ?>
           <?php else : ?>
 
             <?php if (get_user_subscription_id()) : ?>
-              <p>Current subscription: <strong><?php echo get_the_title(get_user_subscription_id()); ?></strong><br/><a href="<?php echo home_url('account/?action=subscriptions') ?>">View Account Settings</a></p>
+              <p>Current subscription: <strong><?php echo get_the_title(get_user_subscription_id()); ?></strong><br/><a href="<?php echo home_url('account/?action=subscriptions') ?>">Other Payment Options</a></p>
             <?php else :
               //the user has an account but does not have an active subscription
             ?>
               <p>
                 <strong>You do not have an active membership.
-                You must be a current dues-paying member to access the Members Portal. <a href="<?php echo home_url('account/?action=subscriptions') ?>">View Account Settings</a></strong><br/>
+                You must be a current dues-paying member to access the Members Portal. <a href="<?php echo home_url('account/?action=subscriptions') ?>">Other Payment Options</a></strong><br/>
                 Please choose from the renewal options below.
               </p>
             <?php endif; ?>
