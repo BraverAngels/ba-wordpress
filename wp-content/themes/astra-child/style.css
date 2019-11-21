@@ -1354,7 +1354,9 @@ background-color: #ab2634 !important;
   margin-bottom: 0;
   margin-top: 1rem;
 }
-
+.library-sidebar-inner .ba-cta-button {
+  white-space: normal;
+}
 .library-labels-list li ul {
   list-style: none;
   line-height: 1.2;
