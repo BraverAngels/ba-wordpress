@@ -119,7 +119,7 @@ get_header(); ?>
               'redirect' => home_url('support-us#upgrade')
             )); ?>
             <p>
-              <a href="<?php echo home_url('login/?action=forgot_password'); ?>">Recover lost password</a>
+              <a href="<?php echo home_url('login/?action=forgot_password'); ?>">Recover lost password/account</a>
             </p>
             <p>
               <a href="#donate">I just want to donate</a>
