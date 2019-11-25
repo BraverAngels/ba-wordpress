@@ -169,3 +169,23 @@ function ba_search_set_post_types( $query ) {
 }
 
 add_filter( 'pre_get_posts', 'ba_search_set_post_types' );
+
+
+
+
+/**
+ * This function modifies the main WordPress query to
+ * display items in menu order
+ */
+
+function ba_change_library_loop_order( $query ) {
+  if ( is_admin() || !$query->is_main_query() ) return;
+
+  if ( is_tax('library_category') ) {
+    $query->query_vars['orderby'] = 'menu_order';
+    $query->query_vars['order'] = 'ASC';
+    return;
+  }
+}
+
+add_action( 'pre_get_posts', 'ba_change_library_loop_order' );
