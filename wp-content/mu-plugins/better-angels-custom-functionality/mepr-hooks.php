@@ -324,7 +324,7 @@ function get_higher_membership_options() {
 
   }
 
-  foreach([3618, 3622] as $membership) {
+  foreach([3612, 3613, 3618, 3622] as $membership) {
     if (in_array($membership, $higher_memberships)) {
       $index = array_search($membership, $higher_memberships);
       unset($higher_memberships[$index]);

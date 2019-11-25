@@ -79,8 +79,6 @@ get_header(); ?>
             <div id="monthly-options" class="join-selection-options active">
               <span class="join-description">Select monthly contribution amount</span>
               <ul>
-                <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-1/">$1</a></li>
-                <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-2/">$2</a></li>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-5/">$5</a></li>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-10/">$10</a></li>
                 <li><a data-autoselect class="join-selection-amount selected" href="<?php echo home_url(); ?>/join/monthly-2020/">$20.20</a></li>
@@ -134,7 +132,8 @@ get_header(); ?>
             ?>
               <p>
                 <strong>You do not have an active membership.
-                You must be a current dues-paying member to access the Members Portal. <a href="<?php echo home_url('account/?action=subscriptions') ?>">Other Payment Options</a></strong><br/>
+                You must be a current dues-paying member to access the Members Portal.
+                <br/><a href="<?php echo home_url('account/?action=subscriptions') ?>">Other Payment Options</a></strong><br/>
                 Please choose from the renewal options below.
               </p>
             <?php endif; ?>
@@ -164,6 +163,7 @@ get_header(); ?>
       <div class="donate-inner">
         <div class="donate-content">
           <h2 style="color: white; overflow: hidden;">Donate</h2>
+          <em style="display: inline-block; padding-bottom: .5rem;">(Will not create or affect membership)</em><br/>
           <p>
             2020 is shaping up to be one of the most divisive years in American history.
             Help us build a house united and save our Republic in this time of crisis.
