@@ -591,6 +591,9 @@ body, button, input, select, textarea {
 .entry-content-support-us #donate .gfield_consent_description {
   padding: .5rem !important;
 }
+.entry-content-support-us #donate .ginput_container_consent {
+  font-size: 90%;
+}
 
 @media screen and (min-width: 1000px) {
   .entry-content-support-us #join .join-content,
