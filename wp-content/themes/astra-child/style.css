@@ -588,6 +588,10 @@ body, button, input, select, textarea {
   border: 2px solid white !important;
 }
 
+.entry-content-support-us #donate .gfield_consent_description {
+  padding: .5rem !important;
+}
+
 @media screen and (min-width: 1000px) {
   .entry-content-support-us #join .join-content,
 .entry-content-support-us #join .join-selection-column {
@@ -1516,6 +1520,11 @@ background-color: #ab2634 !important;
 }
 .mp_wrapper textarea, .mp_wrapper select, .mp_wrapper input[type=text], .mp_wrapper input[type=url], .mp_wrapper input[type=email], .mp_wrapper input[type=tel], .mp_wrapper input[type=number], .mp_wrapper input[type=password] {
   padding: 5px 10px;
+}
+
+.mepr_tos {
+  font-size: 80% !important;
+  margin-top: 2rem !important;
 }
 
 .mepr-account-form {

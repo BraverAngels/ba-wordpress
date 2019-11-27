@@ -11,7 +11,7 @@
 /**
  * Define Constants
  */
-define( 'CHILD_THEME_ASTRA_CHILD_VERSION', '1.0.21' );
+define( 'CHILD_THEME_ASTRA_CHILD_VERSION', '1.0.22' );
 
 add_action('wp_enqueue_scripts', 'use_jquery_from_google');
 
