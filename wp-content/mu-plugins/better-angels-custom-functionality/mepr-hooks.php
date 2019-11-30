@@ -2,7 +2,9 @@
 // Memberpress specific action hooks can be found in the following Gist
 // https://gist.github.com/cartpauj/256e893ed3de276f8604aba01ef71bb8
 
-
+/*
+  Add actions for sending user data to Action Network
+*/
 add_action( 'wp_head', 'ba_process_membership_data' );
 
 function ba_process_membership_data() {
@@ -21,7 +23,7 @@ function ba_process_membership_data() {
 
 
 /*
-  After a user registers for a subscription and completes payment
+  Fires after a user registers for a subscription and completes payment
 */
 
 function send_new_user_data_to_action_network($user_id){
@@ -154,7 +156,7 @@ function send_new_user_data_to_action_network($user_id){
 
 
 /*
-  After a user registers for a subscription and completes payment
+  Fires after a user registers for a subscription and completes payment
 */
 
 function send_updated_user_data_to_action_network($data){
@@ -244,7 +246,7 @@ function send_updated_user_data_to_action_network($data){
 
 
 
-add_action('mepr-event-transaction-expired', 'ba_catch_txn_expired');
+
 
 // Transaction has expired (user cancelled, lapsed etc)
 function ba_catch_txn_expired($event) {
@@ -285,25 +287,56 @@ function ba_catch_txn_expired($event) {
     //else the user is still subscribed to this membership, so do nothing
   }
 }
-add_action('mepr-event-transaction-expired', 'catch_txn_expired');
+
+add_action('mepr-event-transaction-expired', 'ba_catch_txn_expired');
 
 
+/*
+  Functions for analyzing the current user's subscription
+*/
 
+// Returns an array of ALL membership post type ids
+function get_membership_ids() {
+  $args = array(
+    'numberposts' => -1,
+    'post_type'   => 'memberpressproduct',
+    'fields'      => 'ids'
+  );
 
+  $membership_ids = get_posts( $args );
 
-function get_user_subscription_id() {
-  $membership_ids_array = [3706, 3612, 3613, 3614, 3616, 3618, 3620, 3621, 3622, 3623, 3624, 3625, 3626, 3627, 3628, 3629, 3630, 3631, 3632, 4278, 4279];
-  $active_membership = null;
-  foreach($membership_ids_array as $membership_id) {
-    if (current_user_can('mepr-active','memberships: ' + $membership_id)) {
-      $active_membership = $membership_id;
-    }
-  }
-  return $active_membership;
+  return $membership_ids;
 }
 
+
+function get_user_subscription_id(){
+
+    if( class_exists('MeprUser') && is_user_logged_in() ){
+        $user_id = get_current_user_id();
+
+        $user = new MeprUser( $user_id );
+        $get_memberships = $user->active_product_subscriptions();
+
+        if( !empty( $get_memberships ) ){
+            $user_memberships = array_values( array_unique( $get_memberships ) );
+            return $user_memberships[0];
+        }
+
+        return false;
+
+    } else {
+
+        return false;
+    }
+}
+
+
 function get_higher_membership_options() {
+
+  // IDs of monthly memberships
   $monthly_memberships = [3612, 3613, 3614, 3616, 4278, 3618, 3620];
+
+  // IDs of yearly memberships
   $yearly_memberships = [3621, 4279, 3622, 3623, 3624, 3625, 3626];
 
   if (in_array(get_user_subscription_id(), $monthly_memberships)) {
@@ -315,6 +348,7 @@ function get_higher_membership_options() {
 
     $index = array_search(get_user_subscription_id(), $yearly_memberships);
     $higher_memberships = array_slice($yearly_memberships, $index + 1);
+
     // Add the $50 per month option
     $higher_memberships[] = 3620;
 
@@ -324,6 +358,7 @@ function get_higher_membership_options() {
 
   }
 
+  // remove the memberships we don't want people to sign up for anymore
   foreach([3612, 3613, 3618, 3622] as $membership) {
     if (in_array($membership, $higher_memberships)) {
       $index = array_search($membership, $higher_memberships);
@@ -337,7 +372,7 @@ function get_higher_membership_options() {
 
 // Function to add subscribe text to posts and pages
 function ba_mepr_join_or_upgrade_text() {
-  $membership_ids = '3706, 3612, 3613, 3614, 3616, 3618, 3620, 3621, 3622, 3623, 3624, 3625, 3626, 3627, 3628, 3629, 3630, 3631, 3632, 4278, 4279';
+
 
   if (!is_user_logged_in()) {
     return
@@ -347,7 +382,9 @@ function ba_mepr_join_or_upgrade_text() {
       <strong>Already have an account? <a href="' . home_url() . '/login?redirect_to=' . home_url() . $_SERVER['REQUEST_URI'] . '">Login</a> before completing your purchase.</strong>
       <br/><a href="' . home_url('login/?action=forgot_password') . '">Recover lost password</a>
     </p>';
-  } elseif (is_user_logged_in() && current_user_can('mepr-active','memberships: ' . $membership_ids)) {
+
+  } elseif (is_user_logged_in() && get_user_subscription_id()) {
+
     return '<h2>Upgrade account</h2>
     <p>Complete the form below to upgrade your membership.
       <br/>
@@ -362,7 +399,7 @@ function ba_mepr_join_or_upgrade_text() {
 }
 add_shortcode('join_or_upgrade_text', 'ba_mepr_join_or_upgrade_text');
 
-
+// conditional text for use in shortcode on checkout page
 function ba_mepr_login_before_checkout_reminder() {
   if (!is_user_logged_in()) {
     return '<p><strong>Already have an account? <a href="' . home_url() . '/login?redirect_to=' . home_url() . $_SERVER['REQUEST_URI'] . '">Login</a> before completing your purchase.</strong></p>';

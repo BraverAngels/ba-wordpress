@@ -2,10 +2,8 @@
 /**
  * The template for displaying all pages.
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
+ * This is the template that displays the "Support us" page
+ * note that all content is hard-coded.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
@@ -87,7 +85,7 @@ get_header(); ?>
             </div>
           </div>
 
-          <form id="join-submit-form" action="<?php echo home_url(); ?>/join/monthly-10/">
+          <form id="join-submit-form" action="<?php echo home_url(); ?>/join/monthly-2020/">
             <input id="join-submit-button" type="submit" value="Join" />
           </form>
 
@@ -132,8 +130,10 @@ get_header(); ?>
             ?>
               <p>
                 <strong>You do not have an active membership.
-                You must be a current dues-paying member to access the Members Portal.
-                <br/><a href="<?php echo home_url('account/?action=subscriptions') ?>">Other Payment Options</a></strong><br/>
+                You must be a current dues-paying member to access the Members Portal.</strong>
+                <br/>
+              </p>
+              <p>
                 Please choose from the renewal options below.
               </p>
             <?php endif; ?>

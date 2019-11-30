@@ -75,9 +75,11 @@ if ( post_password_required() ) {
     <h3>Leave a Review</h3>
     <div class="library-review-section-join-message">
       <h4>You must be a dues-paying member of Better Angels to post a review.</h4>
-      <p>
-        <em>Already a member?</em> <a href="<?php echo home_url('login?redirect_to=' . get_the_permalink() ); ?>"><strong>Login</strong></a>
-      </p>
+      <?php if (!is_user_logged_in()) : ?>
+        <p>
+          <em>Already a member?</em> <a href="<?php echo home_url('login?redirect_to=' . get_the_permalink() ); ?>"><strong>Login</strong></a>
+        </p>
+      <?php endif; ?>
       <p>
         Membership dues as low as <strong>$12 per year</strong>. <a href="<?php echo home_url('join?utm_source=website&utm_medium=join&utm_campaign=library_review'); ?>"><strong>Join now</strong></a> and also get access to:
         <ul>
