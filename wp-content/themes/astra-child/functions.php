@@ -143,7 +143,7 @@ function redirect_to_login_page() {
     if (!is_user_logged_in()) {
       wp_redirect( home_url() . '/login?redirect_to=' . home_url() . $_SERVER['REQUEST_URI'], 301 );
       exit;
-    } elseif (!get_user_subscription_id()) {
+    } elseif (!get_user_subscription_id() && !current_user_can('edit_others_pages')) {
       wp_redirect( home_url() . '/support-us#upgrade');
       exit;
     }
