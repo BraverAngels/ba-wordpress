@@ -396,9 +396,17 @@ function ba_mepr_join_or_upgrade_text() {
     <p>
       <em>Your membership will renew automatically. Cancel any time.</em>
     </p>';
+
+  } else {
+
+    return '<h2>Welcome to Better Angels</h2>
+    <p>Please complete the form below.</p>
+    <p>
+      <em>Your membership will renew automatically. Cancel any time.</em>
+    </p>';
+
   }
 
-  return;
 }
 add_shortcode('join_or_upgrade_text', 'ba_mepr_join_or_upgrade_text');
 
