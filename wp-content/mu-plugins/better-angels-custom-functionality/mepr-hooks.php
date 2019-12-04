@@ -381,6 +381,9 @@ function ba_mepr_join_or_upgrade_text() {
       Please use the form below to tell us about yourself:<br/>
       <strong>Already have an account? <a href="' . home_url() . '/login?redirect_to=' . home_url() . $_SERVER['REQUEST_URI'] . '">Login</a> before completing your purchase.</strong>
       <br/><a href="' . home_url('login/?action=forgot_password') . '">Recover lost password</a>
+    </p>
+    <p>
+      <em>Your membership will renew automatically. Cancel any time.</em>
     </p>';
 
   } elseif (is_user_logged_in() && get_user_subscription_id()) {
