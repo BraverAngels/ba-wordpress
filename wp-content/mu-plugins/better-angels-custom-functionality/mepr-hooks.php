@@ -400,8 +400,8 @@ function ba_mepr_join_or_upgrade_text() {
   } else {
 
     return '<h2>Welcome to Better Angels</h2>
-    <p>Please complete the form below.</p>
-    <p>
+    <p>Please complete the form below.
+      <br/>
       <em>Your membership will renew automatically. Cancel any time.</em>
     </p>';
 
