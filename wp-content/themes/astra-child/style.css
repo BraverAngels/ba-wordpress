@@ -31,10 +31,18 @@ body, button, input, select, textarea {
 }
 
 
-.elementor-post__title a:hover, .elementor-post__title a:focus, .elementor-heading-title a:hover, .elementor-heading-title a:focus  {
+.elementor-post__title a:hover,
+.elementor-post__title a:focus,
+.elementor-heading-title a:hover,
+.elementor-heading-title a:focus,
+.archive .entry-title a:hover,
+.archive .entry-title a:focus {
   color: #bc2f2c !important;
 }
 
+.archive .entry-meta .published {
+  color: black;
+}
 /**
   # Site Header
 */
