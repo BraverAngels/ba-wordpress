@@ -36,11 +36,14 @@ body, button, input, select, textarea {
 .elementor-heading-title a:hover,
 .elementor-heading-title a:focus,
 .archive .entry-title a:hover,
-.archive .entry-title a:focus {
+.archive .entry-title a:focus,
+.search .entry-title a:hover,
+.search .entry-title a:focus {
   color: #bc2f2c !important;
 }
 
-.archive .entry-meta .published {
+.archive .entry-meta .published,
+.search .entry-meta .published {
   color: black;
 }
 /**
