@@ -54,6 +54,11 @@ get_header(); ?>
                 <br/>
               <?php endif; ?>
               </div>
+              <?php if (has_ba_library_recommended_by(get_the_ID())) : ?>
+                <div class="library-recommended-by">
+                  <span>Recommended by: <?php ba_library_recommended_by(get_the_ID()); ?></span>
+                </div>
+              <?php endif; ?>
               <?php $item_labels = get_the_terms( $post, 'library_category' ); ?>
               <div class="library-entry-categories">
                 <?php

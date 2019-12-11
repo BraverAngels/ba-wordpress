@@ -121,6 +121,7 @@ function ba_add_library_data_custom_box_html($post)
       array('label' => 'Year Published', 'key' => 'ba_year_published', 'value' => get_post_meta($post->ID, '_ba_year_published', true)),
       array('label' => 'Author', 'key' => 'ba_author', 'value' => get_post_meta($post->ID, '_ba_author', true)),
       array('label' => 'Purchase URL', 'key' => 'ba_purchase_link', 'value' => get_post_meta($post->ID, '_ba_purchase_link', true)),
+      array('label' => 'Recommended By', 'key' => 'ba_recommended_by', 'value' => get_post_meta($post->ID, '_ba_recommended_by', true))
     );
     // Display code below
     foreach ($keys as $item) { ?>
@@ -136,7 +137,7 @@ add_action( 'save_post', 'ba_save_library_data_custom_box', 10, 2 );
 /* Save the meta box post metadata. */
 function ba_save_library_data_custom_box( $post_id, $post ) {
   // Keys
-  $keys = ["ba_year_published", "ba_author", "ba_purchase_link",];
+  $keys = ["ba_year_published", "ba_author", "ba_purchase_link", "ba_recommended_by"];
   // Loop through keys and update their meta
   foreach($keys as $key){
     if (array_key_exists($key, $_POST)) {
@@ -195,6 +196,19 @@ function has_ba_library_year_published($id) {
 function the_ba_library_year_published($id) {
   if (get_post_meta($id, '_ba_year_published', true)) {
     echo get_post_meta($id, '_ba_year_published' , true );
+  }
+}
+
+function has_ba_library_recommended_by($id) {
+  if (get_post_meta($id, '_ba_recommended_by', true)) {
+    return true;
+  }
+  return false;
+}
+
+function ba_library_recommended_by($id) {
+  if (get_post_meta($id, '_ba_recommended_by', true)) {
+    echo get_post_meta($id, '_ba_recommended_by' , true );
   }
 }
 
