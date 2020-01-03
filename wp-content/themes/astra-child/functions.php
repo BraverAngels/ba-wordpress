@@ -135,7 +135,7 @@ function redirect_to_login_page() {
   global $post;
 
   $is_member_portal = is_page('members-portal');
-  $is_member_portal_child_page = is_page() && $post->post_parent == 1303;
+  $is_member_portal_child_page = is_page() && $post->post_parent == 1303 && !is_page('welcome');
 
   // make sure that user has an actual membership here!!!
 
