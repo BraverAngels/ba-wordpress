@@ -186,7 +186,7 @@ get_header(); ?>
         </div>
         <div class="donate-selection-column">
           <?php echo do_shortcode('[gravityform id=29 title=false description=false ajax=true tabindex=49]'); ?>
-          <p>If you’d like to <strong>donate via check</strong>, please make it out to “Better Angels” and mail to our New York headquarters:<br/>420 Lexington Avenue<br/>Room 300<br/>New York, NY 10170</p>
+          <p><strong><a href="<?php echo home_url('support-us/donate-by-check'); ?>">Donate via check</a></strong></p>
         </div>
       </div>
     </section>
