@@ -1032,10 +1032,6 @@ join-selection-column
 i.fa-stack-1x {
   font-style: normal;
 }
-.event-categories a.button.active {
-  border-color: #ab2634 !important;
-background-color: #ab2634 !important;
-}
 
 #gform_2 .gfield_checkbox input[type="checkbox"]:checked + label::before,
 #gform_2 .gfield_radio input[type="radio"]:checked + label::before {
@@ -1602,4 +1598,36 @@ input.mepr-form-input.invalid,
 
 #mepr_forgot_password_form {
   margin-bottom: 1rem;
+}
+/* EVENTS */
+
+.event-categories a.button.active {
+  border-color: #ab2634 !important;
+  background-color: #ab2634 !important;
+}
+
+.tribe-js-filters-toggle:focus,
+.tribe-js-filters-toggle:hover,
+.tribe_events_filters_toggle:focus,
+.tribe_events_filters_toggle:hover {
+  color: #bc2f2c;
+}
+
+.tribe-events-list .tribe-events-loop .tribe-events-event-meta .tribe-events-divider {
+  display: none;
+}
+
+.tribe-events-list .tribe-events-loop .tribe-events-event-meta .recurringinfo {
+  font-size: .925rem;
+}
+
+@media screen and (min-width: 769px) {
+  .tribe-events-list .tribe-events-loop .tribe-events-event-meta .recurringinfo {
+    margin-left: .5rem;
+    background: #e3e3e3;
+    padding: 0 .125rem;
+    border-radius: .25rem;
+    position: relative;
+    top: 4px;
+  }
 }
