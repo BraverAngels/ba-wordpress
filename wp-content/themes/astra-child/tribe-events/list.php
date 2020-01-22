@@ -21,10 +21,12 @@
 
   <!-- Title Bar -->
   <?php tribe_get_template_part( 'list/title-bar' ); ?>
-
+  <p>
+    <em style="font-size: 80%;padding-bottom: 1rem;color: gray;">Note: Better Angles is not affiliated with the Better Angels Society®, the non-profit organization that supports the production, promotion and educational outreach associated with historically significant documentary films made by Ken Burns and other associated filmmakers.</em>
+  </p>
     <!-- Tribe Bar -->
   <?php tribe_get_template_part( 'modules/bar' ); ?>
-    
+
     <!-- Main Events Content -->
   <?php tribe_get_template_part( 'list/content' ); ?>
 
