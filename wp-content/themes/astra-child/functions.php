@@ -189,3 +189,12 @@ function ba_change_library_loop_order( $query ) {
 }
 
 add_action( 'pre_get_posts', 'ba_change_library_loop_order' );
+
+
+function author_shortcode() {
+  echo '<div class="author-list">';
+  wp_list_authors();
+  echo '</div>';
+}
+
+add_shortcode('authors_list', 'author_shortcode');
