@@ -192,7 +192,7 @@ add_action( 'pre_get_posts', 'ba_change_library_loop_order' );
 
 
 function author_shortcode() {
-  echo '<ul class="author-list">';
+  echo '<ul class="author-list" style="list-style:none;margin:0 0.5rem;">';
   wp_list_authors();
   echo '</ul>';
 }
