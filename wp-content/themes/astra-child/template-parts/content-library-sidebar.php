@@ -22,7 +22,7 @@
     Online Book Discussions
   </a>
   <p class="library-sidebar-contact-info">
-    The Better Angels Library is curated and maintained by members <strong>Bridget Kraft</strong>, <strong>Jennifer Livingston</strong>, <strong>Kathleen Lowry</strong>, and <strong>Bill Roos</strong>.
+    The Better Angels Library is curated and maintained by members <strong>Bridget Kraft</strong>, <strong>Jennifer Livingston</strong>, and <strong>Bill Roos</strong>.
     <br/>
     Questions, concerns and book recommendations for the Better Angels Library can be submitted to <a href="mailto:mailto:library@better-angels.org">library@better-angels.org</a>.
   </p>
