@@ -21,7 +21,7 @@
 
   <!-- Title Bar -->
   <?php tribe_get_template_part( 'list/title-bar' ); ?>
-  <p style="margin-top: 1rem;"><em><strong>Note:</strong> Due to the public health threat from the Coronavirus, we’re strongly recommending that in-person events we’re strongly recommending that in-person events be cancelled or postponed until at least April 13. More information is available <a href="<?php home_url(); ?>/coronavirus"><u>here</u></a>. If you have not heard from event organizers about this, we recommend reaching out to them for information about your specific event.</em></p>
+  <p style="margin-top: 1rem;"><em><strong>Note:</strong> Due to the public health threat from the Coronavirus, we’re strongly recommending that in-person events be cancelled or postponed until at least April 13. More information is available <a href="<?php home_url(); ?>/coronavirus"><u>here</u></a>. If you have not heard from event organizers about this, we recommend reaching out to them for information about your specific event.</em></p>
   <p>
     <em style="font-size: 80%;">Note: Better Angels is <u>not</u> affiliated with The BETTER ANGELS Society®, the non-profit organization that supports the production, promotion and educational outreach associated with historically significant documentary films made by Ken Burns and other associated filmmakers.</em>
   </p>
