@@ -48,7 +48,6 @@ get_header(); ?>
             <li>With other members, organize local events to bridge political differences.</li>
             <li>Take the online, interactive “Skills Workshop.”</li>
             <li>Contribute to “The Conversation,” the Better Angels blog.</li>
-            <li>Be part of the <a href="<?php echo home_url('bus'); ?>">2020 Bus Tour</a>.</li>
             <li>Participate in member-only meetings with “red” and “blue” members from across the U.S.</li>
             <li>Become a local or national Better Angels volunteer leader.</li>
             <li><em>Be a part of America’s largest organization for bridging the divide.</em></li>
@@ -104,8 +103,7 @@ get_header(); ?>
           <p>Better Angels is a grassroots movement,
             and we can’t rely on rich donors. We’re counting on our members to upgrade or renew their membership
             so that we can bring our country together in 2020.
-            Your dues will help fund workshops, debates, local Alliances, high school & college programs,
-            <a href="<?php echo home_url('bus'); ?>">our upcoming 2020 bus tour</a>, and of course, the 2020 National Convention in Charlotte, NC!
+            Your dues will help fund workshops, debates, local Alliances, and high school & college programs.
           </p>
         </div>
         <div class="upgrade-selection-column">
@@ -172,7 +170,6 @@ get_header(); ?>
             Your donation will fund:
           </p>
           <ul>
-            <li>Our National Bus Tour in 2020 (<a href="<?php echo home_url('bus'); ?>">Learn more</a>)</li>
             <li>Red-Blue Workshops</li>
             <li>Skills Workshops</li>
             <li>Better Angels Debates</li>
