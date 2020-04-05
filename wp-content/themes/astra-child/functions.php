@@ -74,7 +74,7 @@ add_action( 'template_redirect', 'redirect_organizer_and_venue_type_single' );
   ?>
     <style type="text/css">
       body.login div#login h1 a {
-        background-image: url(https://43n9a3188zqw4cdz825bl1q4-wpengine.netdna-ssl.com/wp-content/uploads/2018/11/Better-Angels-clear-logo.png);
+        background-image: url(https://43n9a3188zqw4cdz825bl1q4-wpengine.netdna-ssl.com/wp-content/uploads/2020/04/Braver-Angels-Logo.png);
         padding-bottom: 0;
         width: 100%;
         background-size: 250px;
