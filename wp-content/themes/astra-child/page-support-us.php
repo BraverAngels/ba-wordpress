@@ -20,15 +20,15 @@ get_header(); ?>
       <h3>
         <?php if (!is_user_logged_in()): ?>
           <em>
-            Help us build a house united by <a href="#join"><strong>joining Better Angels</strong></a>,
+            Help us build a house united by <a href="#join"><strong>joining Braver Angels</strong></a>,
             <a href="#upgrade"><strong>upgrading/renewing</strong></a> your membership,
-            or <a href="#donate"><strong>donating</strong></a> to <strong>Better Angels 2020</strong>.
+            or <a href="#donate"><strong>donating</strong></a> to <strong>Braver Angels 2020</strong>.
           </em>
 
         <?php else : ?>
           <em>
             Help us build a house united by <a href="#upgrade"><strong>upgrading/renewing</strong></a> your membership
-            or <a href="#donate"><strong>donating</strong></a> to <strong>Better Angels 2020</strong>.
+            or <a href="#donate"><strong>donating</strong></a> to <strong>Braver Angels 2020</strong>.
           </em>
         <?php endif; ?>
       </h3>
@@ -41,18 +41,17 @@ get_header(); ?>
       <div class="join-inner">
         <div class="join-content">
           <h2 style="overflow: hidden;">Become a Member</h2>
-          <p><em>Better Angels membership requires dues of just $12 a year, but many of our members generously choose to give more. Members can:</em></p>
+          <p><em>Braver Angels membership requires dues of just $12 a year, but many of our members generously choose to give more. Members can:</em></p>
           <ul>
-            <li>Join or create a Better Angels Alliance (chapter) in your community.</li>
-            <li>Get trained to lead Better Angels workshops and/or debates.</li>
+            <li>Join or create a Braver Angels Alliance (chapter) in your community.</li>
+            <li>Get trained to lead Braver Angels workshops and/or debates.</li>
             <li>With other members, organize local events to bridge political differences.</li>
             <li>Take the online, interactive “Skills Workshop.”</li>
-            <li>Contribute to “The Conversation,” the Better Angels blog.</li>
+            <li>Contribute to “The Conversation,” the Braver Angels blog.</li>
             <li>Participate in member-only meetings with “red” and “blue” members from across the U.S.</li>
-            <li>Become a local or national Better Angels volunteer leader.</li>
+            <li>Become a local or national Braver Angels volunteer leader.</li>
             <li><em>Be a part of America’s largest organization for bridging the divide.</em></li>
           </ul>
-          <em style="font-size: 80%;">Note: Better Angels is <u>not</u> affiliated with The BETTER ANGELS Society®, the non-profit organization that supports the production, promotion and educational outreach associated with historically significant documentary films made by Ken Burns and other associated filmmakers.</em>
         </div>
 
         <div class="join-selection-column">
@@ -100,7 +99,7 @@ get_header(); ?>
       <div class="upgrade-inner">
         <div class="upgrade-content">
           <h2 style="overflow: hidden;">Upgrade/Renew Your Membership</h2>
-          <p>Better Angels is a grassroots movement,
+          <p>Braver Angels is a grassroots movement,
             and we can’t rely on rich donors. We’re counting on our members to upgrade or renew their membership
             so that we can bring our country together in 2020.
             Your dues will help fund workshops, debates, local Alliances, and high school & college programs.
@@ -166,17 +165,17 @@ get_header(); ?>
           <p>
             2020 is shaping up to be one of the most divisive years in American history.
             Help us build a house united and save our Republic in this time of crisis.
-            Better Angels is a 501(c)(3) non-profit, and all donations are tax deductible.
+            Braver Angels is a 501(c)(3) non-profit, and all donations are tax deductible.
             Your donation will fund:
           </p>
           <ul>
             <li>Red-Blue Workshops</li>
             <li>Skills Workshops</li>
-            <li>Better Angels Debates</li>
+            <li>Braver Angels Debates</li>
             <li>Alliances (local chapters)</li>
-            <li>The 2020 National Better Angels Convention</li>
+            <li>The 2020 National Braver Angels Convention</li>
             <li>Our 50-State Volunteer Network</li>
-            <li>The Better Angels State of the Union</li>
+            <li>The Braver Angels State of the Union</li>
             <li>High School & College Programs</li>
             <li>Online Programs</li>
             <li>Media Outreach</li>

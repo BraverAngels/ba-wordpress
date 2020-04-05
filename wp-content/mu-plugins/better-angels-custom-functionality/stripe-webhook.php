@@ -39,7 +39,7 @@ function ba_stripe_webhook() {
           $fields = array(
             'identifiers' => [$trans_id], // $transaction_id
             'recipients' => [array(
-              'display_name' => 'Better Angels',
+              'display_name' => 'Braver Angels',
               'amount' => $amount,
             )],
             'person' => $person,

@@ -11,7 +11,7 @@
 get_header(); ?>
 
 <section class="ast-archive-description" style="text-align:center;border-radius: 3px;padding: 3rem 1.25rem;color: white;background:#23356c;background-image: url(https://www.better-angels.org/wp-content/uploads/2019/09/lincolnbooks1.jpg); background-size:cover;background-position:center center;">
-  <h1 class="page-title ast-archive-title" style="color:white;">Better Angels Library</h1>
+  <h1 class="page-title ast-archive-title" style="color:white;">Braver Angels Library</h1>
   <p>Member-recommended books and resources</p>
 </section>
 
@@ -56,7 +56,7 @@ get_header(); ?>
       ) ); ?>
 
       <?php if ($ba_docs_query->have_posts() ) : $i = 1;
-        echo "<div class='ast-col-sm-12 library-section-header'><h3>Better Angels Readings</h3><a class='library-view-all-link' href='" . home_url('/library/categories/better-angels-readings#primary') . "'>[View All]</a></div>";
+        echo "<div class='ast-col-sm-12 library-section-header'><h3>Braver Angels Readings</h3><a class='library-view-all-link' href='" . home_url('/library/categories/better-angels-readings#primary') . "'>[View All]</a></div>";
         while ( $ba_docs_query->have_posts() ) : $ba_docs_query->the_post(); ?>
           <?php get_template_part('template-parts/content-library-index-item'); ?>
           <?php if ($i % 3 == 0) : ?>

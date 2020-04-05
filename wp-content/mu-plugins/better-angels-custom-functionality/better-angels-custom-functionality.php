@@ -1,7 +1,7 @@
 <?php
    /*
-   Plugin Name: Better Angels Custom Functionality
-   description: Custom Features for the Better Angels website
+   Plugin Name: Braver Angels Custom Functionality
+   description: Custom Features for the Braver Angels website
    Version: 1.0.0
    Author: Blake Eric
    Author URI: https://blakeeric.com

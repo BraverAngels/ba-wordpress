@@ -1,6 +1,6 @@
 <?php
 /**
- * Better Angels Primary Header
+ * Braver Angels Primary Header
  */
 ?>
 

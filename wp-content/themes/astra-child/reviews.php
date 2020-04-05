@@ -74,7 +74,7 @@ if ( post_password_required() ) {
   else : ?>
     <h3>Leave a Review</h3>
     <div class="library-review-section-join-message">
-      <h4>You must be a dues-paying member of Better Angels to post a review.</h4>
+      <h4>You must be a dues-paying member of Braver Angels to post a review.</h4>
       <?php if (!is_user_logged_in()) : ?>
         <p>
           <em>Already a member?</em> <a href="<?php echo home_url('login?redirect_to=' . get_the_permalink() ); ?>"><strong>Login</strong></a>
@@ -84,9 +84,9 @@ if ( post_password_required() ) {
         Membership dues as low as <strong>$12 per year</strong>. <a href="<?php echo home_url('join?utm_source=website&utm_medium=join&utm_campaign=library_review'); ?>"><strong>Join or Renew now</strong></a> and also get access to:
         <ul>
           <li>Online book discussions</li>
-          <li>Free training to become a Better Angels organizer, citizen moderator, or debate chair</li>
+          <li>Free training to become a Braver Angels organizer, citizen moderator, or debate chair</li>
           <li>Invites to monthly members-only calls</li>
-          <li>Attend local Better Angels Alliance meetings or form your own</li>
+          <li>Attend local Braver Angels Alliance meetings or form your own</li>
         </ul>
       </p>
       <p><a style="margin: 0;" class="ba-cta-button ba-cta-button-red" href="<?php echo home_url('join?utm_source=website&utm_medium=join&utm_campaign=library_review'); ?>">Become a member</a></p>

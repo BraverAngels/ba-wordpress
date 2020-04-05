@@ -376,7 +376,7 @@ function ba_mepr_join_or_upgrade_text() {
 
   if (!is_user_logged_in()) {
     return
-    '<h2>Welcome to Better Angels</h2>
+    '<h2>Welcome to Braver Angels</h2>
     <p>
       Please use the form below to tell us about yourself:<br/>
       <strong>Already have an account? <a href="' . home_url() . '/login?redirect_to=' . home_url() . $_SERVER['REQUEST_URI'] . '">Login</a> before completing your purchase.</strong>
@@ -399,7 +399,7 @@ function ba_mepr_join_or_upgrade_text() {
 
   } else {
 
-    return '<h2>Welcome to Better Angels</h2>
+    return '<h2>Welcome to Braver Angels</h2>
     <p>Please complete the form below.
       <br/>
       <em>Your membership will renew automatically. Cancel any time.</em>
