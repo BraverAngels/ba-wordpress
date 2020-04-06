@@ -76,9 +76,9 @@ function ba_get_menu_html($menu_array) {
     <?php else: ?>
       <a href="<?php echo esc_url(home_url('/login')) ?>">Member Login</a>
     <?php endif; ?>
-    <a href="https://teespring.com/stores/better-angels-merchandise">
+    <!-- <a href="https://teespring.com/stores/better-angels-merchandise">
       Shop
-    </a>
+    </a> -->
     <a href="<?php echo esc_url(home_url('/events')) ?>">
       Find an Event
     </a>
@@ -150,11 +150,11 @@ function ba_get_menu_html($menu_array) {
         </li>
       <?php endif; ?>
 
-    <li>
+    <!-- <li>
       <a href="https://teespring.com/stores/better-angels-merchandise">
         Shop
       </a>
-    </li>
+    </li> -->
     <li>
       <a href="<?php echo esc_url(home_url('/events')) ?>">
         Find an Event

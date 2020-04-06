@@ -21,7 +21,7 @@
 
   <!-- Title Bar -->
   <?php tribe_get_template_part( 'list/title-bar' ); ?>
-    <p style="margin-top: 1rem;"><em><strong>Note:</strong> Due to the public health threat from the Coronavirus, we’re strongly recommending that in-person events be cancelled or postponed until at least April 13. More information is available <a href="<?php home_url(); ?>/coronavirus"><u>here</u></a>. If you have not heard from event organizers about this, we recommend reaching out to them for information about your specific event.</em></p>
+    <p style="margin-top: 1rem;"><em><strong>Note:</strong> Due to the public health threat from the Coronavirus, we’re strongly recommending that in-person events be cancelled or postponed through at least May 10. More information is available <a href="<?php home_url(); ?>/coronavirus"><u>here</u></a>. If you have not heard from event organizers about this, we recommend reaching out to them for information about your specific event.</em></p>
     <!-- Tribe Bar -->
   <?php tribe_get_template_part( 'modules/bar' ); ?>
 
