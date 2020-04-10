@@ -52,6 +52,7 @@ get_header(); ?>
             <li>Become a local or national Braver Angels volunteer leader.</li>
             <li><em>Be a part of America’s largest organization for bridging the divide.</em></li>
           </ul>
+          <em style="font-size: 80%;">Note: Braver Angels is <u>not</u> affiliated with The BETTER ANGELS Society®, the non-profit organization that supports the production, promotion and educational outreach associated with historically significant documentary films made by Ken Burns and other associated filmmakers.</em>
         </div>
 
         <div class="join-selection-column">
