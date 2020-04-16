@@ -64,7 +64,7 @@ function send_new_user_data_to_action_network($user_id){
       $tags[] = 'Blue';
       $custom_fields['Master Partisanship'] = 'Blue';
     } else {
-      $tags[] = 'Declined to say political affiliation';
+      $tags[] = 'Other';
       $custom_fields['Master Partisanship'] = 'Declined to say political affiliation';
     }
 
