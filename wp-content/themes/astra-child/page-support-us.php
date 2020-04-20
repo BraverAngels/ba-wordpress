@@ -16,8 +16,15 @@ get_header(); ?>
 
   <section class="header" style="overflow: auto; background-size: cover; background-image: url(https://www.better-angels.org/wp-content/uploads/2019/09/2019-BA-Convention-631.jpg);">
     <div class="header-inner">
-      <h2>Support Us</h2>
+      <?php if (isset($_GET['referrer']) && $_GET['referrer'] = "subscribe"): ?>
+        <h2>Thank you for subscribing!</h2>
+      <?php else : ?>
+        <h2>Support Us</h2>
+      <?php endif; ?>
       <h3>
+        <?php if (isset($_GET['referrer']) && $_GET['referrer'] = "subscribe"): ?>
+          <strong>Want to take the next step?</strong>
+        <?php endif; ?>
         <?php if (!is_user_logged_in()): ?>
           <em>
             Help us build a house united by <a href="#join"><strong>joining Braver Angels</strong></a>,
