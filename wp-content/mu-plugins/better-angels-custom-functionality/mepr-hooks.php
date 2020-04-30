@@ -150,8 +150,8 @@ function send_new_user_data_to_action_network($user_id){
     'action_network:recurrence' => $recurrence
   );
 
-  $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
-
+  // post to the AN "Member form" api endpoint for a fake submission
+  $actionnetwork_response = ba_curl_post("https://actionnetwork.org/api/v2/forms/7273eda5-4ea4-44b6-9a36-fd545cda8488/submissions/", $fields);
 }
 
 
