@@ -927,13 +927,13 @@ join-selection-column
 /* The subscribe form */
 
 
-#field_32_4,
-#field_32_2 {
+#field_33_4,
+#field_33_2 {
     width: 50% !important;
     display: inline-block;
 }
 
-#gform_fields_32 li, #gform_fields_32 li div  {
+#gform_fields_33 li, #gform_fields_33 li div  {
   margin: 0
 }
 
@@ -945,7 +945,7 @@ join-selection-column
   margin-bottom: .5rem;
 }
 
-#gform_submit_button_32 {
+#gform_submit_button_33 {
   border: 1px solid white
 }
 
