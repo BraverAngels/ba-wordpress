@@ -937,8 +937,12 @@ join-selection-column
   margin: 0
 }
 
-.elementor-element-5e4b212 {
-  margin: 0 !important;
+.subscribeForm-wrapper {
+  margin-right: -16px;
+}
+
+.subscribeForm-title, .subscribeForm-description {
+  margin-bottom: .5rem;
 }
 
 #gform_submit_button_32 {
