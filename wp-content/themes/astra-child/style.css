@@ -923,6 +923,30 @@ join-selection-column
 /**
   # Gravity-forms overrides
 */
+
+/* The subscribe form */
+
+
+#field_32_4,
+#field_32_2 {
+    width: 50% !important;
+    display: inline-block;
+}
+
+#gform_fields_32 li, #gform_fields_32 li div  {
+  margin: 0
+}
+
+.elementor-element-5e4b212 {
+  margin: 0 !important;
+}
+
+#gform_submit_button_32 {
+  border: 1px solid white
+}
+
+/* Global */
+
 .ginput_price {
     display: none;
 }

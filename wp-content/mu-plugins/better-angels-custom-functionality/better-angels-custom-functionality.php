@@ -15,5 +15,6 @@
    require_once(__DIR__ . '/stripe-webhook.php');
    require_once(__DIR__ . '/library-comments.php');
    require_once(__DIR__ . '/gf-allow-form-total-conditional.php');
+   require_once(__DIR__ . '/subscribe.php');
 
 ?>
