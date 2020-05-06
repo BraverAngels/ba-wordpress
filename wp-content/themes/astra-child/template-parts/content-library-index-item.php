@@ -1,7 +1,6 @@
 <?php
 /**
  * The library index/archive single post content.
- *
  */
 ?>
 
@@ -20,18 +19,23 @@
         <h4 class="entry-title library-entry-title" itemprop="headline">
         <a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h4>
         <div class="library-item-meta">
-        <?php if (has_ba_library_author(get_the_ID())) : ?>
-          <span><?php the_ba_library_author(get_the_ID()); ?></span>
-        <?php endif; ?>
-        <?php if (has_ba_library_author(get_the_ID()) && has_ba_library_year_published(get_the_ID())) : ?>
-          <span>| </span>
-        <?php endif; ?>
-        <?php if (has_ba_library_year_published(get_the_ID())) : ?>
-          <span><?php the_ba_library_year_published(get_the_ID()); ?></span>
-        <?php endif; ?>
-        <?php if (has_ba_library_author(get_the_ID()) || has_ba_library_year_published(get_the_ID())) : ?>
-          <br/>
-        <?php endif; ?>
+
+          <?php if (has_ba_library_author(get_the_ID())) : ?>
+            <span><?php the_ba_library_author(get_the_ID()); ?></span>
+          <?php endif; ?>
+
+          <?php if (has_ba_library_author(get_the_ID()) && has_ba_library_year_published(get_the_ID())) : ?>
+            <span>| </span>
+          <?php endif; ?>
+
+          <?php if (has_ba_library_year_published(get_the_ID())) : ?>
+            <span><?php the_ba_library_year_published(get_the_ID()); ?></span>
+          <?php endif; ?>
+
+          <?php if (has_ba_library_author(get_the_ID()) || has_ba_library_year_published(get_the_ID())) : ?>
+            <br/>
+          <?php endif; ?>
+
         </div>
         <a href="<?php the_permalink(); ?>" rel="bookmark">View →</a>
       </header><!-- .entry-header -->

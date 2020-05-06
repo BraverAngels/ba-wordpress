@@ -41,27 +41,39 @@ get_header(); ?>
               <?php the_title(); ?></h4>
 
               <div class="library-item-meta">
-              <?php if (has_ba_library_author(get_the_ID())) : ?>
-                <span><?php the_ba_library_author(get_the_ID()); ?></span>
-              <?php endif; ?>
-              <?php if (has_ba_library_author(get_the_ID()) && has_ba_library_year_published(get_the_ID())) : ?>
-                <span>| </span>
-              <?php endif; ?>
-              <?php if (has_ba_library_year_published(get_the_ID())) : ?>
-                <span><?php the_ba_library_year_published(get_the_ID()); ?></span>
-              <?php endif; ?>
-              <?php if (has_ba_library_author(get_the_ID()) || has_ba_library_year_published(get_the_ID())) : ?>
-                <br/>
-              <?php endif; ?>
+
+                <?php
+                //display the custom fields for this item
+                ?>
+
+                <?php if (has_ba_library_author(get_the_ID())) : ?>
+                  <span><?php the_ba_library_author(get_the_ID()); ?></span>
+                <?php endif; ?>
+
+                <?php if (has_ba_library_author(get_the_ID()) && has_ba_library_year_published(get_the_ID())) : ?>
+                  <span>| </span>
+                <?php endif; ?>
+
+                <?php if (has_ba_library_year_published(get_the_ID())) : ?>
+                  <span><?php the_ba_library_year_published(get_the_ID()); ?></span>
+                <?php endif; ?>
+
+                <?php if (has_ba_library_author(get_the_ID()) || has_ba_library_year_published(get_the_ID())) : ?>
+                  <br/>
+                <?php endif; ?>
+
               </div>
+
               <?php if (has_ba_library_recommended_by(get_the_ID())) : ?>
                 <div class="library-recommended-by">
                   <span>Recommended by: <?php ba_library_recommended_by(get_the_ID()); ?></span>
                 </div>
               <?php endif; ?>
-              <?php $item_labels = get_the_terms( $post, 'library_category' ); ?>
+
+
               <div class="library-entry-categories">
                 <?php
+                $item_labels = get_the_terms( $post, 'library_category' );
                 if ($item_labels) : ?>
                   <span>Posted in:
                   <?php foreach ($item_labels as $term) : ?>
@@ -72,7 +84,9 @@ get_header(); ?>
                   </span>
                 <?php endif; ?>
               </div>
+
               <?php the_ba_library_purchase_link(get_the_ID()); ?>
+
             </header><!-- .entry-header -->
 
             <?php the_content(); ?>
@@ -82,6 +96,7 @@ get_header(); ?>
       </article><!-- #post-## -->
       <?php astra_primary_content_bottom(); ?>
     </div><!-- .ast-col-md-9 -->
+
     <?php
     if ( comments_open() || get_comments_number() ) :
       comments_template('/reviews.php');
@@ -89,9 +104,11 @@ get_header(); ?>
     ?>
 
   </div><!-- .library-content-wrap -->
+
   <div class="library-back-link-wrapper">
     <a class="library-back-link" href="<?php echo home_url();?>/library">&larr; Back to Library</a><br/>
   </div>
+  
 </div><!-- #primary -->
 
 <?php get_footer(); ?>

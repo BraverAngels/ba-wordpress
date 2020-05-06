@@ -1,7 +1,5 @@
 <?php
 /**
- * The template for displaying all pages.
- *
  * This is the template that displays the "Support us" page
  * note that all content is hard-coded.
  *

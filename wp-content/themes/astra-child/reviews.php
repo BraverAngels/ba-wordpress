@@ -1,14 +1,14 @@
 <?php
 /**
  * The template for displaying reviews in the BA library
- *
- * This is the template that displays the area of the page that contains both the current reviews (comments)
+ * displays the area of the page that contains both the current reviews (comments)
  * and the reviw (comment) form.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package _s
  */
+
 /*
  * If the current post is protected by a password and
  * the visitor has not yet entered the password we will
@@ -22,7 +22,7 @@ if ( post_password_required() ) {
 <div id="comments" class="comments-area library-reviews-area">
 
   <?php
-  // You can start editing here -- including this comment!
+
   if ( have_comments() ) :
     ?>
     <h3 class="comments-title" style="font-size: 24px;">
@@ -64,13 +64,17 @@ if ( post_password_required() ) {
       <p class="no-comments"><?php esc_html_e( 'Reviews are closed.', '_s' ); ?></p>
       <?php
     endif;
-  endif; // Check for have_comments().
+  endif; 
 
   // make sure only users with active subscriptions or admins can add reviews
   if (get_user_subscription_id() || current_user_can('edit_others_pages')) :
-    comment_form(array('comment_field'=> '<p class="comment-form-comment"><em class="library-review-guide-link">Be sure to view our <strong><a target="_blank" href="' . home_url('/tips-for-reviewers/') . '">tips for reviewers</a></strong> before posting a review!</em><label for="comment">' . _x( 'Review', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>', 'title_reply' => __( 'Leave a Review' ), 'label_submit' => __( 'Post Review' )));
-
-    // make sure only users with active subscriptions or admins can add reviews
+    comment_form(
+      array(
+        'comment_field'=> '<p class="comment-form-comment"><em class="library-review-guide-link">Be sure to view our <strong><a target="_blank" href="' . home_url('/tips-for-reviewers/') . '">tips for reviewers</a></strong> before posting a review!</em><label for="comment">' . _x( 'Review', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
+        'title_reply' => __( 'Leave a Review' ),
+        'label_submit' => __( 'Post Review' )
+      )
+    );
   else : ?>
     <h3>Leave a Review</h3>
     <div class="library-review-section-join-message">
