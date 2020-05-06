@@ -20,6 +20,7 @@ Template: astra
 # Gravity-forms overrides
 # Library
 # Memberpress overrides
+# Site Footer
 --------------------------------------------------------------*/
 
 
@@ -1658,4 +1659,46 @@ input.mepr-form-input.invalid,
     position: relative;
     top: 4px;
   }
+}
+
+
+/**
+  # Site Footer
+*/
+.ba-icon {
+  height: 28px;
+  width: 28px;
+  display: inline-block;
+  background-size: contain;
+  background-position: center;
+  vertical-align: middle;
+  border-radius: 3px;
+  position: relative;
+}
+.ba-icon:hover,
+.ba-icon:focus {
+  background-color: rgba(0,0,0,.5);
+}
+.ba-icon.ba-icon-facebook {
+  background-image: url('assets/svg/facebook.svg');
+}
+.ba-icon.ba-icon-instagram {
+  background-image: url('assets/svg/instagram.svg');
+}
+.ba-icon.ba-icon-youtube {
+  background-image: url('assets/svg/youtube.svg');
+}
+.ba-icon.ba-icon-twitter {
+  background-image: url('assets/svg/twitter.svg');
+}
+
+.site-footer img {
+  max-width: 200px;
+}
+.site-footer .widget, .site-footer p {
+  margin-bottom: .5rem;
+  font-weight: 600;
+}
+.site-footer .search-field {
+  padding: 8px 45px 8px 15px;
 }
