@@ -1,6 +1,6 @@
 <?php
 /**
- * Add a sidebar.
+ * Add a widget area before the site footer.
  */
 function ba_widgets_init() {
     register_sidebar( array(
