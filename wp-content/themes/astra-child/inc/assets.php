@@ -45,6 +45,11 @@ function child_enqueue_styles() {
 
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
 
+// determine if page uses elementor assets
+function is_elementor(){
+  global $post;
+  return \Elementor\Plugin::$instance->db->is_built_with_elementor($post->ID);
+}
 
 function inline_scripts() {
   if( !current_user_can('editor') && !current_user_can('administrator') ) { ?>
@@ -58,6 +63,12 @@ function inline_scripts() {
       gtag('config', 'UA-93943838-2');
     </script>
 
+    <?php
+  }
+  if(!is_elementor()) {
+    ?>
+    <!-- Add the nunito sans font to pages that aren't using elementor -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
     <?php
   }
 }

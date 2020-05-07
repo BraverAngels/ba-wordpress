@@ -1665,6 +1665,26 @@ input.mepr-form-input.invalid,
 /**
   # Site Footer
 */
+.pre-footer {
+  background: #bc2f2c;
+  color: white;
+  overflow: auto;
+  padding-top: 1rem;
+}
+.pre-footer h1,
+.pre-footer h2,
+.pre-footer h3,
+.pre-footer h4,
+.pre-footer h5,
+.pre-footer h6 {
+  color: white;
+}
+.pre-footer-widgets {
+  list-style: none;
+  margin: auto;
+  display: block;
+  max-width: 800px;
+}
 .ba-icon {
   height: 28px;
   width: 28px;
@@ -1681,6 +1701,8 @@ input.mepr-form-input.invalid,
 }
 .ba-icon.ba-icon-facebook {
   background-image: url('assets/svg/facebook.svg');
+  /* background: url(fallback.png);
+  background-image: url(image.svg), none; */
 }
 .ba-icon.ba-icon-instagram {
   background-image: url('assets/svg/instagram.svg');
