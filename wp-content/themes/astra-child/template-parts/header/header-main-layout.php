@@ -86,19 +86,19 @@ function ba_get_menu_html($menu_array) {
   <div class="ba-secondary-menu-social-buttons">
     <a class="ba-social-icon" href="https://facebook.com/braverangels" target="_blank">
       <span class="ba-screen-only">Facebook</span>
-      <i class="fa fa-facebook"></i>
+      <i class="ba-icon ba-icon-facebook"></i>
     </a>
     <a class="ba-social-icon" href="https://twitter.com/braverangels" target="_blank">
       <span class="ba-screen-only">Twitter</span>
-      <i class="fa fa-twitter"></i>
+      <i class="ba-icon ba-icon-twitter"></i>
     </a>
     <a class="ba-social-icon" href="https://instagram.com/braverangels"  target="_blank">
     <span class="ba-screen-only">Instagram</span>
-      <i class="fa fa-instagram"></i>
+      <i class="ba-icon ba-icon-instagram"></i>
     </a>
     <a class="ba-social-icon" href="https://www.youtube.com/channel/UCtlZ4t6aS4rAJoPyYD9DGLA" target="_blank">
       <span class="ba-screen-only">Youtube</span>
-      <i class="fa fa-youtube"></i>
+      <i class="ba-icon ba-icon-youtube"></i>
     </a>
   </div>
 </nav>
