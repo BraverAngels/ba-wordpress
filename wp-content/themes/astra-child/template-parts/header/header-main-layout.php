@@ -47,7 +47,7 @@ function ba_get_menu_html($menu_array) {
     $html .= "<li class='{$menu_item['classname']}' id='{$menu_item['ID']}'>";
 
     if($has_children) {
-      $html .= "<a aria-haspopup='true' href='{$menu_item['url']}'>{$menu_item['title']}<i class='fa fa-chevron-down ba-dropdown-icon' aria-hidden='true'></i>
+      $html .= "<a aria-haspopup='true' href='{$menu_item['url']}'>{$menu_item['title']}<i class='ba-icon ba-icon-chevron-down' aria-hidden='true'></i>
 </a>";
       $html .= "<ul class='ba-sub-menu-container' aria-label='submenu'>";
       foreach ($menu_item['children'] as $sub_menu_item) {

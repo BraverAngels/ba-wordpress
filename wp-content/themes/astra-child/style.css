@@ -47,6 +47,42 @@ body, button, input, select, textarea {
 .search .entry-meta .published {
   color: black;
 }
+
+.ba-icon {
+  height: 28px;
+  width: 28px;
+  display: inline-block;
+  background-size: contain !important;
+  background-position: center !important;
+  vertical-align: middle;
+  border-radius: 3px;
+  position: relative;
+}
+.ba-icon:hover,
+.ba-icon:focus {
+  background-color: rgba(0,0,0,.5);
+}
+.ba-icon.ba-icon-facebook {
+  background: url('assets/png/facebook.png');
+  background-image: url('assets/svg/facebook.svg');
+}
+.ba-icon.ba-icon-instagram {
+  background: url('assets/png/instagram.png');
+  background-image: url('assets/svg/instagram.svg');
+}
+.ba-icon.ba-icon-youtube {
+  background: url('assets/png/youtube.png');
+  background-image: url('assets/svg/youtube.svg');
+}
+.ba-icon.ba-icon-twitter {
+  background: url('assets/png/twitter.png');
+  background-image: url('assets/svg/twitter.svg');
+}
+.ba-icon.ba-icon-chevron-down {
+  background: url('assets/png/chevron-down-dark.png');
+  background-image: url('assets/svg/chevron-down-dark.svg');
+}
+
 /**
   # Site Header
 */
@@ -76,6 +112,17 @@ body, button, input, select, textarea {
   margin-left: 3px;
   position: relative;
   bottom: 1px;
+}
+.ba-menu-item {
+  position: relative;
+}
+.ba-menu-item .ba-icon {
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  right: -1px;
+  top: 50%;
+  transform: translateY(-45%);
 }
 
 /* Desktop Menu */
@@ -355,7 +402,7 @@ body, button, input, select, textarea {
 /* Mobile, Desktop breakpoints */
 @media screen and (max-width: 1220px){
   .ba-primary-menu-desktop li  {
-    padding: 0 4px;
+    padding: 0 10px;
   }
   .ba-primary-menu .ba-menu-logo {
     min-width: 200px;
@@ -1690,34 +1737,6 @@ input.mepr-form-input.invalid,
   margin: auto;
   display: block;
   max-width: 800px;
-}
-.ba-icon {
-  height: 28px;
-  width: 28px;
-  display: inline-block;
-  background-size: contain;
-  background-position: center;
-  vertical-align: middle;
-  border-radius: 3px;
-  position: relative;
-}
-.ba-icon:hover,
-.ba-icon:focus {
-  background-color: rgba(0,0,0,.5);
-}
-.ba-icon.ba-icon-facebook {
-  background-image: url('assets/svg/facebook.svg');
-  /* background: url(fallback.png);
-  background-image: url(image.svg), none; */
-}
-.ba-icon.ba-icon-instagram {
-  background-image: url('assets/svg/instagram.svg');
-}
-.ba-icon.ba-icon-youtube {
-  background-image: url('assets/svg/youtube.svg');
-}
-.ba-icon.ba-icon-twitter {
-  background-image: url('assets/svg/twitter.svg');
 }
 
 .site-footer img {
