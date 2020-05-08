@@ -1340,16 +1340,16 @@ i.fa-stack-1x {
   # Library
 */
 
-.post-type-archive-library .ast-container,
-.tax-library_category .ast-container {
+.post-type-archive-library .site-content .ast-container,
+.tax-library_category .site-content .ast-container {
   margin: 0;
   width: 100%;
   padding: 0;
   max-width: 100%;
   overflow-x: hidden;
 }
-.post-type-archive-library .ast-container .content-area,
-.tax-library_category .ast-container .content-area {
+.post-type-archive-library .site-content .ast-container .content-area,
+.tax-library_category .site-content .ast-container .content-area {
   max-width: 1240px;
   margin-left: auto !important;
   margin-right: auto !important;
