@@ -1,0 +1,50 @@
+
+/**
+  # Site Footer
+*/
+.pre-footer {
+  background: #bc2f2c;
+  color: white;
+  overflow: auto;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+.pre-footer h1,
+.pre-footer h2,
+.pre-footer h3,
+.pre-footer h4,
+.pre-footer h5,
+.pre-footer h6 {
+  color: white;
+}
+.pre-footer h1,
+.pre-footer h2,
+.pre-footer h3 {
+  font-weight: bold;
+}
+.pre-footer-widgets {
+  list-style: none;
+  margin: auto;
+  display: block;
+  max-width: 800px;
+}
+
+.pre-footer-widgets .gform_wrapper li.gfield.gfield_error,
+.pre-footer-widgets .gform_wrapper div.validation_error,
+.pre-footer-widgets .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+    padding: .25rem !important;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);
+}
+
+.site-footer img {
+  max-width: 200px;
+}
+.site-footer .widget, .site-footer p {
+  margin-bottom: .5rem;
+  font-weight: 600;
+}
+.site-footer .search-field {
+  padding: 8px 45px 8px 15px;
+}

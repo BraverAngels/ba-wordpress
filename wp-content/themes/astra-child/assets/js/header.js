@@ -12,7 +12,7 @@
       $('.ba-secondary-menu').addClass('toggled');
       $('.ba-scroll-to-top ').addClass('toggled');
     }
-  });
+  }); 
 
 
 
