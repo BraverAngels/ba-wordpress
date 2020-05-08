@@ -1745,6 +1745,15 @@ input.mepr-form-input.invalid,
   max-width: 800px;
 }
 
+.pre-footer-widgets .gform_wrapper li.gfield.gfield_error,
+.pre-footer-widgets .gform_wrapper div.validation_error,
+.pre-footer-widgets .gform_wrapper li.gfield.gfield_error.gfield_contains_required.gfield_creditcard_warning {
+    padding: .25rem !important;
+    background: white;
+    border-radius: 3px;
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.5);
+}
+
 .site-footer img {
   max-width: 200px;
 }
