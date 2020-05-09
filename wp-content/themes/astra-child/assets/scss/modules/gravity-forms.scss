@@ -4,21 +4,6 @@
 
 /* The subscribe form */
 
-
-#field_33_4,
-#field_33_2 {
-    width: 50% !important;
-    display: inline-block;
-}
-
-#gform_fields_33 li, #gform_fields_33 li div  {
-  margin: 0
-}
-
-.subscribeForm-wrapper {
-  margin-right: -16px;
-}
-
 .subscribeForm-title, .subscribeForm-description {
   margin-bottom: .5rem;
 }
@@ -26,6 +11,28 @@
 #gform_submit_button_33 {
   border: 1px solid white
 }
+
+@media screen and (min-width: 640px) {
+  #field_33_4,
+  #field_33_2,
+  #input_33_1_3_container,
+  #input_33_1_6_container {
+    width: 50% !important;
+    display: inline-block !important;
+  }
+
+  #gform_fields_33 li, #gform_fields_33 li div  {
+    margin: 0
+  }
+
+  // Edit this?
+  .subscribeForm-wrapper {
+    margin-right: -16px;
+  }
+
+}
+
+
 
 /* Global */
 

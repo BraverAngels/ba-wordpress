@@ -26,7 +26,9 @@
   list-style: none;
   margin: auto;
   display: block;
-  max-width: 800px;
+  max-width: 100%;
+  width: 800px;
+  padding: 0 1rem;
 }
 
 .pre-footer-widgets .gform_wrapper li.gfield.gfield_error,
