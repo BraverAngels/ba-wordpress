@@ -21,7 +21,7 @@
 
     <?php astra_footer_before(); ?>
 
-    <?php if ( is_active_sidebar( 'pre-footer' ) && !is_page('subscribe')) { ?>
+    <?php if ( is_active_sidebar( 'pre-footer' ) && !is_page('subscribe') $$ !is_page('online-skills-training')) { ?>
       <section id="pre-footer" class="pre-footer">
         <ul class="pre-footer-widgets">
           <?php dynamic_sidebar('pre-footer'); ?>

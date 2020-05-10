@@ -46,6 +46,7 @@ function child_enqueue_styles() {
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
 
 // determine if page uses elementor assets
+// Causing error on search pages
 function is_elementor(){
   global $post;
   return \Elementor\Plugin::$instance->db->is_built_with_elementor($post->ID);
