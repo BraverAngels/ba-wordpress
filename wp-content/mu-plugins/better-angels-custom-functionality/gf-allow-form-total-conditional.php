@@ -1,5 +1,7 @@
 <?php
-// Enable Use of the Total Field with Conditional Logic in Gravity forms
+/*
+ * Enable Use of the Total Field with Conditional Logic in Gravity forms
+*/
 
 
 class RW_GF_Total_Field_Logic {

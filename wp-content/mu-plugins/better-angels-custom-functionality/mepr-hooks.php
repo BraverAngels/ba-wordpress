@@ -1,10 +1,13 @@
 <?php
-// Memberpress specific action hooks can be found in the following Gist
-// https://gist.github.com/cartpauj/256e893ed3de276f8604aba01ef71bb8
+/*
+ * Memberpress specific action hooks to integrate data with Action Network
+ * https://gist.github.com/cartpauj/256e893ed3de276f8604aba01ef71bb8
+*/
+
 
 /*
-  Add actions for sending user data to Action Network
-*/
+ * Add actions for sending user data to Action Network
+ */
 add_action( 'wp_head', 'ba_process_membership_data' );
 
 function ba_process_membership_data() {
@@ -21,11 +24,9 @@ function ba_process_membership_data() {
 }
 
 
-
 /*
-  Fires after a user registers for a subscription and completes payment
-*/
-
+ * Fires after a user registers for a subscription and completes payment
+ */
 function send_new_user_data_to_action_network($user_id){
 
   // Bail if the API key is not set
@@ -151,14 +152,13 @@ function send_new_user_data_to_action_network($user_id){
   );
 
   // post to the AN "Member form" api endpoint for a fake submission
-  $actionnetwork_response = ba_curl_post("https://actionnetwork.org/api/v2/forms/7273eda5-4ea4-44b6-9a36-fd545cda8488/submissions/", $fields);
+  $actionnetwork_response = ba_post_to_action_network("https://actionnetwork.org/api/v2/forms/7273eda5-4ea4-44b6-9a36-fd545cda8488/submissions/", $fields);
 }
 
 
 /*
-  Fires after a user registers for a subscription and completes payment
+* Fires after a user registers for a subscription and completes payment
 */
-
 function send_updated_user_data_to_action_network($data){
 
   // Bail if the API key is not set
@@ -240,15 +240,13 @@ function send_updated_user_data_to_action_network($data){
     'add_tags' => $tags,
   );
 
-  $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
+  $actionnetwork_response = ba_post_to_action_network($actionnetwork_url, $fields);
 
 }
 
-
-
-
-
-// Transaction has expired (user cancelled, lapsed etc)
+/*
+ * Fires when a user's subscription expires
+ */
 function ba_catch_txn_expired($event) {
   $txn = new MeprTransaction($event->evt_id); //evt_id should be the id of a transaction
   $user = new MeprUser($txn->user_id);
@@ -282,7 +280,7 @@ function ba_catch_txn_expired($event) {
           'person' => $person,
         );
 
-        $actionnetwork_response = ba_curl_post($actionnetwork_url, $fields);
+        $actionnetwork_response = ba_post_to_action_network($actionnetwork_url, $fields);
     }
     //else the user is still subscribed to this membership, so do nothing
   }
@@ -291,11 +289,11 @@ function ba_catch_txn_expired($event) {
 add_action('mepr-event-transaction-expired', 'ba_catch_txn_expired');
 
 
-/*
-  Functions for analyzing the current user's subscription
-*/
 
-// Returns an array of ALL membership post type ids
+
+/*
+* Returns an array of ALL membership post type ids
+*/
 function get_membership_ids() {
   $args = array(
     'numberposts' => -1,
@@ -309,6 +307,9 @@ function get_membership_ids() {
 }
 
 
+/*
+* Returns the ID of the current logged in user's subscription, if it exists
+*/
 function get_user_subscription_id(){
 
     if( class_exists('MeprUser') && is_user_logged_in() ){
@@ -330,7 +331,9 @@ function get_user_subscription_id(){
     }
 }
 
-
+/*
+* Returns an array of "Upgrade Options" (membership ids)
+*/
 function get_higher_membership_options() {
 
   // IDs of monthly memberships
@@ -358,6 +361,7 @@ function get_higher_membership_options() {
 
   }
 
+
   // remove the memberships we don't want people to sign up for anymore
   foreach([3612, 3613, 3618, 3622] as $membership) {
     if (in_array($membership, $higher_memberships)) {
@@ -368,53 +372,3 @@ function get_higher_membership_options() {
 
   return $higher_memberships;
 }
-
-
-// Function to add subscribe text to posts and pages
-function ba_mepr_join_or_upgrade_text() {
-
-
-  if (!is_user_logged_in()) {
-    return
-    '<h2>Welcome to Braver Angels</h2>
-    <p>
-      Please use the form below to tell us about yourself:<br/>
-      <strong>Already have an account? <a href="' . home_url() . '/login?redirect_to=' . home_url() . $_SERVER['REQUEST_URI'] . '">Login</a> before completing your purchase.</strong>
-      <br/><a href="' . home_url('login/?action=forgot_password') . '">Recover lost password</a>
-    </p>
-    <p>
-      <em>Your membership will renew automatically. Cancel any time.</em>
-    </p>';
-
-  } elseif (is_user_logged_in() && get_user_subscription_id()) {
-
-    return '<h2>Upgrade account</h2>
-    <p>Complete the form below to upgrade your membership.
-      <br/>
-      <strong>Current subscription: ' . get_the_title(get_user_subscription_id()) . '</strong><br/><a href="'. home_url("account/?action=subscriptions").'">View account settings</a>
-    </p>
-    <p>
-      <em>Your membership will renew automatically. Cancel any time.</em>
-    </p>';
-
-  } else {
-
-    return '<h2>Welcome to Braver Angels</h2>
-    <p>Please complete the form below.
-      <br/>
-      <em>Your membership will renew automatically. Cancel any time.</em>
-    </p>';
-
-  }
-
-}
-add_shortcode('join_or_upgrade_text', 'ba_mepr_join_or_upgrade_text');
-
-// conditional text for use in shortcode on checkout page
-function ba_mepr_login_before_checkout_reminder() {
-  if (!is_user_logged_in()) {
-    return '<p><strong>Already have an account? <a href="' . home_url() . '/login?redirect_to=' . home_url() . $_SERVER['REQUEST_URI'] . '">Login</a> before completing your purchase.</strong></p>';
-  }
-  return;
-}
-add_shortcode('login_before_checkout_reminder', 'ba_mepr_login_before_checkout_reminder');

@@ -1,5 +1,8 @@
 <?php
-// Settings to modify comment functionality specifically for "Library" post type.
+/*
+ * Settings to modify comment functionality specifically for "Library" post type.
+*/
+
 
 // Make sure the right email gets notified when a review (comment) is made on a library item.
 function ba_library_comment_moderation_recipients( $emails, $comment_id ) {

@@ -40,3 +40,58 @@ function subscribe_form_shortcode($atts = '') {
 }
 
 add_shortcode('subscribe', 'subscribe_form_shortcode');
+
+
+
+/**
+ * Text to be displayed above the Memberpress join/upgrade form
+ */
+function ba_mepr_join_or_upgrade_text() {
+
+
+  if (!is_user_logged_in()) {
+    return
+    '<h2>Welcome to Braver Angels</h2>
+    <p>
+      Please use the form below to tell us about yourself:<br/>
+      <strong>Already have an account? <a href="' . home_url() . '/login?redirect_to=' . home_url() . $_SERVER['REQUEST_URI'] . '">Login</a> before completing your purchase.</strong>
+      <br/><a href="' . home_url('login/?action=forgot_password') . '">Recover lost password</a>
+    </p>
+    <p>
+      <em>Your membership will renew automatically. Cancel any time.</em>
+    </p>';
+
+  } elseif (is_user_logged_in() && get_user_subscription_id()) {
+
+    return '<h2>Upgrade account</h2>
+    <p>Complete the form below to upgrade your membership.
+      <br/>
+      <strong>Current subscription: ' . get_the_title(get_user_subscription_id()) . '</strong><br/><a href="'. home_url("account/?action=subscriptions").'">View account settings</a>
+    </p>
+    <p>
+      <em>Your membership will renew automatically. Cancel any time.</em>
+    </p>';
+
+  } else {
+
+    return '<h2>Welcome to Braver Angels</h2>
+    <p>Please complete the form below.
+      <br/>
+      <em>Your membership will renew automatically. Cancel any time.</em>
+    </p>';
+
+  }
+
+}
+add_shortcode('join_or_upgrade_text', 'ba_mepr_join_or_upgrade_text');
+
+/**
+ * Conditional text for use in shortcode on checkout page
+ */
+function ba_mepr_login_before_checkout_reminder() {
+  if (!is_user_logged_in()) {
+    return '<p><strong>Already have an account? <a href="' . home_url() . '/login?redirect_to=' . home_url() . $_SERVER['REQUEST_URI'] . '">Login</a> before completing your purchase.</strong></p>';
+  }
+  return;
+}
+add_shortcode('login_before_checkout_reminder', 'ba_mepr_login_before_checkout_reminder');
