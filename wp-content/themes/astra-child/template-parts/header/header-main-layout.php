@@ -12,6 +12,16 @@ function ba_logo_url() {
   return $image[0];
 }
 
+function ba_mobile_logo_url() {
+  if (astra_get_option( 'different-mobile-logo' ) && astra_get_option( 'mobile-header-logo' )) {
+    return astra_get_option( 'mobile-header-logo' );
+  } else {
+    return ba_logo_url();
+  }
+}
+
+
+
 function ba_get_menu_array($menu_name) {
   $array_menu = wp_get_nav_menu_items($menu_name);
   $menu = array();
@@ -85,19 +95,19 @@ function ba_get_menu_html($menu_array) {
   </div>
   <div class="ba-secondary-menu-social-buttons">
     <a class="ba-social-icon" href="https://facebook.com/braverangels" target="_blank">
-      <span class="ba-screen-only">Facebook</span>
+      <span class="ba-screen-reader-only">Facebook</span>
       <i class="ba-icon ba-icon-facebook"></i>
     </a>
     <a class="ba-social-icon" href="https://twitter.com/braverangels" target="_blank">
-      <span class="ba-screen-only">Twitter</span>
+      <span class="ba-screen-reader-only">Twitter</span>
       <i class="ba-icon ba-icon-twitter"></i>
     </a>
     <a class="ba-social-icon" href="https://instagram.com/braverangels"  target="_blank">
-    <span class="ba-screen-only">Instagram</span>
+    <span class="ba-screen-reader-only">Instagram</span>
       <i class="ba-icon ba-icon-instagram"></i>
     </a>
     <a class="ba-social-icon" href="https://www.youtube.com/channel/UCtlZ4t6aS4rAJoPyYD9DGLA" target="_blank">
-      <span class="ba-screen-only">Youtube</span>
+      <span class="ba-screen-reader-only">Youtube</span>
       <i class="ba-icon ba-icon-youtube"></i>
     </a>
   </div>
@@ -105,10 +115,10 @@ function ba_get_menu_html($menu_array) {
 
 <nav role="navigation" class="ba-primary-menu ba-primary-menu-desktop">
   <a class="ba-menu-item ba-menu-logo" href="<?php echo esc_url(home_url('/')) ?>">
-    <img src="<?php echo ba_logo_url() ?>" />
+    <img src="<?php echo ba_logo_url(); ?>" alt="Braver Angels Logo"/>
   </a>
   <?php echo ba_get_menu_html(ba_get_menu_array('Primary')); ?>
-  <div class="ba-cta-buttons">
+  <div class="ba-cta-button_wrap">
     <a class="ba-cta-button ba-cta-button-red" href="<?php echo home_url("/support-us?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
       Support Us
     </a>
@@ -116,12 +126,12 @@ function ba_get_menu_html($menu_array) {
 </nav>
 
 <nav role="navigation" class="ba-primary-menu ba-primary-menu-mobile">
-  <div class="ba-mobile-logo-container">
+  <div class="ba-mobile-logo_container">
     <a class="ba-menu-item ba-menu-logo" href="<?php echo esc_url(home_url('/')) ?>">
-      <img src="<?php echo ba_logo_url() ?>" />
+      <img src="<?php echo ba_mobile_logo_url(); ?>" alt="Braver Angels Logo"/>
     </a>
   </div>
-  <div class="ba-cta-buttons">
+  <div class="ba-cta-button_wrap">
     <a class="ba-cta-button ba-cta-button-red" href="<?php echo home_url("/support-us?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
       Support Us
     </a>
@@ -131,7 +141,7 @@ function ba_get_menu_html($menu_array) {
     <div class="ba-hamburger ba-hamburger-close">&times;</div>
   </div>
 </nav>
-<div class="ba-mobile-menu-links">
+<div class="ba-mobile-menu_links">
   <ul class="ba-mobile-menu-top-section">
 
       <?php if( is_user_logged_in() ): ?>

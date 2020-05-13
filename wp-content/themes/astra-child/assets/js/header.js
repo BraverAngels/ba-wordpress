@@ -18,7 +18,7 @@
 
   var $open_button = $('.ba-hamburger-open');
   var $close_button = $('.ba-hamburger-close');
-  var $mobile_menu = $('.ba-mobile-menu-links');
+  var $mobile_menu = $('.ba-mobile-menu_links');
   var window_width = $(window).width();
 
   function closeMobileMenu(){

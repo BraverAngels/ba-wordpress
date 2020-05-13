@@ -2,307 +2,9 @@
   # Site Header
 */
 
-/* Mobile & Desktop Menu Common Styles */
-.ba-primary-menu {
-  /* font-family: "Nunito Sans", Karla; */
-  text-transform: uppercase;
-  width: 100%;
-  background: #fff;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-}
-.ba-primary-menu .ba-menu-logo {
-  min-width: 220px;
-  max-width: 220px;
-}
-.ba-dropdown-icon {
-  font-size: 12px;
-  margin-left: 3px;
-  position: relative;
-  bottom: 1px;
-}
-.ba-menu-item {
-  position: relative;
-}
-.ba-menu-item .ba-icon {
-  width: 13px;
-  height: 13px;
-  position: absolute;
-  right: -1px;
-  top: 50%;
-  transform: translateY(-45%);
-}
-
-/* Desktop Menu */
-.ba-primary-menu-desktop {
-  padding: 20px;
-  border-bottom: 1px solid #D8D8D8;
-}
-.ba-primary-menu-desktop ul {
-  background: #fff;
-  list-style: none;
-  margin: 0 12px 0 0;
-  padding-left: 0;
-  width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: flex-end;
-      -ms-flex-pack: flex-end;
-          justify-content: flex-end;
-}
-.ba-primary-menu-desktop li {
-  display: block;
-  float: left;
-  padding: 13px 14px;
-  position: relative;
-  text-decoration: none;
-  -webkit-transition-duration: 0.5s;
-       -o-transition-duration: 0.5s;
-          transition-duration: 0.5s;
-}
-.ba-primary-menu-desktop li a {
-  color: #231f20;
-  padding: 0;
-  font-size: 14px;
-  font-weight: 600;
-}
-.ba-primary-menu-desktop li:hover,
-.ba-primary-menu-desktop li:focus-within {
-  cursor: pointer;
-}
-.ba-primary-menu-desktop li:focus-within a {
-  outline: none;
-}
-.ba-primary-menu-desktop ul li ul {
-  visibility: hidden;
-  opacity: 0;
-  min-width: 12rem;
-  position: absolute;
-  -webkit-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  left: 0;
-  display: none;
-  z-index: 1;
-  -webkit-box-shadow: 0 3px 3px 2px rgba(0,0,0,0.15);
-          box-shadow: 0 3px 3px 2px rgba(0,0,0,0.15);
-}
-.ba-primary-menu-desktop ul li:hover > ul,
-.ba-primary-menu-desktop ul li ul:hover,
-.ba-primary-menu-desktop ul li ul:focus {
-   visibility: visible;
-   opacity: 1;
-   display: block;
-}
-.ba-primary-menu-desktop ul li ul li {
-  clear: both;
-  width: 100%;
-  border-bottom: 1px solid lightgray;
-  display: block;
-  line-height: 1.2;
-}
-.ba-primary-menu-desktop ul li ul li a {
-  font-weight: 600;
-  color: #424242;
-}
-.ba-primary-menu-desktop ul li ul li a:hover,
-.ba-primary-menu-desktop ul li ul li a:focus {
-  color: #23356C;
-}
-.ba-primary-menu-desktop .ba-dropdown-arrow{
-  font-size: 16px;
-  line-height: 1;
-  padding: 10px 0 10px 10px;
-  margin-top: -10px;
-  margin-bottom: -10px;
-}
-
-/* Mobile Menu */
-.ba-primary-menu-mobile {
-  display: none;
-  padding: 20px;
-  border-bottom: 1px solid #D8D8D8;
-}
-.ba-mobile-menu-links li a {
-  color: #231f20;
-  padding: 0;
-  font-size: 16px;
-  font-weight: 600;
-}
-.ba-mobile-logo-container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.ba-mobile-menu-links {
-  display: none;
-  background: #fff;
-  width: 100%;
-}
-.ba-mobile-menu-links ul {
-  list-style: none;
-  padding: 12px 0 12px 38px;
-  margin: 0;
-  padding-left: 1rem;
-}
-.ba-mobile-menu-links ul ul {
-  padding: 2px 0 12px 24px;
-}
-.ba-mobile-menu-links ul ul li a {
-  font-weight: 500;
-  color: gray;
-}
-.ba-mobile-menu-top-section {
-  background: #ebebeb;
-  margin: 0 0 10px 0;
-  padding: 12px 0 12px 50px;
-}
-.ba-scroll-to-top {
-  display: none;
-  position: fixed;
-  right: 10px;
-  bottom: 10px;
-  background-color: #f2f2f2;
-  border-radius: 3px;
-  opacity: .9;
-}
-.ba-scroll-to-top a {
-  display: inline-block;
-  color: black;
-  padding: 0 .5rem;
-}
-
-/* Blue Background Menu with Social Icons, Login, Logout, etc. */
-.ba-secondary-menu {
-  background-color: #23356C;
-  padding: 7px 20px;
-  text-align: right;
-  height: 56px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-.ba-secondary-menu.toggled {
-  height: 144px;
-}
-.ba-secondary-menu a {
-  color: #fff;
-  padding: 0px 7px;
-  border-radius: 2px;
-  display: inline-block;
-}
-.ba-secondary-menu a:hover {
-  color: #23356C;
-  background-color: #fff;
-}
-.ba-secondary-menu a.ba-social-icon {
-  color: #fff;
-  font-size: 24px;
-  width: 40px;
-  height: 42px;
-  text-align: center;
-  display: inline-block;
-  border-radius: 3px
-}
-.ba-secondary-menu a.ba-social-icon:hover {
-  background-color: rgba(0,0,0,.5);
-}
-
-/* Call To Action Buttons ( Join Us / Donate ) */
-.ba-cta-buttons {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.ba-cta-button {
-  font-size: 16px;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 3px;
-  padding: 10px !important;
-  display: inline-block;
-  white-space: nowrap;
-  line-height: 1.5;
-}
-.ba-cta-button:hover, .ba-cta-button:focus{
-  background-color: #23356C	!important;
-  color: white !important;
-  border-color: #23356C	!important;
-}
-
-.ba-cta-button-white {
-  color: #231f20 !important;
-  background-color: #ffffff;
-  border: 1px solid #231f20;
-}
-.ba-cta-button-red {
-  color: #fff !important;
-  background-color: #bc2f2c;
-  border: 1px solid #bc2f2c;
-  margin-left: 12px;
-}
-
-/* Hamburger Menu Toggle Button */
-.ba-hamburger-buttons{
-  width: 40px;
-  height: 40px;
-}
-.ba-hamburger{
-  cursor: pointer;
-  border-radius: 3px;
-  background-color: rgba(0,0,0,.05);
-  color: #494c4f;
-  height: 40px;
-  width: 40px;
-  padding: 4px 12px;
-
-}
-.ba-hamburger-open:after {
-  content: "";
-  display: block;
-  width: 16px;
-  height: 0;
-  -webkit-box-shadow: 1px 10px 1px 1px #231f20,1px 16px 1px 1px #231f20,1px 22px 1px 1px #231f20;
-  box-shadow: 0 10px 0 1px #231f20,0 16px 0 1px #231f20,0 22px 0 1px #231f20;
-}
-.ba-hamburger-close {
-  color: #231f20;
-  display: none;
-  padding: 8px 11px;
-  line-height: 0.8;
-  font-size: 29px;
-  display: none;
-  width: 40px;
-  height: 40px;
-}
 
 /* Intended to appear for screen readers but not appear visually */
-.ba-screen-only{
+.ba-screen-reader-only {
   position: absolute;
   top: -10000em;
   width: 1px;
@@ -314,79 +16,322 @@
   border: 0;
 }
 
-/* Mobile, Desktop breakpoints */
-@media screen and (max-width: 1220px){
-  .ba-menu-item .ba-icon {
-    width: 11px;
-    height: 11px;
-    right: -2px;
+/*
+* The top "Secondary" menu with social links etc.
+* Located directly above primary header
+*/
+.ba-secondary-menu {
+  background-color: #23356C;
+  padding: 7px 8spx;
+  text-align: right;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  &.toggled {
+    height: 144px;
   }
-  .ba-primary-menu-desktop li  {
-    padding: 0 10px;
+
+  a {
+    color: #fff;
+    padding: 0px 7px;
+    border-radius: 2px;
+    display: inline-block;
+    &:hover {
+      color: #23356C;
+      background-color: #fff;
+    }
   }
-  .ba-primary-menu .ba-menu-logo {
-    min-width: 200px;
-    max-width: 200px;
+
+  a.ba-social-icon {
+    color: #fff;
+    font-size: 24px;
+    width: 40px;
+    height: 42px;
+    text-align: center;
+    display: inline-block;
+    border-radius: 3px;
+    &:hover {
+      background-color: rgba(0,0,0,.5);
+    }
   }
-  .ba-primary-menu-desktop li a {
-    font-size: 12px;
-  }
-  .ba-primary-menu-desktop .ba-dropdown-arrow{
-    padding: 10px 0 10px 2px;
-  }
-  .ba-cta-button {
-    font-size: 14px;
-    padding: 10px 8px !important;
-  }
-}
-@media screen and (max-width: 960px){
-  .ba-primary-menu-mobile {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .ba-primary-menu-desktop {
-    display: none;
-  }
+
+  // non-icon-links
   .ba-secondary-menu-links{
     display: none;
+    padding-right: 6px;
+    @media screen and (min-width: 1001px){
+      display: inline-block;
+    }
   }
-  .ba-cta-buttons {
-    margin-left: auto;
-    margin-right: 12px;
+
+}
+
+/*
+* The arrow icon that appears on small screens when the user scrolls down
+* Scrolls to the top of the screen on click for easy menu access
+*/
+.ba-scroll-to-top {
+  display: none;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  background-color: #f2f2f2;
+  border-radius: 3px;
+  opacity: .9;
+  a {
+    display: inline-block;
+    color: black;
+    padding: 0 .5rem;
   }
-  .ba-cta-button {
-    font-size: 14px;
-    padding: 6px 10px !important;
-    line-height: 1.8;
-  }
-  .ba-menu-item .ba-dropdown-icon {
-    display: none;
-  }
-  .ba-secondary-menu.toggled {
-    height: 56px;
-  }
-  .ba-scroll-to-top.toggled {
+  &.toggled {
     display: inline-block;
   }
 }
-@media screen and (max-width: 480px){
-  .ba-cta-button {
-    font-size: 12px;
-    padding: 6px 8px !important;
+
+
+/*
+* The main menu which contains most of the navigation links
+*/
+
+// Styles for both small and large screens
+.ba-primary-menu {
+  width: 100%;
+  background: white;
+  display: flex;
+  vertical-align: middle;
+}
+
+// Call to action buttons within the menu
+.ba-cta-button_wrap {
+  margin-left: auto;
+  padding: 0 8px;
+}
+.ba-cta-button_wrap, .ba-hamburger-buttons{
+  display: flex;
+  justify-content: center;
+  align-content: flex-end;
+  flex-direction: column;
+}
+.ba-cta-button {
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 3px;
+  padding: 6px 8px;
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1.5;
+  @media screen and (min-width: 1001px) {
+    font-size: 14px;
   }
-  .ba-primary-menu .ba-menu-logo {
-    min-width: 130px;
-    max-width: 130px;
+  @media screen and (min-width: 1151px) {
+    font-size: 16px;
   }
-  .ba-primary-menu-mobile {
-    padding: 20px 6px;
+  &.ba-cta-button-red {
+    color: #fff;
+    background-color: #bc2f2c;
+    border: 1px solid #bc2f2c;
+    &:hover, &:focus{
+      background-color: #23356C;
+      color: white;
+      border-color: #23356C;
+    }
   }
 }
-@media screen and (max-width: 350px) {
-  .ba-primary-menu .ba-menu-logo {
-    min-width: 100px;
-    max-width: 100px;
-  }
 
+/*
+* Small screen main nav
+*/
+
+// The mobile menu bar with hamburger
+.ba-primary-menu-mobile {
+  display: flex;
+  padding: 6px 8px;
+  @media screen and (min-width: 1001px) {
+    display: none;
+  }
+  .ba-mobile-logo_container {
+    .ba-menu-logo {
+      display: inline-block;
+      img {
+        max-width: 100%;
+        height: 50px;
+        width: 50px;
+        width: auto;
+      }
+    }
+  }
+  /* Hamburger Menu Toggle Button */
+  .ba-hamburger{
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: rgba(0,0,0,.05);
+    color: #494c4f;
+    height: 40px;
+    width: 40px;
+    padding: 4px 12px;
+    &.ba-hamburger-open:after {
+      content: "";
+      display: block;
+      width: 16px;
+      height: 0;
+      box-shadow: 0 10px 0 1px #231f20, 0 16px 0 1px #231f20, 0 22px 0 1px #231f20;
+    }
+    &.ba-hamburger-close {
+      color: #231f20;
+      display: none;
+      padding: 8px 11px;
+      line-height: 0.8;
+      font-size: 29px;
+      display: none;
+      width: 40px;
+      height: 40px;
+    }
+  }
+}
+
+.ba-mobile-menu_links {
+  display: none;
+  @media screen and (min-width: 1001px) {
+    display: none !important;
+  }
+  background: #fff;
+  width: 100%;
+  .ba-icon {
+    display: none;
+  }
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 1rem;
+    &:first-child {
+      background: #ebebeb;
+    }
+    & > li a {
+      color: #231f20;
+      padding: 0;
+      font-size: 16px;
+      font-weight: 700;
+    }
+    // submenus
+    ul {
+      padding: 2px 0 12px 12px;
+      & > li a {
+        font-weight: 500;
+        color: gray;
+      }
+    }
+  }
+  a:hover,
+  a:focus {
+    color: #23356c;
+  }
+}
+
+
+
+.ba-primary-menu-desktop {
+  display: none;
+  padding: 16px;
+  border-bottom: 1px solid #D8D8D8;
+  @media screen and (min-width: 1001px) {
+    display: flex;
+  }
+  .ba-menu-logo {
+    max-width: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media screen and (min-width: 1101px) {
+      max-width: 180px;
+    }
+  }
+  ul {
+    background: #fff;
+    list-style: none;
+    margin: 0 12px 0 0;
+    padding-left: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  li {
+    display: block;
+    float: left;
+    padding: 8px;
+    position: relative;
+    text-decoration: none;
+    transition-duration: 0.5s;
+    a {
+      color: #231f20;
+      padding: 0;
+      font-size: 14px;
+      font-weight: bold;
+      @media screen and (min-width: 1151px) {
+        font-size: 16px;
+      }
+    }
+    &:hover, &:focus-within {
+      cursor: pointer;
+      a {
+        outline: none;
+      }
+    }
+  }
+}
+
+// submenus
+.ba-primary-menu-desktop ul li ul {
+  visibility: hidden;
+  opacity: 0;
+  min-width: 12rem;
+  position: absolute;
+  transition: all 0.5s ease;
+  left: 0;
+  display: none;
+  z-index: 1;
+  box-shadow: 0 3px 3px 2px rgba(0,0,0,0.15);
+  border-radius: 5px;
+  overflow: hidden;
+  padding-bottom: .5rem;
+}
+.ba-primary-menu-desktop ul li:hover > ul,
+.ba-primary-menu-desktop ul li ul:hover,
+.ba-primary-menu-desktop ul li ul:focus {
+   visibility: visible;
+   opacity: 1;
+   display: block;
+}
+.ba-primary-menu-desktop ul li ul li {
+  clear: both;
+  width: 100%;
+  display: block;
+  line-height: 1.2;
+  padding-bottom: 0;
+}
+.ba-primary-menu-desktop ul li ul li a {
+  font-weight: 600;
+  color: #424242;
+  transition: none;
+}
+.ba-primary-menu-desktop ul li ul li a:hover,
+.ba-primary-menu-desktop ul li ul li a:focus {
+  color: #23356C;
+  text-decoration: underline;
+}
+
+
+
+
+
+
+
+.ba-menu-item .ba-icon {
+  width: 13px;
+  height: 13px;
+  margin-left: 3px;
 }
