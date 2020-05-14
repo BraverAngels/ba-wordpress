@@ -21,7 +21,7 @@ get_header(); ?>
 
   <div class="library-content-wrap" style="margin: 0 -20px; display: block;">
 
-    <div class="library-back-link-wrapper ast-col-md-12">
+    <div class="library-back-link_wrapper ast-col-md-12">
       <a class="library-back-link" href="<?php echo home_url();?>/library">&larr; Back to Library</a><br/>
     </div>
 
@@ -105,10 +105,10 @@ get_header(); ?>
 
   </div><!-- .library-content-wrap -->
 
-  <div class="library-back-link-wrapper">
+  <div class="library-back-link_wrapper">
     <a class="library-back-link" href="<?php echo home_url();?>/library">&larr; Back to Library</a><br/>
   </div>
-  
+
 </div><!-- #primary -->
 
 <?php get_footer(); ?>

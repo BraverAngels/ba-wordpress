@@ -2,7 +2,7 @@
   # Gravity-forms overrides
 */
 
-/* The subscribe form */
+/* The subscribe form (id 33)*/
 
 .subscribeForm-title, .subscribeForm-description {
   margin-bottom: .5rem;
@@ -25,7 +25,6 @@
     margin: 0
   }
 
-  // Edit this?
   .subscribeForm-wrapper {
     margin-right: -16px;
   }
@@ -56,7 +55,7 @@
     padding: 20px 0 !important;
     float: none;
     /* These are the button colors	 */
-    background: #BC2F2C;
+    background: $brand-red;
     color: White !important;
     border-style: solid;
     border-width: 2px;
@@ -64,11 +63,9 @@
     /* end button colors */
     letter-spacing: 0.09375rem;
     border-radius: 3px;
-    font-family: Open Sans, sans-serif;
+    font-family: $brand-font-family;
     font-weight: 600;
     display: block;
-    -webkit-transition: background-color 300ms ease-out;
-    -o-transition: background-color 300ms ease-out;
     transition: background-color 300ms ease-out;
     -webkit-appearance: none;
     cursor: pointer;
@@ -86,8 +83,8 @@
   background: white;
   border-style: solid;
   border-width: 2px;
-  border-color: #BC2F2C;
-  color: #BC2F2C !important;
+  border-color: $brand-red;
+  color: $brand-red !important;
 }
 
 .gfp_big_button_blue .gfield_radio li {
@@ -108,7 +105,7 @@
     padding: 20px 0 !important;
     float: none;
     /* These are the button colors	 */
-    background: #23356C;
+    background: $brand-blue;
     color: White !important;
     border-style: solid;
     border-width: 2px;
@@ -116,7 +113,7 @@
     /* end button colors */
     letter-spacing: 0.09375rem;
     border-radius: 3px;
-    font-family: Open Sans, sans-serif;
+    font-family: $brand-font-family;
     font-weight: 600;
     display: block;
     -webkit-transition: background-color 300ms ease-out;
@@ -138,55 +135,55 @@
   background: white;
   border-style: solid;
   border-width: 2px;
-  border-color: #23356C;
-  color: #23356C !important;
+  border-color: $brand-blue;
+  color: $brand-blue !important;
 }
 
 i.fa-stack-1x {
   font-style: normal;
 }
 
-#gform_2 .gfield_checkbox input[type="checkbox"]:checked + label::before,
-#gform_2 .gfield_radio input[type="radio"]:checked + label::before {
-  background-color: #bc2f2c;
-}
+// #gform_2 .gfield_checkbox input[type="checkbox"]:checked + label::before,
+// #gform_2 .gfield_radio input[type="radio"]:checked + label::before {
+//   background-color: $brand-red;
+// }
+//
+// #gform_wrapper_8  .gfield_checkbox input[type="checkbox"] + label::before,
+// #gform_wrapper_3  .gfield_checkbox input[type="checkbox"] + label::before,
+// #gform_wrapper_8 .gfield_radio input[type="radio"] + label::before,
+// #gform_wrapper_3 .gfield_radio input[type="radio"] + label::before
+// {
+//   background-color: transparent;
+// }
+//
+// #gform_wrapper_8  .gfield_checkbox input[type="checkbox"]:checked + label::before,
+// #gform_wrapper_3  .gfield_checkbox input[type="checkbox"]:checked + label::before,
+// #gform_wrapper_8 .gfield_radio input[type="radio"]:checked + label::before,
+// #gform_wrapper_3 .gfield_radio input[type="radio"]:checked + label::before {
+//   background-color: white;
+// }
 
-#gform_wrapper_8  .gfield_checkbox input[type="checkbox"] + label::before,
-#gform_wrapper_3  .gfield_checkbox input[type="checkbox"] + label::before,
-#gform_wrapper_8 .gfield_radio input[type="radio"] + label::before,
-#gform_wrapper_3 .gfield_radio input[type="radio"] + label::before
-{
-  background-color: transparent;
-}
-
-#gform_wrapper_8  .gfield_checkbox input[type="checkbox"]:checked + label::before,
-#gform_wrapper_3  .gfield_checkbox input[type="checkbox"]:checked + label::before,
-#gform_wrapper_8 .gfield_radio input[type="radio"]:checked + label::before,
-#gform_wrapper_3 .gfield_radio input[type="radio"]:checked + label::before {
-  background-color: white;
-}
-
-#gform_wrapper_13  .gfield_checkbox input[type="checkbox"] + label::before,
-#gform_wrapper_13 .gfield_radio input[type="radio"] + label::before,
+// #gform_wrapper_13  .gfield_checkbox input[type="checkbox"] + label::before,
+// #gform_wrapper_13 .gfield_radio input[type="radio"] + label::before,
+// #gform_wrapper_19  .gfield_checkbox input[type="checkbox"] + label::before,
+// #gform_wrapper_19 .gfield_radio input[type="radio"] + label::before,
+// #gform_wrapper_15  .gfield_checkbox input[type="checkbox"] + label::before,
+// #gform_wrapper_15 .gfield_radio input[type="radio"] + label::before
 #gform_wrapper_18  .gfield_checkbox input[type="checkbox"] + label::before,
-#gform_wrapper_18 .gfield_radio input[type="radio"] + label::before,
-#gform_wrapper_19  .gfield_checkbox input[type="checkbox"] + label::before,
-#gform_wrapper_19 .gfield_radio input[type="radio"] + label::before,
-#gform_wrapper_15  .gfield_checkbox input[type="checkbox"] + label::before,
-
-#gform_wrapper_15 .gfield_radio input[type="radio"] + label::before
+#gform_wrapper_18 .gfield_radio input[type="radio"] + label::before
 {
   background-color: white;
 }
 
-#gform_wrapper_13  .gfield_checkbox input[type="checkbox"]:checked + label::before,
-#gform_wrapper_13 .gfield_radio input[type="radio"]:checked + label::before,
+// #gform_wrapper_13  .gfield_checkbox input[type="checkbox"]:checked + label::before,
+// #gform_wrapper_13 .gfield_radio input[type="radio"]:checked + label::before,
+//
+// #gform_wrapper_19  .gfield_checkbox input[type="checkbox"]:checked + label::before,
+// #gform_wrapper_19 .gfield_radio input[type="radio"]:checked + label::before,
+// #gform_wrapper_15  .gfield_checkbox input[type="checkbox"]:checked + label::before,
+// #gform_wrapper_15 .gfield_radio input[type="radio"]:checked + label::before
 #gform_wrapper_18  .gfield_checkbox input[type="checkbox"]:checked + label::before,
-#gform_wrapper_18 .gfield_radio input[type="radio"]:checked + label::before,
-#gform_wrapper_19  .gfield_checkbox input[type="checkbox"]:checked + label::before,
-#gform_wrapper_19 .gfield_radio input[type="radio"]:checked + label::before,
-#gform_wrapper_15  .gfield_checkbox input[type="checkbox"]:checked + label::before,
-#gform_wrapper_15 .gfield_radio input[type="radio"]:checked + label::before{
+#gform_wrapper_18 .gfield_radio input[type="radio"]:checked + label::before {
   background-color: #213266;
   border-color: gray;
 }
@@ -199,7 +196,7 @@ i.fa-stack-1x {
 /* GLOBAL FORM STYLES - for gravity forms with class of .ba-custom-form */
 
 .ba-custom-form input[type="text"], .ba-custom-form select, .ba-custom-form textarea{
-    border: 1px solid #23356c;
+    border: 1px solid $brand-blue;
     border-radius: 5px;
     background: white;
     -webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
@@ -229,7 +226,7 @@ i.fa-stack-1x {
 }
 
 .ba-custom-form input[type="submit"]:hover, .ba-custom-form input[type="submit"]:focus  {
-    background: #23356c;
+    background: $brand-blue;
 }
 
 @media screen and (min-width: 500px) {
@@ -254,7 +251,7 @@ i.fa-stack-1x {
     font-weight: bold;
     padding: .5rem 1.5rem;
     border: 2px solid lightgray;
-    color: #23356c;
+    color: $brand-blue;
     text-align: center;
     -webkit-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
@@ -273,9 +270,9 @@ i.fa-stack-1x {
 
 /* the selected button*/
 .ba-custom-form .ba-button-list li input:checked + label {
-    background: #23356c;
+    background: $brand-blue;
     color: white;
-    border: 2px solid #23356c;
+    border: 2px solid $brand-blue;
     -webkit-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;
@@ -306,7 +303,7 @@ i.fa-stack-1x {
 
 
 .ba-custom-form input[type="text"], .ba-custom-form select{
-    border: 1px solid #23356c;
+    border: 1px solid $brand-blue;
     border-radius: 5px;
     background: white;
     -webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
@@ -336,15 +333,15 @@ i.fa-stack-1x {
 }
 
 .ba-custom-form input[type="submit"]:hover, .ba-custom-form input[type="submit"]:focus  {
-    background: #23356c;
+    background: $brand-blue;
 }
 
 
 /* the selected button*/
 .ba-custom-form .ba-button-list li input:checked + label {
-    background: #23356c;
+    background: $brand-blue;
     color: white;
-    border: 2px solid #23356c;
+    border: 2px solid $brand-blue;
     -webkit-transition: all 0.2s ease;
     -o-transition: all 0.2s ease;
     transition: all 0.2s ease;

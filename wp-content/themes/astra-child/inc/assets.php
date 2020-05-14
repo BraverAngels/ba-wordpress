@@ -69,7 +69,7 @@ function inline_scripts() {
   if(!is_elementor()) {
     ?>
     <!-- Add the nunito sans font to pages that aren't using elementor -->
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <?php
   }
 }

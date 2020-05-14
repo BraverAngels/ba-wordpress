@@ -2,9 +2,12 @@
   # Global
 */
 body, button, input, select, textarea {
-  font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+  font-family: $brand-font-family;
 }
 
+/**
+* Astra theme color overrides
+*/
 
 .elementor-post__title a:hover,
 .elementor-post__title a:focus,
@@ -14,13 +17,18 @@ body, button, input, select, textarea {
 .archive .entry-title a:focus,
 .search .entry-title a:hover,
 .search .entry-title a:focus {
-  color: #bc2f2c !important;
+  color: $brand-red !important;
 }
 
 .archive .entry-meta .published,
 .search .entry-meta .published {
   color: black;
 }
+
+
+/**
+* SVG Icons
+*/
 
 .ba-icon {
   height: 25px;
@@ -32,27 +40,33 @@ body, button, input, select, textarea {
   border-radius: 3px;
   position: relative;
   bottom: 2px;
+
+  &:focus, &:hover {
+    background-color: rgba(0,0,0,.5);
+  }
 }
-.ba-icon:hover,
-.ba-icon:focus {
-  background-color: rgba(0,0,0,.5);
-}
+
+
 .ba-icon.ba-icon-facebook {
   background: url('../img/facebook.png');
-  background-image: url('../img/facebook.svg'); 
+  background-image: url('../img/facebook.svg');
 }
+
 .ba-icon.ba-icon-instagram {
   background: url('../img/instagram.png');
   background-image: url('../img/instagram.svg');
 }
+
 .ba-icon.ba-icon-youtube {
   background: url('../img/youtube.png');
   background-image: url('../img/youtube.svg');
 }
+
 .ba-icon.ba-icon-twitter {
   background: url('../img/twitter.png');
   background-image: url('../img/twitter.svg');
 }
+
 .ba-icon.ba-icon-chevron-down {
   background: url('../img/chevron-down-dark.png');
   background-image: url('../img/chevron-down-dark.svg');

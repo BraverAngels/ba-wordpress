@@ -20,10 +20,10 @@ get_header(); ?>
   <?php astra_primary_content_top(); ?>
 
   <?php astra_entry_before(); ?>
-  
+
   <div class="library-content-wrap" style="margin: 0 -20px;">
 
-    <div class="library-sidebar ast-col-md-3">
+    <div class="library-sidebar_wrapper ast-col-md-3">
       <?php get_template_part('template-parts/content-library-sidebar'); ?>
     </div>
 

@@ -23,7 +23,7 @@
 
     <?php if ( is_active_sidebar( 'pre-footer' ) && !is_page('subscribe') && !is_page('online-skills-training')) { ?>
       <section id="pre-footer" class="pre-footer">
-        <ul class="pre-footer-widgets">
+        <ul class="pre-footer_widgets">
           <?php dynamic_sidebar('pre-footer'); ?>
         </ul>
       </section>

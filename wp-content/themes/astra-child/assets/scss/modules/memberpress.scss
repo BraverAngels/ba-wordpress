@@ -1,102 +1,15 @@
-
-
 /**
   # Memberpress overrides
 */
-.single-memberpressproduct .site-content .ast-container {
-  max-width: 800px;
-}
-.single-memberpressproduct .mp_wrapper {
-  padding: 0;
-}
-.mepr-unauthorized-message {
-  margin: 1rem -.5rem;
-  min-height: 200px;
-  border: 2px solid lightgray;
-  border-radius: 3px;
-  padding: 1rem;
-  text-align: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.mepr-account-actions a {
-    display: inline-block;
-    font-size: 16px;
-    text-decoration: underline;
-    margin-right: .25rem;
-    clear: both;
-    float: left;
-    text-align: center;
-}
 
-
-#mepr_loginform, #mepr_forgot_password_form, .mepr-stripe-payment-form {
-  max-width: 350px;
-}
-
-.mp_wrapper {
-    margin: auto;
-    max-width: 1200px;
-    display: block;
-    padding-left: .5rem;
-    padding-right: .5rem;
-}
-
-.mepr-form-has-errors, .cc-error, .stripe_element_error {
-  display: inline-block;
-  width: auto;
-  background: #e03330 !important;
-  border-radius: 2px;
-  color: white !important;
-  font-size: .875rem;
-}
-.mepr-form-has-errors, .cc-error {
-  padding: 5px !important;
-}
-
-.mepr-form-input.invalid {
-  background-color: #F2F2F2 !important
-}
-
-.mepr_error {
-  display: inline-block;
-  width: auto;
-  background: #e03330 !important;
-  border-radius: 2px;
-  color: white;
-  padding: .25rem 1rem !important;
-}
-.mepr_error ul {
-  padding: 0 !important;
-}
-.mepr_updated {
-  display: inline-block;
-  width: auto;
-  background: #27b758 !important;
-  border-color: #27b758 !important;
-  border-radius: 2px;
-  color: white;
-  padding: .25rem 1rem !important;
-}
-.mp_wrapper textarea, .mp_wrapper select, .mp_wrapper input[type=text], .mp_wrapper input[type=url], .mp_wrapper input[type=email], .mp_wrapper input[type=tel], .mp_wrapper input[type=number], .mp_wrapper input[type=password] {
-  padding: 5px 10px;
-}
-
-.mepr_tos {
-  font-size: 80% !important;
-  margin-top: 2rem !important;
-}
-
-.mepr-account-form {
-  max-width: 600px !important;
+// Memberpress signup form
+.single-memberpressproduct {
+  .site-content .ast-container {
+    max-width: 800px;
+  }
+  .mp_wrapper {
+    padding: 0;
+  }
 }
 
 .mepr-signup-form .mepr_price {
@@ -119,36 +32,138 @@ input.stripe-card-name {
   line-height: 1.75 !important;
 }
 
-.mepr-submit {
-  margin-bottom: 1rem !important;
+.mepr-payment-method-desc-text {
+  padding:0!important
 }
 
+.mepr-payment-method-icon img {
+  max-height: 32px
+}
+
+
+// account actions
+.mepr-account-actions a {
+  display: inline-block;
+  font-size: 16px;
+  text-decoration: underline;
+  margin-right: .25rem;
+  clear: both;
+  float: left;
+  text-align: center;
+}
+
+
+.mp_wrapper {
+  margin: auto;
+  max-width: 1200px;
+  display: block;
+  padding-left: .5rem;
+  padding-right: .5rem;
+
+  textarea,
+  select,
+  input[type=text],
+  input[type=url],
+  input[type=email],
+  input[type=tel],
+  input[type=number],
+  input[type=password] {
+    padding: 5px 10px;
+  }
+
+}
+
+#mepr_loginform,
+#mepr_forgot_password_form,
+.mepr-stripe-payment-form {
+  max-width: 350px;
+}
+
+
+// Validation feedback
+.mepr-unauthorized-message {
+  margin: 1rem -.5rem;
+  min-height: 200px;
+  border: 2px solid lightgray;
+  border-radius: 3px;
+  padding: 1rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mepr-form-has-errors {
+  width: auto;
+  background: #e03330 !important;
+  border-radius: 2px;
+  color: white !important;
+  font-size: .875rem;
+  text-align: center;
+}
+
+.mepr-form-input.invalid,
 input.mepr-form-input.invalid,
 .mepr-form div.mepr-radios-field.invalid {
   background-color: #FAFAFA  !important;
   border: 2px solid #e03330 !important;
 }
 
-.mepr-payment-method-desc-text {
-  padding:0!important
-}
-.mepr-payment-method-icon img {
-  max-height: 32px
+.mepr_error {
+  display: inline-block;
+  width: auto;
+  background: #e03330 !important;
+  border-radius: 2px;
+  color: white;
+  padding: .25rem 1rem !important;
+  ul {
+    padding: 0 !important;
+  }
 }
 
+
+
+// displays after a successful submission
+.mepr_updated {
+  display: inline-block;
+  width: auto;
+  background: #27b758 !important;
+  border-color: #27b758 !important;
+  border-radius: 2px;
+  color: white;
+  padding: .25rem 1rem !important;
+}
+
+.mepr_tos {
+  font-size: 80% !important;
+  margin-top: 2rem !important;
+}
+
+// Allows subscribers to edit their information (name, email, etc)
+.mepr-account-form {
+  max-width: 600px !important;
+}
+
+
+// Submit button for all Memberpress forms
+.mepr-submit {
+  margin-bottom: 1rem !important;
+}
+
+// The table showing current subscription info
 .mepr-cancel-sub-buttons button {
-  background-color: #23356c !important;
+  background-color: $brand-blue !important;
   border: none !important;
 }
 
 .mepr_update_account_table {
   max-width: 600px !important;
+  #card-element{
+    height: auto !important;
+  }
 }
 
-.mepr_update_account_table #card-element{
-  height: auto !important;
-}
-
+// forgot password form
 #mepr_forgot_password_form {
   margin-bottom: 1rem;
 }

@@ -3,7 +3,7 @@
 */
 
 
-.page-id-4159 .ast-container {
+.page-id-4159 .site-content .ast-container {
   margin: 0;
   padding: 0;
   width: 100%;
@@ -29,19 +29,17 @@
 }
 
 .page-id-4159 .header-inner h2 {
-  /* font-family: 'Nunito Sans', 'Karla'; */
   font-weight: bold;
 }
 .page-id-4159 .header-inner h3 {
   color: #212121;
   margin-bottom: 2rem;
   font-weight: 400;
-  /* font-family: 'Nunito Sans', 'Karla'; */
 }
 
 
 .entry-content-support-us #donate {
-  background: #bc2f2c;
+  background: $brand-red;
   overflow: auto;
   width: 100%;
   padding: 1rem 0.5rem;
@@ -57,7 +55,7 @@
 }
 .entry-content-support-us .ba-button-list li label {
   color: white !important;
-  background: #23356c !important;
+  background: $brand-blue !important;
   border-radius: 0 !important;
   border: none !important;
   width: 100% !important;
@@ -93,7 +91,7 @@
   margin-top: 1rem;
 }
 .entry-content-support-us #donate #gform_submit_button_29 {
-  background: #23356c;
+  background: $brand-blue;
 }
 .entry-content-support-us #donate #gform_submit_button_29:hover,
 .entry-content-support-us #donate #gform_submit_button_29:focus {
@@ -126,7 +124,7 @@
   }
 }
 .entry-content-support-us #join {
-  background: #bc2f2c;
+  background: $brand-red;
   padding: 1rem 0.5rem;
 }
 @media screen and (min-width: 961px) {
@@ -235,8 +233,8 @@ join-selection-column
    width: 100%;
    padding: 10px 40px;
    color: #fff;
-   border-color: #23356c;
-   background-color: #23356c;
+   border-color: $brand-blue;
+   background-color: $brand-blue;
    display: inline-block;
 }
  .entry-content-support-us .join-selection-amount {
@@ -266,7 +264,7 @@ join-selection-column
 
 /* UPGRADE section */
 .entry-content-support-us #upgrade {
-  background: #23356C;
+  background: $brand-blue;
   padding: 1rem 0.5rem;
 }
 @media screen and (min-width: 961px) {
@@ -338,7 +336,7 @@ join-selection-column
   display: block;
   width: 100%;
   text-align: center;
-  background: #23356c;
+  background: $brand-blue;
   color: white;
   padding: 0.5rem;
 }
@@ -368,7 +366,6 @@ join-selection-column
   width: 100%;
   outline-style: none;
   font-size: inherit;
-  font-family: inherit;
   letter-spacing: normal;
   border: 1px solid rgba(0, 0, 0, 0.2);
   display: inline;
@@ -413,7 +410,7 @@ join-selection-column
   border-radius: 2px;
 }
 .entry-content-support-us #donate input[type=submit]:hover, .entry-content-support-us #donate input[type=submit]:focus {
-  background: #23356c;
+  background: $brand-blue;
 }
 .entry-content-support-us #donate .ba-button-list {
   width: 102.5%;
@@ -444,7 +441,7 @@ join-selection-column
   font-weight: bold;
   padding: 0.5rem 1.5rem;
   border: 2px solid lightgray;
-  color: #23356c;
+  color: $brand-blue;
   text-align: center;
   -webkit-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
@@ -460,18 +457,14 @@ join-selection-column
   }
 }
 .entry-content-support-us #donate .ba-button-list li input:checked + label {
-  background: #23356c;
+  background: $brand-blue;
   color: white;
-  border: 2px solid #23356c;
+  border: 2px solid $brand-blue;
   -webkit-transition: all 0.2s ease;
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
 .entry-content-support-us #donate select {
-  -moz-appearance: none;
-  /* Firefox */
-  -webkit-appearance: none;
-  /* Safari and Chrome */
   appearance: none;
   position: relative;
   background: url(https://www.better-angels.org/wp-content/uploads/2019/06/icon-chevron-down.png) no-repeat;

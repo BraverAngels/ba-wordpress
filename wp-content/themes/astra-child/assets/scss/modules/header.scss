@@ -21,20 +21,22 @@
 * Located directly above primary header
 */
 .ba-secondary-menu {
-  background-color: #23356C;
+  background-color: $brand-blue;
   padding: 7px 8px;
   text-align: right;
   height: 56px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  &.toggled {
+    height: 144px;
+  }
 
   @media screen and (min-width: 1001px) {
     padding: 7px 1rem;
-  }
-
-  &.toggled {
-    height: 144px;
+    &.toggled {
+      height: 56px;
+    }
   }
 
   a {
@@ -43,7 +45,7 @@
     border-radius: 2px;
     display: inline-block;
     &:hover {
-      color: #23356C;
+      color: $brand-blue;
       background-color: #fff;
     }
   }
@@ -62,7 +64,7 @@
   }
 
   // non-icon-links
-  .ba-secondary-menu-links{
+  .ba-secondary-menu_links{
     display: none;
     padding-right: 6px;
     @media screen and (min-width: 1001px){
@@ -112,7 +114,7 @@
   margin-left: auto;
   padding: 0 8px;
 }
-.ba-cta-button_wrap, .ba-hamburger-buttons{
+.ba-cta-button_wrap, .ba-mobile-toggle_wrap{
   display: flex;
   justify-content: center;
   align-content: flex-end;
@@ -133,24 +135,36 @@
   @media screen and (min-width: 1151px) {
     font-size: 16px;
   }
-  &.ba-cta-button-red {
+  &.ba-cta-button--warning {
     color: #fff;
-    background-color: #bc2f2c;
-    border: 1px solid #bc2f2c;
+    background-color: $brand-red;
+    border: 1px solid $brand-red;
     &:hover, &:focus{
-      background-color: #23356C;
+      background-color: $brand-blue;
       color: white;
-      border-color: #23356C;
+      border-color: $brand-blue;
     }
   }
+  &.ba-cta-button--light {
+    color: #231f20;
+    background-color: #ffffff;
+    border: 1px solid #231f20;
+  }
 }
+
+.ba-menu_item .ba-icon {
+  width: 13px;
+  height: 13px;
+  margin-left: 3px;
+}
+
 
 /*
 * Small screen main nav
 */
 
 // The mobile menu bar with hamburger
-.ba-primary-menu-mobile {
+.ba-primary-menu--mobile {
   display: flex;
   padding: 6px 8px;
   @media screen and (min-width: 1001px) {
@@ -168,7 +182,7 @@
     }
   }
   /* Hamburger Menu Toggle Button */
-  .ba-hamburger{
+  .ba-mobile-toggle{
     cursor: pointer;
     border-radius: 3px;
     background-color: rgba(0,0,0,.05);
@@ -176,14 +190,14 @@
     height: 40px;
     width: 40px;
     padding: 4px 12px;
-    &.ba-hamburger-open:after {
+    &.ba-mobile-toggle_open:after {
       content: "";
       display: block;
       width: 16px;
       height: 0;
       box-shadow: 0 10px 0 1px #231f20, 0 16px 0 1px #231f20, 0 22px 0 1px #231f20;
     }
-    &.ba-hamburger-close {
+    &.ba-mobile-toggle_close {
       color: #231f20;
       display: none;
       padding: 8px 11px;
@@ -230,13 +244,13 @@
   }
   a:hover,
   a:focus {
-    color: #23356c;
+    color: $brand-blue;
   }
 }
 
 
 
-.ba-primary-menu-desktop {
+.ba-primary-menu--desktop {
   display: none;
   padding: 16px;
   border-bottom: 1px solid #D8D8D8;
@@ -280,7 +294,7 @@
       }
       &:hover,
       &:focus {
-        color: #23356c;
+        color: $brand-blue;
         text-decoration: underline;
       }
     }
@@ -294,7 +308,7 @@
 }
 
 // submenus
-.ba-primary-menu-desktop ul li ul {
+.ba-primary-menu--desktop ul li ul {
   visibility: hidden;
   opacity: 0;
   min-width: 12rem;
@@ -309,39 +323,27 @@
   padding-bottom: .5rem;
   border: 1px solid #e2e2e2;
 }
-.ba-primary-menu-desktop ul li:hover > ul,
-.ba-primary-menu-desktop ul li ul:hover,
-.ba-primary-menu-desktop ul li ul:focus {
+.ba-primary-menu--desktop ul li:hover > ul,
+.ba-primary-menu--desktop ul li ul:hover,
+.ba-primary-menu--desktop ul li ul:focus {
    visibility: visible;
    opacity: 1;
    display: block;
 }
-.ba-primary-menu-desktop ul li ul li {
+.ba-primary-menu--desktop ul li ul li {
   clear: both;
   width: 100%;
   display: block;
   line-height: 1.2;
   padding-bottom: 0;
 }
-.ba-primary-menu-desktop ul li ul li a {
+.ba-primary-menu--desktop ul li ul li a {
   font-weight: 600;
   color: #424242;
   transition: none;
 }
-.ba-primary-menu-desktop ul li ul li a:hover,
-.ba-primary-menu-desktop ul li ul li a:focus {
-  color: #23356C;
+.ba-primary-menu--desktop ul li ul li a:hover,
+.ba-primary-menu--desktop ul li ul li a:focus {
+  color: $brand-blue;
   text-decoration: underline;
-}
-
-
-
-
-
-
-
-.ba-menu-item .ba-icon {
-  width: 13px;
-  height: 13px;
-  margin-left: 3px;
 }

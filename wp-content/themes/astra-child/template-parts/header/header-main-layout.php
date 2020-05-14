@@ -6,12 +6,16 @@
 
 
 <?php
+
+// Get the url of the Custom Logo set in the theme customizer
 function ba_logo_url() {
   $custom_logo_id = get_theme_mod( 'custom_logo' );
   $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
   return $image[0];
 }
 
+// Get the url of the alternate mobile logo set in the theme customizer
+// If no alternate logo is set return the normal custom logo
 function ba_mobile_logo_url() {
   if (astra_get_option( 'different-mobile-logo' ) && astra_get_option( 'mobile-header-logo' )) {
     return astra_get_option( 'mobile-header-logo' );
@@ -20,8 +24,8 @@ function ba_mobile_logo_url() {
   }
 }
 
-
-
+// Get and transform main menu data
+// return menu data array
 function ba_get_menu_array($menu_name) {
   $array_menu = wp_get_nav_menu_items($menu_name);
   $menu = array();
@@ -31,7 +35,7 @@ function ba_get_menu_array($menu_name) {
       $menu[$m->ID]['ID'] = $m->ID;
       $menu[$m->ID]['title'] = $m->title;
       $menu[$m->ID]['url'] = $m->url;
-      $menu[$m->ID]['classname'] = 'ba-menu-item';
+      $menu[$m->ID]['classname'] = 'ba-menu_item';
       $menu[$m->ID]['children'] = array();
     }
   }
@@ -42,15 +46,16 @@ function ba_get_menu_array($menu_name) {
       $submenu[$m->ID]['ID'] = $m->ID;
       $submenu[$m->ID]['title'] = $m->title;
       $submenu[$m->ID]['url'] = $m->url;
-      $submenu[$m->ID]['classname'] = 'ba-sub-menu-item';
+      $submenu[$m->ID]['classname'] = 'ba-sub-menu_item';
       $menu[$m->menu_item_parent]['children'][$m->ID] = $submenu[$m->ID];
     }
   }
   return $menu;
 }
 
+// Returns the main menu markup
 function ba_get_menu_html($menu_array) {
-  $html = "<ul class='ba-menu-container'>";
+  $html = "<ul class='ba-menu_container'>";
 
   foreach ($menu_array as $menu_item) {
     $has_children = !empty($menu_item['children']);
@@ -59,7 +64,7 @@ function ba_get_menu_html($menu_array) {
     if($has_children) {
       $html .= "<a aria-haspopup='true' href='{$menu_item['url']}'>{$menu_item['title']}<i class='ba-icon ba-icon-chevron-down' aria-hidden='true'></i>
 </a>";
-      $html .= "<ul class='ba-sub-menu-container' aria-label='submenu'>";
+      $html .= "<ul class='ba-sub-menu_container' aria-label='submenu'>";
       foreach ($menu_item['children'] as $sub_menu_item) {
         $html .= "<li class='{$sub_menu_item['classname']}' id='{$sub_menu_item['ID']}'>";
         $html .= "<a href='{$sub_menu_item['url']}'>{$sub_menu_item['title']}</a>";
@@ -77,7 +82,7 @@ function ba_get_menu_html($menu_array) {
 ?>
 
 <nav role="navigation" class="ba-secondary-menu">
-  <div class="ba-secondary-menu-links">
+  <div class="ba-secondary-menu_links">
     <?php if( is_user_logged_in() ): ?>
       <a href="<?php echo esc_url(home_url('/members-portal')) ?>">Members Portal</a>
       <a href="<?php echo esc_url(home_url('/account?action=subscriptions')) ?>">My Account</a>
@@ -93,7 +98,7 @@ function ba_get_menu_html($menu_array) {
       Find an Event
     </a>
   </div>
-  <div class="ba-secondary-menu-social-buttons">
+  <div class="ba-secondary-menu_social-buttons">
     <a class="ba-social-icon" href="https://facebook.com/braverangels" target="_blank">
       <span class="ba-screen-reader-only">Facebook</span>
       <i class="ba-icon ba-icon-facebook"></i>
@@ -113,36 +118,36 @@ function ba_get_menu_html($menu_array) {
   </div>
 </nav>
 
-<nav role="navigation" class="ba-primary-menu ba-primary-menu-desktop">
-  <a class="ba-menu-item ba-menu-logo" href="<?php echo esc_url(home_url('/')) ?>">
+<nav role="navigation" class="ba-primary-menu ba-primary-menu--desktop">
+  <a class="ba-menu_item ba-menu-logo" href="<?php echo esc_url(home_url('/')) ?>">
     <img src="<?php echo ba_logo_url(); ?>" alt="Braver Angels Logo"/>
   </a>
   <?php echo ba_get_menu_html(ba_get_menu_array('Primary')); ?>
   <div class="ba-cta-button_wrap">
-    <a class="ba-cta-button ba-cta-button-red" href="<?php echo home_url("/support-us?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
+    <a class="ba-cta-button ba-cta-button--warning" href="<?php echo home_url("/support-us?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
       Support Us
     </a>
   </div>
 </nav>
 
-<nav role="navigation" class="ba-primary-menu ba-primary-menu-mobile">
+<nav role="navigation" class="ba-primary-menu ba-primary-menu--mobile">
   <div class="ba-mobile-logo_container">
-    <a class="ba-menu-item ba-menu-logo" href="<?php echo esc_url(home_url('/')) ?>">
+    <a class="ba-menu_item ba-menu-logo" href="<?php echo esc_url(home_url('/')) ?>">
       <img src="<?php echo ba_mobile_logo_url(); ?>" alt="Braver Angels Logo"/>
     </a>
   </div>
   <div class="ba-cta-button_wrap">
-    <a class="ba-cta-button ba-cta-button-red" href="<?php echo home_url("/support-us?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
+    <a class="ba-cta-button ba-cta-button--warning" href="<?php echo home_url("/support-us?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
       Support Us
     </a>
   </div>
-  <div class="ba-hamburger-buttons">
-    <div class="ba-hamburger ba-hamburger-open"></div>
-    <div class="ba-hamburger ba-hamburger-close">&times;</div>
+  <div class="ba-mobile-toggle_wrap">
+    <div class="ba-mobile-toggle ba-mobile-toggle_open"></div>
+    <div class="ba-mobile-toggle ba-mobile-toggle_close">&times;</div>
   </div>
 </nav>
 <div class="ba-mobile-menu_links">
-  <ul class="ba-mobile-menu-top-section">
+  <ul class="ba-mobile-menu_links--static">
 
       <?php if( is_user_logged_in() ): ?>
         <li>

@@ -2,34 +2,51 @@
   # Library
 */
 
-.post-type-archive-library .site-content .ast-container,
-.tax-library_category .site-content .ast-container {
-  margin: 0;
-  width: 100%;
-  padding: 0;
-  max-width: 100%;
-  overflow-x: hidden;
+
+// "Global" styles shared accross all library templates
+.post-type-archive-library,
+.tax-library_category {
+  .site-content {
+    .ast-container {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
+  }
+
+  .attachment-post-thumbnail {
+    max-height: 275px;
+    width: auto;
+    margin-bottom: .5rem;
+  }
+
+  .ast-article-post {
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-layout-1 {
+    padding-bottom: 1em;
+    border-bottom: none;
+  }
 }
-.post-type-archive-library .site-content .ast-container .content-area,
-.tax-library_category .site-content .ast-container .content-area {
-  max-width: 1240px;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 2rem !important;
-  float: none !important;
-}
-.library-back-link-wrapper {
+
+
+.library-back-link_wrapper {
   overflow: auto;
   position: relative;
   display: block;
+
+  .library-back-link {
+    display: inline-block;
+    float: left;
+    margin: 1rem 0;
+  }
 }
-.library-back-link {
-  display: inline-block;
-  float: left;
-  margin: 1rem 0;
-}
+
+
+
 .library-reviews-area {
   padding: 1rem;
   float: left;
@@ -38,116 +55,115 @@
   overflow: auto;
   border: none;
   margin-top: 0;
+  .comment-list {
+    margin: 2rem 0;
+  }
+  .comment-body {
+    padding: 1rem;
+    padding-bottom: 0;
+    margin-bottom: .5rem;
+    border: 1px solid lightgray;
+  }
+  .comment-meta {
+    font-size: .875rem;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+  }
+  .reply {
+    display: none;
+  }
+
 }
-.library-reviews-area .comment-list {
-  margin: 2rem 0;
-}
-.library-reviews-area .comment-body {
-  padding: 1rem;
-  padding-bottom: 0;
-  margin-bottom: .5rem;
-  border: 1px solid lightgray;
-}
-.library-reviews-area .comment-meta {
-  font-size: .875rem;
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-}
-.library-reviews-area .reply {
-  display: none;
-}
+
 
 .library-entry-title {
   font-size: 22px;
 }
+
 .library-index-entry-title {
   margin-top: 1rem;
-}
-.post-type-archive-library .attachment-post-thumbnail,
-.tax-library_category .attachment-post-thumbnail{
-  max-height: 275px;
-  width: auto;
-  margin-bottom: .5rem;
-}
-.post-type-archive-library .ast-article-post,
-.tax-library_category .ast-article-post {
-  margin-bottom: 1.5rem;
 }
 
 .library-default-image {
   max-width: 225px;
   border: 1px solid lightgray;
 }
-.post-type-archive-library .blog-layout-1,
-.tax-library_category .blog-layout-1 {
-  padding-bottom: 1em;
-  border-bottom: none;
-}
-.library-labels-list  {
+
+.library-sidebar_labels-list  {
   margin: 0;
   list-style: none;
+  li{
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: .25rem;
+    margin-top: .25rem;
+  }
 }
 .library-reading-rooms-list {
   margin-bottom: .5rem;
 }
-.library-labels-list li{
-  font-size: 16px;
-  line-height: 1.2;
-  margin-bottom: .25rem;
-  margin-top: .25rem;
-}
-.library-sidebar {
+
+.library-sidebar_wrapper {
   padding-bottom: 1.5rem;
 }
-.library-sidebar-inner {
+
+.library-sidebar {
   background: #e8e8e8;
   padding: 1rem 1.25rem;
   border-radius: 3px;
+  .library-recommended-readings-header {
+    color: gray;
+  }
+  .library-sidebar_contact-info{
+    font-size: .875rem;
+    color: gray;
+    display: inline-block;
+    line-height: 1.5;
+    &:first-of-type{
+      margin-bottom: 0;
+      margin-top: 1rem;
+    }
+  }
+  .ba-cta-button {
+    white-space: normal;
+  }
 }
-.library-sidebar-inner .library-recommended-readings-header {
-  color: gray;
-}
-.library-sidebar-inner .library-sidebar-contact-info{
-  font-size: .875rem;
-  color: gray;
-  display: inline-block;
-  line-height: 1.5;
-}
-.library-sidebar-inner .library-sidebar-contact-info:first-of-type{
-  margin-bottom: 0;
-  margin-top: 1rem;
-}
-.library-sidebar-inner .ba-cta-button {
-  white-space: normal;
-}
-.library-labels-list li ul {
+
+
+
+
+.library-sidebar_labels-list li ul {
   list-style: none;
   line-height: 1.2;
   margin-left: .5rem;
   margin-bottom: .25rem;
 }
-.library-labels-list li ul li {
+
+.library-sidebar_labels-list li ul li {
   margin-bottom: .375rem;
   margin-top: .375rem;
   display: block;
 }
-.library-labels-list li.current-cat > a {
+
+.library-sidebar_labels-list li.current-cat > a {
   font-weight: bold;
   text-decoration: underline;
 }
+
 .library-section-header {
   margin-bottom: 1rem;
+  h3 {
+    display: inline-block;
+    margin-right: .5rem;
+  }
 }
-.library-section-header h3 {
-  display: inline-block;
-  margin-right: .5rem;
-}
+
 .library-item-meta {
   color: #838383;
 }
 .single-library .library-item-meta {
-    color: black;
-    font-weight: 600;
+  color: black;
+  font-weight: 600;
 }
 .library-entry-categories, .library-recommended-by {
   color: #838383; font-size: 16px;
@@ -159,6 +175,7 @@
   margin-bottom: 1rem;
   display: block;
 }
+
 .ba-clearfix {
   width: 100%;
   display: none;
@@ -185,7 +202,7 @@
   display: block;
   padding: 1rem;
   margin-top: 1rem;
-}
-.library-review-section-join-message h4, .library-review-section-join-message p {
-  margin-bottom: .5rem;
+  h4, p {
+    margin-bottom: .5rem;
+  }
 }

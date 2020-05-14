@@ -93,7 +93,7 @@ if ( post_password_required() ) {
           <li>Attend local Braver Angels Alliance meetings or form your own</li>
         </ul>
       </p>
-      <p><a style="margin: 0;" class="ba-cta-button ba-cta-button-red" href="<?php echo home_url('join?utm_source=website&utm_medium=join&utm_campaign=library_review'); ?>">Become a member</a></p>
+      <p><a style="margin: 0;" class="ba-cta-button ba-cta-button--warning" href="<?php echo home_url('join?utm_source=website&utm_medium=join&utm_campaign=library_review'); ?>">Become a member</a></p>
     </div>
   <?php
   endif; ?>

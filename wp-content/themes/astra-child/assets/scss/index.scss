@@ -1,7 +1,12 @@
+//defaults
+$brand-blue: #23356c !default;
+$brand-red: #bc2f2c !default;
+$brand-font-family: 'Nunito Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+
 @import "modules/global";
 @import "modules/header";
 @import "modules/support-us";
 @import "modules/gravity-forms";
 @import "modules/library";
 @import "modules/memberpress";
-@import "modules/footer"; 
+@import "modules/footer";
