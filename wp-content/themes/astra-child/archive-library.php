@@ -21,13 +21,13 @@ get_header(); ?>
 
   <?php astra_entry_before(); ?>
 
-  <div class="library-content-wrap" style="margin: 0 -20px;">
+  <div class="library-content-wrap">
 
-    <div class="library-sidebar_wrapper ast-col-md-3">
+    <aside class="library-sidebar_wrapper ast-col-md-3">
       <?php get_template_part('template-parts/content-library-sidebar'); ?>
-    </div>
+    </aside>
 
-    <div class="library-index-content ast-col-md-9">
+    <main class="library-index-content ast-col-md-9">
       <?php $ba_docs_query = new WP_Query( array(
           'post_type' => 'library',
           'max_num_pages' => '1',
@@ -55,7 +55,7 @@ get_header(); ?>
       ) ); ?>
 
       <?php if ($ba_docs_query->have_posts() ) : $i = 1;
-        echo "<div class='ast-col-sm-12 library-section-header'><h3>Braver Angels Readings</h3><a class='library-view-all-link' href='" . home_url('/library/categories/better-angels-readings#primary') . "'>[View All]</a></div>";
+        echo "<div class='ast-col-sm-12 library-category_header'><h3>Braver Angels Readings</h3><a class='library-view-all-link' href='" . home_url('/library/categories/better-angels-readings#primary') . "'>[View All]</a></div>";
         while ( $ba_docs_query->have_posts() ) : $ba_docs_query->the_post(); ?>
           <?php get_template_part('template-parts/content-library-index-item'); ?>
           <?php if ($i % 3 == 0) : ?>
@@ -69,7 +69,7 @@ get_header(); ?>
       <?php endif; ?>
 
       <?php if ($ba_other_items->have_posts() ) : $i = 1;
-        echo "<div class='ast-col-sm-12 library-section-header'><h3>Member-Recommended Readings</h3><a class='library-view-all-link' href='" . home_url('/library/categories/member-recommended-readings#primary') . "'>[View All]</a></div>";
+        echo "<div class='ast-col-sm-12 library-category_header'><h3>Member-Recommended Readings</h3><a class='library-view-all-link' href='" . home_url('/library/categories/member-recommended-readings#primary') . "'>[View All]</a></div>";
         while ( $ba_other_items->have_posts() ) : $ba_other_items->the_post(); ?>
           <?php get_template_part('template-parts/content-library-index-item'); ?>
           <?php if ($i % 3 == 0) : ?>
@@ -81,7 +81,8 @@ get_header(); ?>
         <?php $i++;
         endwhile; wp_reset_postdata(); ?>
       <?php endif; ?>
-    </div>
+    </main>
+
   </div>
 
   <?php astra_entry_after(); ?>

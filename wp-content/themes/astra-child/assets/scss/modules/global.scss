@@ -71,3 +71,25 @@ body, button, input, select, textarea {
   background: url('../img/chevron-down-dark.png');
   background-image: url('../img/chevron-down-dark.svg');
 }
+
+// Utilities
+.ba-clearfix {
+  width: 100%;
+  display: none;
+  float: left;
+}
+
+@media screen and (min-width: 768px) {
+  .ba-clearfix-md {
+    display: block;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .ba-clearfix-md {
+    display: none;
+  }
+  .ba-clearfix-lg {
+    display: block;
+  }
+}

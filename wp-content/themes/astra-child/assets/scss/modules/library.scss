@@ -3,7 +3,9 @@
 */
 
 
-// "Global" styles shared accross all library templates
+/**
+* "Global" styles shared accross all library templates
+*/
 .post-type-archive-library,
 .tax-library_category {
   .site-content {
@@ -26,10 +28,15 @@
     margin-bottom: 1.5rem;
   }
 
-  .blog-layout-1 {
-    padding-bottom: 1em;
-    border-bottom: none;
-  }
+}
+
+.library-item_meta {
+  color: #838383;
+}
+
+.library-default-image {
+  max-width: 225px;
+  border: 1px solid lightgray;
 }
 
 
@@ -46,8 +53,93 @@
 }
 
 
+/*
+* Library archive template styles
+*/
 
-.library-reviews-area {
+.library-category_header {
+  margin-bottom: 1rem;
+  h3 {
+    display: inline-block;
+    margin-right: .5rem;
+  }
+}
+
+
+.library-sidebar_wrapper {
+  padding-bottom: 1.5rem;
+}
+
+
+.library-sidebar {
+  background: #e8e8e8;
+  padding: 1rem 1.25rem;
+  border-radius: 3px;
+  .library-sidebar_contact-info{
+    font-size: .875rem;
+    color: gray;
+    display: inline-block;
+    line-height: 1.5;
+    &:first-of-type{
+      margin-bottom: 0;
+      margin-top: 1rem;
+    }
+  }
+
+  .ba-cta-button {
+    white-space: normal;
+  }
+}
+
+.library-sidebar_labels-list  {
+  margin: 0;
+  list-style: none;
+  li{
+    font-size: 16px;
+    line-height: 1.2;
+    margin-bottom: .25rem;
+    margin-top: .25rem;
+    &.current-cat > a {
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    ul {
+      list-style: none;
+      line-height: 1.2;
+      margin-left: .5rem;
+      margin-bottom: .25rem;
+      li {
+        margin-bottom: .375rem;
+        margin-top: .375rem;
+        display: block;
+      }
+    }
+  }
+}
+
+
+/*
+* Single library template
+*/
+
+.single-library {
+  .library-item_meta {
+    color: black;
+    font-weight: 600;
+  }
+
+  .library-entry-categories, .library-recommended-by {
+    color: #838383; font-size: 16px;
+    span {
+      display: block;
+    }
+  }
+
+}
+
+// Book Reviews list and submission form
+
+.library-reviews_wrapper {
   padding: 1rem;
   float: left;
   clear: both;
@@ -75,129 +167,7 @@
 
 }
 
-
-.library-entry-title {
-  font-size: 22px;
-}
-
-.library-index-entry-title {
-  margin-top: 1rem;
-}
-
-.library-default-image {
-  max-width: 225px;
-  border: 1px solid lightgray;
-}
-
-.library-sidebar_labels-list  {
-  margin: 0;
-  list-style: none;
-  li{
-    font-size: 16px;
-    line-height: 1.2;
-    margin-bottom: .25rem;
-    margin-top: .25rem;
-  }
-}
-.library-reading-rooms-list {
-  margin-bottom: .5rem;
-}
-
-.library-sidebar_wrapper {
-  padding-bottom: 1.5rem;
-}
-
-.library-sidebar {
-  background: #e8e8e8;
-  padding: 1rem 1.25rem;
-  border-radius: 3px;
-  .library-recommended-readings-header {
-    color: gray;
-  }
-  .library-sidebar_contact-info{
-    font-size: .875rem;
-    color: gray;
-    display: inline-block;
-    line-height: 1.5;
-    &:first-of-type{
-      margin-bottom: 0;
-      margin-top: 1rem;
-    }
-  }
-  .ba-cta-button {
-    white-space: normal;
-  }
-}
-
-
-
-
-.library-sidebar_labels-list li ul {
-  list-style: none;
-  line-height: 1.2;
-  margin-left: .5rem;
-  margin-bottom: .25rem;
-}
-
-.library-sidebar_labels-list li ul li {
-  margin-bottom: .375rem;
-  margin-top: .375rem;
-  display: block;
-}
-
-.library-sidebar_labels-list li.current-cat > a {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.library-section-header {
-  margin-bottom: 1rem;
-  h3 {
-    display: inline-block;
-    margin-right: .5rem;
-  }
-}
-
-.library-item-meta {
-  color: #838383;
-}
-.single-library .library-item-meta {
-  color: black;
-  font-weight: 600;
-}
-.library-entry-categories, .library-recommended-by {
-  color: #838383; font-size: 16px;
-}
-.library-entry-categories span{
-  display: block;
-}
-.library-review-guide-link {
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.ba-clearfix {
-  width: 100%;
-  display: none;
-  float: left;
-}
-
-@media screen and (min-width: 768px) {
-  .ba-clearfix-md {
-    display: block;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .ba-clearfix-md {
-    display: none;
-  }
-  .ba-clearfix-lg {
-    display: block;
-  }
-}
-
-.library-review-section-join-message {
+.library-reviews_join-message {
   background: #eceeef;
   display: block;
   padding: 1rem;
@@ -205,4 +175,9 @@
   h4, p {
     margin-bottom: .5rem;
   }
+}
+
+.library-reviews_guide-link {
+  margin-bottom: 1rem;
+  display: block;
 }

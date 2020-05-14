@@ -19,7 +19,7 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area library-reviews-area">
+<div id="comments" class="comments-area library-reviews_wrapper">
 
   <?php
 
@@ -64,20 +64,20 @@ if ( post_password_required() ) {
       <p class="no-comments"><?php esc_html_e( 'Reviews are closed.', '_s' ); ?></p>
       <?php
     endif;
-  endif; 
+  endif;
 
   // make sure only users with active subscriptions or admins can add reviews
   if (get_user_subscription_id() || current_user_can('edit_others_pages')) :
     comment_form(
       array(
-        'comment_field'=> '<p class="comment-form-comment"><em class="library-review-guide-link">Be sure to view our <strong><a target="_blank" href="' . home_url('/tips-for-reviewers/') . '">tips for reviewers</a></strong> before posting a review!</em><label for="comment">' . _x( 'Review', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
+        'comment_field'=> '<p class="comment-form-comment"><em class="library-reviews_guide-link">Be sure to view our <strong><a target="_blank" href="' . home_url('/tips-for-reviewers/') . '">tips for reviewers</a></strong> before posting a review!</em><label for="comment">' . _x( 'Review', 'noun' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>',
         'title_reply' => __( 'Leave a Review' ),
         'label_submit' => __( 'Post Review' )
       )
     );
   else : ?>
     <h3>Leave a Review</h3>
-    <div class="library-review-section-join-message">
+    <div class="library-reviews_join-message">
       <h4>You must be a dues-paying member of Braver Angels to post a review.</h4>
       <?php if (!is_user_logged_in()) : ?>
         <p>
@@ -93,7 +93,7 @@ if ( post_password_required() ) {
           <li>Attend local Braver Angels Alliance meetings or form your own</li>
         </ul>
       </p>
-      <p><a style="margin: 0;" class="ba-cta-button ba-cta-button--warning" href="<?php echo home_url('join?utm_source=website&utm_medium=join&utm_campaign=library_review'); ?>">Become a member</a></p>
+      <p><a class="ba-cta-button ba-cta-button--warning" href="<?php echo home_url('join?utm_source=website&utm_medium=join&utm_campaign=library_review'); ?>">Become a member</a></p>
     </div>
   <?php
   endif; ?>

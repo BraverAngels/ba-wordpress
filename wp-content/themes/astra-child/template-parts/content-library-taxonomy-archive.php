@@ -22,17 +22,17 @@ get_header(); ?>
 
   <?php astra_entry_before(); ?>
 
-  <div class="library-content-wrap" style="margin: 0 -20px;">
+  <div class="library-content-wrap">
 
     <div class="library-back-link_wrapper ast-col-md-12">
       <a class="library-back-link" href="<?php echo home_url();?>/library">&times; Back to library home</a><br/>
     </div>
 
-    <div class="library-sidebar_wrapper ast-col-md-3">
+    <aside class="library-sidebar_wrapper ast-col-md-3">
       <?php get_template_part('template-parts/content-library-sidebar'); ?>
-    </div>
+    </aside>
 
-    <div class="library-index-content ast-col-md-9">
+    <main class="library-index-content ast-col-md-9">
       <?php if (have_posts() ) : $i = 1;
         while ( have_posts() ) : the_post(); ?>
           <?php get_template_part('template-parts/content-library-index-item'); ?>
@@ -44,7 +44,8 @@ get_header(); ?>
           <?php endif; ?>
         <?php $i++; endwhile; wp_reset_postdata(); ?>
       <?php endif; ?>
-    </div>
+    </main>
+
   </div>
 
 <?php astra_entry_after(); ?>
@@ -61,68 +62,4 @@ get_header(); ?>
 
 <?php endif ?>
 
-<style>
-  .library-entry-title {
-    font-size: 22px;
-    margin-top: 1rem;
-  }
-  .post-type-archive-library .attachment-post-thumbnail {
-    max-height: 275px;
-    width: auto;
-  }
-  .post-type-archive-library .blog-layout-1 {
-    padding-bottom: 1em;
-    border-bottom: none;
-  }
-  .library-sidebar_labels-list, .library-reading-rooms-list  {
-    margin: 0;
-    list-style: none;
-  }
-  .library-reading-rooms-list {
-    margin-bottom: .5rem;
-  }
-  .library-sidebar_labels-list li{
-    font-size: 16px;
-  }
-  .library-reading-rooms-list a.currently-selected, .library-sidebar_labels-list a.currently-selected{
-    color: #23356c;
-    font-weight: bold;
-    text-decoration: underline;
-  }
-  .library-sidebar_wrapper {
-    padding-bottom: 1.5rem;
-  }
-  .library-sidebar {
-    background: #e8e8e8;
-    padding: 1rem 1.25rem;
-    border-radius: 3px;
-  }
-  .library-section-header {
-    margin-bottom: 1rem;
-
-  }
-  .library-section-header h3 {
-    display: inline-block;
-    margin-right: .5rem;
-  }
-  .library-item-meta {
-    color: #838383;
-  }
-  .library-clear-filters-link {
-    color: white;
-    text-decoration: underline;
-    font-size: 16px;
-    margin-left: .5rem;
-  }
-  .library-clear-filters-link:hover,
-  .library-clear-filters-link:active,
-  .library-clear-filters-link:focus {
-    color: lightgray;
-    text-decoration: underline;
-  }
-  .library-index-content .blog-layout-1 {
-    padding-bottom: 1em;
-    border-bottom: none
-  }
-</style>
 <?php get_footer(); ?>

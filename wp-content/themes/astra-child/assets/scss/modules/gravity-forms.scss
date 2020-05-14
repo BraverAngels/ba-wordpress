@@ -3,7 +3,6 @@
 */
 
 /* The subscribe form (id 33)*/
-
 .subscribeForm-title, .subscribeForm-description {
   margin-bottom: .5rem;
 }
@@ -35,113 +34,113 @@
 
 /* Global */
 
-.ginput_price {
-    display: none;
-}
-.gfp_big_button .gfield_radio li {
-  display: inline-block;
-  min-width: 150px;
-  width:auto !important;
-  padding-right:  0!important;
-  max-width: 200px;
-}
-.gfp_big_button .gfield_radio li label::before {
-    display:none !important;
-}
-.gfp_big_button .gfield_radio label {
-    max-width: 300px;
-    width: 100% !important;
-    margin: 0px auto;
-    padding: 20px 0 !important;
-    float: none;
-    /* These are the button colors	 */
-    background: $brand-red;
-    color: White !important;
-    border-style: solid;
-    border-width: 2px;
-    border-color: white;
-    /* end button colors */
-    letter-spacing: 0.09375rem;
-    border-radius: 3px;
-    font-family: $brand-font-family;
-    font-weight: 600;
-    display: block;
-    transition: background-color 300ms ease-out;
-    -webkit-appearance: none;
-    cursor: pointer;
-    line-height: 1;
-    position: relative;
-    text-decoration: none;
-    text-align: center;
-    font-size: 1.1em;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-}
-
-/* THIS CONTROLS THE STYLE OF THE BUTTON WHEN IT IS SELECTED */
-.gfp_big_button .gfield_radio li input[type="radio"]:checked + label {
-  background: white;
-  border-style: solid;
-  border-width: 2px;
-  border-color: $brand-red;
-  color: $brand-red !important;
-}
-
-.gfp_big_button_blue .gfield_radio li {
-  display: inline-block;
-  min-width: 150px;
-  width:auto !important;
-  padding-right:  0!important;
-  max-width: 200px;
-}
-.gfp_big_button_blue .gfield_radio li label::before {
-    display:none !important;
-}
-
-.gfp_big_button_blue .gfield_radio label {
-    max-width: 300px;
-    width: 100% !important;
-    margin: 0px auto;
-    padding: 20px 0 !important;
-    float: none;
-    /* These are the button colors	 */
-    background: $brand-blue;
-    color: White !important;
-    border-style: solid;
-    border-width: 2px;
-    border-color: white;
-    /* end button colors */
-    letter-spacing: 0.09375rem;
-    border-radius: 3px;
-    font-family: $brand-font-family;
-    font-weight: 600;
-    display: block;
-    -webkit-transition: background-color 300ms ease-out;
-    -o-transition: background-color 300ms ease-out;
-    transition: background-color 300ms ease-out;
-    -webkit-appearance: none;
-    cursor: pointer;
-    line-height: 1;
-    position: relative;
-    text-decoration: none;
-    text-align: center;
-    font-size: 1.1em;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-}
-
-/* THIS CONTROLS THE STYLE OF THE BUTTON WHEN IT IS SELECTED */
-.gfp_big_button_blue .gfield_radio li input[type="radio"]:checked + label {
-  background: white;
-  border-style: solid;
-  border-width: 2px;
-  border-color: $brand-blue;
-  color: $brand-blue !important;
-}
-
-i.fa-stack-1x {
-  font-style: normal;
-}
+// .ginput_price {
+//     display: none;
+// }
+// .gfp_big_button .gfield_radio li {
+//   display: inline-block;
+//   min-width: 150px;
+//   width:auto !important;
+//   padding-right:  0!important;
+//   max-width: 200px;
+// }
+// .gfp_big_button .gfield_radio li label::before {
+//     display:none !important;
+// }
+// .gfp_big_button .gfield_radio label {
+//     max-width: 300px;
+//     width: 100% !important;
+//     margin: 0px auto;
+//     padding: 20px 0 !important;
+//     float: none;
+//     /* These are the button colors	 */
+//     background: $brand-red;
+//     color: White !important;
+//     border-style: solid;
+//     border-width: 2px;
+//     border-color: white;
+//     /* end button colors */
+//     letter-spacing: 0.09375rem;
+//     border-radius: 3px;
+//     font-family: $brand-font-family;
+//     font-weight: 600;
+//     display: block;
+//     transition: background-color 300ms ease-out;
+//     -webkit-appearance: none;
+//     cursor: pointer;
+//     line-height: 1;
+//     position: relative;
+//     text-decoration: none;
+//     text-align: center;
+//     font-size: 1.1em;
+//     -webkit-box-sizing: border-box;
+//             box-sizing: border-box;
+// }
+//
+// /* THIS CONTROLS THE STYLE OF THE BUTTON WHEN IT IS SELECTED */
+// .gfp_big_button .gfield_radio li input[type="radio"]:checked + label {
+//   background: white;
+//   border-style: solid;
+//   border-width: 2px;
+//   border-color: $brand-red;
+//   color: $brand-red !important;
+// }
+//
+// .gfp_big_button_blue .gfield_radio li {
+//   display: inline-block;
+//   min-width: 150px;
+//   width:auto !important;
+//   padding-right:  0!important;
+//   max-width: 200px;
+// }
+// .gfp_big_button_blue .gfield_radio li label::before {
+//     display:none !important;
+// }
+//
+// .gfp_big_button_blue .gfield_radio label {
+//     max-width: 300px;
+//     width: 100% !important;
+//     margin: 0px auto;
+//     padding: 20px 0 !important;
+//     float: none;
+//     /* These are the button colors	 */
+//     background: $brand-blue;
+//     color: White !important;
+//     border-style: solid;
+//     border-width: 2px;
+//     border-color: white;
+//     /* end button colors */
+//     letter-spacing: 0.09375rem;
+//     border-radius: 3px;
+//     font-family: $brand-font-family;
+//     font-weight: 600;
+//     display: block;
+//     -webkit-transition: background-color 300ms ease-out;
+//     -o-transition: background-color 300ms ease-out;
+//     transition: background-color 300ms ease-out;
+//     -webkit-appearance: none;
+//     cursor: pointer;
+//     line-height: 1;
+//     position: relative;
+//     text-decoration: none;
+//     text-align: center;
+//     font-size: 1.1em;
+//     -webkit-box-sizing: border-box;
+//             box-sizing: border-box;
+// }
+//
+// /* THIS CONTROLS THE STYLE OF THE BUTTON WHEN IT IS SELECTED */
+// .gfp_big_button_blue .gfield_radio li input[type="radio"]:checked + label {
+//   background: white;
+//   border-style: solid;
+//   border-width: 2px;
+//   border-color: $brand-blue;
+//   color: $brand-blue !important;
+// }
+//
+// i.fa-stack-1x {
+//   font-style: normal;
+// }
 
 // #gform_2 .gfield_checkbox input[type="checkbox"]:checked + label::before,
 // #gform_2 .gfield_radio input[type="radio"]:checked + label::before {
@@ -188,177 +187,98 @@ i.fa-stack-1x {
   border-color: gray;
 }
 
+
+// contact form
 #gf_5.gform_anchor {
   position: relative;
   bottom: 200px;
 }
 
+
+
 /* GLOBAL FORM STYLES - for gravity forms with class of .ba-custom-form */
 
-.ba-custom-form input[type="text"], .ba-custom-form select, .ba-custom-form textarea{
-    border: 1px solid $brand-blue;
-    border-radius: 5px;
-    background: white;
-    -webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
-            box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
-    padding-left: 8px !important;
-    padding-right: 8px !important;
-    margin-top: 0 !important;
+.ba-custom-form {
+
+  // Descriptions
+  .gfield_description {
+      padding: 0 !important;
+      margin-top: 0 !important;
+  }
+
+  // text inputs
+  input[type="text"],  select,  textarea{
+      border: 1px solid $brand-blue;
+      border-radius: 5px;
+      background: white;
+      box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
+      padding-left: 8px !important;
+      padding-right: 8px !important;
+      margin-top: 0 !important;
+  }
+
+  input[type="submit"] {
+      border-radius: 5px;
+      background: #27b758;
+      transition: all 0.2s ease;
+      &:hover, &:focus {
+          background: $brand-blue;
+      }
+  }
+
+  // select fields
+  select, select:focus {
+      padding: 5px 4px;
+      height: 44px;
+      appearance:none;
+      position: relative;
+      background: url(https://www.better-angels.org/wp-content/uploads/2019/06/icon-chevron-down.png) no-repeat;
+      background-size: 14px;
+      background-position: right 8px center;
+  }
+
+  // "Button" checkboxes/radio buttons
+  .ba-button-list li {
+      display: block;
+      width: 100%;
+      max-width: 100%;
+      @media screen and (min-width: 500px) {
+          display: inline-block;
+          min-width: 200px;
+          width: auto;
+      }
+      label {
+        display: none; // Hide the checkbox
+        background: white;
+        color: white;
+        font-weight: bold;
+        padding: .5rem 1.5rem;
+        border: 2px solid lightgray;
+        color: $brand-blue;
+        text-align: center;
+        -webkit-transition: all 0.2s ease;
+        -o-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+        border-radius: 5px;
+        max-width: 100%;
+        width: 100%;
+        margin-left: 0;
+        @media screen and (min-width: 500px) {
+            max-width: 95%;
+        }
+      }
+      input:checked + label {
+        background: $brand-blue;
+        color: white;
+        border: 2px solid $brand-blue;
+        transition: all 0.2s ease;
+      }
+  }
 }
 
-.ba-custom-form select{
-    padding: 5px 4px;
-    height: 44px;
-}
-
-.ba-custom-form .ba-button-list li {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-}
-
-.ba-custom-form input[type="submit"] {
-    border-radius: 5px;
-    background: #27b758;
-    -webkit-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
-
-.ba-custom-form input[type="submit"]:hover, .ba-custom-form input[type="submit"]:focus  {
-    background: $brand-blue;
-}
-
-@media screen and (min-width: 500px) {
-    .ba-custom-form .ba-button-list li {
-        display: inline-block;
-        min-width: 200px;
-        width: auto;
-    }
-}
-
-
-/* Hide the checkbox */
-.ba-custom-form .ba-button-list li input {
-    display: none;
-}
-
-
-/* the unselected button*/
-.ba-custom-form .ba-button-list li label {
-    background: white;
-    color: white;
-    font-weight: bold;
-    padding: .5rem 1.5rem;
-    border: 2px solid lightgray;
-    color: $brand-blue;
-    text-align: center;
-    -webkit-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-    border-radius: 5px;
-    max-width: 100%;
-    width: 100%;
-    margin-left: 0;
-}
-
-@media screen and (min-width: 500px) {
- .ba-custom-form .ba-button-list li label {
-     max-width: 95%;
- }
-}
-
-/* the selected button*/
-.ba-custom-form .ba-button-list li input:checked + label {
-    background: $brand-blue;
-    color: white;
-    border: 2px solid $brand-blue;
-    -webkit-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
-
-
-.ba-custom-form select,
-.ba-custom-form select:focus {
-    -moz-appearance:none; /* Firefox */
-    -webkit-appearance:none; /* Safari and Chrome */
-    appearance:none;
-    position: relative;
-     background: url(https://www.better-angels.org/wp-content/uploads/2019/06/icon-chevron-down.png) no-repeat;
-     background-size: 14px;
-     background-position: right 8px center;
-}
-
-.ba-custom-form .gfield_description {
-    padding: 0 !important;
-    margin-top: 0 !important;
-}
-
+// Mozilla spacing fix
 @-moz-document url-prefix() {
   .ba-custom-form .gfield_checkbox li > label {
       margin-top: 0px !important;
   }
-}
-
-
-.ba-custom-form input[type="text"], .ba-custom-form select{
-    border: 1px solid $brand-blue;
-    border-radius: 5px;
-    background: white;
-    -webkit-box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
-            box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
-    padding-left: 8px !important;
-    padding-right: 8px !important;
-    margin-top: 0 !important;
-}
-
-.ba-custom-form select{
-    padding: 5px 4px;
-    height: 44px;
-}
-
-.ba-custom-form .ba-button-list li {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-}
-
-.ba-custom-form input[type="submit"] {
-    border-radius: 5px;
-    background: #27b758;
-    -webkit-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
-
-.ba-custom-form input[type="submit"]:hover, .ba-custom-form input[type="submit"]:focus  {
-    background: $brand-blue;
-}
-
-
-/* the selected button*/
-.ba-custom-form .ba-button-list li input:checked + label {
-    background: $brand-blue;
-    color: white;
-    border: 2px solid $brand-blue;
-    -webkit-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-}
-
-
-.ba-custom-form select{
-    -moz-appearance:none; /* Firefox */
-    -webkit-appearance:none; /* Safari and Chrome */
-    appearance:none;
-    position: relative;
-     background: url(https://www.better-angels.org/wp-content/uploads/2019/06/icon-chevron-down.png) no-repeat;
-     background-size: 14px;
-     background-position: right 8px center;
-}
-
-.ba-custom-form .gfield_description {
-    padding: 0;
-    margin-top: 0;
 }
