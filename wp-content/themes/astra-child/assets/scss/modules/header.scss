@@ -22,12 +22,16 @@
 */
 .ba-secondary-menu {
   background-color: #23356C;
-  padding: 7px 8spx;
+  padding: 7px 8px;
   text-align: right;
   height: 56px;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+
+  @media screen and (min-width: 1001px) {
+    padding: 7px 1rem;
+  }
 
   &.toggled {
     height: 144px;
@@ -274,6 +278,11 @@
       @media screen and (min-width: 1151px) {
         font-size: 16px;
       }
+      &:hover,
+      &:focus {
+        color: #23356c;
+        text-decoration: underline;
+      }
     }
     &:hover, &:focus-within {
       cursor: pointer;
@@ -298,6 +307,7 @@
   border-radius: 5px;
   overflow: hidden;
   padding-bottom: .5rem;
+  border: 1px solid #e2e2e2;
 }
 .ba-primary-menu-desktop ul li:hover > ul,
 .ba-primary-menu-desktop ul li ul:hover,
