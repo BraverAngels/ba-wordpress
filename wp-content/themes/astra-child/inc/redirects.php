@@ -1,10 +1,11 @@
 <?php
+namespace BraverAngels\Redirects;
 
 /**
  * Redirect non-logged in users away from the "Members Portal"
  * Page and its subpages
  */
-add_action( 'template_redirect', 'redirect_to_login_page' );
+add_action( 'template_redirect', 'BraverAngels\Redirects\redirect_to_login_page' );
 
 function redirect_to_login_page() {
   global $post;
@@ -28,7 +29,7 @@ function redirect_to_login_page() {
  * Redirect single Event Organizer pages to main events list
  * Event organizer pages are not useful for us
  */
-add_action( 'template_redirect', 'redirect_organizer_and_venue_type_single' );
+add_action( 'template_redirect', 'BraverAngels\Redirects\redirect_organizer_and_venue_type_single' );
 
 function redirect_organizer_and_venue_type_single() {
     if ( ! is_singular( 'tribe_organizer' ) && ! is_singular( 'tribe_venue' ) )

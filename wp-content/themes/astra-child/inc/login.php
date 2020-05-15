@@ -1,6 +1,8 @@
 <?php
+namespace BraverAngels\Login_Page;
 
-function ba_login_page_styles() {
+
+function login_page_styles() {
 ?>
   <style type="text/css">
     body.login div#login h1 a {
@@ -29,4 +31,4 @@ function ba_login_page_styles() {
 <?php
 }
 
-add_action( 'login_enqueue_scripts', 'ba_login_page_styles' );
+add_action( 'login_enqueue_scripts', 'BraverAngels\Login_Page\login_page_styles' );

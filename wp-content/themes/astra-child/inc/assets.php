@@ -29,11 +29,6 @@ function use_jquery_from_google () {
  */
 function child_enqueue_styles() {
 
-  //Disable the gutenburg styles since we aren't using it
-  // if (!is_admin()) {
-  //   wp_deregister_style('wp-block-library');
-  // }
-
   wp_enqueue_style( 'astra-child-theme-css', get_stylesheet_directory_uri() . '/dist/css/index.min.css', array('astra-theme-css'), CHILD_THEME_ASTRA_CHILD_VERSION, 'all' );
   wp_enqueue_script( 'mobile-header-js', get_stylesheet_directory_uri() . '/dist/js/header.min.js', ['jquery'], CHILD_THEME_ASTRA_CHILD_VERSION, true );
 
@@ -45,12 +40,7 @@ function child_enqueue_styles() {
 
 add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
 
-// determine if page uses elementor assets
-// Causing error on search pages
-function is_elementor(){
-  global $post;
-  return \Elementor\Plugin::$instance->db->is_built_with_elementor($post->ID);
-}
+
 
 function inline_scripts() {
   if( !current_user_can('editor') && !current_user_can('administrator') ) { ?>
@@ -64,12 +54,8 @@ function inline_scripts() {
       gtag('config', 'UA-93943838-2');
     </script>
 
-    <?php
-  }
-  if(!is_elementor()) {
-    ?>
-    <!-- Add the nunito sans font to pages that aren't using elementor -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+
     <?php
   }
 }

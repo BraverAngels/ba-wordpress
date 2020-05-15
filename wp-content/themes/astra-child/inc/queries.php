@@ -1,4 +1,6 @@
 <?php
+namespace BraverAngels\Queries;
+
 /**
  * Custom/modified queries to be used in this theme
  */
@@ -12,7 +14,7 @@
  * @return object $query The amended query.
  */
 
-function ba_search_set_post_types( $query ) {
+function search_set_post_types( $query ) {
   if ( $query->is_search ) {
     $query->set( 'post_type', array( 'post', 'page', 'library', 'tribe_events') );
   }
@@ -20,14 +22,14 @@ function ba_search_set_post_types( $query ) {
   return $query;
 }
 
-add_filter( 'pre_get_posts', 'ba_search_set_post_types' );
+add_filter( 'pre_get_posts', 'BraverAngels\Queries\search_set_post_types' );
 
 
 /**
  * This function modifies the main WordPress query to
  * display items in menu order
  */
-function ba_modify_library_loop_order( $query ) {
+function modify_library_loop_order( $query ) {
   if ( is_admin() || !$query->is_main_query() ) return;
 
   if ( is_tax('library_category') ) {
@@ -37,4 +39,4 @@ function ba_modify_library_loop_order( $query ) {
   }
 }
 
-add_action( 'pre_get_posts', 'ba_modify_library_loop_order' );
+add_action( 'pre_get_posts', 'BraverAngels\Queries\modify_library_loop_order' );

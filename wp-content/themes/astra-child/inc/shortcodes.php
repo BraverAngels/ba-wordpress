@@ -1,4 +1,5 @@
 <?php
+namespace BraverAngels\Shortcodes;
 
 /**
  * Displays a list of important author archive links
@@ -9,7 +10,7 @@ function author_shortcode() {
   echo '</ul>';
 }
 
-add_shortcode('authors_list', 'author_shortcode');
+add_shortcode('authors_list', 'BraverAngels\Shortcodes\author_shortcode');
 
 
 /**
@@ -39,14 +40,14 @@ function subscribe_form_shortcode($atts = '') {
   return $html;
 }
 
-add_shortcode('subscribe', 'subscribe_form_shortcode');
+add_shortcode('subscribe', 'BraverAngels\Shortcodes\subscribe_form_shortcode');
 
 
 
 /**
  * Text to be displayed above the Memberpress join/upgrade form
  */
-function ba_mepr_join_or_upgrade_text() {
+function mepr_join_or_upgrade_text() {
 
 
   if (!is_user_logged_in()) {
@@ -83,15 +84,15 @@ function ba_mepr_join_or_upgrade_text() {
   }
 
 }
-add_shortcode('join_or_upgrade_text', 'ba_mepr_join_or_upgrade_text');
+add_shortcode('join_or_upgrade_text', 'BraverAngels\Shortcodes\mepr_join_or_upgrade_text');
 
 /**
  * Conditional text for use in shortcode on checkout page
  */
-function ba_mepr_login_before_checkout_reminder() {
+function mepr_login_before_checkout_reminder() {
   if (!is_user_logged_in()) {
     return '<p><strong>Already have an account? <a href="' . home_url() . '/login?redirect_to=' . home_url() . $_SERVER['REQUEST_URI'] . '">Login</a> before completing your purchase.</strong></p>';
   }
   return;
 }
-add_shortcode('login_before_checkout_reminder', 'ba_mepr_login_before_checkout_reminder');
+add_shortcode('login_before_checkout_reminder', 'BraverAngels\Shortcodes\mepr_login_before_checkout_reminder');
