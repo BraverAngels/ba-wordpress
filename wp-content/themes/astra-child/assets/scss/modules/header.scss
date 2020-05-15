@@ -35,7 +35,7 @@
   @media screen and (min-width: 1001px) {
     padding: 7px 1rem;
     &.toggled {
-      height: 144px;      
+      height: 144px;
     }
   }
 
@@ -260,11 +260,13 @@
   }
   .ba-menu-logo {
     max-width: 130px;
+    min-width: 130px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     @media screen and (min-width: 1101px) {
       max-width: 180px;
+      min-width: 180px;
     }
   }
   ul {
