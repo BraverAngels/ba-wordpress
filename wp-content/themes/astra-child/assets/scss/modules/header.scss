@@ -29,13 +29,13 @@
   align-items: center;
   justify-content: flex-end;
   &.toggled {
-    height: 144px;
+    height: 56px;
   }
 
   @media screen and (min-width: 1001px) {
     padding: 7px 1rem;
     &.toggled {
-      height: 56px;
+      height: 144px;      
     }
   }
 
@@ -166,6 +166,7 @@
 // The mobile menu bar with hamburger
 .ba-primary-menu--mobile {
   display: flex;
+  border-bottom: 1px solid lightgray;
   padding: 6px 8px;
   @media screen and (min-width: 1001px) {
     display: none;
@@ -307,7 +308,7 @@
   }
 }
 
-// submenus
+// desktop submenus
 .ba-primary-menu--desktop ul li ul {
   visibility: hidden;
   opacity: 0;
@@ -323,6 +324,8 @@
   padding-bottom: .5rem;
   border: 1px solid #e2e2e2;
 }
+
+// desktop submenu wrappers
 .ba-primary-menu--desktop ul li:hover > ul,
 .ba-primary-menu--desktop ul li ul:hover,
 .ba-primary-menu--desktop ul li ul:focus {
@@ -330,20 +333,21 @@
    opacity: 1;
    display: block;
 }
+
+// desktop submenu items
 .ba-primary-menu--desktop ul li ul li {
   clear: both;
   width: 100%;
   display: block;
   line-height: 1.2;
   padding-bottom: 0;
-}
-.ba-primary-menu--desktop ul li ul li a {
-  font-weight: 600;
-  color: #424242;
-  transition: none;
-}
-.ba-primary-menu--desktop ul li ul li a:hover,
-.ba-primary-menu--desktop ul li ul li a:focus {
-  color: $brand-blue;
-  text-decoration: underline;
+  a {
+    font-weight: 600;
+    color: #424242;
+    transition: none;
+    &:hover, &:focus {
+      color: $brand-blue;
+      text-decoration: underline;
+    }
+  }
 }

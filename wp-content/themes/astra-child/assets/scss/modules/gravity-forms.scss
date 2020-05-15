@@ -2,7 +2,8 @@
   # Gravity-forms overrides
 */
 
-/* The subscribe form (id 33)*/
+/* The subscribe form (id 33) */
+
 .subscribeForm-title, .subscribeForm-description {
   margin-bottom: .5rem;
 }
@@ -12,6 +13,11 @@
 }
 
 @media screen and (min-width: 640px) {
+
+  .subscribeForm-wrapper {
+    margin-right: -16px;
+  }
+
   #field_33_4,
   #field_33_2,
   #input_33_1_3_container,
@@ -24,163 +30,17 @@
     margin: 0
   }
 
-  .subscribeForm-wrapper {
-    margin-right: -16px;
-  }
-
 }
 
 
+/* General form overrides */
 
-/* Global */
-
-// .ginput_price {
-//     display: none;
-// }
-// .gfp_big_button .gfield_radio li {
-//   display: inline-block;
-//   min-width: 150px;
-//   width:auto !important;
-//   padding-right:  0!important;
-//   max-width: 200px;
-// }
-// .gfp_big_button .gfield_radio li label::before {
-//     display:none !important;
-// }
-// .gfp_big_button .gfield_radio label {
-//     max-width: 300px;
-//     width: 100% !important;
-//     margin: 0px auto;
-//     padding: 20px 0 !important;
-//     float: none;
-//     /* These are the button colors	 */
-//     background: $brand-red;
-//     color: White !important;
-//     border-style: solid;
-//     border-width: 2px;
-//     border-color: white;
-//     /* end button colors */
-//     letter-spacing: 0.09375rem;
-//     border-radius: 3px;
-//     font-family: $brand-font-family;
-//     font-weight: 600;
-//     display: block;
-//     transition: background-color 300ms ease-out;
-//     -webkit-appearance: none;
-//     cursor: pointer;
-//     line-height: 1;
-//     position: relative;
-//     text-decoration: none;
-//     text-align: center;
-//     font-size: 1.1em;
-//     -webkit-box-sizing: border-box;
-//             box-sizing: border-box;
-// }
-//
-// /* THIS CONTROLS THE STYLE OF THE BUTTON WHEN IT IS SELECTED */
-// .gfp_big_button .gfield_radio li input[type="radio"]:checked + label {
-//   background: white;
-//   border-style: solid;
-//   border-width: 2px;
-//   border-color: $brand-red;
-//   color: $brand-red !important;
-// }
-//
-// .gfp_big_button_blue .gfield_radio li {
-//   display: inline-block;
-//   min-width: 150px;
-//   width:auto !important;
-//   padding-right:  0!important;
-//   max-width: 200px;
-// }
-// .gfp_big_button_blue .gfield_radio li label::before {
-//     display:none !important;
-// }
-//
-// .gfp_big_button_blue .gfield_radio label {
-//     max-width: 300px;
-//     width: 100% !important;
-//     margin: 0px auto;
-//     padding: 20px 0 !important;
-//     float: none;
-//     /* These are the button colors	 */
-//     background: $brand-blue;
-//     color: White !important;
-//     border-style: solid;
-//     border-width: 2px;
-//     border-color: white;
-//     /* end button colors */
-//     letter-spacing: 0.09375rem;
-//     border-radius: 3px;
-//     font-family: $brand-font-family;
-//     font-weight: 600;
-//     display: block;
-//     -webkit-transition: background-color 300ms ease-out;
-//     -o-transition: background-color 300ms ease-out;
-//     transition: background-color 300ms ease-out;
-//     -webkit-appearance: none;
-//     cursor: pointer;
-//     line-height: 1;
-//     position: relative;
-//     text-decoration: none;
-//     text-align: center;
-//     font-size: 1.1em;
-//     -webkit-box-sizing: border-box;
-//             box-sizing: border-box;
-// }
-//
-// /* THIS CONTROLS THE STYLE OF THE BUTTON WHEN IT IS SELECTED */
-// .gfp_big_button_blue .gfield_radio li input[type="radio"]:checked + label {
-//   background: white;
-//   border-style: solid;
-//   border-width: 2px;
-//   border-color: $brand-blue;
-//   color: $brand-blue !important;
-// }
-//
-// i.fa-stack-1x {
-//   font-style: normal;
-// }
-
-// #gform_2 .gfield_checkbox input[type="checkbox"]:checked + label::before,
-// #gform_2 .gfield_radio input[type="radio"]:checked + label::before {
-//   background-color: $brand-red;
-// }
-//
-// #gform_wrapper_8  .gfield_checkbox input[type="checkbox"] + label::before,
-// #gform_wrapper_3  .gfield_checkbox input[type="checkbox"] + label::before,
-// #gform_wrapper_8 .gfield_radio input[type="radio"] + label::before,
-// #gform_wrapper_3 .gfield_radio input[type="radio"] + label::before
-// {
-//   background-color: transparent;
-// }
-//
-// #gform_wrapper_8  .gfield_checkbox input[type="checkbox"]:checked + label::before,
-// #gform_wrapper_3  .gfield_checkbox input[type="checkbox"]:checked + label::before,
-// #gform_wrapper_8 .gfield_radio input[type="radio"]:checked + label::before,
-// #gform_wrapper_3 .gfield_radio input[type="radio"]:checked + label::before {
-//   background-color: white;
-// }
-
-// #gform_wrapper_13  .gfield_checkbox input[type="checkbox"] + label::before,
-// #gform_wrapper_13 .gfield_radio input[type="radio"] + label::before,
-// #gform_wrapper_19  .gfield_checkbox input[type="checkbox"] + label::before,
-// #gform_wrapper_19 .gfield_radio input[type="radio"] + label::before,
-// #gform_wrapper_15  .gfield_checkbox input[type="checkbox"] + label::before,
-// #gform_wrapper_15 .gfield_radio input[type="radio"] + label::before
 #gform_wrapper_18  .gfield_checkbox input[type="checkbox"] + label::before,
 #gform_wrapper_18 .gfield_radio input[type="radio"] + label::before
 {
   background-color: white;
 }
 
-// #gform_wrapper_13  .gfield_checkbox input[type="checkbox"]:checked + label::before,
-// #gform_wrapper_13 .gfield_radio input[type="radio"]:checked + label::before,
-//
-// #gform_wrapper_19  .gfield_checkbox input[type="checkbox"]:checked + label::before,
-// #gform_wrapper_19 .gfield_radio input[type="radio"]:checked + label::before,
-// #gform_wrapper_15  .gfield_checkbox input[type="checkbox"]:checked + label::before,
-// #gform_wrapper_15 .gfield_radio input[type="radio"]:checked + label::before
 #gform_wrapper_18  .gfield_checkbox input[type="checkbox"]:checked + label::before,
 #gform_wrapper_18 .gfield_radio input[type="radio"]:checked + label::before {
   background-color: #213266;
@@ -188,92 +48,13 @@
 }
 
 
-// contact form
+.ginput_price {
+  display: none;
+}
+
 #gf_5.gform_anchor {
   position: relative;
   bottom: 200px;
-}
-
-
-
-/* GLOBAL FORM STYLES - for gravity forms with class of .ba-custom-form */
-
-.ba-custom-form {
-
-  // Descriptions
-  .gfield_description {
-      padding: 0 !important;
-      margin-top: 0 !important;
-  }
-
-  // text inputs
-  input[type="text"],  select,  textarea{
-      border: 1px solid $brand-blue;
-      border-radius: 5px;
-      background: white;
-      box-shadow: 0px 0px 2px rgba(0,0,0,0.3);
-      padding-left: 8px !important;
-      padding-right: 8px !important;
-      margin-top: 0 !important;
-  }
-
-  input[type="submit"] {
-      border-radius: 5px;
-      background: #27b758;
-      transition: all 0.2s ease;
-      &:hover, &:focus {
-          background: $brand-blue;
-      }
-  }
-
-  // select fields
-  select, select:focus {
-      padding: 5px 4px;
-      height: 44px;
-      appearance:none;
-      position: relative;
-      background: url(https://www.better-angels.org/wp-content/uploads/2019/06/icon-chevron-down.png) no-repeat;
-      background-size: 14px;
-      background-position: right 8px center;
-  }
-
-  // "Button" checkboxes/radio buttons
-  .ba-button-list li {
-      display: block;
-      width: 100%;
-      max-width: 100%;
-      @media screen and (min-width: 500px) {
-          display: inline-block;
-          min-width: 200px;
-          width: auto;
-      }
-      label {
-        display: none; // Hide the checkbox
-        background: white;
-        color: white;
-        font-weight: bold;
-        padding: .5rem 1.5rem;
-        border: 2px solid lightgray;
-        color: $brand-blue;
-        text-align: center;
-        -webkit-transition: all 0.2s ease;
-        -o-transition: all 0.2s ease;
-        transition: all 0.2s ease;
-        border-radius: 5px;
-        max-width: 100%;
-        width: 100%;
-        margin-left: 0;
-        @media screen and (min-width: 500px) {
-            max-width: 95%;
-        }
-      }
-      input:checked + label {
-        background: $brand-blue;
-        color: white;
-        border: 2px solid $brand-blue;
-        transition: all 0.2s ease;
-      }
-  }
 }
 
 // Mozilla spacing fix
