@@ -37,4 +37,4 @@ function ba_modify_library_loop_order( $query ) {
   }
 }
 
-// add_action( 'pre_get_posts', 'ba_modify_library_loop_order' );
+add_action( 'pre_get_posts', 'ba_modify_library_loop_order' );
