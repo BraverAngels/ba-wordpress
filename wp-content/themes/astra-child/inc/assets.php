@@ -1,44 +1,26 @@
 <?php
+namespace BraverAngels\Assets;
 
 /**
  * Define Constants
  */
-define( 'CHILD_THEME_ASTRA_CHILD_VERSION', '0.9.3' );
-
-add_action('wp_enqueue_scripts', 'use_jquery_from_google');
-
-function use_jquery_from_google () {
-  if (is_admin() || is_user_logged_in()) {
-    return;
-  }
-
-  global $wp_scripts;
-  if (isset($wp_scripts->registered['jquery']->ver)) {
-    $ver = $wp_scripts->registered['jquery']->ver;
-    $ver = str_replace("-wp", "", $ver);
-  } else {
-    $ver = '1.12.4';
-  }
-
-  wp_deregister_script('jquery');
-  wp_register_script('jquery', "https://ajax.googleapis.com/ajax/libs/jquery/$ver/jquery.min.js", false, $ver);
-}
+define( 'THEME_VERSION', '0.9.3' );
 
 /**
  * Enqueue styles
  */
-function child_enqueue_styles() {
+function enqueue_styles() {
 
-  wp_enqueue_style( 'astra-child-theme-css', get_stylesheet_directory_uri() . '/dist/css/index.min.css', array('astra-theme-css'), CHILD_THEME_ASTRA_CHILD_VERSION, 'all' );
-  wp_enqueue_script( 'mobile-header-js', get_stylesheet_directory_uri() . '/dist/js/header.min.js', ['jquery'], CHILD_THEME_ASTRA_CHILD_VERSION, true );
+  wp_enqueue_style( 'astra-child-theme-css', get_stylesheet_directory_uri() . '/dist/css/index.min.css', array('astra-theme-css'), THEME_VERSION, 'all' );
+  wp_enqueue_script( 'mobile-header-js', get_stylesheet_directory_uri() . '/dist/js/header.min.js', ['jquery'], THEME_VERSION, true );
 
   if (is_page('support-us')) {
-    wp_enqueue_script( 'join-js', get_stylesheet_directory_uri() . '/dist/js/join.min.js', [], CHILD_THEME_ASTRA_CHILD_VERSION, true );
+    wp_enqueue_script( 'join-js', get_stylesheet_directory_uri() . '/dist/js/join.min.js', [], THEME_VERSION, true );
   }
 
 }
 
-add_action( 'wp_enqueue_scripts', 'child_enqueue_styles', 15 );
+add_action( 'wp_enqueue_scripts', 'BraverAngels\Assets\enqueue_styles', 15 );
 
 
 
@@ -59,4 +41,4 @@ function inline_scripts() {
     <?php
   }
 }
-add_action( 'wp_enqueue_scripts', 'inline_scripts', 1, 1 );
+add_action( 'wp_enqueue_scripts', 'BraverAngels\Assets\inline_scripts', 1, 1 );
