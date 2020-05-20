@@ -44,7 +44,6 @@ $email = tribe_get_organizer_email();
       <span class="tribe-events-cost"><?php echo tribe_get_cost( null, true ) ?></span>
     <?php endif; ?>
   </div>
-  <p style="margin-top: 1rem;"><em><strong>Note:</strong> Due to the public health threat from the Coronavirus, we’re strongly recommending that in-person events be cancelled or postponed through at least May 31. More information is available <a href="<?php home_url(); ?>/coronavirus"><u>here</u></a>. If you have not heard from event organizers about this, we recommend reaching out to them for information about your specific event.</em></p>
 
   <!-- Event header -->
   <div id="tribe-events-header" <?php tribe_events_the_header_attributes() ?>>
