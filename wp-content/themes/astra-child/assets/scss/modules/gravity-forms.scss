@@ -2,6 +2,21 @@
   # Gravity-forms overrides
 */
 
+/* General events announcements configured in dashboard
+*  at Events / Settings / Display => "Add HTML before event content"
+*/
+
+.tribe-events-before-html {
+  padding: 1rem 0;
+  margin: 1rem 0;
+  border-bottom: 2px solid lightgray;
+}
+
+.post-type-archive-tribe_events .tribe-events-before-html {
+  max-width: 700px;
+  margin: auto;
+}
+
 /* The subscribe form (id 33) */
 
 .subscribeForm-title, .subscribeForm-description {
