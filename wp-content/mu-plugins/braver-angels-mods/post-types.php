@@ -211,28 +211,3 @@ function ba_library_recommended_by($id) {
     echo get_post_meta($id, '_ba_recommended_by' , true );
   }
 }
-
-
-add_action( 'init', 'ba_remove_membership_comments' );
-function ba_remove_membership_comments() {
-  remove_post_type_support( 'memberpressproduct', 'comments' );
-}
-
-function ba_comments_open( $open, $post_id ) {
-    $post_type = get_post_type( $post_id );
-    // allow comments for built-in "post" post type
-    if ( $post_type == 'post' || $post_type == 'library') {
-        return true;
-    }
-    // disable comments for any other post types
-    return false;
-}
-add_filter( 'comments_open', 'ba_comments_open', 10 , 2 );
-
-function ba_next_prev_links( $status ) {
-  if ( 'memberpressproduct' == get_post_type() ) {
-    $status = false;
-  }
-  return $status;
-}
-add_filter( 'astra_single_post_navigation_enabled', 'ba_next_prev_links' );

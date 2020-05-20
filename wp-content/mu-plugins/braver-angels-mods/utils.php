@@ -1,6 +1,6 @@
 <?php
 /*
- * Functions to be utilized elsewhere in custom functionality
+ * Helper functions to be utilized elsewhere in custom functionality
 */
 
 

@@ -9,10 +9,10 @@
    */
 
    require_once(__DIR__ . '/utils.php');
-   require_once(__DIR__ . '/gf-action-network.php');
-   require_once(__DIR__ . '/mepr-hooks.php');
-   require_once(__DIR__ . '/disable-admin-notifications.php');
-   require_once(__DIR__ . '/library-comments.php');
-   require_once(__DIR__ . '/gf-allow-form-total-conditional.php');
+   require_once(__DIR__ . '/post-types.php');
+   require_once(__DIR__ . '/gravity-forms.php');
+   require_once(__DIR__ . '/memberpress.php');
+   require_once(__DIR__ . '/notifications.php');
+   require_once(__DIR__ . '/comments.php');
 
 ?>

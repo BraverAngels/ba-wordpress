@@ -1,6 +1,7 @@
 <?php
 /*
- * Memberpress specific action hooks to integrate data with Action Network
+ * Memberpress-specific Modifications
+ * action hooks are used to integrate data with Action Network
  * https://gist.github.com/cartpauj/256e893ed3de276f8604aba01ef71bb8
 */
 
@@ -372,3 +373,14 @@ function get_higher_membership_options() {
 
   return $higher_memberships;
 }
+
+
+
+// Remove 'previous' and 'next' links from single "memberpress" post type templates
+function ba_next_prev_links( $status ) {
+  if ( 'memberpressproduct' == get_post_type() ) {
+    $status = false;
+  }
+  return $status;
+}
+add_filter( 'astra_single_post_navigation_enabled', 'ba_next_prev_links' );

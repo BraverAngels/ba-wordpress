@@ -9,6 +9,6 @@
    */
 
 
-   require_once(__DIR__ . '/better-angels-custom-functionality/better-angels-custom-functionality.php');
+   require_once(__DIR__ . '/braver-angels-mods/braver-angels-mods.php');
 
 ?>
