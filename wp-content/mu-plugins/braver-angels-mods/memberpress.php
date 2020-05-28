@@ -13,7 +13,7 @@ add_action( 'wp_head', 'ba_process_membership_data' );
 
 function ba_process_membership_data() {
 
-     if( isset( $_POST['mepr-account-form']) && $_POST['mepr-account-form'] == 'Save Profile' ) {
+     if( isset( $_POST['mepr_why_i_joined']) ) {
         // Profile updated
         send_updated_user_data_to_action_network($_POST);
 
