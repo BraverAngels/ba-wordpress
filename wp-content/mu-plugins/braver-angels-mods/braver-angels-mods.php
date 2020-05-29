@@ -8,6 +8,9 @@
    License: GPL2
    */
 
+   // Action Network
+   define('AN_BASE', "https://actionnetwork.org/api/v2");
+
    require_once(__DIR__ . '/utils.php');
    require_once(__DIR__ . '/post-types.php');
    require_once(__DIR__ . '/gravity-forms.php');

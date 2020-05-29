@@ -3,10 +3,6 @@
  * Modifications and Callbacks for the Gravity Forms plugin
 */
 
-// Action Network
-define('AN_BASE', "https://actionnetwork.org/api/v2");
-define('AN_FUNDRAISING_ID', "4b5466f8-885f-432c-8b18-b491aa3ec4ab");
-
 
 // California campaign form
 add_action( 'gform_after_submission_25', 'record_user_in_action_network_after_donation', 10, 2 );
