@@ -12,8 +12,8 @@
 
 get_header(); ?>
 
-  <section class="header" style="overflow: auto; background-size: cover; background-image: url(https://www.better-angels.org/wp-content/uploads/2019/09/2019-BA-Convention-631.jpg);">
-    <div class="header-inner">
+  <section class="header support-us_header">
+    <div class="header-inner support-us_header_inner">
       <?php if (isset($_GET['referrer']) && $_GET['referrer'] = "subscribe"): ?>
         <h2>Thank you for subscribing!</h2>
       <?php else : ?>
@@ -39,13 +39,14 @@ get_header(); ?>
       </h3>
     </div>
   </section>
+
   <div class="entry-content entry-content-support-us clear" itemprop="text">
 
   <?php if (!is_user_logged_in()): ?>
     <section id="join">
       <div class="join-inner">
         <div class="join-content">
-          <h2 style="overflow: hidden;">Become a Member</h2>
+          <h2>Become a Member</h2>
           <p><em>Braver Angels membership requires dues of just $12 a year, but many of our members generously choose to give more. Members can:</em></p>
           <ul>
             <li>Join or create a Braver Angels Alliance (chapter) in your community.</li>
@@ -62,8 +63,8 @@ get_header(); ?>
         <div class="join-selection-column">
           <h3>Choose your level of support</h3>
           <div class="join-selection-type">
-            <button class="join-selection-type-item selected" data-toggle="monthly-options">Monthly</button>
-            <button class="join-selection-type-item" data-toggle="yearly-options">Yearly</button>
+            <button class="join-selection-type_item selected" data-toggle="monthly-options">Monthly</button>
+            <button class="join-selection-type_item" data-toggle="yearly-options">Yearly</button>
           </div>
           <div class="join-selection-options-wrap">
             <div id="yearly-options" class="join-selection-options">
@@ -103,7 +104,7 @@ get_header(); ?>
     <section class="upgrade" id="upgrade">
       <div class="upgrade-inner">
         <div class="upgrade-content">
-          <h2 style="overflow: hidden;">Upgrade/Renew Your Membership</h2>
+          <h2>Upgrade/Renew Your Membership</h2>
           <p>Braver Angels is a grassroots movement,
             and we can’t rely on rich donors. We’re counting on our members to upgrade or renew their membership
             so that we can bring our country together in 2020.
@@ -143,7 +144,7 @@ get_header(); ?>
 
             <?php $options = get_higher_membership_options();
             if (sizeof($options) > 0) {
-              echo '<span style="color:#6c6c6c;">Select amount</span>';
+              echo '<span class="upgrade-selection-column_option">Select amount</span>';
               echo '<ul class="membership-upgrade-options">';
               foreach ($options as $option) {
                 echo '<li><a class="membership-upgrade-option-link" href="'. get_the_permalink($option) .'">'. get_the_title($option) .'</a></li>';
@@ -165,9 +166,10 @@ get_header(); ?>
     <section class="donate" id="donate">
       <div class="donate-inner">
         <div class="donate-content">
-          <h2 style="color: white; overflow: hidden;">Donate</h2>
-          <em style="display: inline-block; padding-bottom: .5rem;">(Will not create or affect membership)</em><br/>
+          <h2>Donate</h2>
+
           <p>
+            <em>* Will not create or affect membership</em><br/>
             2020 is shaping up to be one of the most divisive years in American history.
             Help us build a house united and save our Republic in this time of crisis.
             Braver Angels is a 501(c)(3) non-profit, and all donations are tax deductible.

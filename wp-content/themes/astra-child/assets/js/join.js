@@ -2,11 +2,12 @@ function handleSelectPaymentType() {
   document.addEventListener('click', function (event) {
     // If the clicked element doesn't have the right selector, bail
     if (!event.target.matches('.join-selection-type button')) return;
+    
     // Don't follow the link
     event.preventDefault();
 
     var selectedId = event.target.getAttribute('data-toggle');
-    var options = document.getElementsByClassName('join-selection-type-item');
+    var options = document.getElementsByClassName('join-selection-type_item');
     for (var i = 0; i < options.length; i++) {
       if (options[i].classList.contains('selected') ) {
         options[i].classList.remove('selected');
