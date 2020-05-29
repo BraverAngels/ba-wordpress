@@ -43,6 +43,7 @@ function ba_custom_post_types() {
     'query_var'          => true,
     'show_ui'            => true,
     'show_in_menu'       => true,
+    'show_in_rest'       => true,
     'capability_type'    => 'post',
     'has_archive'        => true,
     'hierarchical'       => false,
