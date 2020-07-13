@@ -18,9 +18,9 @@ use BraverAngels\Header;
     <?php else: ?>
       <a href="<?php echo esc_url(home_url('/login')) ?>">Member Login</a>
     <?php endif; ?>
-    <!-- <a href="https://teespring.com/stores/better-angels-merchandise">
+    <a href="https://teespring.com/stores/braverangels" target="_blank" rel="noopener noreferrer">
       Shop
-    </a> -->
+    </a>
     <a href="<?php echo esc_url(home_url('/events')) ?>">
       Find an Event
     </a>
@@ -95,11 +95,11 @@ use BraverAngels\Header;
       </li>
     <?php endif; ?>
 
-    <!-- <li>
-      <a href="https://teespring.com/stores/better-angels-merchandise">
+    <li>
+      <a href="https://teespring.com/stores/braverangels" target="_blank" rel="noopener noreferrer">
         Shop
       </a>
-    </li> -->
+    </li>
     <li>
       <a href="<?php echo esc_url(home_url('/events')) ?>">
         Find an Event
@@ -108,7 +108,7 @@ use BraverAngels\Header;
   </ul>
 
   <?php Header\the_primary_menu(); ?>
-  
+
 </div>
 
 <div class="ba-scroll-to-top">
