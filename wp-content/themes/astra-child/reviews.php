@@ -85,7 +85,7 @@ if ( post_password_required() ) {
         </p>
       <?php endif; ?>
       <p>
-        Membership dues as low as <strong>$12 per year</strong>. <a href="<?php echo home_url('join?utm_source=website&utm_medium=join&utm_campaign=library_review'); ?>"><strong>Join or Renew now</strong></a> and also get access to:
+        Membership dues as low as <strong>$12 per year</strong>. <a href="<?php echo home_url('join'); ?>"><strong>Join or Renew now</strong></a> and also get access to:
         <ul>
           <li>Online book discussions</li>
           <li>Free training to become a Braver Angels organizer, citizen moderator, or debate chair</li>
@@ -93,7 +93,7 @@ if ( post_password_required() ) {
           <li>Attend local Braver Angels Alliance meetings or form your own</li>
         </ul>
       </p>
-      <p><a class="ba-cta-button ba-cta-button--warning" href="<?php echo home_url('join?utm_source=website&utm_medium=join&utm_campaign=library_review'); ?>">Become a member</a></p>
+      <p><a class="ba-cta-button ba-cta-button--warning" href="<?php echo home_url('join'); ?>">Become a member</a></p>
     </div>
   <?php
   endif; ?>

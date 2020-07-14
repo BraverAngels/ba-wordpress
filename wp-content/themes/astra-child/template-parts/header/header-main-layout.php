@@ -54,7 +54,7 @@ use BraverAngels\Header;
   <?php Header\the_primary_menu(); ?>
 
   <div class="ba-cta-button_wrap">
-    <a class="ba-cta-button ba-cta-button--warning" href="<?php echo home_url("/support-us?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
+    <a class="ba-cta-button ba-cta-button--warning" href="<?php echo home_url("/support-us"); ?>">
       Support Us
     </a>
   </div>
@@ -68,7 +68,7 @@ use BraverAngels\Header;
     </a>
   </div>
   <div class="ba-cta-button_wrap">
-    <a class="ba-cta-button ba-cta-button--warning" href="<?php echo home_url("/support-us?utm_source=website&utm_medium=join&utm_campaign=upper_right"); ?>">
+    <a class="ba-cta-button ba-cta-button--warning" href="<?php echo home_url("/support-us"); ?>">
       Support Us
     </a>
   </div>
