@@ -4,7 +4,7 @@ namespace BraverAngels\Assets;
 /**
  * Define Constants
  */
-define( 'THEME_VERSION', '0.9.3' );
+define( 'THEME_VERSION', '0.9.4' );
 
 /**
  * Enqueue styles

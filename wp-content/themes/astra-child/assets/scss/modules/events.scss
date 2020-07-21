@@ -18,6 +18,13 @@
 }
 
 /*
+* Overlap fix for filter bar
+*/
+#tribe_events_filters_wrapper.tribe-events-filters-vertical {
+  z-index: 1;
+}
+
+/*
 * "Tribe events calendar" spacing overrides
 */
 .tribe-events-list .tribe-events-loop .tribe-events-event-meta {
