@@ -26,6 +26,7 @@
       && !is_page('subscribe')
       && !is_page('online-skills-training')
       && !is_page('online-depolarizing-within-workshop') 
+      && !is_page('families-and-politics-training') 
       && !is_front_page()
     ) { ?>
       <section id="pre-footer" class="pre-footer">
