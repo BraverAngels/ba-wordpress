@@ -7,6 +7,7 @@
 * "Global" styles shared accross all library templates
 */
 .post-type-archive-library,
+.page-id-5801, 
 .tax-library_category {
   .site-content {
     .ast-container {
@@ -15,6 +16,42 @@
       width: 100%;
       max-width: 100%;
       overflow-x: hidden;
+      .ast-archive-description {
+        text-align: center;
+        padding: 2rem 1.25rem;
+        margin-bottom: 0;
+        color: white;
+        background: #26272b;
+        h1 {
+          color: white;
+        }
+        a {
+          color: lightgray;
+          text-decoration: underline;
+          &:hover, &:focus {
+            color: #bc2f2c;
+          }
+        }
+        @media screen and (min-width: 800px) {
+          padding: 2rem 1.25rem 1rem 1.25rem;
+          display: flex;
+          justify-content: center;
+          .library-icon_wrapper {
+            display: inline-block;
+            padding-right: 1rem;
+            padding-bottom: 1rem;
+            position: relative;
+            bottom: .25rem;
+          }
+          .library-title_wrapper {
+            display: inline-block;
+            text-align: left;
+          }
+        }
+      }      
+      #primary {
+        margin-top: 2rem;
+      }
     }
   }
 

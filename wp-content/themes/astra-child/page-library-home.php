@@ -21,12 +21,16 @@ get_header(); ?>
 </section>
 
 <div id="primary" <?php astra_primary_class(); ?>>
+  <div class="library-home-content_wrapper ast-col-md-12">
+    <?php the_content(); ?>
+  </div>
 
   <?php astra_primary_content_top(); ?>
 
   <?php astra_entry_before(); ?>
 
   <div class="library-content-wrap">
+
 
     <aside class="library-sidebar_wrapper ast-col-md-3">
       <?php get_template_part('template-parts/content-library-sidebar'); ?>

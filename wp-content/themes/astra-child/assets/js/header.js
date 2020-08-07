@@ -28,7 +28,7 @@
 
   function handleResize(){
     if ($(window).width() !== window_width) {
-      closeMobileMenu()
+      closeMobileMenu();
       $(window).off("resize", handleResize);
     }
     window_width = $(window).width();
