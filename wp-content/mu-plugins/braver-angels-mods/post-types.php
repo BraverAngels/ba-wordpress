@@ -1,17 +1,9 @@
 <?php
  /*
- Plugin Name: Braver Angels Custom Post Types
- description: Custom Post Types for the Braver Angels website
- Version: 1.0.0
- Author: Blake Lundquist
- Author URI: https://blakelundquist.dev
- License: GPL2
+ * Custom Post and Taxonomy Types
  */
 
- /** ////////////////////////////////////////////////////////
- **   CUSTOM POST TYPES AND TAXONOMIES
- ** ///////////////////////////////////////////////////////*/
-
+ 
 function ba_custom_post_types() {
 
   // Book Reviews
@@ -45,13 +37,13 @@ function ba_custom_post_types() {
     'show_in_menu'       => true,
     'show_in_rest'       => true,
     'capability_type'    => 'post',
-    'has_archive'        => true,
+    'has_archive'        => false,
     'hierarchical'       => false,
     'menu_icon'          => 'dashicons-book-alt',
     'menu_position'      => 4,
     'supports'           => array( 'title', 'editor', 'thumbnail', 'comments' ),
     'rewrite'            => array(
-      'slug' => 'library',
+      'slug' => 'library/resources',
       'with_front' => false,
     )
   );

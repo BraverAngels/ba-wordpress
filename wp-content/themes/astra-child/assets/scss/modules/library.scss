@@ -7,7 +7,7 @@
 * "Global" styles shared accross all library templates
 */
 .post-type-archive-library,
-.page-id-5801, 
+.page-id-6574, // The "library" home page
 .tax-library_category {
   .site-content {
     .ast-container {
@@ -217,4 +217,19 @@
 .library-reviews_guide-link {
   margin-bottom: 1rem;
   display: block;
+}
+
+
+/*
+* "Library Home" page template
+*/
+
+.library-home-content_inner {
+  overflow: auto;
+  padding: 1rem 1rem 0 1rem;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  margin: auto;
+  margin-bottom: 2rem;
+  max-width: 1000px;
 }

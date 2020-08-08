@@ -22,7 +22,9 @@ get_header(); ?>
 
 <div id="primary" <?php astra_primary_class(); ?>>
   <div class="library-home-content_wrapper ast-col-md-12">
-    <?php the_content(); ?>
+    <div class="library-home-content_inner">
+      <?php the_content(); ?>
+    </div>
   </div>
 
   <?php astra_primary_content_top(); ?>
