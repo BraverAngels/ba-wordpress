@@ -19,3 +19,5 @@ $includes = glob(get_stylesheet_directory() . "/inc/*.php");
 foreach($includes as $file){
   require $file;
 }
+
+// comment
