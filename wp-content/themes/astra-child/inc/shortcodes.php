@@ -13,6 +13,77 @@ function author_shortcode() {
 add_shortcode('authors_list', 'BraverAngels\Shortcodes\author_shortcode');
 
 
+
+/**
+ * Displays a list of events by state
+ */
+function events_shortcode() {
+  // Retrieve the next 5 upcoming events
+  	//Retrieve venues that match query criteria
+	$args = array(
+		'nopaging' => true,
+		'post_type'=>'tribe_venue',
+		//Only query venues in specific locations
+		'meta_query' => array(
+			'relation' => 'AND',
+			//Specific City
+			array(
+        'key' => '_VenueStateProvince',
+        'value' => array('CA'), 
+        'compare' => 'IN',
+     )
+		)
+	);
+
+	$state_venues = get_posts( $args );
+	
+	$venue_ids = array();
+
+	//Loops through venues and add ID to array
+	foreach( $state_venues as $post ) {
+		setup_postdata($post);
+
+		//Get ID of matching Venue
+		$venue_ids[] = get_the_id();
+	}
+
+  wp_reset_postdata();
+
+	
+	if( empty( $venue_ids ) ) {
+    echo "<p>No upcoming events found.</p>";
+    //If Venue IDs were found, then query events
+  } else {
+		//Retrieve Events with matching Venue IDs
+		$event_args = array(
+      'start_date'    => 'now',
+			'posts_per_page'=>	10,
+			//Only query venues in specific countries
+			'meta_query' => array(
+				array(
+				   'key' => '_EventVenueID',
+				   'value' => $venue_ids,
+				   'compare' => 'IN',
+				)
+			)
+		);
+
+		$state_events = tribe_get_events( $event_args );
+    echo print_r($state_events);
+		//Loops through events and display
+		foreach( $state_events as $post ) {
+			setup_postdata($post);
+
+			echo '<h2>' . get_the_title() . '</h2>';
+		}
+
+		wp_reset_postdata();
+	}
+}
+
+add_shortcode('events_list', 'BraverAngels\Shortcodes\events_shortcode');
+
+
 /**
  * Displays the subscribe Gravity Form
  */
