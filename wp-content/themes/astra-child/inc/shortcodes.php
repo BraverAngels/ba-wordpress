@@ -31,7 +31,7 @@ function events_shortcode() {
         'key' => '_VenueStateProvince',
         'value' => array('CA'), 
         'compare' => 'IN',
-     )
+      )
 		)
 	);
 
@@ -54,6 +54,7 @@ function events_shortcode() {
     echo "<p>No upcoming events found.</p>";
     //If Venue IDs were found, then query events
   } else {
+    echo print_r($venue_ids);
 		//Retrieve Events with matching Venue IDs
 		$event_args = array(
       'start_date'    => 'now',
@@ -69,7 +70,7 @@ function events_shortcode() {
 		);
 
 		$state_events = tribe_get_events( $event_args );
-    echo print_r($state_events);
+    
 		//Loops through events and display
 		foreach( $state_events as $post ) {
 			setup_postdata($post);

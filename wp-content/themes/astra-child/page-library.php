@@ -21,11 +21,7 @@ get_header(); ?>
 </section>
 
 <div id="primary" <?php astra_primary_class(); ?>>
-  <div class="library-home-content_wrapper ast-col-md-12">
-    <div class="library-home-content_inner">
-      <?php the_content(); ?>
-    </div>
-  </div>
+  
 
   <?php astra_primary_content_top(); ?>
 
@@ -39,6 +35,11 @@ get_header(); ?>
     </aside>
 
     <main class="library-index-content ast-col-md-9">
+      <div class="library-home-content_wrapper ast-col-md-12">
+        <div class="library-home-content_inner">
+          <?php the_content(); ?>
+        </div>
+      </div>
       <?php $ba_docs_query = new WP_Query( array(
           'post_type' => 'library',
           'max_num_pages' => '1',
