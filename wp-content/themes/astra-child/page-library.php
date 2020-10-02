@@ -40,6 +40,7 @@ get_header(); ?>
           <?php the_content(); ?>
         </div>
       </div>
+
       <?php $ba_docs_query = new WP_Query( array(
           'post_type' => 'library',
           'max_num_pages' => '1',
@@ -52,16 +53,30 @@ get_header(); ?>
               ),
           ),
       ) ); ?>
-      <?php $ba_other_items = new WP_Query( array(
+
+      <?php $ba_recommended_readings = new WP_Query( array(
           'post_type' => 'library',
           'max_num_pages' => '1',
-          'posts_per_page' => '6',
+          'posts_per_page' => '3',
           'tax_query' => array(
               array(
                   'taxonomy' => 'library_category',
                   'field' => 'slug',
                   'terms' => 'better-angels-readings',
                   'operator'  => 'NOT IN'
+              ),
+          ),
+      ) ); ?>
+
+      <?php $ba_external_sources = new WP_Query( array(
+          'post_type' => 'library',
+          'max_num_pages' => '1',
+          'posts_per_page' => '3',
+          'tax_query' => array(
+              array(
+                  'taxonomy' => 'library_category',
+                  'field' => 'slug',
+                  'terms' => 'external-sources',
               ),
           ),
       ) ); ?>
@@ -80,9 +95,9 @@ get_header(); ?>
         endwhile; wp_reset_postdata(); ?>
       <?php endif; ?>
 
-      <?php if ($ba_other_items->have_posts() ) : $i = 1;
+      <?php if ($ba_recommended_readings->have_posts() ) : $i = 1;
         echo "<div class='ast-col-sm-12 library-category_header'><h3>Member-Recommended Readings</h3><a class='library-view-all-link' href='" . home_url('/library/categories/member-recommended-readings#primary') . "'>[View All]</a></div>";
-        while ( $ba_other_items->have_posts() ) : $ba_other_items->the_post(); ?>
+        while ( $ba_recommended_readings->have_posts() ) : $ba_recommended_readings->the_post(); ?>
           <?php get_template_part('template-parts/content-library-index-item'); ?>
           <?php if ($i % 3 == 0) : ?>
             <div class="ba-clearfix ba-clearfix-lg"></div>
@@ -93,6 +108,21 @@ get_header(); ?>
         <?php $i++;
         endwhile; wp_reset_postdata(); ?>
       <?php endif; ?>
+
+      <?php if ($ba_external_sources->have_posts() ) : $i = 1;
+        echo "<div class='ast-col-sm-12 library-category_header'><h3>Recommended Online Resources</h3><a class='library-view-all-link' href='" . home_url('/library/categories/external-sources#primary') . "'>[View All]</a></div>";
+        while ( $ba_external_sources->have_posts() ) : $ba_external_sources->the_post(); ?>
+          <?php get_template_part('template-parts/content-library-index-item'); ?>
+          <?php if ($i % 3 == 0) : ?>
+            <div class="ba-clearfix ba-clearfix-lg"></div>
+          <?php endif; ?>
+          <?php if ($i % 2 == 0) : ?>
+            <div class="ba-clearfix ba-clearfix-md"></div>
+          <?php endif; ?>
+        <?php $i++;
+        endwhile; wp_reset_postdata(); ?>
+      <?php endif; ?>
+      
     </main>
 
   </div>
