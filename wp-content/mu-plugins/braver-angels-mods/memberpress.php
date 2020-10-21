@@ -125,6 +125,20 @@ function send_new_user_data_to_action_network($user_id){
 
   }
 
+  $ladder_lookup_payload = array(
+    "apiKey" => "1krqpyNK_cNPx2wOG5XzIk5nyYxzx8shVzVe9VYgPUSw",
+    "email" => $user_data->user_email,
+    "first_name" => $user_meta['first_name'][0],
+    "last_name" => $user_meta['last_name'][0],
+    "zip" => $user_meta['mepr_zipcode'][0],
+  )
+
+  $ladder_return = ba_post_to_hh_ladder_lookup($ladder_lookup_payload);
+
+  if ($ladder_return['template']) {
+    $custom_fields['Helping Hands Template'] = $ladder_return['template'];
+  }
+
   // Set the user info
   $person = array(
     "family_name" => $user_meta['last_name'][0],
@@ -140,7 +154,7 @@ function send_new_user_data_to_action_network($user_id){
         'postal_code' => $user_meta['mepr_zipcode'][0]
       )
     ],
-    "country" => "US",
+    "country" => $user_meta['mepr_country'][0],
     "language" => "en",
     "custom_fields" => $custom_fields,
   );
