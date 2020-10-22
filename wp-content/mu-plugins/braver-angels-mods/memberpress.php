@@ -135,7 +135,7 @@ function send_new_user_data_to_action_network($user_id){
 
   $ladder_return = ba_post_to_hh_ladder_lookup($ladder_lookup_payload);
 
-  if ($ladder_return['template']) {
+  if (isset($ladder_return['template'])) {
     $custom_fields['Helping Hands Template'] = $ladder_return['template'];
   }
 
