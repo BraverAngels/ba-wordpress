@@ -37,8 +37,7 @@ function ba_post_to_hh_ladder_lookup($fields = []) {
   $payload = json_encode( $fields );
 
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-    "Content-Type: application/json",
-    "OSDI-API-Token: " . AN_KEY
+    "Content-Type: application/json"
   ));
 
   curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
@@ -47,5 +46,6 @@ function ba_post_to_hh_ladder_lookup($fields = []) {
   # Send request.
   $result = curl_exec($ch);
   curl_close($ch);
-  return $result;
+  $json = json_decode($result, true);
+  return $json;
 }
