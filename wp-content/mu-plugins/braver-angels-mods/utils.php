@@ -34,7 +34,7 @@ function ba_post_to_hh_ladder_lookup($fields = []) {
   $url = "https://script.google.com/macros/s/AKfycby5t8xCvrqY1f5IgScZco-2u9BK4ETwN9wbard_UX0O5pgRiqk/exec";
   $ch = curl_init( $url );
   # Setup request to send json via POST
-  $payload = json_encode( $fields );
+  $payload = json_encode( $fields ); #comment
 
   curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     "Content-Type: application/json"
