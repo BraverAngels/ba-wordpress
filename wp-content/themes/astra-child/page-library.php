@@ -62,7 +62,7 @@ get_header(); ?>
               array(
                   'taxonomy' => 'library_category',
                   'field' => 'slug',
-                  'terms' => 'better-angels-readings',
+                  'terms' => array( 'better-angels-readings', 'external-sources' ),
                   'operator'  => 'NOT IN'
               ),
           ),
