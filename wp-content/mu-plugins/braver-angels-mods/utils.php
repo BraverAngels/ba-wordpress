@@ -46,5 +46,6 @@ function ba_post_to_hh_ladder_lookup($fields = []) {
   # Send request.
   $result = curl_exec($ch);
   curl_close($ch);
-  return $result;
+  $json = json_decode($result, true);
+  return $json;
 }
