@@ -40,6 +40,9 @@ function ba_post_to_hh_ladder_lookup($fields = []) {
     "Content-Type: application/json"
   ));
 
+  curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    # Follow Apps script redirect to the request location...
+
   curl_setopt( $ch, CURLOPT_POSTFIELDS, $payload );
   # Return response instead of printing.
   curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
