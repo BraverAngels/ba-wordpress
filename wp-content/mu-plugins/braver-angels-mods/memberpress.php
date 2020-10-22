@@ -131,7 +131,7 @@ function send_new_user_data_to_action_network($user_id){
     "first_name" => $user_meta['first_name'][0],
     "last_name" => $user_meta['last_name'][0],
     "zip" => $user_meta['mepr_zipcode'][0],
-  )
+  );
 
   $ladder_return = ba_post_to_hh_ladder_lookup($ladder_lookup_payload);
 
