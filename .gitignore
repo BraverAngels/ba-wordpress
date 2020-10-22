@@ -1,11 +1,11 @@
 *~
 .DS_Store
-.idea
 .svn
 .cvs
 *.bak
 *.swp
 Thumbs.db
+.idea
 
 # wordpress specific
 wp-config.php
