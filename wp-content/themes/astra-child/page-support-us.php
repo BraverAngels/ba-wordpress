@@ -189,7 +189,7 @@ get_header(); ?>
           </ul>
         </div>
         <div class="donate-selection-column">
-          <?php echo do_shortcode('[gravityform id=29 title=false description=false ajax=true tabindex=49]'); ?>
+          <?php echo do_shortcode('[gravityform id=39 title=false description=false ajax=true tabindex=49]'); ?>
           <p><strong><a href="<?php echo home_url('support-us/donate-by-check'); ?>">Donate via check</a></strong></p>
         </div>
       </div>
