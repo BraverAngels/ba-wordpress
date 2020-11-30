@@ -157,7 +157,7 @@ function send_new_user_data_to_action_network($user_id){
         'postal_code' => $user_meta['mepr_zipcode'][0]
       )
     ],
-    "country" => $user_meta['mepr_country'][0],
+    "country" => 'US',
     "language" => "en",
     "custom_fields" => $custom_fields,
   );
