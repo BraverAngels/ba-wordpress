@@ -154,11 +154,11 @@ function send_new_user_data_to_action_network($user_id){
     ],
     "postal_addresses" => [
       array(
-        'postal_code' => $user_meta['mepr_zipcode'][0]
+        'postal_code' => $user_meta['mepr_zipcode'][0],
+        "language" => 'en',
+         "country" => 'US'
       )
     ],
-    "country" => 'US',
-    "language" => "en",
     "custom_fields" => $custom_fields,
   );
 
@@ -244,11 +244,11 @@ function send_updated_user_data_to_action_network($data){
     ],
     "postal_addresses" => [
       array(
-        'postal_code' => $data['mepr_zipcode']
+        'postal_code' => $data['mepr_zipcode'],
+        "country" => "US",
+        "language" => "en"
       )
     ],
-    "country" => "US",
-    "language" => "en",
     "custom_fields" => $custom_fields,
   );
 
