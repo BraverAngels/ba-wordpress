@@ -33,7 +33,7 @@ function ba_library_comment_moderation_recipients( $emails, $comment_id ) {
   $comment_post_type = get_post_type($comment->comment_post_ID);
 
   if ($comment_post_type == 'library') {
-    $emails = array('library@better-angels.org');
+    $emails = array('library@braverangels.org');
   }
 
   return $emails;
