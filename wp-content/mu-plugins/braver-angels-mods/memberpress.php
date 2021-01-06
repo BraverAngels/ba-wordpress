@@ -244,7 +244,10 @@ function send_updated_user_data_to_action_network($data){
     ],
     "postal_addresses" => [
       array(
-        'postal_code' => $data['mepr_zipcode'],
+        'address_lines' => array(1 => $data['mepr-address-one'] . $data['mepr-address-two']),
+        'locality' => $data['mepr-address-city'],
+        'region' => $data['mepr-address-state'],
+        'postal_code' => $data['mepr-address-zip'],
         "country" => "US",
         "language" => "en"
       )
