@@ -142,7 +142,7 @@ function send_new_user_data_to_action_network($user_id){
      $custom_fields['Helping Hands Welcome Template'] = NULL;
   }
 
-  $street = trim($user_meta['mepr-address-one'] . ' ' . $user_meta['mepr-address-two'])
+  $street = trim($user_meta['mepr-address-one'] . ' ' . $user_meta['mepr-address-two']);
 
   // Set the user info
   $person = array(
@@ -237,7 +237,7 @@ function send_updated_user_data_to_action_network($data){
     $custom_fields['Profession'] = $data['mepr_profession'];
   }
 
-  $street = trim($data['mepr-address-one'] . ' ' . $data['mepr-address-two'])
+  $street = trim($data['mepr-address-one'] . ' ' . $data['mepr-address-two']);
 
   // Set the user info
   $person = array(
