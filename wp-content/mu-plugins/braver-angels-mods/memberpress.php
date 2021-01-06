@@ -252,9 +252,9 @@ function send_updated_user_data_to_action_network($data){
     "postal_addresses" => [
       array(
         "address_lines" => $street,
-        "locality" => $data['mepr-address-city'][0],
-        "region" => $data['mepr-address-state'][0],
-        "postal_code" => $data['mepr-address-zip'][0],
+        "locality" => $data['mepr-address-city'],
+        "region" => $data['mepr-address-state'],
+        "postal_code" => $data['mepr-address-zip'],
         "country" => "US",
         "language" => "en"
       )
