@@ -130,7 +130,7 @@ function send_new_user_data_to_action_network($user_id){
     "email" => $user_data->user_email,
     "first_name" => $user_meta['first_name'][0],
     "last_name" => $user_meta['last_name'][0],
-    "zip" => $user_meta['mepr_zipcode'][0],
+    "zip" => $user_meta['mepr_address_zip'][0],
   );
 
   if (!isset($custom_fields['Membership Updated Date'])) {
@@ -153,11 +153,14 @@ function send_new_user_data_to_action_network($user_id){
       )
     ],
     "postal_addresses" => [
-      array(
-        'postal_code' => $user_meta['mepr_zipcode'][0],
-        "language" => 'en',
-         "country" => 'US'
-      )
+        array(
+          'address_lines' => array(1 => $user_meta['mepr_address_one'] . ' ' . $user_meta['mepr_address_two']),
+          'locality' => $user_meta['mepr_address_city'],
+          'region' => $user_meta['mepr_address_state'],
+          'postal_code' => $user_meta['mepr_address_zip'],
+          "country" => "US",
+          "language" => "en"
+        )
     ],
     "custom_fields" => $custom_fields,
   );
@@ -244,10 +247,10 @@ function send_updated_user_data_to_action_network($data){
     ],
     "postal_addresses" => [
       array(
-        'address_lines' => array(1 => $data['mepr-address-one'] . ' ' . $data['mepr-address-two']),
-        'locality' => $data['mepr-address-city'],
-        'region' => $data['mepr-address-state'],
-        'postal_code' => $data['mepr-address-zip'],
+        'address_lines' => array(1 => $data['mepr_address_one'] . ' ' . $data['mepr_address_two']),
+        'locality' => $data['mepr_address_city'],
+        'region' => $data['mepr_address_state'],
+        'postal_code' => $data['mepr_address_zip'],
         "country" => "US",
         "language" => "en"
       )
