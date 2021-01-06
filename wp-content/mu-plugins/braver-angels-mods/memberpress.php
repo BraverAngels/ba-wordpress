@@ -154,10 +154,10 @@ function send_new_user_data_to_action_network($user_id){
     ],
     "postal_addresses" => [
         array(
-          'address_lines' => array(1 => $user_meta['mepr_address_one'] . ' ' . $user_meta['mepr_address_two']),
-          'locality' => $user_meta['mepr_address_city'],
-          'region' => $user_meta['mepr_address_state'],
-          'postal_code' => $user_meta['mepr_address_zip'],
+          'address_lines' => array(1 => trim($user_meta['mepr-address-one'] . ' ' . $user_meta['mepr-address-two'])),
+          'locality' => $user_meta['mepr-address-city'],
+          'region' => $user_meta['mepr-address-state'],
+          'postal_code' => $user_meta['mepr-address-zip'],
           "country" => "US",
           "language" => "en"
         )
@@ -247,10 +247,10 @@ function send_updated_user_data_to_action_network($data){
     ],
     "postal_addresses" => [
       array(
-        'address_lines' => array(1 => $data['mepr_address_one'] . ' ' . $data['mepr_address_two']),
-        'locality' => $data['mepr_address_city'],
-        'region' => $data['mepr_address_state'],
-        'postal_code' => $data['mepr_address_zip'],
+        'address_lines' => array(1 => trim($data['mepr-address-one'] . ' ' . $data['mepr-address-two'])),
+        'locality' => $data['mepr-address-city'],
+        'region' => $data['mepr-address-state'],
+        'postal_code' => $data['mepr-address-zip'],
         "country" => "US",
         "language" => "en"
       )
