@@ -142,7 +142,7 @@ function send_new_user_data_to_action_network($user_id){
      $custom_fields['Helping Hands Welcome Template'] = NULL;
   }
 
-  $street = trim($user_meta['mepr-address-one'] . ' ' . $user_meta['mepr-address-two']);
+  $street = array(trim($user_meta['mepr-address-one'][0] . ' ' . $user_meta['mepr-address-two'][0]));
 
   // Set the user info
   $person = array(
@@ -156,10 +156,10 @@ function send_new_user_data_to_action_network($user_id){
     ],
     "postal_addresses" => [
         array(
-          "address_lines" => array($street),
-          "locality" => $user_meta['mepr-address-city'],
-          "region" => $user_meta['mepr-address-state'],
-          "postal_code" => $user_meta['mepr-address-zip'],
+          "address_lines" => $street,
+          "locality" => $user_meta['mepr-address-city'][0],
+          "region" => $user_meta['mepr-address-state'][0],
+          "postal_code" => $user_meta['mepr-address-zip'][0],
           "country" => "US",
           "language" => "en"
         )
@@ -237,7 +237,7 @@ function send_updated_user_data_to_action_network($data){
     $custom_fields['Profession'] = $data['mepr_profession'];
   }
 
-  $street = trim($data['mepr-address-one'] . ' ' . $data['mepr-address-two']);
+  $street = array(trim($data['mepr-address-one'][0] . ' ' . $data['mepr-address-two'][0]));
 
   // Set the user info
   $person = array(
@@ -251,10 +251,10 @@ function send_updated_user_data_to_action_network($data){
     ],
     "postal_addresses" => [
       array(
-        "address_lines" => array($street),
-        "locality" => $data['mepr-address-city'],
-        "region" => $data['mepr-address-state'],
-        "postal_code" => $data['mepr-address-zip'],
+        "address_lines" => $street,
+        "locality" => $data['mepr-address-city'][0],
+        "region" => $data['mepr-address-state'][0],
+        "postal_code" => $data['mepr-address-zip'][0],
         "country" => "US",
         "language" => "en"
       )
