@@ -130,7 +130,7 @@ function send_new_user_data_to_action_network($user_id){
     "email" => $user_data->user_email,
     "first_name" => $user_meta['first_name'][0],
     "last_name" => $user_meta['last_name'][0],
-    "zip" => $user_meta['mepr_address_zip'][0],
+    "zip" => $user_meta['mepr-address-zip'][0],
   );
 
   if (!isset($custom_fields['Membership Updated Date'])) {
@@ -141,6 +141,8 @@ function send_new_user_data_to_action_network($user_id){
   } else {
      $custom_fields['Helping Hands Welcome Template'] = NULL;
   }
+
+  $street = trim($user_meta['mepr-address-one'] . ' ' . $user_meta['mepr-address-two'])
 
   // Set the user info
   $person = array(
@@ -154,10 +156,10 @@ function send_new_user_data_to_action_network($user_id){
     ],
     "postal_addresses" => [
         array(
-          'address_lines' => array(1 => trim($user_meta['mepr-address-one'] . ' ' . $user_meta['mepr-address-two'])),
-          'locality' => $user_meta['mepr-address-city'],
-          'region' => $user_meta['mepr-address-state'],
-          'postal_code' => $user_meta['mepr-address-zip'],
+          "address_lines" => array($street),
+          "locality" => $user_meta['mepr-address-city'],
+          "region" => $user_meta['mepr-address-state'],
+          "postal_code" => $user_meta['mepr-address-zip'],
           "country" => "US",
           "language" => "en"
         )
@@ -235,6 +237,8 @@ function send_updated_user_data_to_action_network($data){
     $custom_fields['Profession'] = $data['mepr_profession'];
   }
 
+  $street = trim($data['mepr-address-one'] . ' ' . $data['mepr-address-two'])
+
   // Set the user info
   $person = array(
     "family_name" => $data['user_last_name'],
@@ -247,10 +251,10 @@ function send_updated_user_data_to_action_network($data){
     ],
     "postal_addresses" => [
       array(
-        'address_lines' => array(1 => trim($data['mepr-address-one'] . ' ' . $data['mepr-address-two'])),
-        'locality' => $data['mepr-address-city'],
-        'region' => $data['mepr-address-state'],
-        'postal_code' => $data['mepr-address-zip'],
+        "address_lines" => array($street),
+        "locality" => $data['mepr-address-city'],
+        "region" => $data['mepr-address-state'],
+        "postal_code" => $data['mepr-address-zip'],
         "country" => "US",
         "language" => "en"
       )
@@ -260,8 +264,8 @@ function send_updated_user_data_to_action_network($data){
 
   // Final fields we will submit to Action Network
   $fields = array(
-    'person' => $person,
-    'add_tags' => $tags,
+    "person" => $person,
+    "add_tags" => $tags,
   );
 
   $actionnetwork_response = ba_post_to_action_network($actionnetwork_url, $fields);
