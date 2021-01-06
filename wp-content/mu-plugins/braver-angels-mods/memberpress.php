@@ -237,7 +237,7 @@ function send_updated_user_data_to_action_network($data){
     $custom_fields['Profession'] = $data['mepr_profession'];
   }
 
-  $street = array(trim($data['mepr-address-one'][0] . ' ' . $data['mepr-address-two'][0]));
+  $street = array(trim($data['mepr-address-one'] . ' ' . $data['mepr-address-two']));
 
   // Set the user info
   $person = array(
