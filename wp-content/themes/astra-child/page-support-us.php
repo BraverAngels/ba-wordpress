@@ -27,13 +27,13 @@ get_header(); ?>
           <em>
             Help us build a house united by <a href="#join"><strong>joining Braver Angels</strong></a>,
             <a href="#upgrade"><strong>upgrading/renewing</strong></a> your membership,
-            or <a href="#donate"><strong>making a one-time donation</strong></a>.
+            or <a href="#donate"><strong>making a one-time donation</strong></a>.  Not ready to join? <a href="#gform_wrapper_33"><strong>Subscribe to our newsletter.</strong></a>
           </em>
 
         <?php else : ?>
           <em>
             Help us build a house united by <a href="#upgrade"><strong>upgrading/renewing</strong></a> your membership
-            or <a href="#donate"><strong>making a one-time donation</strong></a>. Not ready to join? <a href="gform_wrapper_33"><strong>Subscribe to our newsletter.</strong></a>
+            or <a href="#donate"><strong>making a one-time donation</strong></a>.
           </em>
         <?php endif; ?>
       </h3>
