@@ -33,7 +33,7 @@ get_header(); ?>
         <?php else : ?>
           <em>
             Help us build a house united by <a href="#upgrade"><strong>upgrading/renewing</strong></a> your membership
-            or <a href="#donate"><strong>donating</strong></a> to <strong>Braver Angels 2020</strong>.
+            or <a href="#donate"><strong>making a one-time donation</strong></a>.
           </em>
         <?php endif; ?>
       </h3>
@@ -71,7 +71,7 @@ get_header(); ?>
               <span class="join-description">Select yearly contribution amount</span>
               <ul>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-12/">$12</a></li>
-                <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-2020/">$20.20</a></li>
+                <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-25/">$25</a></li>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-50/">$50</a></li>
                 <li><a data-autoselect class="join-selection-amount selected" href="<?php echo home_url(); ?>/join/yearly-100/">$100</a></li>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-250/">$250</a></li>
@@ -84,7 +84,7 @@ get_header(); ?>
               <ul>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-5/">$5</a></li>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-10/">$10</a></li>
-                <li><a data-autoselect class="join-selection-amount selected" href="<?php echo home_url(); ?>/join/monthly-2020/">$20.20</a></li>
+                <li><a data-autoselect class="join-selection-amount selected" href="<?php echo home_url(); ?>/join/monthly-25/">$25</a></li>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-50/">$50</a></li>
               </ul>
             </div>
@@ -107,7 +107,7 @@ get_header(); ?>
           <h2>Upgrade/Renew Your Membership</h2>
           <p>Braver Angels is a grassroots movement,
             and we can’t rely on rich donors. We’re counting on our members to upgrade or renew their membership
-            so that we can bring our country together in 2020.
+            so that we can bring our country together in 2021.
             Your dues will help fund workshops, debates, local Alliances, and high school & college programs.
           </p>
         </div>
@@ -170,7 +170,6 @@ get_header(); ?>
 
           <p>
             <em>* Will not create or affect membership</em><br/>
-            2020 is shaping up to be one of the most divisive years in American history.
             Help us build a house united and save our Republic in this time of crisis.
             Braver Angels is a 501(c)(3) non-profit, and all donations are tax deductible.
             Your donation will fund:
@@ -180,7 +179,6 @@ get_header(); ?>
             <li>Skills Workshops</li>
             <li>Braver Angels Debates</li>
             <li>Alliances (local chapters)</li>
-            <li>The 2020 National Braver Angels Convention</li>
             <li>Our 50-State Volunteer Network</li>
             <li>The Braver Angels State of the Union</li>
             <li>High School & College Programs</li>
