@@ -53,8 +53,8 @@ get_header(); ?>
             <li>Get trained to lead Braver Angels workshops and/or debates.</li>
             <li>With other members, organize local events to bridge political differences.</li>
             <li>Take the online, interactive “Skills Workshop.”</li>
-            <li>Contribute to “The Conversation,” the Braver Angels blog.</li>
-            <li>Participate in member-only meetings with “red” and “blue” members from across the U.S.</li>
+            <li>Develop content for Braver Angels Media, the Braver Angels blog, podcast, and YouTube channel.</li>
+            <li>Participate in member-only meetings with “red,” “blue,” and “other,” members from across the U.S.</li>
             <li>Become a local or national Braver Angels volunteer leader.</li>
             <li><em>Be a part of America’s largest organization for bridging the divide.</em></li>
           </ul>
