@@ -27,13 +27,13 @@ get_header(); ?>
           <em>
             Help us build a house united by <a href="#join"><strong>joining Braver Angels</strong></a>,
             <a href="#upgrade"><strong>upgrading/renewing</strong></a> your membership,
-            or <a href="#donate"><strong>donating</strong></a> to <strong>Braver Angels 2020</strong>.
+            or <a href="#donate"><strong>making a one-time donation</strong></a>.
           </em>
 
         <?php else : ?>
           <em>
             Help us build a house united by <a href="#upgrade"><strong>upgrading/renewing</strong></a> your membership
-            or <a href="#donate"><strong>making a one-time donation</strong></a>.
+            or <a href="#donate"><strong>making a one-time donation</strong></a>. Not ready to join? <a href="gform_wrapper_33"><strong>Subscribe to our newsletter.</strong></a>
           </em>
         <?php endif; ?>
       </h3>
@@ -90,7 +90,7 @@ get_header(); ?>
             </div>
           </div>
 
-          <form id="join-submit-form" action="<?php echo home_url(); ?>/join/monthly-2020/">
+          <form id="join-submit-form" action="<?php echo home_url(); ?>/join/monthly-25/">
             <input id="join-submit-button" type="submit" value="Join" />
           </form>
 
