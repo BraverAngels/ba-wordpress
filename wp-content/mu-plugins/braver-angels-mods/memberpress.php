@@ -57,19 +57,23 @@ function send_new_user_data_to_action_network($user_id){
 
   // Set tags
   if (isset($user_meta['mepr_lean_red_or_blue']) && $user_meta['mepr_lean_red_or_blue'][0]) {
-
     $lean = $user_meta['mepr_lean_red_or_blue'][0];
-    if ($lean == 'red' || $lean == 'lean-red') {
+    if ($lean == 'red') {
       $tags[] = 'Red';
       $custom_fields['Master Partisanship'] = 'Red';
-    } elseif ($lean == 'blue' || $lean == 'lean-blue') {
+    } elseif ($lean == 'blue') {
       $tags[] = 'Blue';
       $custom_fields['Master Partisanship'] = 'Blue';
+    } else if ($lean == 'not-leaning-either-way') {
+       $tags[] = 'Other';
+       $custom_fields['Master Partisanship'] = 'Other';
+    } else if ($lean == 'prefer-not-to-say') {
+      $custom_fields['Master Partisanship'] = 'Declined';
     } else {
-      $tags[] = 'Other';
-      $custom_fields['Master Partisanship'] = 'Other';
+      $custom_fields['Master Partisanship'] = $lean;
     }
-
+  } else {
+     $custom_fields['Master Partisanship'] = 'Unknown';
   }
   if (isset($user_meta['mepr_birthday']) && $user_meta['mepr_birthday']) {
     $custom_fields['Birthday'] = $user_meta['mepr_birthday'][0];
@@ -212,17 +216,22 @@ function send_updated_user_data_to_action_network($data){
   if (isset($data['mepr_lean_red_or_blue']) && $data['mepr_lean_red_or_blue']) {
 
     $lean = $data['mepr_lean_red_or_blue'];
-    if ($lean == 'red' || $lean == 'lean-red') {
+    if ($lean == 'red') {
       $tags[] = 'Red';
       $custom_fields['Master Partisanship'] = 'Red';
-    } elseif ($lean == 'blue' || $lean == 'lean-blue') {
+    } elseif ($lean == 'blue') {
       $tags[] = 'Blue';
       $custom_fields['Master Partisanship'] = 'Blue';
+    } else if ($lean == 'not-leaning-either-way') {
+       $tags[] = 'Other';
+       $custom_fields['Master Partisanship'] = 'Other';
+    } else if ($lean == 'prefer-not-to-say') {
+      $custom_fields['Master Partisanship'] = 'Declined';
     } else {
-      $tags[] = 'Other';
-      $custom_fields['Master Partisanship'] = 'Other';
+      $custom_fields['Master Partisanship'] = $lean;
     }
-
+  } else {
+     $custom_fields['Master Partisanship'] = 'Unknown';
   }
   if (isset($data['mepr_birthday']) && $data['mepr_birthday']) {
     $custom_fields['Birthday'] = $data['mepr_birthday'];
