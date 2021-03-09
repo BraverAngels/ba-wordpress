@@ -2,20 +2,17 @@
   "name": "braver-angels-astra-child-theme",
   "version": "0.0.1",
   "description": "WordPress child theme for Braver Angels based on Astra",
-  "author": {
-    "name": "Blake Lundquist",
-    "url": "http://blakelundquist.dev"
-  },
+  "author": "Blake Lundquist (http://blakelundquist.dev)",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BlakeEric/better-angels"
+    "url": "git+https://github.com/BlakeEric/better-angels.git"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "del": "5.1.0",
-    "gulp": "4.0.2",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "7.0.1",
     "gulp-babel": "^8.0.0",
     "gulp-concat": "2.6.1",
@@ -35,5 +32,13 @@
   "dependencies": {
     "js-yaml": ">=3.13.1",
     "lodash": ">=4.17.19"
+  },
+  "bugs": {
+    "url": "https://github.com/BlakeEric/better-angels/issues"
+  },
+  "homepage": "https://github.com/BlakeEric/better-angels#readme",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
