@@ -374,10 +374,10 @@ function get_user_subscription_id(){
 function get_higher_membership_options() {
 
   // IDs of monthly memberships
-  $monthly_memberships = [3612, 3613, 3614, 3616, 4278, 3618, 3620];
+  $monthly_memberships = [3612, 3613, 3614, 3616, 4278, 3618, 3620, 6987, 22138, 25116];
 
   // IDs of yearly memberships
-  $yearly_memberships = [3621, 4279, 3622, 3623, 3624, 3625, 3626];
+  $yearly_memberships = [3621, 4279, 3620, 3622, 3623, 3624, 3625, 3626, 25113, 25115];
 
   if (in_array(get_user_subscription_id(), $monthly_memberships)) {
 
@@ -388,9 +388,6 @@ function get_higher_membership_options() {
 
     $index = array_search(get_user_subscription_id(), $yearly_memberships);
     $higher_memberships = array_slice($yearly_memberships, $index + 1);
-
-    // Add the $50 per month option
-    $higher_memberships[] = 3620;
 
   } else {
 
