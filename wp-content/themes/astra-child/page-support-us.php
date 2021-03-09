@@ -25,14 +25,14 @@ get_header(); ?>
         <?php endif; ?>
         <?php if (!is_user_logged_in()): ?>
           <em>
-            Help us build a house united by <a href="#join"><strong>joining Braver Angels</strong></a>,
-            <a href="#upgrade"><strong>upgrading/renewing</strong></a> your membership,
+            Help us build a house united by <a href="#join"><strong>joining Braver Angels</strong></a>, or by
+            <a href="#renew"><strong>renewing or upgrading</strong></a> your membership,
             or <a href="#donate"><strong>making a one-time donation</strong></a>.  Not ready to join? <a href="#gform_wrapper_33"><strong>Subscribe to our newsletter.</strong></a>
           </em>
 
         <?php else : ?>
           <em>
-            Help us build a house united by <a href="#upgrade"><strong>upgrading/renewing</strong></a> your membership
+            Help us build a house united by <a href="#renew"><strong>renewing or upgrading</strong></a> your membership
             or <a href="#donate"><strong>making a one-time donation</strong></a>.
           </em>
         <?php endif; ?>
@@ -74,8 +74,10 @@ get_header(); ?>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-25/">$25</a></li>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-50/">$50</a></li>
                 <li><a data-autoselect class="join-selection-amount selected" href="<?php echo home_url(); ?>/join/yearly-100/">$100</a></li>
-                <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-250/">$250</a></li>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-500/">$500</a></li>
+                <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-1000/">$1000</a></li>
+                <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-5000/">$5000</a></li>
+                <li><a class="join-selection-amount" href="mailto:development@braverangels.org">Other Amount</a></li>
               </ul>
             </div>
 
@@ -83,9 +85,12 @@ get_header(); ?>
               <span class="join-description">Select monthly contribution amount</span>
               <ul>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-5/">$5</a></li>
-                <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-10/">$10</a></li>
-                <li><a data-autoselect class="join-selection-amount selected" href="<?php echo home_url(); ?>/join/monthly-25/">$25</a></li>
+                <li><a data-autoselect class="join-selection-amount selected" href="<?php echo home_url(); ?>/join/monthly-20/">$20</a></li>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-50/">$50</a></li>
+                <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-100/">$100</a></li>
+                <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-250/">$250</a></li>
+                <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-500/">$500</a></li>
+                <li><a class="join-selection-amount" href="mailto:development@braverangels.org">Other Amount</a></li>
               </ul>
             </div>
           </div>
@@ -101,15 +106,18 @@ get_header(); ?>
     </section>
   <?php endif; ?>
 
-    <section class="upgrade" id="upgrade">
+    <section class="upgrade" id="renew">
       <div class="upgrade-inner">
         <div class="upgrade-content">
-          <h2>Upgrade/Renew Your Membership</h2>
-          <p>Braver Angels is a grassroots movement,
-            and we can’t rely on rich donors. We’re counting on our members to upgrade or renew their membership
-            so that we can bring our country together in 2021.
-            Your dues will help fund workshops, debates, local Alliances, and high school & college programs.
-          </p>
+          <h2>Renew or Upgrade Your Membership</h2>
+          <p>As a member-led organization, Braver Angels counts on membership support to deliver our
+          programs and cultivate growth of the movement.</p>
+          <p>We invite you to decide which membership level is right for you to help fund workshops,
+          debates, local Alliances, and programs in our nation’s colleges and high schools. Some members
+          give at the basic $12/year level, some give $500 or more per month -- every membership in every amount counts!</p>
+          <p>Thank you for renewing or upgrading your membership today!</p>
+          <p>Your membership contribution is fully tax-deductible. Please note all memberships renew
+          automatically on the anniversary of the donation using the credit card on file.</p>
         </div>
         <div class="upgrade-selection-column">
 
@@ -128,7 +136,7 @@ get_header(); ?>
           <?php else : ?>
 
             <?php if (get_user_subscription_id()) : ?>
-              <p>Current subscription: <strong><?php echo get_the_title(get_user_subscription_id()); ?></strong><br/><a href="<?php echo home_url('account/?action=subscriptions') ?>">Other Payment Options</a></p>
+              <p>Current subscription: <strong><?php echo get_the_title(get_user_subscription_id()); ?></strong></p>
             <?php else :
               //the user has an account but does not have an active subscription
             ?>
@@ -149,10 +157,9 @@ get_header(); ?>
               foreach ($options as $option) {
                 echo '<li><a class="membership-upgrade-option-link" href="'. get_the_permalink($option) .'">'. get_the_title($option) .'</a></li>';
               }
+              echo '<li><a class="membership-upgrade-option-link" href="'. echo home_url('account/?action=subscriptions') .'">Other Recurring Amount</a></li>';
+              echo '<li><a class="membership-upgrade-option-link" href="#donate">One Time Donation</a></li>';
               echo '</ul>';
-              echo '<p>';
-                echo '<a href="#donate">I just want to donate</a>';
-              echo '</p>';
             } else {
               echo "<span><strong>You're maxed out.</strong><br/>You are already subscribed to our highest membership level. Consider <a href='#donate'><strong>making an additional one-time gift.</strong></a></span>";
             }
@@ -169,10 +176,9 @@ get_header(); ?>
           <h2>Donate</h2>
 
           <p>
-            <em>* Will not create or affect membership</em><br/>
-            Help us build a house united and save our Republic in this time of crisis.
-            Braver Angels is a 501(c)(3) non-profit, and all donations are tax deductible.
-            Your donation will fund:
+            <em>* Will not create a membership</em><br/>
+            Help us build a house united by making a one-time donation to Braver Angels.
+            Your donation will support Braver Angels programming around the country including:
           </p>
           <ul>
             <li>Red-Blue Workshops</li>
