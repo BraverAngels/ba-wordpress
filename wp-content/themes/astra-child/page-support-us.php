@@ -157,7 +157,9 @@ get_header(); ?>
               foreach ($options as $option) {
                 echo '<li><a class="membership-upgrade-option-link" href="'. get_the_permalink($option) .'">'. get_the_title($option) .'</a></li>';
               }
-              echo '<li><a class="membership-upgrade-option-link" href="'. echo home_url('account/?action=subscriptions') .'">Other Recurring Amount</a></li>';
+              echo '<li><a class="membership-upgrade-option-link" href="';
+              echo home_url('account/?action=subscriptions');
+              echo '">Other Recurring Amount</a></li>';
               echo '<li><a class="membership-upgrade-option-link" href="#donate">One Time Donation</a></li>';
               echo '</ul>';
             } else {
