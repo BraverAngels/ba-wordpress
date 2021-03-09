@@ -103,3 +103,5 @@ wp-content/themes/*
 *.asf
 *.wmv
 *.avi
+!/wp-content/themes/astra-child/package.json
+!/wp-content/themes/astra-child/package-lock.json
