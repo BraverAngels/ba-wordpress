@@ -183,6 +183,7 @@
 }
 
 .entry-content-support-us .join-selection-options ul li a:active,
+.entry-content-support-us .join-selection-options ul li a:focus,
 .entry-content-support-us .join-selection-type button.selected,
 .entry-content-support-us .join-selection-amount.selected {
    color: #fff;
@@ -190,7 +191,6 @@
    border: 3px solid #23356c !important;
 }
 
-.entry-content-support-us .join-selection-options ul li a:focus,
 .entry-content-support-us .join-selection-options ul li a:hover {
   color: #fff;
   background-color: #ab2634;
