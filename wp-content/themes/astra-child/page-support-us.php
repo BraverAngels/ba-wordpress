@@ -19,6 +19,7 @@ get_header(); ?>
       <?php else : ?>
         <h2>Support Us</h2>
       <?php endif; ?>
+      <h3>
         <?php if (isset($_GET['referrer']) && $_GET['referrer'] = "subscribe"): ?>
           <strong>Want to take the next step?</strong>
         <?php endif; ?>
@@ -28,12 +29,14 @@ get_header(); ?>
             <a href="#renew"><strong>renewing or upgrading</strong></a> your membership,
             or <a href="#donate"><strong>making a one-time donation</strong></a>.  Not ready to join? <a href="#gform_wrapper_33"><strong>Subscribe to our newsletter.</strong></a>
           </em>
+
         <?php else : ?>
           <em>
             Help us build a house united by <a href="#renew"><strong>renewing or upgrading</strong></a> your membership
             or <a href="#donate"><strong>making a one-time donation</strong></a>.
           </em>
         <?php endif; ?>
+      </h3>
     </div>
   </section>
 
@@ -154,9 +157,7 @@ get_header(); ?>
               foreach ($options as $option) {
                 echo '<li><a class="membership-upgrade-option-link" href="'. get_the_permalink($option) .'">'. get_the_title($option) .'</a></li>';
               }
-              echo '<li><a class="membership-upgrade-option-link" href="';
-              echo home_url('account/?action=subscriptions');
-              echo '">Other Recurring Amount</a></li>';
+              echo '<li><a class="membership-upgrade-option-link" href="'. home_url() .'/account/?action=subscriptions">Other Recurring Amount</a></li>';
               echo '<li><a class="membership-upgrade-option-link" href="#donate">One Time Donation</a></li>';
               echo '</ul>';
             } else {
