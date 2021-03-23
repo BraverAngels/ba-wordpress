@@ -87,7 +87,18 @@ function send_new_user_data_to_action_network($user_id){
   if (isset($user_meta['mepr_profession']) && $user_meta['mepr_profession']) {
     $custom_fields['Profession'] = $user_meta['mepr_profession'][0];
   }
-
+  if (isset($user_meta['mepr_race_ethnicity_check_all_that_apply']) && $user_meta['mepr_race_ethnicity_check_all_that_apply']) {
+    $custom_fields['Race / Ethnicity'] = $user_meta['mepr_race_ethnicity_check_all_that_apply'];
+  }
+  if (isset($user_meta['mepr_education']) && $user_meta['mepr_education']) {
+    $custom_fields['Education'] = $user_meta['mepr_education'];
+  }
+  if (isset($user_meta['mepr_which_of_the_following_would_best_describe_where_you_live']) && $user_meta['mepr_which_of_the_following_would_best_describe_where_you_live']) {
+    $custom_fields['Urban / Rural'] = $user_meta['mepr_which_of_the_following_would_best_describe_where_you_live'];
+  }
+  if (isset($user_meta['mepr_age']) && $user_meta['mepr_age']) {
+    $custom_fields['Age'] = $user_meta['mepr_age'];
+  }
 
 
   // Get the "registration date" from user data and convert to proper format
@@ -244,6 +255,18 @@ function send_updated_user_data_to_action_network($data){
   }
   if (isset($data['mepr_profession']) && $data['mepr_profession']) {
     $custom_fields['Profession'] = $data['mepr_profession'];
+  }
+  if (isset($data['mepr_race_ethnicity_check_all_that_apply']) && $data['mepr_race_ethnicity_check_all_that_apply']) {
+      $custom_fields['Race / Ethnicity'] = $data['mepr_race_ethnicity_check_all_that_apply'];
+  }
+  if (isset($data['mepr_education']) && $data['mepr_education']) {
+      $custom_fields['Education'] = $data['mepr_education'];
+  }
+  if (isset($data['mepr_which_of_the_following_would_best_describe_where_you_live']) && $data['mepr_which_of_the_following_would_best_describe_where_you_live']) {
+      $custom_fields['Urban / Rural'] = $data['mepr_which_of_the_following_would_best_describe_where_you_live'];
+  }
+  if (isset($data['mepr_age']) && $data['mepr_age']) {
+      $custom_fields['Age'] = $data['mepr_age'];
   }
 
   $street = array(trim($data['mepr-address-one'] . ' ' . $data['mepr-address-two']));
