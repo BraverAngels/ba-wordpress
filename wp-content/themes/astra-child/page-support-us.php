@@ -77,7 +77,7 @@ get_header(); ?>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-500/">$500</a></li>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-1000/">$1000</a></li>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/yearly-5000/">$5000</a></li>
-                <li><a class="join-selection-amount" href="mailto:development@braverangels.org" target="_blank">Other</a></li>
+                <li><a class="join-selection-amount" href="https://braverangels.org/custom-membership/" target="_blank">Other</a></li>
               </ul>
             </div>
 
@@ -90,7 +90,7 @@ get_header(); ?>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-100/">$100</a></li>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-250/">$250</a></li>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-500/">$500</a></li>
-                <li><a class="join-selection-amount" href="mailto:development@braverangels.org" target="_blank">Other</a></li>
+                <li><a class="join-selection-amount" href="https://braverangels.org/custom-membership/" target="_blank">Other</a></li>
               </ul>
             </div>
           </div>
