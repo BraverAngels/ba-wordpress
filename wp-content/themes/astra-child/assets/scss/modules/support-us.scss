@@ -188,8 +188,9 @@
 .entry-content-support-us .join-selection-type button.selected,
 .entry-content-support-us .join-selection-amount.selected {
    color: #fff;
-   border-color: #ab2634;
    background-color: #ab2634;
+   border: 3px solid #23356c !important;
+   padding: 8px;
 }
 
 .entry-content-support-us .join-description {
