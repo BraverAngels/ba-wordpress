@@ -26,13 +26,13 @@ get_header(); ?>
         <?php if (!is_user_logged_in()): ?>
           <em>
             Help us build a house united by <a href="#join"><strong>joining Braver Angels</strong></a>, or by
-            <a href="#renew"><strong>renewing or upgrading</strong></a> your membership,
+            <a href="#upgrade"><strong>renewing or upgrading</strong></a> your membership,
             or <a href="#donate"><strong>making a one-time donation</strong></a>.  Not ready to join? <a href="#gform_wrapper_33"><strong>Subscribe to our newsletter.</strong></a>
           </em>
 
         <?php else : ?>
           <em>
-            Help us build a house united by <a href="#renew"><strong>renewing or upgrading</strong></a> your membership
+            Help us build a house united by <a href="#upgrade"><strong>renewing or upgrading</strong></a> your membership
             or <a href="#donate"><strong>making a one-time donation</strong></a>.
           </em>
         <?php endif; ?>
@@ -106,7 +106,7 @@ get_header(); ?>
     </section>
   <?php endif; ?>
 
-    <section class="upgrade" id="renew">
+    <section class="upgrade" id="upgrade">
       <div class="upgrade-inner">
         <div class="upgrade-content">
           <h2>Renew or Upgrade Your Membership</h2>
