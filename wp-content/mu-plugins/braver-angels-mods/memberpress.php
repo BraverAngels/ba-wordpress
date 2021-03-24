@@ -101,7 +101,7 @@ function send_new_user_data_to_action_network($user_id){
   if (isset($user_meta['mepr_which_of_the_following_would_best_describe_where_you_live']) && $user_meta['mepr_which_of_the_following_would_best_describe_where_you_live']) {
     $custom_fields['Urban / Rural'] = $user_meta['mepr_which_of_the_following_would_best_describe_where_you_live'];
   }
-  if (isset($user_meta['mepr_age']) && $user_meta['mepr_age']) {
+  if (isset($user_meta['mepr_age'])) {
     $custom_fields['Age'] = $user_meta['mepr_age'];
   }
 
@@ -275,7 +275,7 @@ function send_updated_user_data_to_action_network($data){
   if (isset($data['mepr_which_of_the_following_would_best_describe_where_you_live']) && $data['mepr_which_of_the_following_would_best_describe_where_you_live']) {
       $custom_fields['Urban / Rural'] = $data['mepr_which_of_the_following_would_best_describe_where_you_live'];
   }
-  if (isset($data['mepr_age']) && $data['mepr_age']) {
+  if (isset($data['mepr_age'])) {
       $custom_fields['Age'] = $data['mepr_age'];
   }
 
