@@ -52,7 +52,7 @@ get_header(); ?>
             <li>Join or create a Braver Angels Alliance (chapter) in your community.</li>
             <li>Get trained to lead Braver Angels workshops and/or debates.</li>
             <li>With other members, organize local events to bridge political differences.</li>
-            <li>Take the online, interactive “Skills Workshop.”</li>
+            <li>Take our online, interactive eCourses.</li>
             <li>Contribute to the Braver Angels blog.</li>
             <li>Participate in member-only meetings with “red” and “blue” members from across the U.S.</li>
             <li>Become a local or national Braver Angels volunteer leader.</li>
@@ -188,7 +188,7 @@ get_header(); ?>
             <li>Our 50-State Volunteer Network</li>
             <li>The Braver Angels State of the Union</li>
             <li>High School & College Programs</li>
-            <li>Online Programs</li>
+            <li>Online Programs and eCourses</li>
             <li>Media Outreach</li>
           </ul>
         </div>
