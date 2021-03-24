@@ -103,7 +103,7 @@ function send_new_user_data_to_action_network($user_id){
   }
   if (isset($user_meta['mepr_age'])) {
     error_log ($user_meta['mepr_age']);
-    $custom_fields['Age'] = $user_meta['mepr_age'];
+    $custom_fields['Age Profile'] = $user_meta['mepr_age'];
   }
 
 
@@ -278,7 +278,7 @@ function send_updated_user_data_to_action_network($data){
   }
 
   if (isset($data['mepr_age']) && $data['mepr_age']) {
-      $custom_fields['Age'] = $data['mepr_age'];
+      $custom_fields['Age Profile'] = $data['mepr_age'];
   }
 
   $street = array(trim($data['mepr-address-one'] . ' ' . $data['mepr-address-two']));
