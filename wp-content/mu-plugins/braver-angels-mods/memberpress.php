@@ -277,7 +277,7 @@ function send_updated_user_data_to_action_network($data){
       $custom_fields['Urban / Rural'] = $data['mepr_which_of_the_following_would_best_describe_where_you_live'];
   }
   if (isset($data['mepr_age'])) {
-      error_log ($user_meta['mepr_age']);
+      error_log ($data['mepr_age']);
       $custom_fields['Age'] = $data['mepr_age'];
   }
 
