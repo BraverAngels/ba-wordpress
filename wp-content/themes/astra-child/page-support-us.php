@@ -85,6 +85,7 @@ get_header(); ?>
               <span class="join-description">Select monthly contribution amount</span>
               <ul>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-5/">$5</a></li>
+                <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-10/">$10</a></li>
                 <li><a data-autoselect class="join-selection-amount selected" href="<?php echo home_url(); ?>/join/monthly-20/">$20</a></li>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-50/">$50</a></li>
                 <li><a class="join-selection-amount" href="<?php echo home_url(); ?>/join/monthly-100/">$100</a></li>
