@@ -278,7 +278,6 @@ function send_updated_user_data_to_action_network($data){
   }
 
   if (isset($data['mepr_age']) && $data['mepr_age']) {
-      print_r($data['mepr_age']);
       $custom_fields['Age'] = $data['mepr_age'];
   }
 
