@@ -23,7 +23,7 @@ $event_id = get_the_ID();
 // Signup link
 $signup_link = tribe_get_event_website_link($event_id);
 
-if $signup_link {
+if ($signup_link) {
     preg_match_all('#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#', $signup_link, $matches);
     if ($matches[0]) && $matches[0][0]) {
       $signup_link = trim($matches[0][0]);
