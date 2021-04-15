@@ -23,6 +23,11 @@ $event_id = get_the_ID();
 // Signup link
 $signup_link = tribe_get_event_website_link($event_id);
 
+if ($signup_link) {
+    preg_match_all('#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#', $signup_link, $matches)
+    $signup_link = trim($matches[0][0]
+}
+
 // Organizer Email
 $email = tribe_get_organizer_email();
 
@@ -68,11 +73,9 @@ $email = tribe_get_organizer_email();
       <div class="tribe-events-single-event-description tribe-events-content">
         <?php the_content(); ?>
       </div>
-      <?php echo $event_id ?>
       <?php echo $signup_link ?>
-      <?php preg_match_all('#\bhttps?://[^\s()<>]+(?:\([\w\d]+\)|([^[:punct:]\s]|/))#', $signup_link, $matches); print_r($matches[0][0]); ?>
       <?php if ($signup_link) : ?>
-        <a id="event-signup-button" class="tribe-events-button" style="font-size: 1.125rem;background-color:#23356c;" target="_blank" rel="nofollow" href="<?php echo strip_tags($signup_link); ?>">Click here to sign up now!</a>
+        <a id="event-signup-button" class="tribe-events-button" style="font-size: 1.125rem;background-color:#23356c;" target="_blank" rel="nofollow" href="<?php echo $signup_link; ?>">Click here to sign up now!</a>
       <?php elseif ( ! empty( $email ) ) : ?>
         <a id="event-signup-button" class="tribe-events-button" style="font-size: 1.125rem;background-color:#23356c;" target="_blank" rel="nofollow" href="mailto:<?php echo $email; ?>">Click here to contact organizer!</a>
       <?php endif; ?>
