@@ -68,6 +68,8 @@ $email = tribe_get_organizer_email();
       <div class="tribe-events-single-event-description tribe-events-content">
         <?php the_content(); ?>
       </div>
+      <?php echo $event_id ?>
+      <?php echo $signup_link ?>
       <?php if ($signup_link) : ?>
         <a id="event-signup-button" class="tribe-events-button" style="font-size: 1.125rem;background-color:#23356c;" target="_blank" rel="nofollow" href="<?php echo strip_tags($signup_link); ?>">Click here to sign up now!</a>
       <?php elseif ( ! empty( $email ) ) : ?>
