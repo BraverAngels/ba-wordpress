@@ -412,7 +412,7 @@ function get_higher_membership_options() {
   $monthly_memberships = [3612, 3613, 3614, 3616, 4278, 3618, 3620, 6987, 22138, 25116];
 
   // IDs of yearly memberships
-  $yearly_memberships = [3621, 4279, 3620, 3622, 3623, 3624, 3625, 3626, 25113, 25115];
+  $yearly_memberships = [3621, 3622, 3623, 3624, 3625, 3626, 25113, 25115];
 
   if (in_array(get_user_subscription_id(), $monthly_memberships)) {
 
