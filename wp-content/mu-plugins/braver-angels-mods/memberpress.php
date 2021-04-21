@@ -409,7 +409,7 @@ function get_user_subscription_id(){
 function get_higher_membership_options() {
 
   // IDs of monthly memberships
-  $monthly_memberships = [3612, 3613, 3614, 3616, 4278, 3618, 3620, 6987, 22138, 25116];
+  $monthly_memberships = [3614, 3616, 4278, 3618, 3620, 6987, 22138, 25116];
 
   // IDs of yearly memberships
   $yearly_memberships = [3621, 3622, 3623, 3624, 3625, 3626, 25113, 25115];
@@ -432,7 +432,7 @@ function get_higher_membership_options() {
 
 
   // remove the memberships we don't want people to sign up for anymore
-  foreach([3612, 3613, 3618, 3622] as $membership) {
+  foreach([3612, 3613] as $membership) {
     if (in_array($membership, $higher_memberships)) {
       $index = array_search($membership, $higher_memberships);
       unset($higher_memberships[$index]);
