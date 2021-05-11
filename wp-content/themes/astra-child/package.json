@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "js-yaml": ">=3.13.1",
-    "lodash": ">=4.17.19"
+    "lodash": ">=4.17.21"
   },
   "bugs": {
     "url": "https://github.com/BlakeEric/better-angels/issues"
